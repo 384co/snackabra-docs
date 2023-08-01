@@ -2,7 +2,8 @@
 
 # Class: Snackabra
 
-Snackabra is the main class for interacting with the Snackable backend.
+Snackabra
+The main class for interacting with SB servers
 
 It is a singleton, so you can only have one instance of it.
 It is guaranteed to be synchronous, so you can use it right away.
@@ -35,46 +36,60 @@ without a parameter in which case SB will ping known servers.
 - [#channel](Snackabra.md##channel)
 - [#preferredServer](Snackabra.md##preferredserver)
 - [#storage](Snackabra.md##storage)
+- [#version](Snackabra.md##version)
 
 ### Accessors
 
 - [channel](Snackabra.md#channel)
 - [crypto](Snackabra.md#crypto)
 - [storage](Snackabra.md#storage)
+- [version](Snackabra.md#version)
 
 ### Methods
 
 - [connect](Snackabra.md#connect)
 - [create](Snackabra.md#create)
-- [sendFile](Snackabra.md#sendfile)
 
 ## Constructors
 
-### constructor
+### <a id="constructor" name="constructor"></a> constructor
 
-• **new Snackabra**()
+• **new Snackabra**(`args?`, `DEBUG?`)
+
+#### Parameters
+
+| Name | Type | Default value | Description |
+| :------ | :------ | :------ | :------ |
+| `args?` | [`SBServer`](../interfaces/SBServer.md) | `undefined` | optional object with the names of the matching servers, for example below shows the miniflare local dev config. Note that 'new Snackabra()' is guaranteed synchronous, so can be 'used' right away. You can optionally call without a parameter in which case SB will ping known servers. |
+| `DEBUG` | `boolean` | `false` | optional boolean to enable debug logging |
 
 ## Properties
 
-### #channel
+### <a id="#channel" name="#channel"></a> #channel
 
 • `Private` **#channel**: [`Channel`](Channel.md)
 
 ___
 
-### #preferredServer
+### <a id="#preferredserver" name="#preferredserver"></a> #preferredServer
 
 • `Private` `Optional` **#preferredServer**: [`SBServer`](../interfaces/SBServer.md)
 
 ___
 
-### #storage
+### <a id="#storage" name="#storage"></a> #storage
 
 • `Private` **#storage**: `StorageApi`
 
+___
+
+### <a id="#version" name="#version"></a> #version
+
+• `Private` **#version**: `string` = `version`
+
 ## Accessors
 
-### channel
+### <a id="channel" name="channel"></a> channel
 
 • `get` **channel**(): [`Channel`](Channel.md)
 
@@ -86,7 +101,7 @@ Connects to a channel.
 
 ___
 
-### crypto
+### <a id="crypto" name="crypto"></a> crypto
 
 • `get` **crypto**(): [`SBCrypto`](SBCrypto.md)
 
@@ -98,7 +113,7 @@ Returns the crypto API.
 
 ___
 
-### storage
+### <a id="storage" name="storage"></a> storage
 
 • `get` **storage**(): `StorageApi`
 
@@ -108,19 +123,39 @@ Returns the storage API.
 
 `StorageApi`
 
+___
+
+### <a id="version" name="version"></a> version
+
+• `get` **version**(): `string`
+
+#### Returns
+
+`string`
+
 ## Methods
 
-### connect
+### <a id="connect" name="connect"></a> connect
 
 ▸ **connect**(`onMessage`, `key?`, `channelId?`): `Promise`<[`ChannelSocket`](ChannelSocket.md)\>
+
+Connects to :term:`Channel Name` on this SB config.
+Returns a channel socket promise right away, but it
+will not be ready until the ``ready`` promise is resolved.
+
+Note that if you have a preferred server then the channel
+object will be returned right away, but the ``ready`` promise
+will still be pending. If you do not have a preferred server,
+then the ``ready`` promise will be resolved when at least
+one of the known servers is responding and ready.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `onMessage` | (`m`: [`ChannelMessage`](../interfaces/ChannelMessage.md)) => `void` | - |
-| `key?` | `JsonWebKey` | optional key to use for encryption/decryption * |
-| `channelId?` | `string` | optional channel id to use for encryption/decryption * |
+| `key?` | `JsonWebKey` | optional key to use for encryption/decryption |
+| `channelId?` | `string` | optional channel id to use for encryption/decryption |
 
 #### Returns
 
@@ -130,7 +165,7 @@ a channel object
 
 ___
 
-### create
+### <a id="create" name="create"></a> create
 
 ▸ **create**(`sbServer`, `serverSecret`, `keys?`): `Promise`<[`SBChannelHandle`](../interfaces/SBChannelHandle.md)\>
 
@@ -151,21 +186,3 @@ it just creates (authorizes) it.
 #### Returns
 
 `Promise`<[`SBChannelHandle`](../interfaces/SBChannelHandle.md)\>
-
-___
-
-### sendFile
-
-▸ **sendFile**(`file`): `void`
-
-Sends a file to the channel.
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `file` | [`SBFile`](SBFile.md) | the file to send |
-
-#### Returns
-
-`void`

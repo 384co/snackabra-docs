@@ -23,19 +23,19 @@ SB simple events (mesage bus) class
 
 ## Constructors
 
-### constructor
+### <a id="constructor" name="constructor"></a> constructor
 
 • **new MessageBus**()
 
 ## Properties
 
-### bus
+### <a id="bus" name="bus"></a> bus
 
 • **bus**: `Dictionary`<`any`\> = `{}`
 
 ## Methods
 
-### #select
+### <a id="#select" name="#select"></a> #select
 
 ▸ `Private` **#select**(`event`): `any`
 
@@ -53,7 +53,7 @@ Safely returns handler for any event
 
 ___
 
-### publish
+### <a id="publish" name="publish"></a> publish
 
 ▸ **publish**(`event`, `...args`): `void`
 
@@ -72,7 +72,7 @@ Publish
 
 ___
 
-### subscribe
+### <a id="subscribe" name="subscribe"></a> subscribe
 
 ▸ **subscribe**(`event`, `handler`): `void`
 
@@ -92,7 +92,7 @@ Subscribe. 'event' is a string, special case '*' means everything
 
 ___
 
-### unsubscribe
+### <a id="unsubscribe" name="unsubscribe"></a> unsubscribe
 
 ▸ **unsubscribe**(`event`, `handler`): `void`
 

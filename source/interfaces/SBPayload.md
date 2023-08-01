@@ -2,6 +2,8 @@
 
 # Interface: SBPayload
 
+Essentially a dictionary where each entry is an arraybuffer.
+
 ## Indexable
 
 ▪ [index: `string`]: `ArrayBuffer`

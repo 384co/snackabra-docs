@@ -5,10 +5,10 @@
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" />
 
-    <!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
+    <!-- Generated with Sphinx 5.3.0 and Furo 2023.03.27 -->
         <title>Interface: ChannelMessage - snackabra 0.5.x beta documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=fad236701ea90a88636c2a8c73b44ae642ed2a53" />
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
@@ -243,6 +243,7 @@
 <li><p><a class="reference internal" href="#channelid"><span class="std std-ref">channelID</span></a></p></li>
 <li><p><a class="reference internal" href="#contents"><span class="std std-ref">contents</span></a></p></li>
 <li><p><a class="reference internal" href="#control"><span class="std std-ref">control</span></a></p></li>
+<li><p><a class="reference internal" href="#encrypted"><span class="std std-ref">encrypted</span></a></p></li>
 <li><p><a class="reference internal" href="#encrypted_contents"><span class="std std-ref">encrypted_contents</span></a></p></li>
 <li><p><a class="reference internal" href="#id"><span class="std std-ref">id</span></a></p></li>
 <li><p><a class="reference internal" href="#image"><span class="std std-ref">image</span></a></p></li>
@@ -252,7 +253,9 @@
 <li><p><a class="reference internal" href="#keys"><span class="std std-ref">keys</span></a></p></li>
 <li><p><a class="reference internal" href="#motd"><span class="std std-ref">motd</span></a></p></li>
 <li><p><a class="reference internal" href="#ready"><span class="std std-ref">ready</span></a></p></li>
+<li><p><a class="reference internal" href="#replyto"><span class="std std-ref">replyTo</span></a></p></li>
 <li><p><a class="reference internal" href="#roomlocked"><span class="std std-ref">roomLocked</span></a></p></li>
+<li><p><a class="reference internal" href="#sendto"><span class="std std-ref">sendTo</span></a></p></li>
 <li><p><a class="reference internal" href="#sender_pubkey"><span class="std std-ref">sender_pubKey</span></a></p></li>
 <li><p><a class="reference internal" href="#sender_username"><span class="std std-ref">sender_username</span></a></p></li>
 <li><p><a class="reference internal" href="#sign"><span class="std std-ref">sign</span></a></p></li>
@@ -263,123 +266,140 @@
 <li><p><a class="reference internal" href="#type"><span class="std std-ref">type</span></a></p></li>
 <li><p><a class="reference internal" href="#user"><span class="std std-ref">user</span></a></p></li>
 <li><p><a class="reference internal" href="#verificationtoken"><span class="std std-ref">verificationToken</span></a></p></li>
+<li><p><a class="reference internal" href="#whisper"><span class="std std-ref">whisper</span></a></p></li>
+<li><p><a class="reference internal" href="#whispered"><span class="std std-ref">whispered</span></a></p></li>
 </ul>
 </section>
 </section>
 <section id="id1">
 <h2>Properties<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
 <section id="id">
-<h3>_id<a class="headerlink" href="#id" title="Permalink to this heading">#</a></h3>
+<h3><a id="_id" name="_id"></a> _id<a class="headerlink" href="#id" title="Permalink to this heading">#</a></h3>
 <p>• <code class="docutils literal notranslate"><span class="pre">Optional</span></code> <strong>_id</strong>: <code class="docutils literal notranslate"><span class="pre">string</span></code></p>
 </section>
 <hr class="docutils" />
 <section id="channelid">
-<h3>channelID<a class="headerlink" href="#channelid" title="Permalink to this heading">#</a></h3>
+<h3><a id="channelid" name="channelid"></a> channelID<a class="headerlink" href="#channelid" title="Permalink to this heading">#</a></h3>
 <p>• <code class="docutils literal notranslate"><span class="pre">Optional</span></code> <strong>channelID</strong>: <code class="docutils literal notranslate"><span class="pre">string</span></code></p>
 </section>
 <hr class="docutils" />
 <section id="contents">
-<h3>contents<a class="headerlink" href="#contents" title="Permalink to this heading">#</a></h3>
+<h3><a id="contents" name="contents"></a> contents<a class="headerlink" href="#contents" title="Permalink to this heading">#</a></h3>
 <p>• <code class="docutils literal notranslate"><span class="pre">Optional</span></code> <strong>contents</strong>: <code class="docutils literal notranslate"><span class="pre">string</span></code></p>
 </section>
 <hr class="docutils" />
 <section id="control">
-<h3>control<a class="headerlink" href="#control" title="Permalink to this heading">#</a></h3>
+<h3><a id="control" name="control"></a> control<a class="headerlink" href="#control" title="Permalink to this heading">#</a></h3>
 <p>• <code class="docutils literal notranslate"><span class="pre">Optional</span></code> <strong>control</strong>: <code class="docutils literal notranslate"><span class="pre">boolean</span></code></p>
 </section>
 <hr class="docutils" />
+<section id="encrypted">
+<h3><a id="encrypted" name="encrypted"></a> encrypted<a class="headerlink" href="#encrypted" title="Permalink to this heading">#</a></h3>
+<p>• <code class="docutils literal notranslate"><span class="pre">Optional</span></code> <strong>encrypted</strong>: <code class="docutils literal notranslate"><span class="pre">boolean</span></code></p>
+</section>
+<hr class="docutils" />
 <section id="encrypted-contents">
-<h3>encrypted_contents<a class="headerlink" href="#encrypted-contents" title="Permalink to this heading">#</a></h3>
+<h3><a id="encrypted_contents" name="encrypted_contents"></a> encrypted_contents<a class="headerlink" href="#encrypted-contents" title="Permalink to this heading">#</a></h3>
 <p>• <code class="docutils literal notranslate"><span class="pre">Optional</span></code> <strong>encrypted_contents</strong>: <a class="reference internal" href="EncryptedContents.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">EncryptedContents</span></code></span></a></p>
 </section>
 <hr class="docutils" />
 <section id="id2">
-<h3>id<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
+<h3><a id="id" name="id"></a> id<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
 <p>• <code class="docutils literal notranslate"><span class="pre">Optional</span></code> <strong>id</strong>: <code class="docutils literal notranslate"><span class="pre">string</span></code></p>
 </section>
 <hr class="docutils" />
 <section id="image">
-<h3>image<a class="headerlink" href="#image" title="Permalink to this heading">#</a></h3>
+<h3><a id="image" name="image"></a> image<a class="headerlink" href="#image" title="Permalink to this heading">#</a></h3>
 <p>• <code class="docutils literal notranslate"><span class="pre">Optional</span></code> <strong>image</strong>: <code class="docutils literal notranslate"><span class="pre">string</span></code></p>
 </section>
 <hr class="docutils" />
 <section id="imagemetadata">
-<h3>imageMetaData<a class="headerlink" href="#imagemetadata" title="Permalink to this heading">#</a></h3>
-<p>• <code class="docutils literal notranslate"><span class="pre">Optional</span></code> <strong>imageMetaData</strong>: <code class="docutils literal notranslate"><span class="pre">ImageMetaData</span></code></p>
+<h3><a id="imagemetadata" name="imagemetadata"></a> imageMetaData<a class="headerlink" href="#imagemetadata" title="Permalink to this heading">#</a></h3>
+<p>• <code class="docutils literal notranslate"><span class="pre">Optional</span></code> <strong>imageMetaData</strong>: <a class="reference internal" href="ImageMetaData.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">ImageMetaData</span></code></span></a></p>
 </section>
 <hr class="docutils" />
 <section id="imagemetadata-sign">
-<h3>imageMetadata_sign<a class="headerlink" href="#imagemetadata-sign" title="Permalink to this heading">#</a></h3>
+<h3><a id="imagemetadata_sign" name="imagemetadata_sign"></a> imageMetadata_sign<a class="headerlink" href="#imagemetadata-sign" title="Permalink to this heading">#</a></h3>
 <p>• <code class="docutils literal notranslate"><span class="pre">Optional</span></code> <strong>imageMetadata_sign</strong>: <code class="docutils literal notranslate"><span class="pre">string</span></code></p>
 </section>
 <hr class="docutils" />
 <section id="image-sign">
-<h3>image_sign<a class="headerlink" href="#image-sign" title="Permalink to this heading">#</a></h3>
+<h3><a id="image_sign" name="image_sign"></a> image_sign<a class="headerlink" href="#image-sign" title="Permalink to this heading">#</a></h3>
 <p>• <code class="docutils literal notranslate"><span class="pre">Optional</span></code> <strong>image_sign</strong>: <code class="docutils literal notranslate"><span class="pre">string</span></code></p>
 </section>
 <hr class="docutils" />
 <section id="keys">
-<h3>keys<a class="headerlink" href="#keys" title="Permalink to this heading">#</a></h3>
-<p>• <code class="docutils literal notranslate"><span class="pre">Optional</span></code> <strong>keys</strong>: <code class="docutils literal notranslate"><span class="pre">ChannelKeyStrings</span></code></p>
+<h3><a id="keys" name="keys"></a> keys<a class="headerlink" href="#keys" title="Permalink to this heading">#</a></h3>
+<p>• <code class="docutils literal notranslate"><span class="pre">Optional</span></code> <strong>keys</strong>: <a class="reference internal" href="ChannelKeyStrings.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">ChannelKeyStrings</span></code></span></a></p>
 </section>
 <hr class="docutils" />
 <section id="motd">
-<h3>motd<a class="headerlink" href="#motd" title="Permalink to this heading">#</a></h3>
+<h3><a id="motd" name="motd"></a> motd<a class="headerlink" href="#motd" title="Permalink to this heading">#</a></h3>
 <p>• <code class="docutils literal notranslate"><span class="pre">Optional</span></code> <strong>motd</strong>: <code class="docutils literal notranslate"><span class="pre">string</span></code></p>
 </section>
 <hr class="docutils" />
 <section id="ready">
-<h3>ready<a class="headerlink" href="#ready" title="Permalink to this heading">#</a></h3>
+<h3><a id="ready" name="ready"></a> ready<a class="headerlink" href="#ready" title="Permalink to this heading">#</a></h3>
 <p>• <code class="docutils literal notranslate"><span class="pre">Optional</span></code> <strong>ready</strong>: <code class="docutils literal notranslate"><span class="pre">boolean</span></code></p>
 </section>
 <hr class="docutils" />
+<section id="replyto">
+<h3><a id="replyto" name="replyto"></a> replyTo<a class="headerlink" href="#replyto" title="Permalink to this heading">#</a></h3>
+<p>• <code class="docutils literal notranslate"><span class="pre">Optional</span></code> <strong>replyTo</strong>: <code class="docutils literal notranslate"><span class="pre">JsonWebKey</span></code></p>
+</section>
+<hr class="docutils" />
 <section id="roomlocked">
-<h3>roomLocked<a class="headerlink" href="#roomlocked" title="Permalink to this heading">#</a></h3>
+<h3><a id="roomlocked" name="roomlocked"></a> roomLocked<a class="headerlink" href="#roomlocked" title="Permalink to this heading">#</a></h3>
 <p>• <code class="docutils literal notranslate"><span class="pre">Optional</span></code> <strong>roomLocked</strong>: <code class="docutils literal notranslate"><span class="pre">boolean</span></code></p>
 </section>
 <hr class="docutils" />
+<section id="sendto">
+<h3><a id="sendto" name="sendto"></a> sendTo<a class="headerlink" href="#sendto" title="Permalink to this heading">#</a></h3>
+<p>• <code class="docutils literal notranslate"><span class="pre">Optional</span></code> <strong>sendTo</strong>: <code class="docutils literal notranslate"><span class="pre">string</span></code></p>
+</section>
+<hr class="docutils" />
 <section id="sender-pubkey">
-<h3>sender_pubKey<a class="headerlink" href="#sender-pubkey" title="Permalink to this heading">#</a></h3>
+<h3><a id="sender_pubkey" name="sender_pubkey"></a> sender_pubKey<a class="headerlink" href="#sender-pubkey" title="Permalink to this heading">#</a></h3>
 <p>• <code class="docutils literal notranslate"><span class="pre">Optional</span></code> <strong>sender_pubKey</strong>: <code class="docutils literal notranslate"><span class="pre">JsonWebKey</span></code></p>
 </section>
 <hr class="docutils" />
 <section id="sender-username">
-<h3>sender_username<a class="headerlink" href="#sender-username" title="Permalink to this heading">#</a></h3>
+<h3><a id="sender_username" name="sender_username"></a> sender_username<a class="headerlink" href="#sender-username" title="Permalink to this heading">#</a></h3>
 <p>• <code class="docutils literal notranslate"><span class="pre">Optional</span></code> <strong>sender_username</strong>: <code class="docutils literal notranslate"><span class="pre">string</span></code></p>
 </section>
 <hr class="docutils" />
 <section id="sign">
-<h3>sign<a class="headerlink" href="#sign" title="Permalink to this heading">#</a></h3>
+<h3><a id="sign" name="sign"></a> sign<a class="headerlink" href="#sign" title="Permalink to this heading">#</a></h3>
 <p>• <code class="docutils literal notranslate"><span class="pre">Optional</span></code> <strong>sign</strong>: <code class="docutils literal notranslate"><span class="pre">string</span></code></p>
 </section>
 <hr class="docutils" />
 <section id="system">
-<h3>system<a class="headerlink" href="#system" title="Permalink to this heading">#</a></h3>
+<h3><a id="system" name="system"></a> system<a class="headerlink" href="#system" title="Permalink to this heading">#</a></h3>
 <p>• <code class="docutils literal notranslate"><span class="pre">Optional</span></code> <strong>system</strong>: <code class="docutils literal notranslate"><span class="pre">boolean</span></code></p>
 </section>
 <hr class="docutils" />
 <section id="text">
-<h3>text<a class="headerlink" href="#text" title="Permalink to this heading">#</a></h3>
+<h3><a id="text" name="text"></a> text<a class="headerlink" href="#text" title="Permalink to this heading">#</a></h3>
 <p>• <code class="docutils literal notranslate"><span class="pre">Optional</span></code> <strong>text</strong>: <code class="docutils literal notranslate"><span class="pre">string</span></code></p>
 </section>
 <hr class="docutils" />
 <section id="timestamp">
-<h3>timestamp<a class="headerlink" href="#timestamp" title="Permalink to this heading">#</a></h3>
+<h3><a id="timestamp" name="timestamp"></a> timestamp<a class="headerlink" href="#timestamp" title="Permalink to this heading">#</a></h3>
 <p>• <code class="docutils literal notranslate"><span class="pre">Optional</span></code> <strong>timestamp</strong>: <code class="docutils literal notranslate"><span class="pre">number</span></code></p>
 </section>
 <hr class="docutils" />
 <section id="timestampprefix">
-<h3>timestampPrefix<a class="headerlink" href="#timestampprefix" title="Permalink to this heading">#</a></h3>
+<h3><a id="timestampprefix" name="timestampprefix"></a> timestampPrefix<a class="headerlink" href="#timestampprefix" title="Permalink to this heading">#</a></h3>
 <p>• <code class="docutils literal notranslate"><span class="pre">Optional</span></code> <strong>timestampPrefix</strong>: <code class="docutils literal notranslate"><span class="pre">string</span></code></p>
 </section>
 <hr class="docutils" />
 <section id="type">
-<h3>type<a class="headerlink" href="#type" title="Permalink to this heading">#</a></h3>
+<h3><a id="type" name="type"></a> type<a class="headerlink" href="#type" title="Permalink to this heading">#</a></h3>
 <p>• <code class="docutils literal notranslate"><span class="pre">Optional</span></code> <strong>type</strong>: <a class="reference internal" href="../modules.html#channelmessagetypes"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">ChannelMessageTypes</span></code></span></a></p>
 </section>
 <hr class="docutils" />
 <section id="user">
-<h3>user<a class="headerlink" href="#user" title="Permalink to this heading">#</a></h3>
+<h3><a id="user" name="user"></a> user<a class="headerlink" href="#user" title="Permalink to this heading">#</a></h3>
 <p>• <code class="docutils literal notranslate"><span class="pre">Optional</span></code> <strong>user</strong>: <code class="docutils literal notranslate"><span class="pre">Object</span></code></p>
 <section id="type-declaration">
 <h4>Type declaration<a class="headerlink" href="#type-declaration" title="Permalink to this heading">#</a></h4>
@@ -404,8 +424,18 @@
 </section>
 <hr class="docutils" />
 <section id="verificationtoken">
-<h3>verificationToken<a class="headerlink" href="#verificationtoken" title="Permalink to this heading">#</a></h3>
+<h3><a id="verificationtoken" name="verificationtoken"></a> verificationToken<a class="headerlink" href="#verificationtoken" title="Permalink to this heading">#</a></h3>
 <p>• <code class="docutils literal notranslate"><span class="pre">Optional</span></code> <strong>verificationToken</strong>: <code class="docutils literal notranslate"><span class="pre">string</span></code></p>
+</section>
+<hr class="docutils" />
+<section id="whisper">
+<h3><a id="whisper" name="whisper"></a> whisper<a class="headerlink" href="#whisper" title="Permalink to this heading">#</a></h3>
+<p>• <code class="docutils literal notranslate"><span class="pre">Optional</span></code> <strong>whisper</strong>: <code class="docutils literal notranslate"><span class="pre">string</span></code></p>
+</section>
+<hr class="docutils" />
+<section id="whispered">
+<h3><a id="whispered" name="whispered"></a> whispered<a class="headerlink" href="#whispered" title="Permalink to this heading">#</a></h3>
+<p>• <code class="docutils literal notranslate"><span class="pre">Optional</span></code> <strong>whispered</strong>: <code class="docutils literal notranslate"><span class="pre">boolean</span></code></p>
 </section>
 </section>
 </section>
@@ -453,33 +483,38 @@
 </ul>
 </li>
 <li><a class="reference internal" href="#id1">Properties</a><ul>
-<li><a class="reference internal" href="#id">_id</a></li>
-<li><a class="reference internal" href="#channelid">channelID</a></li>
-<li><a class="reference internal" href="#contents">contents</a></li>
-<li><a class="reference internal" href="#control">control</a></li>
-<li><a class="reference internal" href="#encrypted-contents">encrypted_contents</a></li>
-<li><a class="reference internal" href="#id2">id</a></li>
-<li><a class="reference internal" href="#image">image</a></li>
-<li><a class="reference internal" href="#imagemetadata">imageMetaData</a></li>
-<li><a class="reference internal" href="#imagemetadata-sign">imageMetadata_sign</a></li>
-<li><a class="reference internal" href="#image-sign">image_sign</a></li>
-<li><a class="reference internal" href="#keys">keys</a></li>
-<li><a class="reference internal" href="#motd">motd</a></li>
-<li><a class="reference internal" href="#ready">ready</a></li>
-<li><a class="reference internal" href="#roomlocked">roomLocked</a></li>
-<li><a class="reference internal" href="#sender-pubkey">sender_pubKey</a></li>
-<li><a class="reference internal" href="#sender-username">sender_username</a></li>
-<li><a class="reference internal" href="#sign">sign</a></li>
-<li><a class="reference internal" href="#system">system</a></li>
-<li><a class="reference internal" href="#text">text</a></li>
-<li><a class="reference internal" href="#timestamp">timestamp</a></li>
-<li><a class="reference internal" href="#timestampprefix">timestampPrefix</a></li>
-<li><a class="reference internal" href="#type">type</a></li>
-<li><a class="reference internal" href="#user">user</a><ul>
+<li><a class="reference internal" href="#id"><a id="_id" name="_id"></a> _id</a></li>
+<li><a class="reference internal" href="#channelid"><a id="channelid" name="channelid"></a> channelID</a></li>
+<li><a class="reference internal" href="#contents"><a id="contents" name="contents"></a> contents</a></li>
+<li><a class="reference internal" href="#control"><a id="control" name="control"></a> control</a></li>
+<li><a class="reference internal" href="#encrypted"><a id="encrypted" name="encrypted"></a> encrypted</a></li>
+<li><a class="reference internal" href="#encrypted-contents"><a id="encrypted_contents" name="encrypted_contents"></a> encrypted_contents</a></li>
+<li><a class="reference internal" href="#id2"><a id="id" name="id"></a> id</a></li>
+<li><a class="reference internal" href="#image"><a id="image" name="image"></a> image</a></li>
+<li><a class="reference internal" href="#imagemetadata"><a id="imagemetadata" name="imagemetadata"></a> imageMetaData</a></li>
+<li><a class="reference internal" href="#imagemetadata-sign"><a id="imagemetadata_sign" name="imagemetadata_sign"></a> imageMetadata_sign</a></li>
+<li><a class="reference internal" href="#image-sign"><a id="image_sign" name="image_sign"></a> image_sign</a></li>
+<li><a class="reference internal" href="#keys"><a id="keys" name="keys"></a> keys</a></li>
+<li><a class="reference internal" href="#motd"><a id="motd" name="motd"></a> motd</a></li>
+<li><a class="reference internal" href="#ready"><a id="ready" name="ready"></a> ready</a></li>
+<li><a class="reference internal" href="#replyto"><a id="replyto" name="replyto"></a> replyTo</a></li>
+<li><a class="reference internal" href="#roomlocked"><a id="roomlocked" name="roomlocked"></a> roomLocked</a></li>
+<li><a class="reference internal" href="#sendto"><a id="sendto" name="sendto"></a> sendTo</a></li>
+<li><a class="reference internal" href="#sender-pubkey"><a id="sender_pubkey" name="sender_pubkey"></a> sender_pubKey</a></li>
+<li><a class="reference internal" href="#sender-username"><a id="sender_username" name="sender_username"></a> sender_username</a></li>
+<li><a class="reference internal" href="#sign"><a id="sign" name="sign"></a> sign</a></li>
+<li><a class="reference internal" href="#system"><a id="system" name="system"></a> system</a></li>
+<li><a class="reference internal" href="#text"><a id="text" name="text"></a> text</a></li>
+<li><a class="reference internal" href="#timestamp"><a id="timestamp" name="timestamp"></a> timestamp</a></li>
+<li><a class="reference internal" href="#timestampprefix"><a id="timestampprefix" name="timestampprefix"></a> timestampPrefix</a></li>
+<li><a class="reference internal" href="#type"><a id="type" name="type"></a> type</a></li>
+<li><a class="reference internal" href="#user"><a id="user" name="user"></a> user</a><ul>
 <li><a class="reference internal" href="#type-declaration">Type declaration</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#verificationtoken">verificationToken</a></li>
+<li><a class="reference internal" href="#verificationtoken"><a id="verificationtoken" name="verificationtoken"></a> verificationToken</a></li>
+<li><a class="reference internal" href="#whisper"><a id="whisper" name="whisper"></a> whisper</a></li>
+<li><a class="reference internal" href="#whispered"><a id="whispered" name="whispered"></a> whispered</a></li>
 </ul>
 </li>
 </ul>

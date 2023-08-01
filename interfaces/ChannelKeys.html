@@ -5,10 +5,10 @@
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" />
 
-    <!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
+    <!-- Generated with Sphinx 5.3.0 and Furo 2023.03.27 -->
         <title>Interface: ChannelKeys - snackabra 0.5.x beta documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=fad236701ea90a88636c2a8c73b44ae642ed2a53" />
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
@@ -214,55 +214,88 @@
           <p><a class="reference internal" href="../jslib2.html"><span class="std std-doc">JSLib Reference Manual</span></a> / <a class="reference internal" href="../modules.html"><span class="std std-doc">Exports</span></a> / ChannelKeys</p>
 <section id="interface-channelkeys">
 <h1>Interface: ChannelKeys<a class="headerlink" href="#interface-channelkeys" title="Permalink to this heading">#</a></h1>
+<p>ChannelKeys</p>
+<p>All keys relevant for a given channel, in decoded (CryptoKey) form.
+They are sent over channels as a message (see ChannelKeysMessage);
+in export/import code they may be in the intermediary form of
+strings (see ChannelKeyStrings).</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Example</span></code></strong></p>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"> </span><span class="s2">&quot;ready&quot;</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w"> </span><span class="o">*</span><span class="w">    </span><span class="s2">&quot;keys&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w"> </span><span class="o">*</span><span class="w">            </span><span class="s2">&quot;ownerKey&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;{\&quot;crv\&quot;:\&quot;P-384\&quot;,\&quot;ext\&quot;:true,\&quot;key_ops\&quot;:[],\&quot;kty\&quot;:\&quot;EC\&quot;,</span>
+<span class="s2"> *                        \&quot;x\&quot;:\&quot;9s17B4i0Cuf_w9XN_uAq2DFePOr6S3sMFMA95KjLN8akBUWEhPAcuMEMwNUlrrkN\&quot;,</span>
+<span class="s2"> *                        \&quot;y\&quot;:\&quot;6dAtcyMbtsO5ufKvlhxRsvjTmkABGlTYG1BrEjTpwrAgtmn6k25GR7akklz9klBr\&quot;}&quot;</span><span class="p">,</span>
+<span class="w"> </span><span class="o">*</span><span class="w">            </span><span class="s2">&quot;guestKey&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;{\&quot;crv\&quot;:\&quot;P-384\&quot;,\&quot;ext\&quot;:true,\&quot;key_ops\&quot;:[],\&quot;kty\&quot;:\&quot;EC\&quot;,</span>
+<span class="s2"> *                         \&quot;x\&quot;:\&quot;Lx0eJcbNuyEfHDobWaZqgy9UO7ppxVIsEpEtvbzkAlIjySh9lY2AvgnACREO6QXD\&quot;,</span>
+<span class="s2"> *                         \&quot;y\&quot;:\&quot;zEHPgpsl4jge_Q-K6ekuzi2bQOybnaPT1MozCFQJnXEePBX8emkHriOiwl6P8BAS\&quot;}&quot;</span><span class="p">,</span>
+<span class="w"> </span><span class="o">*</span><span class="w">            </span><span class="s2">&quot;encryptionKey&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;{\&quot;alg\&quot;:\&quot;A256GCM\&quot;,\&quot;ext\&quot;:true,</span>
+<span class="s2"> *                             \&quot;k\&quot;:\&quot;F0sQTTLXDhuvvmgGQLzMoeHPD-SJlFyhfOD-cqejEOU\&quot;,</span>
+<span class="s2"> *                             \&quot;key_ops\&quot;:[\&quot;encrypt\&quot;,\&quot;decrypt\&quot;],\&quot;kty\&quot;:\&quot;oct\&quot;}&quot;</span><span class="p">,</span>
+<span class="w"> </span><span class="o">*</span><span class="w">            </span><span class="s2">&quot;signKey&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;{\&quot;crv\&quot;:\&quot;P-384\&quot;,</span>
+<span class="s2"> *                        \&quot;d\&quot;:\&quot;KCJHDZ34XgVFsS9-sU09HFzXZhnGCvnDgJ5a8GTSfjuJQaq-1N2acvchPRhknk8B\&quot;,</span>
+<span class="s2"> *                        \&quot;ext\&quot;:true,\&quot;key_ops\&quot;:[\&quot;deriveKey\&quot;],\&quot;kty\&quot;:\&quot;EC\&quot;,</span>
+<span class="s2"> *                        \&quot;x\&quot;:\&quot;rdsyBle0DD1hvp2OE2mINyyI87Cyg7FS3tCQUIeVkfPiNOACtFxi6iP8oeYt-Dge\&quot;,</span>
+<span class="s2"> *                        \&quot;y\&quot;:\&quot;qW9VP72uf9rgUU117G7AfTkCMncJbT5scIaIRwBXfqET6FYcq20fwSP7R911J2_t\&quot;}&quot;</span>
+<span class="w"> </span><span class="o">*</span><span class="w">             </span><span class="p">},</span>
+<span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="s2">&quot;motd&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="s2">&quot;roomLocked&quot;</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">}</span>
+</pre></div>
+</div>
 <section id="table-of-contents">
 <h2>Table of contents<a class="headerlink" href="#table-of-contents" title="Permalink to this heading">#</a></h2>
 <section id="properties">
 <h3>Properties<a class="headerlink" href="#properties" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
-<li><p><a class="reference internal" href="#channelsignkey"><span class="std std-ref">channelSignKey</span></a></p></li>
 <li><p><a class="reference internal" href="#encryptionkey"><span class="std std-ref">encryptionKey</span></a></p></li>
 <li><p><a class="reference internal" href="#guestkey"><span class="std std-ref">guestKey</span></a></p></li>
 <li><p><a class="reference internal" href="#lockedkey"><span class="std std-ref">lockedKey</span></a></p></li>
 <li><p><a class="reference internal" href="#ownerkey"><span class="std std-ref">ownerKey</span></a></p></li>
+<li><p><a class="reference internal" href="#ownerpubkeyx"><span class="std std-ref">ownerPubKeyX</span></a></p></li>
 <li><p><a class="reference internal" href="#privatekey"><span class="std std-ref">privateKey</span></a></p></li>
+<li><p><a class="reference internal" href="#publicsignkey"><span class="std std-ref">publicSignKey</span></a></p></li>
 <li><p><a class="reference internal" href="#signkey"><span class="std std-ref">signKey</span></a></p></li>
 </ul>
 </section>
 </section>
 <section id="id1">
 <h2>Properties<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
-<section id="channelsignkey">
-<h3>channelSignKey<a class="headerlink" href="#channelsignkey" title="Permalink to this heading">#</a></h3>
-<p>• <strong>channelSignKey</strong>: <code class="docutils literal notranslate"><span class="pre">CryptoKey</span></code></p>
-</section>
-<hr class="docutils" />
 <section id="encryptionkey">
-<h3>encryptionKey<a class="headerlink" href="#encryptionkey" title="Permalink to this heading">#</a></h3>
+<h3><a id="encryptionkey" name="encryptionkey"></a> encryptionKey<a class="headerlink" href="#encryptionkey" title="Permalink to this heading">#</a></h3>
 <p>• <strong>encryptionKey</strong>: <code class="docutils literal notranslate"><span class="pre">CryptoKey</span></code></p>
 </section>
 <hr class="docutils" />
 <section id="guestkey">
-<h3>guestKey<a class="headerlink" href="#guestkey" title="Permalink to this heading">#</a></h3>
+<h3><a id="guestkey" name="guestkey"></a> guestKey<a class="headerlink" href="#guestkey" title="Permalink to this heading">#</a></h3>
 <p>• <code class="docutils literal notranslate"><span class="pre">Optional</span></code> <strong>guestKey</strong>: <code class="docutils literal notranslate"><span class="pre">CryptoKey</span></code></p>
 </section>
 <hr class="docutils" />
 <section id="lockedkey">
-<h3>lockedKey<a class="headerlink" href="#lockedkey" title="Permalink to this heading">#</a></h3>
-<p>• <code class="docutils literal notranslate"><span class="pre">Optional</span></code> <strong>lockedKey</strong>: <code class="docutils literal notranslate"><span class="pre">CryptoKey</span></code></p>
+<h3><a id="lockedkey" name="lockedkey"></a> lockedKey<a class="headerlink" href="#lockedkey" title="Permalink to this heading">#</a></h3>
+<p>• <code class="docutils literal notranslate"><span class="pre">Optional</span></code> <strong>lockedKey</strong>: <code class="docutils literal notranslate"><span class="pre">JsonWebKey</span></code></p>
 </section>
 <hr class="docutils" />
 <section id="ownerkey">
-<h3>ownerKey<a class="headerlink" href="#ownerkey" title="Permalink to this heading">#</a></h3>
+<h3><a id="ownerkey" name="ownerkey"></a> ownerKey<a class="headerlink" href="#ownerkey" title="Permalink to this heading">#</a></h3>
 <p>• <strong>ownerKey</strong>: <code class="docutils literal notranslate"><span class="pre">CryptoKey</span></code></p>
 </section>
 <hr class="docutils" />
+<section id="ownerpubkeyx">
+<h3><a id="ownerpubkeyx" name="ownerpubkeyx"></a> ownerPubKeyX<a class="headerlink" href="#ownerpubkeyx" title="Permalink to this heading">#</a></h3>
+<p>• <strong>ownerPubKeyX</strong>: <code class="docutils literal notranslate"><span class="pre">string</span></code></p>
+</section>
+<hr class="docutils" />
 <section id="privatekey">
-<h3>privateKey<a class="headerlink" href="#privatekey" title="Permalink to this heading">#</a></h3>
-<p>• <strong>privateKey</strong>: <code class="docutils literal notranslate"><span class="pre">CryptoKey</span></code></p>
+<h3><a id="privatekey" name="privatekey"></a> privateKey<a class="headerlink" href="#privatekey" title="Permalink to this heading">#</a></h3>
+<p>• <code class="docutils literal notranslate"><span class="pre">Optional</span></code> <strong>privateKey</strong>: <code class="docutils literal notranslate"><span class="pre">CryptoKey</span></code></p>
+</section>
+<hr class="docutils" />
+<section id="publicsignkey">
+<h3><a id="publicsignkey" name="publicsignkey"></a> publicSignKey<a class="headerlink" href="#publicsignkey" title="Permalink to this heading">#</a></h3>
+<p>• <strong>publicSignKey</strong>: <code class="docutils literal notranslate"><span class="pre">CryptoKey</span></code></p>
 </section>
 <hr class="docutils" />
 <section id="signkey">
-<h3>signKey<a class="headerlink" href="#signkey" title="Permalink to this heading">#</a></h3>
+<h3><a id="signkey" name="signkey"></a> signKey<a class="headerlink" href="#signkey" title="Permalink to this heading">#</a></h3>
 <p>• <strong>signKey</strong>: <code class="docutils literal notranslate"><span class="pre">CryptoKey</span></code></p>
 </section>
 </section>
@@ -311,13 +344,14 @@
 </ul>
 </li>
 <li><a class="reference internal" href="#id1">Properties</a><ul>
-<li><a class="reference internal" href="#channelsignkey">channelSignKey</a></li>
-<li><a class="reference internal" href="#encryptionkey">encryptionKey</a></li>
-<li><a class="reference internal" href="#guestkey">guestKey</a></li>
-<li><a class="reference internal" href="#lockedkey">lockedKey</a></li>
-<li><a class="reference internal" href="#ownerkey">ownerKey</a></li>
-<li><a class="reference internal" href="#privatekey">privateKey</a></li>
-<li><a class="reference internal" href="#signkey">signKey</a></li>
+<li><a class="reference internal" href="#encryptionkey"><a id="encryptionkey" name="encryptionkey"></a> encryptionKey</a></li>
+<li><a class="reference internal" href="#guestkey"><a id="guestkey" name="guestkey"></a> guestKey</a></li>
+<li><a class="reference internal" href="#lockedkey"><a id="lockedkey" name="lockedkey"></a> lockedKey</a></li>
+<li><a class="reference internal" href="#ownerkey"><a id="ownerkey" name="ownerkey"></a> ownerKey</a></li>
+<li><a class="reference internal" href="#ownerpubkeyx"><a id="ownerpubkeyx" name="ownerpubkeyx"></a> ownerPubKeyX</a></li>
+<li><a class="reference internal" href="#privatekey"><a id="privatekey" name="privatekey"></a> privateKey</a></li>
+<li><a class="reference internal" href="#publicsignkey"><a id="publicsignkey" name="publicsignkey"></a> publicSignKey</a></li>
+<li><a class="reference internal" href="#signkey"><a id="signkey" name="signkey"></a> signKey</a></li>
 </ul>
 </li>
 </ul>

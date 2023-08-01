@@ -33,6 +33,7 @@ for example the incoming message will look like this (after decryption)
 - [channelID](ChannelMessage.md#channelid)
 - [contents](ChannelMessage.md#contents)
 - [control](ChannelMessage.md#control)
+- [encrypted](ChannelMessage.md#encrypted)
 - [encrypted\_contents](ChannelMessage.md#encrypted_contents)
 - [id](ChannelMessage.md#id)
 - [image](ChannelMessage.md#image)
@@ -42,7 +43,9 @@ for example the incoming message will look like this (after decryption)
 - [keys](ChannelMessage.md#keys)
 - [motd](ChannelMessage.md#motd)
 - [ready](ChannelMessage.md#ready)
+- [replyTo](ChannelMessage.md#replyto)
 - [roomLocked](ChannelMessage.md#roomlocked)
+- [sendTo](ChannelMessage.md#sendto)
 - [sender\_pubKey](ChannelMessage.md#sender_pubkey)
 - [sender\_username](ChannelMessage.md#sender_username)
 - [sign](ChannelMessage.md#sign)
@@ -53,142 +56,162 @@ for example the incoming message will look like this (after decryption)
 - [type](ChannelMessage.md#type)
 - [user](ChannelMessage.md#user)
 - [verificationToken](ChannelMessage.md#verificationtoken)
+- [whisper](ChannelMessage.md#whisper)
+- [whispered](ChannelMessage.md#whispered)
 
 ## Properties
 
-### \_id
+### <a id="_id" name="_id"></a> \_id
 
 • `Optional` **\_id**: `string`
 
 ___
 
-### channelID
+### <a id="channelid" name="channelid"></a> channelID
 
 • `Optional` **channelID**: `string`
 
 ___
 
-### contents
+### <a id="contents" name="contents"></a> contents
 
 • `Optional` **contents**: `string`
 
 ___
 
-### control
+### <a id="control" name="control"></a> control
 
 • `Optional` **control**: `boolean`
 
 ___
 
-### encrypted\_contents
+### <a id="encrypted" name="encrypted"></a> encrypted
+
+• `Optional` **encrypted**: `boolean`
+
+___
+
+### <a id="encrypted_contents" name="encrypted_contents"></a> encrypted\_contents
 
 • `Optional` **encrypted\_contents**: [`EncryptedContents`](EncryptedContents.md)
 
 ___
 
-### id
+### <a id="id" name="id"></a> id
 
 • `Optional` **id**: `string`
 
 ___
 
-### image
+### <a id="image" name="image"></a> image
 
 • `Optional` **image**: `string`
 
 ___
 
-### imageMetaData
+### <a id="imagemetadata" name="imagemetadata"></a> imageMetaData
 
-• `Optional` **imageMetaData**: `ImageMetaData`
+• `Optional` **imageMetaData**: [`ImageMetaData`](ImageMetaData.md)
 
 ___
 
-### imageMetadata\_sign
+### <a id="imagemetadata_sign" name="imagemetadata_sign"></a> imageMetadata\_sign
 
 • `Optional` **imageMetadata\_sign**: `string`
 
 ___
 
-### image\_sign
+### <a id="image_sign" name="image_sign"></a> image\_sign
 
 • `Optional` **image\_sign**: `string`
 
 ___
 
-### keys
+### <a id="keys" name="keys"></a> keys
 
-• `Optional` **keys**: `ChannelKeyStrings`
+• `Optional` **keys**: [`ChannelKeyStrings`](ChannelKeyStrings.md)
 
 ___
 
-### motd
+### <a id="motd" name="motd"></a> motd
 
 • `Optional` **motd**: `string`
 
 ___
 
-### ready
+### <a id="ready" name="ready"></a> ready
 
 • `Optional` **ready**: `boolean`
 
 ___
 
-### roomLocked
+### <a id="replyto" name="replyto"></a> replyTo
+
+• `Optional` **replyTo**: `JsonWebKey`
+
+___
+
+### <a id="roomlocked" name="roomlocked"></a> roomLocked
 
 • `Optional` **roomLocked**: `boolean`
 
 ___
 
-### sender\_pubKey
+### <a id="sendto" name="sendto"></a> sendTo
+
+• `Optional` **sendTo**: `string`
+
+___
+
+### <a id="sender_pubkey" name="sender_pubkey"></a> sender\_pubKey
 
 • `Optional` **sender\_pubKey**: `JsonWebKey`
 
 ___
 
-### sender\_username
+### <a id="sender_username" name="sender_username"></a> sender\_username
 
 • `Optional` **sender\_username**: `string`
 
 ___
 
-### sign
+### <a id="sign" name="sign"></a> sign
 
 • `Optional` **sign**: `string`
 
 ___
 
-### system
+### <a id="system" name="system"></a> system
 
 • `Optional` **system**: `boolean`
 
 ___
 
-### text
+### <a id="text" name="text"></a> text
 
 • `Optional` **text**: `string`
 
 ___
 
-### timestamp
+### <a id="timestamp" name="timestamp"></a> timestamp
 
 • `Optional` **timestamp**: `number`
 
 ___
 
-### timestampPrefix
+### <a id="timestampprefix" name="timestampprefix"></a> timestampPrefix
 
 • `Optional` **timestampPrefix**: `string`
 
 ___
 
-### type
+### <a id="type" name="type"></a> type
 
 • `Optional` **type**: [`ChannelMessageTypes`](../modules.md#channelmessagetypes)
 
 ___
 
-### user
+### <a id="user" name="user"></a> user
 
 • `Optional` **user**: `Object`
 
@@ -201,6 +224,18 @@ ___
 
 ___
 
-### verificationToken
+### <a id="verificationtoken" name="verificationtoken"></a> verificationToken
 
 • `Optional` **verificationToken**: `string`
+
+___
+
+### <a id="whisper" name="whisper"></a> whisper
+
+• `Optional` **whisper**: `string`
+
+___
+
+### <a id="whispered" name="whispered"></a> whispered
+
+• `Optional` **whispered**: `boolean`

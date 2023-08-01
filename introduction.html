@@ -5,10 +5,10 @@
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Technical Overview" href="overview.html" /><link rel="prev" title="Snackabra" href="index.html" />
 
-    <!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
+    <!-- Generated with Sphinx 5.3.0 and Furo 2023.03.27 -->
         <title>Introduction - snackabra 0.5.x beta documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=fad236701ea90a88636c2a8c73b44ae642ed2a53" />
     <link rel="stylesheet" type="text/css" href="_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     <link rel="stylesheet" type="text/css" href="_static/css/custom.css" />
@@ -299,7 +299,7 @@ anything about you.  Visitors are either Guests or Owners. Guests can
 be Verified (or not), and Accepted (or not), and Owners can also be
 Admin. More on all this shortly:</p>
 <figure class="align-center" id="id9">
-<div class="graphviz"><img src="_images/graphviz-c8e609aa71d6648116000899492ac7ebaa7cd2b8.png" alt="digraph visitors{
+digraph visitors{
         size=&quot;6,6&quot;;
     node [shape=&quot;record&quot;, color=lightgrey]; Guest;
         node [color=lightblue2, style=filled];  Visitor; Owner; Admin
@@ -307,8 +307,7 @@ Admin. More on all this shortly:</p>
         &quot;Visitor&quot; -&gt; &quot;Owner&quot; [label=&quot;  Keys Match Room?  &quot;, fontsize=&quot;10&quot;];
         &quot;Owner&quot; -&gt; &quot;Admin&quot; [label=&quot;  Cookie Present?  &quot;, fontsize=&quot;10&quot;];
     Guest [label=&quot;Guest: \n|{Verified?|Accepted?}&quot;];
-}" class="graphviz" /></div>
-<figcaption>
+}<figcaption>
 <p><span class="caption-text">Basic categories of visitors</span><a class="headerlink" href="#id9" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
@@ -363,7 +362,6 @@ device. More on this later.</p>
 <h2>Sequence Diagrams<a class="headerlink" href="#sequence-diagrams" title="Permalink to this heading">#</a></h2>
 <p>First let’s introduce the type of sequence diagrams that we will be
 using in these docs:</p>
-<div class="align-default"><img height="683" src="_images/seqdiag-ebf5236af8edb72b009d08d1d510e8aae8b29842.png" width="856" /></div>
 <p>Note that the “solid” arrowhead is something initated, and if there
 is a regular arrow immediately after then, that is the reply.
 If the line is dotted, it’s optional - an optional reply, or
@@ -374,7 +372,6 @@ an event that “might” happen.</p>
 <p>Here’s roughly what’s going on. Let’s say you’re connecting to
 “example.com/&lt;room…&gt;” with a browser (on a computer or on a phone,
 doesn’t matter, you’re using a “web client” / “web app”):</p>
-<div class="align-default"><img height="897" src="_images/seqdiag-6770fdb2caf10830b6beff0d8302621b80e310de.png" width="640" /></div>
 <p>Details on the steps:</p>
 <ol class="arabic simple">
 <li><p>Your browser connects to “&lt;site&gt;/&lt;roomId&gt;”, which returns

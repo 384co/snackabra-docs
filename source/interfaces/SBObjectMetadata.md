@@ -17,48 +17,48 @@
 
 ## Properties
 
-### [SB\_OBJECT\_HANDLE\_SYMBOL]
+### <a id="[sb_object_handle_symbol]" name="[sb_object_handle_symbol]"></a> [SB\_OBJECT\_HANDLE\_SYMBOL]
 
 • **[SB\_OBJECT\_HANDLE\_SYMBOL]**: `boolean`
 
 ___
 
-### id
+### <a id="id" name="id"></a> id
 
 • **id**: `string`
 
 ___
 
-### iv
+### <a id="iv" name="iv"></a> iv
 
 • **iv**: `Uint8Array`
 
 ___
 
-### key
+### <a id="key" name="key"></a> key
 
 • **key**: `string`
 
 ___
 
-### paddedBuffer
+### <a id="paddedbuffer" name="paddedbuffer"></a> paddedBuffer
 
 • **paddedBuffer**: `ArrayBuffer`
 
 ___
 
-### salt
+### <a id="salt" name="salt"></a> salt
 
 • **salt**: `Uint8Array`
 
 ___
 
-### type
+### <a id="type" name="type"></a> type
 
 • **type**: [`SBObjectType`](../modules.md#sbobjecttype)
 
 ___
 
-### version
+### <a id="version" name="version"></a> version
 
 • **version**: ``"1"``

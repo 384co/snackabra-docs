@@ -5,10 +5,10 @@
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" />
 
-    <!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
+    <!-- Generated with Sphinx 5.3.0 and Furo 2023.03.27 -->
         <title>Interface: SBServer - snackabra 0.5.x beta documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=fad236701ea90a88636c2a8c73b44ae642ed2a53" />
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
@@ -214,6 +214,7 @@
           <p><a class="reference internal" href="../jslib2.html"><span class="std std-doc">JSLib Reference Manual</span></a> / <a class="reference internal" href="../modules.html"><span class="std std-doc">Exports</span></a> / SBServer</p>
 <section id="interface-sbserver">
 <h1>Interface: SBServer<a class="headerlink" href="#interface-sbserver" title="Permalink to this heading">#</a></h1>
+<hr class="docutils" />
 <section id="table-of-contents">
 <h2>Table of contents<a class="headerlink" href="#table-of-contents" title="Permalink to this heading">#</a></h2>
 <section id="properties">
@@ -229,7 +230,7 @@
 <section id="id1">
 <h2>Properties<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
 <section id="channel-server">
-<h3>channel_server<a class="headerlink" href="#channel-server" title="Permalink to this heading">#</a></h3>
+<h3><a id="channel_server" name="channel_server"></a> channel_server<a class="headerlink" href="#channel-server" title="Permalink to this heading">#</a></h3>
 <p>• <strong>channel_server</strong>: <code class="docutils literal notranslate"><span class="pre">string</span></code></p>
 <p>The channel server is the server that handles channel creation,
 channel deletion, and channel access. It is also the server that
@@ -237,7 +238,7 @@ handles channel messages.</p>
 </section>
 <hr class="docutils" />
 <section id="channel-ws">
-<h3>channel_ws<a class="headerlink" href="#channel-ws" title="Permalink to this heading">#</a></h3>
+<h3><a id="channel_ws" name="channel_ws"></a> channel_ws<a class="headerlink" href="#channel-ws" title="Permalink to this heading">#</a></h3>
 <p>• <strong>channel_ws</strong>: <code class="docutils literal notranslate"><span class="pre">string</span></code></p>
 <p>The channel websocket is the websocket that handles channel
 messages. It is the same as the channel server, but with a
@@ -245,7 +246,7 @@ different protocol.</p>
 </section>
 <hr class="docutils" />
 <section id="shard-server">
-<h3>shard_server<a class="headerlink" href="#shard-server" title="Permalink to this heading">#</a></h3>
+<h3><a id="shard_server" name="shard_server"></a> shard_server<a class="headerlink" href="#shard-server" title="Permalink to this heading">#</a></h3>
 <p>• <code class="docutils literal notranslate"><span class="pre">Optional</span></code> <strong>shard_server</strong>: <code class="docutils literal notranslate"><span class="pre">string</span></code></p>
 <p>“shard” server is a more modern version of the storage server,
 generally acting as a caching and/or mirroring layer. It proxies
@@ -255,7 +256,7 @@ interface, in particular for reading.</p>
 </section>
 <hr class="docutils" />
 <section id="storage-server">
-<h3>storage_server<a class="headerlink" href="#storage-server" title="Permalink to this heading">#</a></h3>
+<h3><a id="storage_server" name="storage_server"></a> storage_server<a class="headerlink" href="#storage-server" title="Permalink to this heading">#</a></h3>
 <p>• <strong>storage_server</strong>: <code class="docutils literal notranslate"><span class="pre">string</span></code></p>
 <p>The storage server is the server that all “shard” (blob) storage</p>
 </section>
@@ -305,10 +306,10 @@ interface, in particular for reading.</p>
 </ul>
 </li>
 <li><a class="reference internal" href="#id1">Properties</a><ul>
-<li><a class="reference internal" href="#channel-server">channel_server</a></li>
-<li><a class="reference internal" href="#channel-ws">channel_ws</a></li>
-<li><a class="reference internal" href="#shard-server">shard_server</a></li>
-<li><a class="reference internal" href="#storage-server">storage_server</a></li>
+<li><a class="reference internal" href="#channel-server"><a id="channel_server" name="channel_server"></a> channel_server</a></li>
+<li><a class="reference internal" href="#channel-ws"><a id="channel_ws" name="channel_ws"></a> channel_ws</a></li>
+<li><a class="reference internal" href="#shard-server"><a id="shard_server" name="shard_server"></a> shard_server</a></li>
+<li><a class="reference internal" href="#storage-server"><a id="storage_server" name="storage_server"></a> storage_server</a></li>
 </ul>
 </li>
 </ul>

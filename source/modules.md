@@ -4,26 +4,33 @@
 
 ## Table of contents
 
+### Namespaces
+
+- [Interfaces](modules/Interfaces.md)
+
 ### Classes
 
 - [Channel](classes/Channel.md)
+- [ChannelEndpoint](classes/ChannelEndpoint.md)
 - [ChannelSocket](classes/ChannelSocket.md)
 - [MessageBus](classes/MessageBus.md)
 - [SB384](classes/SB384.md)
 - [SBCrypto](classes/SBCrypto.md)
-- [SBFile](classes/SBFile.md)
 - [SBMessage](classes/SBMessage.md)
-- [SBObjectHandleClass](classes/SBObjectHandleClass.md)
+- [SBObjectHandle](classes/SBObjectHandle.md)
 - [Snackabra](classes/Snackabra.md)
 
 ### Interfaces
 
+- [ChannelAdminData](interfaces/ChannelAdminData.md)
+- [ChannelData](interfaces/ChannelData.md)
+- [ChannelKeyStrings](interfaces/ChannelKeyStrings.md)
 - [ChannelKeys](interfaces/ChannelKeys.md)
 - [ChannelMessage](interfaces/ChannelMessage.md)
 - [EncryptedContents](interfaces/EncryptedContents.md)
 - [EncryptedContentsBin](interfaces/EncryptedContentsBin.md)
+- [ImageMetaData](interfaces/ImageMetaData.md)
 - [SBChannelHandle](interfaces/SBChannelHandle.md)
-- [SBObjectHandle](interfaces/SBObjectHandle.md)
 - [SBObjectMetadata](interfaces/SBObjectMetadata.md)
 - [SBPayload](interfaces/SBPayload.md)
 - [SBServer](interfaces/SBServer.md)
@@ -31,20 +38,19 @@
 ### Type Aliases
 
 - [ChannelMessageTypes](modules.md#channelmessagetypes)
+- [SB384Hash](modules.md#sb384hash)
 - [SBChannelId](modules.md#sbchannelid)
 - [SBObjectType](modules.md#sbobjecttype)
+- [SBUserId](modules.md#sbuserid)
 
 ### Variables
 
 - [SB](modules.md#sb)
+- [sbCrypto](modules.md#sbcrypto)
+- [version](modules.md#version)
 
 ### Functions
 
-- [\_appendBuffer](modules.md#_appendbuffer)
-- [\_assertBase64](modules.md#_assertbase64)
-- [\_sb\_assert](modules.md#_sb_assert)
-- [\_sb\_exception](modules.md#_sb_exception)
-- [\_sb\_resolve](modules.md#_sb_resolve)
 - [arrayBuffer32ToBase62](modules.md#arraybuffer32tobase62)
 - [arrayBufferToBase64](modules.md#arraybuffertobase64)
 - [assemblePayload](modules.md#assemblepayload)
@@ -60,6 +66,7 @@
 - [extractPayload](modules.md#extractpayload)
 - [extractPayloadV1](modules.md#extractpayloadv1)
 - [getRandomValues](modules.md#getrandomvalues)
+- [isBase62Encoded](modules.md#isbase62encoded)
 - [jsonParseWrapper](modules.md#jsonparsewrapper)
 - [partition](modules.md#partition)
 - [simpleRand256](modules.md#simplerand256)
@@ -67,25 +74,37 @@
 
 ## Type Aliases
 
-### ChannelMessageTypes
+### <a id="channelmessagetypes" name="channelmessagetypes"></a> ChannelMessageTypes
 
-Ƭ **ChannelMessageTypes**: ``"ack"`` \| ``"keys"`` \| ``"invalid"`` \| ``"ready"`` \| ``"encypted"``
-
-___
-
-### SBChannelId
-
-Ƭ **SBChannelId**: `string`
+Ƭ **ChannelMessageTypes**: ``"ack"`` \| ``"keys"`` \| ``"invalid"`` \| ``"ready"`` \| ``"encrypted"``
 
 ___
 
-### SBObjectType
+### <a id="sb384hash" name="sb384hash"></a> SB384Hash
+
+Ƭ **SB384Hash**: `string`
+
+___
+
+### <a id="sbchannelid" name="sbchannelid"></a> SBChannelId
+
+Ƭ **SBChannelId**: [`SB384Hash`](modules.md#sb384hash)
+
+___
+
+### <a id="sbobjecttype" name="sbobjecttype"></a> SBObjectType
 
 Ƭ **SBObjectType**: ``"f"`` \| ``"p"`` \| ``"b"`` \| ``"t"``
 
+___
+
+### <a id="sbuserid" name="sbuserid"></a> SBUserId
+
+Ƭ **SBUserId**: [`SB384Hash`](modules.md#sb384hash)
+
 ## Variables
 
-### SB
+### <a id="sb" name="sb"></a> SB
 
 • **SB**: `Object`
 
@@ -99,100 +118,29 @@ ___
 | `SBMessage` | typeof [`SBMessage`](classes/SBMessage.md) |
 | `Snackabra` | typeof [`Snackabra`](classes/Snackabra.md) |
 | `arrayBufferToBase64` | (`buffer`: ``null`` \| `ArrayBuffer` \| `Uint8Array`, `variant`: ``"url"`` \| ``"b64"``) => `string` |
+| `sbCrypto` | [`SBCrypto`](classes/SBCrypto.md) |
+| `version` | `string` |
+
+___
+
+### <a id="sbcrypto" name="sbcrypto"></a> sbCrypto
+
+• `Const` **sbCrypto**: [`SBCrypto`](classes/SBCrypto.md)
+
+This is the GLOBAL SBCrypto object, which is instantiated
+immediately upon loading the jslib library.
+
+You should use this guy, not instantiate your own.
+
+___
+
+### <a id="version" name="version"></a> version
+
+• `Const` **version**: ``"1.1.25 (pre) build 01"``
 
 ## Functions
 
-### \_appendBuffer
-
-▸ **_appendBuffer**(`buffer1`, `buffer2`): `ArrayBuffer`
-
-Appends two buffers and returns a new buffer
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `buffer1` | `ArrayBuffer` \| `Uint8Array` |
-| `buffer2` | `ArrayBuffer` \| `Uint8Array` |
-
-#### Returns
-
-`ArrayBuffer`
-
-new buffer
-
-___
-
-### \_assertBase64
-
-▸ **_assertBase64**(`base64`): `boolean`
-
-Returns 'true' if (and only if) string is well-formed base64.
-Works same on browsers and nodejs.
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `base64` | `string` |
-
-#### Returns
-
-`boolean`
-
-___
-
-### \_sb\_assert
-
-▸ **_sb_assert**(`val`, `msg`): `void`
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `val` | `unknown` |
-| `msg` | `string` |
-
-#### Returns
-
-`void`
-
-___
-
-### \_sb\_exception
-
-▸ **_sb_exception**(`loc`, `msg`): `void`
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `loc` | `string` |
-| `msg` | `string` |
-
-#### Returns
-
-`void`
-
-___
-
-### \_sb\_resolve
-
-▸ **_sb_resolve**(`val`): `any`
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `val` | `any` |
-
-#### Returns
-
-`any`
-
-___
-
-### arrayBuffer32ToBase62
+### <a id="arraybuffer32tobase62" name="arraybuffer32tobase62"></a> arrayBuffer32ToBase62
 
 ▸ **arrayBuffer32ToBase62**(`buffer`): `string`
 
@@ -212,7 +160,7 @@ base62 encoded string
 
 ___
 
-### arrayBufferToBase64
+### <a id="arraybuffertobase64" name="arraybuffertobase64"></a> arrayBufferToBase64
 
 ▸ **arrayBufferToBase64**(`buffer`, `variant?`): `string`
 
@@ -235,11 +183,12 @@ for 'ascii').
 
 ___
 
-### assemblePayload
+### <a id="assemblepayload" name="assemblepayload"></a> assemblePayload
 
 ▸ **assemblePayload**(`data`): `BodyInit` \| ``null``
 
-Assemble payload
+Assemble payload. This creates a single binary (wire) format
+of an arbitrary set of (named) binary objects.
 
 #### Parameters
 
@@ -253,7 +202,7 @@ Assemble payload
 
 ___
 
-### base62ToArrayBuffer32
+### <a id="base62toarraybuffer32" name="base62toarraybuffer32"></a> base62ToArrayBuffer32
 
 ▸ **base62ToArrayBuffer32**(`s`): `ArrayBuffer`
 
@@ -273,7 +222,7 @@ ArrayBuffer32
 
 ___
 
-### base62ToBase64
+### <a id="base62tobase64" name="base62tobase64"></a> base62ToBase64
 
 ▸ **base62ToBase64**(`s`): `string`
 
@@ -297,7 +246,7 @@ base64 encoded string
 
 ___
 
-### base64ToArrayBuffer
+### <a id="base64toarraybuffer" name="base64toarraybuffer"></a> base64ToArrayBuffer
 
 ▸ **base64ToArrayBuffer**(`str`): `Uint8Array`
 
@@ -320,7 +269,7 @@ where `+` => `-`, `/` => `_`, and the padding character is omitted.
 
 ___
 
-### base64ToBase62
+### <a id="base64tobase62" name="base64tobase62"></a> base64ToBase62
 
 ▸ **base64ToBase62**(`s`): `string`
 
@@ -344,19 +293,26 @@ base62 encoded string
 
 ___
 
-### cleanBase32mi
+### <a id="cleanbase32mi" name="cleanbase32mi"></a> cleanBase32mi
 
 ▸ **cleanBase32mi**(`s`): `string`
 
-Disambiguates strings that are known to be 'base32mi' type
+This function disambiguates strings that are known to be 'base32mi' type.
+Below is the list of base32 characters, and the disambiguation table.
+base32mi is designed to be human-friendly, so this function can be 
+safely called anywhere you have human input - including as an 
+event on an input field that immediately makes any correction. 
 
-::
+You can think of the translation either in terms of many-to-one
+(all entered characters that map to a specific base32mi character),
+or as a one-to-one correspondence (where '.' means 'no change').
 
-    'base32mi': '0123456789abcdefyhEjkLmNHpFrRTUW'
+**`Example`**
 
-This is the base32mi disambiguation table
+```ts
+'base32mi': '0123456789abcdefyhEjkLmNHpFrRTUW'
 
- ::
+    Disambiguation transformations:
 
     [OoQD] -> '0'
     [lIiJ] -> '1'
@@ -376,12 +332,9 @@ This is the base32mi disambiguation table
     [uvV] -> 'U'
     [w] -> 'W'
 
-Another way to think of it is this transform ('.' means no change):
-
-::
-
     0123456789abcdefghijklmnopqrstuvxyzABCDEFGHIJKLMNOPQRSTUVXYZ
     ................9.1..1.N0.9.57UUk.248c0EF6.11kLm.0p0.5..Uky2
+```
 
 #### Parameters
 
@@ -395,7 +348,7 @@ Another way to think of it is this transform ('.' means no change):
 
 ___
 
-### compareBuffers
+### <a id="comparebuffers" name="comparebuffers"></a> compareBuffers
 
 ▸ **compareBuffers**(`a`, `b`): `boolean`
 
@@ -414,7 +367,7 @@ Compare buffers
 
 ___
 
-### decodeB64Url
+### <a id="decodeb64url" name="decodeb64url"></a> decodeB64Url
 
 ▸ **decodeB64Url**(`input`): `string`
 
@@ -432,7 +385,7 @@ Decode b64 URL
 
 ___
 
-### encodeB64Url
+### <a id="encodeb64url" name="encodeb64url"></a> encodeB64Url
 
 ▸ **encodeB64Url**(`input`): `string`
 
@@ -450,7 +403,7 @@ Encode into b64 URL
 
 ___
 
-### encryptedContentsMakeBinary
+### <a id="encryptedcontentsmakebinary" name="encryptedcontentsmakebinary"></a> encryptedContentsMakeBinary
 
 ▸ **encryptedContentsMakeBinary**(`o`): [`EncryptedContentsBin`](interfaces/EncryptedContentsBin.md)
 
@@ -470,7 +423,7 @@ implies base64 encoding.
 
 ___
 
-### extractPayload
+### <a id="extractpayload" name="extractpayload"></a> extractPayload
 
 ▸ **extractPayload**(`payload`): [`SBPayload`](interfaces/SBPayload.md)
 
@@ -490,11 +443,9 @@ and it allows some elements of the JSON to be raw (binary).
 
 ___
 
-### extractPayloadV1
+### <a id="extractpayloadv1" name="extractpayloadv1"></a> extractPayloadV1
 
-▸ **extractPayloadV1**(`payload`): [`SBPayload`](interfaces/SBPayload.md)
-
-Deprecated (older version of payloads, for older channels)
+▸ `Private` **extractPayloadV1**(`payload`): [`SBPayload`](interfaces/SBPayload.md)
 
 #### Parameters
 
@@ -508,7 +459,7 @@ Deprecated (older version of payloads, for older channels)
 
 ___
 
-### getRandomValues
+### <a id="getrandomvalues" name="getrandomvalues"></a> getRandomValues
 
 ▸ **getRandomValues**(`buffer`): `Uint8Array`
 
@@ -526,7 +477,23 @@ Fills buffer with random data
 
 ___
 
-### jsonParseWrapper
+### <a id="isbase62encoded" name="isbase62encoded"></a> isBase62Encoded
+
+▸ **isBase62Encoded**(`value`): value is Base62Encoded
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value` | `string` |
+
+#### Returns
+
+value is Base62Encoded
+
+___
+
+### <a id="jsonparsewrapper" name="jsonparsewrapper"></a> jsonParseWrapper
 
 ▸ **jsonParseWrapper**(`str`, `loc`): `any`
 
@@ -538,7 +505,7 @@ in the code; one approach is the line number in the file (at some point).
 
 | Name | Type |
 | :------ | :------ |
-| `str` | `string` |
+| `str` | ``null`` \| `string` |
 | `loc` | `string` |
 
 #### Returns
@@ -547,7 +514,7 @@ in the code; one approach is the line number in the file (at some point).
 
 ___
 
-### partition
+### <a id="partition" name="partition"></a> partition
 
 ▸ **partition**(`str`, `n`): `void`
 
@@ -566,7 +533,7 @@ Partition
 
 ___
 
-### simpleRand256
+### <a id="simplerand256" name="simplerand256"></a> simpleRand256
 
 ▸ **simpleRand256**(): `number`
 
@@ -580,7 +547,7 @@ integer 0..255
 
 ___
 
-### simpleRandomString
+### <a id="simplerandomstring" name="simplerandomstring"></a> simpleRandomString
 
 ▸ **simpleRandomString**(`n`, `code`): `string`
 

@@ -19,12 +19,12 @@ depending on if it's internal or over wire.
 
 ## Properties
 
-### content
+### <a id="content" name="content"></a> content
 
 • **content**: `string` \| `ArrayBuffer`
 
 ___
 
-### iv
+### <a id="iv" name="iv"></a> iv
 
 • **iv**: `string` \| `Uint8Array`

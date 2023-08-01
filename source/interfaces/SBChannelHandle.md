@@ -17,12 +17,12 @@ an 'owner' key.
 
 ## Properties
 
-### channelId
+### <a id="channelid" name="channelid"></a> channelId
 
 • **channelId**: `string`
 
 ___
 
-### key
+### <a id="key" name="key"></a> key
 
 • **key**: `JsonWebKey`

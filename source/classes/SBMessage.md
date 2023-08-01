@@ -2,15 +2,9 @@
 
 # Class: SBMessage
 
-SBMessage
+Class SBMessage
 
 Body should be below 32KiB, though it tolerates up to 64KiB
-
-## Hierarchy
-
-- **`SBMessage`**
-
-  ↳ [`SBFile`](SBFile.md)
 
 ## Table of contents
 
@@ -20,11 +14,18 @@ Body should be below 32KiB, though it tolerates up to 64KiB
 
 ### Properties
 
+- [#encryptionKey](SBMessage.md##encryptionkey)
+- [#sendToPubKey](SBMessage.md##sendtopubkey)
 - [MAX\_SB\_BODY\_SIZE](SBMessage.md#max_sb_body_size)
 - [[SB\_MESSAGE\_SYMBOL]](SBMessage.md#[sb_message_symbol])
 - [channel](SBMessage.md#channel)
 - [contents](SBMessage.md#contents)
 - [ready](SBMessage.md#ready)
+
+### Accessors
+
+- [encryptionKey](SBMessage.md#encryptionkey)
+- [sendToPubKey](SBMessage.md#sendtopubkey)
 
 ### Methods
 
@@ -32,50 +33,83 @@ Body should be below 32KiB, though it tolerates up to 64KiB
 
 ## Constructors
 
-### constructor
+### <a id="constructor" name="constructor"></a> constructor
 
-• **new SBMessage**(`channel`, `body?`)
+• **new SBMessage**(`channel`, `bodyParameter?`, `sendToJsonWebKey?`)
 
 #### Parameters
 
 | Name | Type | Default value |
 | :------ | :------ | :------ |
 | `channel` | [`Channel`](Channel.md) | `undefined` |
-| `body` | `string` | `''` |
+| `bodyParameter` | `string` \| `SBMessageContents` | `''` |
+| `sendToJsonWebKey?` | `JsonWebKey` | `undefined` |
 
 ## Properties
 
-### MAX\_SB\_BODY\_SIZE
+### <a id="#encryptionkey" name="#encryptionkey"></a> #encryptionKey
+
+• `Private` `Optional` **#encryptionKey**: `CryptoKey`
+
+___
+
+### <a id="#sendtopubkey" name="#sendtopubkey"></a> #sendToPubKey
+
+• `Private` `Optional` **#sendToPubKey**: `JsonWebKey`
+
+___
+
+### <a id="max_sb_body_size" name="max_sb_body_size"></a> MAX\_SB\_BODY\_SIZE
 
 • **MAX\_SB\_BODY\_SIZE**: `number`
 
 ___
 
-### [SB\_MESSAGE\_SYMBOL]
+### <a id="[sb_message_symbol]" name="[sb_message_symbol]"></a> [SB\_MESSAGE\_SYMBOL]
 
 • **[SB\_MESSAGE\_SYMBOL]**: `boolean` = `true`
 
 ___
 
-### channel
+### <a id="channel" name="channel"></a> channel
 
 • **channel**: [`Channel`](Channel.md)
 
 ___
 
-### contents
+### <a id="contents" name="contents"></a> contents
 
 • **contents**: `SBMessageContents`
 
 ___
 
-### ready
+### <a id="ready" name="ready"></a> ready
 
 • **ready**: `Promise`<[`SBMessage`](SBMessage.md)\>
 
+## Accessors
+
+### <a id="encryptionkey" name="encryptionkey"></a> encryptionKey
+
+• `get` **encryptionKey**(): `undefined` \| `CryptoKey`
+
+#### Returns
+
+`undefined` \| `CryptoKey`
+
+___
+
+### <a id="sendtopubkey" name="sendtopubkey"></a> sendToPubKey
+
+• `get` **sendToPubKey**(): `undefined` \| `JsonWebKey`
+
+#### Returns
+
+`undefined` \| `JsonWebKey`
+
 ## Methods
 
-### send
+### <a id="send" name="send"></a> send
 
 ▸ **send**(): `Promise`<`string`\>
 

@@ -5,10 +5,10 @@
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Motivation" href="motivation.html" /><link rel="prev" title="Appendix B: Privacy.App Chat Room User Guide" href="user-guide.html" />
 
-    <!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
+    <!-- Generated with Sphinx 5.3.0 and Furo 2023.03.27 -->
         <title>Sphinx Diagram Examples - snackabra 0.5.x beta documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=fad236701ea90a88636c2a8c73b44ae642ed2a53" />
     <link rel="stylesheet" type="text/css" href="_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     <link rel="stylesheet" type="text/css" href="_static/css/custom.css" />
@@ -221,16 +221,12 @@ some of the diagram / figure tools.</p>
 <section id="sequence-diagrams">
 <h3>Sequence Diagrams<a class="headerlink" href="#sequence-diagrams" title="Permalink to this heading">#</a></h3>
 <p>Basic one:</p>
-<div class="align-default"><img height="464" src="_images/seqdiag-1ffc8d4f23d6b2d4a87d89125042740c5198839a.png" width="448" /></div>
 <p>Testing. Again. Again. Again.</p>
 </section>
 <section id="block-diagrams">
 <h3>Block Diagrams<a class="headerlink" href="#block-diagrams" title="Permalink to this heading">#</a></h3>
-<div class="align-default"><img height="360" src="_images/blockdiag-79e2f561028943b1db7bcee40c2916949b6ff318.png" width="640" /></div>
 <p>And some more:</p>
-<div class="align-default"><img height="520" src="_images/blockdiag-e85fa8cce03fe454670eeee5ab7fa649d4d13b17.png" width="832" /></div>
 <p>And more:</p>
-<div class="align-default"><img height="304" src="_images/blockdiag-780bb21260a9c8cc0004149a956a09291e71f83e.png" width="1088" /></div>
 <p>More examples of block diagrams here: <a class="reference external" href="http://blockdiag.com/en/blockdiag/examples.html">http://blockdiag.com/en/blockdiag/examples.html</a></p>
 <p>Lots of sequence diagram examples: <a class="reference external" href="http://blockdiag.com/en/seqdiag/examples.html#seqdiag-sample-diagrams">http://blockdiag.com/en/seqdiag/examples.html#seqdiag-sample-diagrams</a></p>
 <p>We can also inline simple network diagrams: <a class="reference external" href="http://blockdiag.com/en/nwdiag/nwdiag-examples.html">http://blockdiag.com/en/nwdiag/nwdiag-examples.html</a></p>
@@ -241,15 +237,13 @@ some of the diagram / figure tools.</p>
 <section id="chatgpt">
 <h2>ChatGPT<a class="headerlink" href="#chatgpt" title="Permalink to this heading">#</a></h2>
 <p>Testing some chatgpt-generated ones:</p>
-<div class="align-default"><img height="120" src="_images/blockdiag-16f5500a28aad08ed51fcee391803a5f5c9b70aa.png" width="1216" /></div>
-<div class="align-default"><img height="1184" src="_images/seqdiag-51797d9e343256ce4eb9198e093481abea95203c.png" width="1216" /></div>
 </section>
 <section id="graphviz">
 <h2>Graphviz<a class="headerlink" href="#graphviz" title="Permalink to this heading">#</a></h2>
 <p>Here’s an example using graphviz (more here: <a class="reference external" href="https://graphviz.org/gallery/">https://graphviz.org/gallery/</a> )</p>
 <section id="digraph">
 <h3>Digraph<a class="headerlink" href="#digraph" title="Permalink to this heading">#</a></h3>
-<div class="graphviz"><img src="_images/graphviz-84b43c8606d0bc796a3a6c24d22a7d82e5dbbccc.png" alt="digraph PhiloDilemma {
+digraph PhiloDilemma {
 layout=neato
 node [shape=box];  bec3; rel3; bec2; rel2; acq2; acq3; bec1; rel1; acq1;
 node [shape=circle,fixedsize=true,width=0.9];  hu3; th3; ri3; ea3; hu2; th2; ri2; ea2; hu1; th1; ri1; ea1;
@@ -284,11 +278,10 @@ acq1-&gt;ea1;
 overlap=false
 label=&quot;PetriNet Model PhiloDilemma\nExtracted from ConceptBase and layed out by Graphviz &quot;
 fontsize=12;
-}" class="graphviz" /></div>
-</section>
+}</section>
 <section id="process-graph">
 <h3>Process Graph<a class="headerlink" href="#process-graph" title="Permalink to this heading">#</a></h3>
-<div class="graphviz"><img src="_images/graphviz-b61c7aecdb64833bf229b759a613380785166522.png" alt="graph G {
+graph G {
         layout=neato
         run -- intr;
         intr -- runbl;
@@ -303,8 +296,7 @@ fontsize=12;
         runswap -- runmem;
         new -- runmem;
         sleep -- runmem;
-}" class="graphviz" /></div>
-</section>
+}</section>
 </section>
 </section>
 

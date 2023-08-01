@@ -13,12 +13,12 @@ Same as EncryptedContents interface, but binary view enforced
 
 ## Properties
 
-### content
+### <a id="content" name="content"></a> content
 
 • **content**: `ArrayBuffer`
 
 ___
 
-### iv
+### <a id="iv" name="iv"></a> iv
 
 • **iv**: `Uint8Array`

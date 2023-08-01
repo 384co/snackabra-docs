@@ -13,31 +13,84 @@ as well as some general utility functions.
 
 - [constructor](SBCrypto.md#constructor)
 
+### Properties
+
+- [#knownKeys](SBCrypto.md##knownkeys)
+
 ### Methods
 
+- [#generateHash](SBCrypto.md##generatehash)
+- [#testHash](SBCrypto.md##testhash)
 - [ab2str](SBCrypto.md#ab2str)
+- [addKnownKey](SBCrypto.md#addknownkey)
+- [channelKeyStringsToCryptoKeys](SBCrypto.md#channelkeystringstocryptokeys)
+- [compareHashWithKey](SBCrypto.md#comparehashwithkey)
 - [compareKeys](SBCrypto.md#comparekeys)
 - [deriveKey](SBCrypto.md#derivekey)
 - [encrypt](SBCrypto.md#encrypt)
+- [exportKey](SBCrypto.md#exportkey)
 - [extractPubKey](SBCrypto.md#extractpubkey)
 - [generateIdKey](SBCrypto.md#generateidkey)
 - [generateKeys](SBCrypto.md#generatekeys)
 - [importKey](SBCrypto.md#importkey)
+- [lookupKey](SBCrypto.md#lookupkey)
+- [lookupKeyGlobal](SBCrypto.md#lookupkeyglobal)
+- [sb384Hash](SBCrypto.md#sb384hash)
 - [sign](SBCrypto.md#sign)
 - [str2ab](SBCrypto.md#str2ab)
 - [unwrap](SBCrypto.md#unwrap)
 - [verify](SBCrypto.md#verify)
+- [verifyChannelId](SBCrypto.md#verifychannelid)
 - [wrap](SBCrypto.md#wrap)
 
 ## Constructors
 
-### constructor
+### <a id="constructor" name="constructor"></a> constructor
 
 • **new SBCrypto**()
 
+## Properties
+
+### <a id="#knownkeys" name="#knownkeys"></a> #knownKeys
+
+• `Private` **#knownKeys**: `Map`<`string`, `knownKeysInfo`\>
+
 ## Methods
 
-### ab2str
+### <a id="#generatehash" name="#generatehash"></a> #generateHash
+
+▸ `Private` **#generateHash**(`rawBytes`): `Promise`<`string`\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `rawBytes` | `ArrayBuffer` |
+
+#### Returns
+
+`Promise`<`string`\>
+
+___
+
+### <a id="#testhash" name="#testhash"></a> #testHash
+
+▸ `Private` **#testHash**(`channelBytes`, `channel_id`): `Promise`<`boolean`\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `channelBytes` | `ArrayBuffer` |
+| `channel_id` | `string` |
+
+#### Returns
+
+`Promise`<`boolean`\>
+
+___
+
+### <a id="ab2str" name="ab2str"></a> ab2str
 
 ▸ **ab2str**(`buffer`): `string`
 
@@ -58,13 +111,82 @@ string
 
 ___
 
-### compareKeys
+### <a id="addknownkey" name="addknownkey"></a> addKnownKey
+
+▸ **addKnownKey**(`key`): `Promise`<`void`\>
+
+SBCrypto.addKnownKey()
+
+Adds any key to the list of known keys; if it's known
+but only as a public key, then it will be 'upgraded'.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `key` | `CryptoKey` \| `JsonWebKey` \| [`SB384`](SB384.md) |
+
+#### Returns
+
+`Promise`<`void`\>
+
+___
+
+### <a id="channelkeystringstocryptokeys" name="channelkeystringstocryptokeys"></a> channelKeyStringsToCryptoKeys
+
+▸ **channelKeyStringsToCryptoKeys**(`keyStrings`): `Promise`<[`ChannelKeys`](../interfaces/ChannelKeys.md)\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `keyStrings` | [`ChannelKeyStrings`](../interfaces/ChannelKeyStrings.md) |
+
+#### Returns
+
+`Promise`<[`ChannelKeys`](../interfaces/ChannelKeys.md)\>
+
+___
+
+### <a id="comparehashwithkey" name="comparehashwithkey"></a> compareHashWithKey
+
+▸ **compareHashWithKey**(`hash`, `key`): `Promise`<`boolean`\>
+
+SBCrypto.compareHashWithKey()
+
+Checks if an existing SB384Hash is 'compatible' with a given key.
+
+Note that you CAN NOT have a hash, and a key, generate a hash
+from that key, and then compare the two. The hash generation per
+se will be deterministic and specific AT ANY POINT IN TIME,
+but may change over time, and this comparison function will 
+maintain ability to compare over versions.
+
+For example, this comparison will accept a simple straight
+b64-encoded hash without iteration or other processing.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `hash` | `string` |
+| `key` | `JsonWebKey` |
+
+#### Returns
+
+`Promise`<`boolean`\>
+
+___
+
+### <a id="comparekeys" name="comparekeys"></a> compareKeys
 
 ▸ **compareKeys**(`key1`, `key2`): `boolean`
 
 SBCrypto.compareKeys()
 
-Compare JSON keys, true if the 'same', false if different.
+Compare JSON keys, true if the 'same', false if different. We consider
+them "equal" if both have 'x' and 'y' properties and they are the same.
+(Which means it doesn't care about which or either being public or private)
 
 #### Parameters
 
@@ -79,13 +201,13 @@ Compare JSON keys, true if the 'same', false if different.
 
 ___
 
-### deriveKey
+### <a id="derivekey" name="derivekey"></a> deriveKey
 
 ▸ **deriveKey**(`privateKey`, `publicKey`, `type`, `extractable`, `keyUsages`): `Promise`<`CryptoKey`\>
 
 SBCrypto.deriveKey()
 
-Derive key.
+Derive key. Takes a private and public key, and returns a Promise to a cryptoKey for 1:1 communication.
 
 #### Parameters
 
@@ -103,7 +225,7 @@ Derive key.
 
 ___
 
-### encrypt
+### <a id="encrypt" name="encrypt"></a> encrypt
 
 ▸ **encrypt**(`data`, `key`, `_iv?`, `returnType?`): `Promise`<[`EncryptedContents`](../interfaces/EncryptedContents.md)\>
 
@@ -143,7 +265,30 @@ Note that for the former, nonce must be given.
 
 ___
 
-### extractPubKey
+### <a id="exportkey" name="exportkey"></a> exportKey
+
+▸ **exportKey**(`format`, `key`): `Promise`<`undefined` \| `JsonWebKey`\>
+
+SBCrypto.exportKey()
+
+Export key; note that if there's an issue, this will return undefined.
+That can happen normally if for example the key is restricted (and
+not extractable).
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `format` | ``"jwk"`` |
+| `key` | `CryptoKey` |
+
+#### Returns
+
+`Promise`<`undefined` \| `JsonWebKey`\>
+
+___
+
+### <a id="extractpubkey" name="extractpubkey"></a> extractPubKey
 
 ▸ **extractPubKey**(`privateKey`): ``null`` \| `JsonWebKey`
 
@@ -161,7 +306,7 @@ Extracts (generates) public key from a private key.
 
 ___
 
-### generateIdKey
+### <a id="generateidkey" name="generateidkey"></a> generateIdKey
 
 ▸ **generateIdKey**(`buf`): `Promise`<{ `id`: `string` ; `key`: `string`  }\>
 
@@ -181,7 +326,7 @@ encryption (h2, salt, iv)
 
 ___
 
-### generateKeys
+### <a id="generatekeys" name="generatekeys"></a> generateKeys
 
 ▸ **generateKeys**(): `Promise`<`CryptoKeyPair`\>
 
@@ -195,7 +340,7 @@ Generates standard ``ECDH`` keys using ``P-384``.
 
 ___
 
-### importKey
+### <a id="importkey" name="importkey"></a> importKey
 
 ▸ **importKey**(`format`, `key`, `type`, `extractable`, `keyUsages`): `Promise`<`CryptoKey`\>
 
@@ -219,7 +364,69 @@ Import keys
 
 ___
 
-### sign
+### <a id="lookupkey" name="lookupkey"></a> lookupKey
+
+▸ **lookupKey**(`key`, `array`): `number`
+
+SBCrypto.lookupKey()
+
+Uses compareKeys() to check for presense of a key in a list of keys.
+Returns index of key if found, -1 if not found.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `key` | `JsonWebKey` |
+| `array` | `JsonWebKey`[] |
+
+#### Returns
+
+`number`
+
+___
+
+### <a id="lookupkeyglobal" name="lookupkeyglobal"></a> lookupKeyGlobal
+
+▸ **lookupKeyGlobal**(`hash`): `undefined` \| `knownKeysInfo`
+
+SBCrypto.lookupKeyGlobal()
+
+Given any sort of SB384Hash, returns the corresponding known key, if any
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `hash` | `string` |
+
+#### Returns
+
+`undefined` \| `knownKeysInfo`
+
+___
+
+### <a id="sb384hash" name="sb384hash"></a> sb384Hash
+
+▸ **sb384Hash**(`key?`): `Promise`<`undefined` \| `string`\>
+
+SBCrypto.sb384Hash()
+
+Takes a JsonWebKey and creates the SB384Hash. Returns
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `key?` | `CryptoKey` \| `JsonWebKey` |
+
+#### Returns
+
+`Promise`<`undefined` \| `string`\>
+
+___
+
+### <a id="sign" name="sign"></a> sign
 
 ▸ **sign**(`secretKey`, `contents`): `Promise`<`string`\>
 
@@ -240,7 +447,7 @@ Sign
 
 ___
 
-### str2ab
+### <a id="str2ab" name="str2ab"></a> str2ab
 
 ▸ **str2ab**(`string`): `Uint8Array`
 
@@ -261,7 +468,7 @@ buffer
 
 ___
 
-### unwrap
+### <a id="unwrap" name="unwrap"></a> unwrap
 
 ▸ **unwrap**(`k`, `o`, `returnType`): `Promise`<`string`\>
 
@@ -298,7 +505,7 @@ per se (either as a string or arrayBuffer)
 
 ___
 
-### verify
+### <a id="verify" name="verify"></a> verify
 
 ▸ **verify**(`verifyKey`, `sign`, `contents`): `Promise`<`boolean`\>
 
@@ -320,7 +527,26 @@ Verify signature.
 
 ___
 
-### wrap
+### <a id="verifychannelid" name="verifychannelid"></a> verifyChannelId
+
+▸ **verifyChannelId**(`owner_key`, `channel_id`): `Promise`<`boolean`\>
+
+'Compare' two channel IDs. Note that this is not constant time.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `owner_key` | `JsonWebKey` |
+| `channel_id` | `string` |
+
+#### Returns
+
+`Promise`<`boolean`\>
+
+___
+
+### <a id="wrap" name="wrap"></a> wrap
 
 ▸ **wrap**(`k`, `b`, `bodyType`): `Promise`<[`EncryptedContents`](../interfaces/EncryptedContents.md)\>
 

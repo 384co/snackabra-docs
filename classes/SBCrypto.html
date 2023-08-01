@@ -5,10 +5,10 @@
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" />
 
-    <!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
+    <!-- Generated with Sphinx 5.3.0 and Furo 2023.03.27 -->
         <title>Class: SBCrypto - snackabra 0.5.x beta documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=fad236701ea90a88636c2a8c73b44ae642ed2a53" />
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
@@ -225,21 +225,37 @@ as well as some general utility functions.</p>
 <li><p><a class="reference internal" href="#constructor"><span class="std std-ref">constructor</span></a></p></li>
 </ul>
 </section>
+<section id="properties">
+<h3>Properties<a class="headerlink" href="#properties" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p><a class="reference internal" href="##knownkeys"><span class="std std-ref">#knownKeys</span></a></p></li>
+</ul>
+</section>
 <section id="methods">
 <h3>Methods<a class="headerlink" href="#methods" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
+<li><p><a class="reference internal" href="##generatehash"><span class="std std-ref">#generateHash</span></a></p></li>
+<li><p><a class="reference internal" href="##testhash"><span class="std std-ref">#testHash</span></a></p></li>
 <li><p><a class="reference internal" href="#ab2str"><span class="std std-ref">ab2str</span></a></p></li>
+<li><p><a class="reference internal" href="#addknownkey"><span class="std std-ref">addKnownKey</span></a></p></li>
+<li><p><a class="reference internal" href="#channelkeystringstocryptokeys"><span class="std std-ref">channelKeyStringsToCryptoKeys</span></a></p></li>
+<li><p><a class="reference internal" href="#comparehashwithkey"><span class="std std-ref">compareHashWithKey</span></a></p></li>
 <li><p><a class="reference internal" href="#comparekeys"><span class="std std-ref">compareKeys</span></a></p></li>
 <li><p><a class="reference internal" href="#derivekey"><span class="std std-ref">deriveKey</span></a></p></li>
 <li><p><a class="reference internal" href="#encrypt"><span class="std std-ref">encrypt</span></a></p></li>
+<li><p><a class="reference internal" href="#exportkey"><span class="std std-ref">exportKey</span></a></p></li>
 <li><p><a class="reference internal" href="#extractpubkey"><span class="std std-ref">extractPubKey</span></a></p></li>
 <li><p><a class="reference internal" href="#generateidkey"><span class="std std-ref">generateIdKey</span></a></p></li>
 <li><p><a class="reference internal" href="#generatekeys"><span class="std std-ref">generateKeys</span></a></p></li>
 <li><p><a class="reference internal" href="#importkey"><span class="std std-ref">importKey</span></a></p></li>
+<li><p><a class="reference internal" href="#lookupkey"><span class="std std-ref">lookupKey</span></a></p></li>
+<li><p><a class="reference internal" href="#lookupkeyglobal"><span class="std std-ref">lookupKeyGlobal</span></a></p></li>
+<li><p><a class="reference internal" href="#sb384hash"><span class="std std-ref">sb384Hash</span></a></p></li>
 <li><p><a class="reference internal" href="#sign"><span class="std std-ref">sign</span></a></p></li>
 <li><p><a class="reference internal" href="#str2ab"><span class="std std-ref">str2ab</span></a></p></li>
 <li><p><a class="reference internal" href="#unwrap"><span class="std std-ref">unwrap</span></a></p></li>
 <li><p><a class="reference internal" href="#verify"><span class="std std-ref">verify</span></a></p></li>
+<li><p><a class="reference internal" href="#verifychannelid"><span class="std std-ref">verifyChannelId</span></a></p></li>
 <li><p><a class="reference internal" href="#wrap"><span class="std std-ref">wrap</span></a></p></li>
 </ul>
 </section>
@@ -247,19 +263,81 @@ as well as some general utility functions.</p>
 <section id="id1">
 <h2>Constructors<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
 <section id="constructor">
-<h3>constructor<a class="headerlink" href="#constructor" title="Permalink to this heading">#</a></h3>
+<h3><a id="constructor" name="constructor"></a> constructor<a class="headerlink" href="#constructor" title="Permalink to this heading">#</a></h3>
 <p>• <strong>new SBCrypto</strong>()</p>
 </section>
 </section>
 <section id="id2">
-<h2>Methods<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<h2>Properties<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<section id="knownkeys">
+<h3><a id="#knownkeys" name="#knownkeys"></a> #knownKeys<a class="headerlink" href="#knownkeys" title="Permalink to this heading">#</a></h3>
+<p>• <code class="docutils literal notranslate"><span class="pre">Private</span></code> <strong>#knownKeys</strong>: <code class="docutils literal notranslate"><span class="pre">Map</span></code>&lt;<code class="docutils literal notranslate"><span class="pre">string</span></code>, <code class="docutils literal notranslate"><span class="pre">knownKeysInfo</span></code>&gt;</p>
+</section>
+</section>
+<section id="id3">
+<h2>Methods<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<section id="generatehash">
+<h3><a id="#generatehash" name="#generatehash"></a> #generateHash<a class="headerlink" href="#generatehash" title="Permalink to this heading">#</a></h3>
+<p>▸ <code class="docutils literal notranslate"><span class="pre">Private</span></code> <strong>#generateHash</strong>(<code class="docutils literal notranslate"><span class="pre">rawBytes</span></code>): <code class="docutils literal notranslate"><span class="pre">Promise</span></code>&lt;<code class="docutils literal notranslate"><span class="pre">string</span></code>&gt;</p>
+<section id="parameters">
+<h4>Parameters<a class="headerlink" href="#parameters" title="Permalink to this heading">#</a></h4>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Name</p></th>
+<th class="head text-left"><p>Type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">rawBytes</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">ArrayBuffer</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="returns">
+<h4>Returns<a class="headerlink" href="#returns" title="Permalink to this heading">#</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">Promise</span></code>&lt;<code class="docutils literal notranslate"><span class="pre">string</span></code>&gt;</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="testhash">
+<h3><a id="#testhash" name="#testhash"></a> #testHash<a class="headerlink" href="#testhash" title="Permalink to this heading">#</a></h3>
+<p>▸ <code class="docutils literal notranslate"><span class="pre">Private</span></code> <strong>#testHash</strong>(<code class="docutils literal notranslate"><span class="pre">channelBytes</span></code>, <code class="docutils literal notranslate"><span class="pre">channel_id</span></code>): <code class="docutils literal notranslate"><span class="pre">Promise</span></code>&lt;<code class="docutils literal notranslate"><span class="pre">boolean</span></code>&gt;</p>
+<section id="id4">
+<h4>Parameters<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h4>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Name</p></th>
+<th class="head text-left"><p>Type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">channelBytes</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">ArrayBuffer</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">channel_id</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">string</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="id5">
+<h4>Returns<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">Promise</span></code>&lt;<code class="docutils literal notranslate"><span class="pre">boolean</span></code>&gt;</p>
+</section>
+</section>
+<hr class="docutils" />
 <section id="ab2str">
-<h3>ab2str<a class="headerlink" href="#ab2str" title="Permalink to this heading">#</a></h3>
+<h3><a id="ab2str" name="ab2str"></a> ab2str<a class="headerlink" href="#ab2str" title="Permalink to this heading">#</a></h3>
 <p>▸ <strong>ab2str</strong>(<code class="docutils literal notranslate"><span class="pre">buffer</span></code>): <code class="docutils literal notranslate"><span class="pre">string</span></code></p>
 <p>Standardized ‘ab2str()’ function, array buffer to string.
 This assumes one byte per character.</p>
-<section id="parameters">
-<h4>Parameters<a class="headerlink" href="#parameters" title="Permalink to this heading">#</a></h4>
+<section id="id6">
+<h4>Parameters<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h4>
 <div class="table-wrapper colwidths-auto docutils container">
 <table class="docutils align-default">
 <thead>
@@ -275,20 +353,115 @@ This assumes one byte per character.</p>
 </table>
 </div>
 </section>
-<section id="returns">
-<h4>Returns<a class="headerlink" href="#returns" title="Permalink to this heading">#</a></h4>
+<section id="id7">
+<h4>Returns<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h4>
 <p><code class="docutils literal notranslate"><span class="pre">string</span></code></p>
 <p>string</p>
 </section>
 </section>
 <hr class="docutils" />
+<section id="addknownkey">
+<h3><a id="addknownkey" name="addknownkey"></a> addKnownKey<a class="headerlink" href="#addknownkey" title="Permalink to this heading">#</a></h3>
+<p>▸ <strong>addKnownKey</strong>(<code class="docutils literal notranslate"><span class="pre">key</span></code>): <code class="docutils literal notranslate"><span class="pre">Promise</span></code>&lt;<code class="docutils literal notranslate"><span class="pre">void</span></code>&gt;</p>
+<p>SBCrypto.addKnownKey()</p>
+<p>Adds any key to the list of known keys; if it’s known
+but only as a public key, then it will be ‘upgraded’.</p>
+<section id="id8">
+<h4>Parameters<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h4>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Name</p></th>
+<th class="head text-left"><p>Type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">key</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">CryptoKey</span></code> | <code class="docutils literal notranslate"><span class="pre">JsonWebKey</span></code> | <a class="reference internal" href="SB384.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">SB384</span></code></span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="id9">
+<h4>Returns<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">Promise</span></code>&lt;<code class="docutils literal notranslate"><span class="pre">void</span></code>&gt;</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="channelkeystringstocryptokeys">
+<h3><a id="channelkeystringstocryptokeys" name="channelkeystringstocryptokeys"></a> channelKeyStringsToCryptoKeys<a class="headerlink" href="#channelkeystringstocryptokeys" title="Permalink to this heading">#</a></h3>
+<p>▸ <strong>channelKeyStringsToCryptoKeys</strong>(<code class="docutils literal notranslate"><span class="pre">keyStrings</span></code>): <code class="docutils literal notranslate"><span class="pre">Promise</span></code>&lt;<a class="reference internal" href="../interfaces/ChannelKeys.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">ChannelKeys</span></code></span></a>&gt;</p>
+<section id="id10">
+<h4>Parameters<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h4>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Name</p></th>
+<th class="head text-left"><p>Type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">keyStrings</span></code></p></td>
+<td class="text-left"><p><a class="reference internal" href="../interfaces/ChannelKeyStrings.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">ChannelKeyStrings</span></code></span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="id11">
+<h4>Returns<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">Promise</span></code>&lt;<a class="reference internal" href="../interfaces/ChannelKeys.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">ChannelKeys</span></code></span></a>&gt;</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="comparehashwithkey">
+<h3><a id="comparehashwithkey" name="comparehashwithkey"></a> compareHashWithKey<a class="headerlink" href="#comparehashwithkey" title="Permalink to this heading">#</a></h3>
+<p>▸ <strong>compareHashWithKey</strong>(<code class="docutils literal notranslate"><span class="pre">hash</span></code>, <code class="docutils literal notranslate"><span class="pre">key</span></code>): <code class="docutils literal notranslate"><span class="pre">Promise</span></code>&lt;<code class="docutils literal notranslate"><span class="pre">boolean</span></code>&gt;</p>
+<p>SBCrypto.compareHashWithKey()</p>
+<p>Checks if an existing SB384Hash is ‘compatible’ with a given key.</p>
+<p>Note that you CAN NOT have a hash, and a key, generate a hash
+from that key, and then compare the two. The hash generation per
+se will be deterministic and specific AT ANY POINT IN TIME,
+but may change over time, and this comparison function will
+maintain ability to compare over versions.</p>
+<p>For example, this comparison will accept a simple straight
+b64-encoded hash without iteration or other processing.</p>
+<section id="id12">
+<h4>Parameters<a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h4>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Name</p></th>
+<th class="head text-left"><p>Type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">hash</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">string</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">key</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">JsonWebKey</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="id13">
+<h4>Returns<a class="headerlink" href="#id13" title="Permalink to this heading">#</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">Promise</span></code>&lt;<code class="docutils literal notranslate"><span class="pre">boolean</span></code>&gt;</p>
+</section>
+</section>
+<hr class="docutils" />
 <section id="comparekeys">
-<h3>compareKeys<a class="headerlink" href="#comparekeys" title="Permalink to this heading">#</a></h3>
+<h3><a id="comparekeys" name="comparekeys"></a> compareKeys<a class="headerlink" href="#comparekeys" title="Permalink to this heading">#</a></h3>
 <p>▸ <strong>compareKeys</strong>(<code class="docutils literal notranslate"><span class="pre">key1</span></code>, <code class="docutils literal notranslate"><span class="pre">key2</span></code>): <code class="docutils literal notranslate"><span class="pre">boolean</span></code></p>
 <p>SBCrypto.compareKeys()</p>
-<p>Compare JSON keys, true if the ‘same’, false if different.</p>
-<section id="id3">
-<h4>Parameters<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h4>
+<p>Compare JSON keys, true if the ‘same’, false if different. We consider
+them “equal” if both have ‘x’ and ‘y’ properties and they are the same.
+(Which means it doesn’t care about which or either being public or private)</p>
+<section id="id14">
+<h4>Parameters<a class="headerlink" href="#id14" title="Permalink to this heading">#</a></h4>
 <div class="table-wrapper colwidths-auto docutils container">
 <table class="docutils align-default">
 <thead>
@@ -307,19 +480,19 @@ This assumes one byte per character.</p>
 </table>
 </div>
 </section>
-<section id="id4">
-<h4>Returns<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h4>
+<section id="id15">
+<h4>Returns<a class="headerlink" href="#id15" title="Permalink to this heading">#</a></h4>
 <p><code class="docutils literal notranslate"><span class="pre">boolean</span></code></p>
 </section>
 </section>
 <hr class="docutils" />
 <section id="derivekey">
-<h3>deriveKey<a class="headerlink" href="#derivekey" title="Permalink to this heading">#</a></h3>
+<h3><a id="derivekey" name="derivekey"></a> deriveKey<a class="headerlink" href="#derivekey" title="Permalink to this heading">#</a></h3>
 <p>▸ <strong>deriveKey</strong>(<code class="docutils literal notranslate"><span class="pre">privateKey</span></code>, <code class="docutils literal notranslate"><span class="pre">publicKey</span></code>, <code class="docutils literal notranslate"><span class="pre">type</span></code>, <code class="docutils literal notranslate"><span class="pre">extractable</span></code>, <code class="docutils literal notranslate"><span class="pre">keyUsages</span></code>): <code class="docutils literal notranslate"><span class="pre">Promise</span></code>&lt;<code class="docutils literal notranslate"><span class="pre">CryptoKey</span></code>&gt;</p>
 <p>SBCrypto.deriveKey()</p>
-<p>Derive key.</p>
-<section id="id5">
-<h4>Parameters<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h4>
+<p>Derive key. Takes a private and public key, and returns a Promise to a cryptoKey for 1:1 communication.</p>
+<section id="id16">
+<h4>Parameters<a class="headerlink" href="#id16" title="Permalink to this heading">#</a></h4>
 <div class="table-wrapper colwidths-auto docutils container">
 <table class="docutils align-default">
 <thead>
@@ -347,21 +520,21 @@ This assumes one byte per character.</p>
 </table>
 </div>
 </section>
-<section id="id6">
-<h4>Returns<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h4>
+<section id="id17">
+<h4>Returns<a class="headerlink" href="#id17" title="Permalink to this heading">#</a></h4>
 <p><code class="docutils literal notranslate"><span class="pre">Promise</span></code>&lt;<code class="docutils literal notranslate"><span class="pre">CryptoKey</span></code>&gt;</p>
 </section>
 </section>
 <hr class="docutils" />
 <section id="encrypt">
-<h3>encrypt<a class="headerlink" href="#encrypt" title="Permalink to this heading">#</a></h3>
+<h3><a id="encrypt" name="encrypt"></a> encrypt<a class="headerlink" href="#encrypt" title="Permalink to this heading">#</a></h3>
 <p>▸ <strong>encrypt</strong>(<code class="docutils literal notranslate"><span class="pre">data</span></code>, <code class="docutils literal notranslate"><span class="pre">key</span></code>, <code class="docutils literal notranslate"><span class="pre">_iv?</span></code>, <code class="docutils literal notranslate"><span class="pre">returnType?</span></code>): <code class="docutils literal notranslate"><span class="pre">Promise</span></code>&lt;<a class="reference internal" href="../interfaces/EncryptedContents.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">EncryptedContents</span></code></span></a>&gt;</p>
 <p>SBCrypto.encrypt()</p>
 <p>Encrypt. if no nonce (iv) is given, will create it. Returns a Promise
 that resolves either to raw array buffer or a packaged EncryptedContents.
 Note that for the former, nonce must be given.</p>
-<section id="id7">
-<h4>Parameters<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h4>
+<section id="id18">
+<h4>Parameters<a class="headerlink" href="#id18" title="Permalink to this heading">#</a></h4>
 <div class="table-wrapper colwidths-auto docutils container">
 <table class="docutils align-default">
 <thead>
@@ -386,13 +559,13 @@ Note that for the former, nonce must be given.</p>
 </table>
 </div>
 </section>
-<section id="id8">
-<h4>Returns<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h4>
+<section id="id19">
+<h4>Returns<a class="headerlink" href="#id19" title="Permalink to this heading">#</a></h4>
 <p><code class="docutils literal notranslate"><span class="pre">Promise</span></code>&lt;<a class="reference internal" href="../interfaces/EncryptedContents.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">EncryptedContents</span></code></span></a>&gt;</p>
 <p>▸ <strong>encrypt</strong>(<code class="docutils literal notranslate"><span class="pre">data</span></code>, <code class="docutils literal notranslate"><span class="pre">key</span></code>, <code class="docutils literal notranslate"><span class="pre">_iv?</span></code>, <code class="docutils literal notranslate"><span class="pre">returnType?</span></code>): <code class="docutils literal notranslate"><span class="pre">Promise</span></code>&lt;<code class="docutils literal notranslate"><span class="pre">ArrayBuffer</span></code>&gt;</p>
 </section>
-<section id="id9">
-<h4>Parameters<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h4>
+<section id="id20">
+<h4>Parameters<a class="headerlink" href="#id20" title="Permalink to this heading">#</a></h4>
 <div class="table-wrapper colwidths-auto docutils container">
 <table class="docutils align-default">
 <thead>
@@ -417,18 +590,51 @@ Note that for the former, nonce must be given.</p>
 </table>
 </div>
 </section>
-<section id="id10">
-<h4>Returns<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h4>
+<section id="id21">
+<h4>Returns<a class="headerlink" href="#id21" title="Permalink to this heading">#</a></h4>
 <p><code class="docutils literal notranslate"><span class="pre">Promise</span></code>&lt;<code class="docutils literal notranslate"><span class="pre">ArrayBuffer</span></code>&gt;</p>
 </section>
 </section>
 <hr class="docutils" />
+<section id="exportkey">
+<h3><a id="exportkey" name="exportkey"></a> exportKey<a class="headerlink" href="#exportkey" title="Permalink to this heading">#</a></h3>
+<p>▸ <strong>exportKey</strong>(<code class="docutils literal notranslate"><span class="pre">format</span></code>, <code class="docutils literal notranslate"><span class="pre">key</span></code>): <code class="docutils literal notranslate"><span class="pre">Promise</span></code>&lt;<code class="docutils literal notranslate"><span class="pre">undefined</span></code> | <code class="docutils literal notranslate"><span class="pre">JsonWebKey</span></code>&gt;</p>
+<p>SBCrypto.exportKey()</p>
+<p>Export key; note that if there’s an issue, this will return undefined.
+That can happen normally if for example the key is restricted (and
+not extractable).</p>
+<section id="id22">
+<h4>Parameters<a class="headerlink" href="#id22" title="Permalink to this heading">#</a></h4>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Name</p></th>
+<th class="head text-left"><p>Type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">format</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">&quot;jwk&quot;</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">key</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">CryptoKey</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="id23">
+<h4>Returns<a class="headerlink" href="#id23" title="Permalink to this heading">#</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">Promise</span></code>&lt;<code class="docutils literal notranslate"><span class="pre">undefined</span></code> | <code class="docutils literal notranslate"><span class="pre">JsonWebKey</span></code>&gt;</p>
+</section>
+</section>
+<hr class="docutils" />
 <section id="extractpubkey">
-<h3>extractPubKey<a class="headerlink" href="#extractpubkey" title="Permalink to this heading">#</a></h3>
+<h3><a id="extractpubkey" name="extractpubkey"></a> extractPubKey<a class="headerlink" href="#extractpubkey" title="Permalink to this heading">#</a></h3>
 <p>▸ <strong>extractPubKey</strong>(<code class="docutils literal notranslate"><span class="pre">privateKey</span></code>): <code class="docutils literal notranslate"><span class="pre">null</span></code> | <code class="docutils literal notranslate"><span class="pre">JsonWebKey</span></code></p>
 <p>Extracts (generates) public key from a private key.</p>
-<section id="id11">
-<h4>Parameters<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h4>
+<section id="id24">
+<h4>Parameters<a class="headerlink" href="#id24" title="Permalink to this heading">#</a></h4>
 <div class="table-wrapper colwidths-auto docutils container">
 <table class="docutils align-default">
 <thead>
@@ -444,20 +650,20 @@ Note that for the former, nonce must be given.</p>
 </table>
 </div>
 </section>
-<section id="id12">
-<h4>Returns<a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h4>
+<section id="id25">
+<h4>Returns<a class="headerlink" href="#id25" title="Permalink to this heading">#</a></h4>
 <p><code class="docutils literal notranslate"><span class="pre">null</span></code> | <code class="docutils literal notranslate"><span class="pre">JsonWebKey</span></code></p>
 </section>
 </section>
 <hr class="docutils" />
 <section id="generateidkey">
-<h3>generateIdKey<a class="headerlink" href="#generateidkey" title="Permalink to this heading">#</a></h3>
+<h3><a id="generateidkey" name="generateidkey"></a> generateIdKey<a class="headerlink" href="#generateidkey" title="Permalink to this heading">#</a></h3>
 <p>▸ <strong>generateIdKey</strong>(<code class="docutils literal notranslate"><span class="pre">buf</span></code>): <code class="docutils literal notranslate"><span class="pre">Promise</span></code>&lt;{ <code class="docutils literal notranslate"><span class="pre">id</span></code>: <code class="docutils literal notranslate"><span class="pre">string</span></code> ; <code class="docutils literal notranslate"><span class="pre">key</span></code>: <code class="docutils literal notranslate"><span class="pre">string</span></code>  }&gt;</p>
 <p>Hashes and splits into two (h1 and h1) signature of data, h1
 is used to request (salt, iv) pair and then h2 is used for
 encryption (h2, salt, iv)</p>
-<section id="id13">
-<h4>Parameters<a class="headerlink" href="#id13" title="Permalink to this heading">#</a></h4>
+<section id="id26">
+<h4>Parameters<a class="headerlink" href="#id26" title="Permalink to this heading">#</a></h4>
 <div class="table-wrapper colwidths-auto docutils container">
 <table class="docutils align-default">
 <thead>
@@ -475,30 +681,30 @@ encryption (h2, salt, iv)</p>
 </table>
 </div>
 </section>
-<section id="id14">
-<h4>Returns<a class="headerlink" href="#id14" title="Permalink to this heading">#</a></h4>
+<section id="id27">
+<h4>Returns<a class="headerlink" href="#id27" title="Permalink to this heading">#</a></h4>
 <p><code class="docutils literal notranslate"><span class="pre">Promise</span></code>&lt;{ <code class="docutils literal notranslate"><span class="pre">id</span></code>: <code class="docutils literal notranslate"><span class="pre">string</span></code> ; <code class="docutils literal notranslate"><span class="pre">key</span></code>: <code class="docutils literal notranslate"><span class="pre">string</span></code>  }&gt;</p>
 </section>
 </section>
 <hr class="docutils" />
 <section id="generatekeys">
-<h3>generateKeys<a class="headerlink" href="#generatekeys" title="Permalink to this heading">#</a></h3>
+<h3><a id="generatekeys" name="generatekeys"></a> generateKeys<a class="headerlink" href="#generatekeys" title="Permalink to this heading">#</a></h3>
 <p>▸ <strong>generateKeys</strong>(): <code class="docutils literal notranslate"><span class="pre">Promise</span></code>&lt;<code class="docutils literal notranslate"><span class="pre">CryptoKeyPair</span></code>&gt;</p>
 <p>SBCrypto.generatekeys()</p>
 <p>Generates standard <code class="docutils literal notranslate"><span class="pre">ECDH</span></code> keys using <code class="docutils literal notranslate"><span class="pre">P-384</span></code>.</p>
-<section id="id15">
-<h4>Returns<a class="headerlink" href="#id15" title="Permalink to this heading">#</a></h4>
+<section id="id28">
+<h4>Returns<a class="headerlink" href="#id28" title="Permalink to this heading">#</a></h4>
 <p><code class="docutils literal notranslate"><span class="pre">Promise</span></code>&lt;<code class="docutils literal notranslate"><span class="pre">CryptoKeyPair</span></code>&gt;</p>
 </section>
 </section>
 <hr class="docutils" />
 <section id="importkey">
-<h3>importKey<a class="headerlink" href="#importkey" title="Permalink to this heading">#</a></h3>
+<h3><a id="importkey" name="importkey"></a> importKey<a class="headerlink" href="#importkey" title="Permalink to this heading">#</a></h3>
 <p>▸ <strong>importKey</strong>(<code class="docutils literal notranslate"><span class="pre">format</span></code>, <code class="docutils literal notranslate"><span class="pre">key</span></code>, <code class="docutils literal notranslate"><span class="pre">type</span></code>, <code class="docutils literal notranslate"><span class="pre">extractable</span></code>, <code class="docutils literal notranslate"><span class="pre">keyUsages</span></code>): <code class="docutils literal notranslate"><span class="pre">Promise</span></code>&lt;<code class="docutils literal notranslate"><span class="pre">CryptoKey</span></code>&gt;</p>
 <p>SBCrypto.importKey()</p>
 <p>Import keys</p>
-<section id="id16">
-<h4>Parameters<a class="headerlink" href="#id16" title="Permalink to this heading">#</a></h4>
+<section id="id29">
+<h4>Parameters<a class="headerlink" href="#id29" title="Permalink to this heading">#</a></h4>
 <div class="table-wrapper colwidths-auto docutils container">
 <table class="docutils align-default">
 <thead>
@@ -526,19 +732,107 @@ encryption (h2, salt, iv)</p>
 </table>
 </div>
 </section>
-<section id="id17">
-<h4>Returns<a class="headerlink" href="#id17" title="Permalink to this heading">#</a></h4>
+<section id="id30">
+<h4>Returns<a class="headerlink" href="#id30" title="Permalink to this heading">#</a></h4>
 <p><code class="docutils literal notranslate"><span class="pre">Promise</span></code>&lt;<code class="docutils literal notranslate"><span class="pre">CryptoKey</span></code>&gt;</p>
 </section>
 </section>
 <hr class="docutils" />
+<section id="lookupkey">
+<h3><a id="lookupkey" name="lookupkey"></a> lookupKey<a class="headerlink" href="#lookupkey" title="Permalink to this heading">#</a></h3>
+<p>▸ <strong>lookupKey</strong>(<code class="docutils literal notranslate"><span class="pre">key</span></code>, <code class="docutils literal notranslate"><span class="pre">array</span></code>): <code class="docutils literal notranslate"><span class="pre">number</span></code></p>
+<p>SBCrypto.lookupKey()</p>
+<p>Uses compareKeys() to check for presense of a key in a list of keys.
+Returns index of key if found, -1 if not found.</p>
+<section id="id31">
+<h4>Parameters<a class="headerlink" href="#id31" title="Permalink to this heading">#</a></h4>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Name</p></th>
+<th class="head text-left"><p>Type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">key</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">JsonWebKey</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">array</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">JsonWebKey</span></code>[]</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="id32">
+<h4>Returns<a class="headerlink" href="#id32" title="Permalink to this heading">#</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">number</span></code></p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="lookupkeyglobal">
+<h3><a id="lookupkeyglobal" name="lookupkeyglobal"></a> lookupKeyGlobal<a class="headerlink" href="#lookupkeyglobal" title="Permalink to this heading">#</a></h3>
+<p>▸ <strong>lookupKeyGlobal</strong>(<code class="docutils literal notranslate"><span class="pre">hash</span></code>): <code class="docutils literal notranslate"><span class="pre">undefined</span></code> | <code class="docutils literal notranslate"><span class="pre">knownKeysInfo</span></code></p>
+<p>SBCrypto.lookupKeyGlobal()</p>
+<p>Given any sort of SB384Hash, returns the corresponding known key, if any</p>
+<section id="id33">
+<h4>Parameters<a class="headerlink" href="#id33" title="Permalink to this heading">#</a></h4>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Name</p></th>
+<th class="head text-left"><p>Type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">hash</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">string</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="id34">
+<h4>Returns<a class="headerlink" href="#id34" title="Permalink to this heading">#</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">undefined</span></code> | <code class="docutils literal notranslate"><span class="pre">knownKeysInfo</span></code></p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="sb384hash">
+<h3><a id="sb384hash" name="sb384hash"></a> sb384Hash<a class="headerlink" href="#sb384hash" title="Permalink to this heading">#</a></h3>
+<p>▸ <strong>sb384Hash</strong>(<code class="docutils literal notranslate"><span class="pre">key?</span></code>): <code class="docutils literal notranslate"><span class="pre">Promise</span></code>&lt;<code class="docutils literal notranslate"><span class="pre">undefined</span></code> | <code class="docutils literal notranslate"><span class="pre">string</span></code>&gt;</p>
+<p>SBCrypto.sb384Hash()</p>
+<p>Takes a JsonWebKey and creates the SB384Hash. Returns</p>
+<section id="id35">
+<h4>Parameters<a class="headerlink" href="#id35" title="Permalink to this heading">#</a></h4>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Name</p></th>
+<th class="head text-left"><p>Type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">key?</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">CryptoKey</span></code> | <code class="docutils literal notranslate"><span class="pre">JsonWebKey</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="id36">
+<h4>Returns<a class="headerlink" href="#id36" title="Permalink to this heading">#</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">Promise</span></code>&lt;<code class="docutils literal notranslate"><span class="pre">undefined</span></code> | <code class="docutils literal notranslate"><span class="pre">string</span></code>&gt;</p>
+</section>
+</section>
+<hr class="docutils" />
 <section id="sign">
-<h3>sign<a class="headerlink" href="#sign" title="Permalink to this heading">#</a></h3>
+<h3><a id="sign" name="sign"></a> sign<a class="headerlink" href="#sign" title="Permalink to this heading">#</a></h3>
 <p>▸ <strong>sign</strong>(<code class="docutils literal notranslate"><span class="pre">secretKey</span></code>, <code class="docutils literal notranslate"><span class="pre">contents</span></code>): <code class="docutils literal notranslate"><span class="pre">Promise</span></code>&lt;<code class="docutils literal notranslate"><span class="pre">string</span></code>&gt;</p>
 <p>SBCrypto.sign()</p>
 <p>Sign</p>
-<section id="id18">
-<h4>Parameters<a class="headerlink" href="#id18" title="Permalink to this heading">#</a></h4>
+<section id="id37">
+<h4>Parameters<a class="headerlink" href="#id37" title="Permalink to this heading">#</a></h4>
 <div class="table-wrapper colwidths-auto docutils container">
 <table class="docutils align-default">
 <thead>
@@ -557,19 +851,19 @@ encryption (h2, salt, iv)</p>
 </table>
 </div>
 </section>
-<section id="id19">
-<h4>Returns<a class="headerlink" href="#id19" title="Permalink to this heading">#</a></h4>
+<section id="id38">
+<h4>Returns<a class="headerlink" href="#id38" title="Permalink to this heading">#</a></h4>
 <p><code class="docutils literal notranslate"><span class="pre">Promise</span></code>&lt;<code class="docutils literal notranslate"><span class="pre">string</span></code>&gt;</p>
 </section>
 </section>
 <hr class="docutils" />
 <section id="str2ab">
-<h3>str2ab<a class="headerlink" href="#str2ab" title="Permalink to this heading">#</a></h3>
+<h3><a id="str2ab" name="str2ab"></a> str2ab<a class="headerlink" href="#str2ab" title="Permalink to this heading">#</a></h3>
 <p>▸ <strong>str2ab</strong>(<code class="docutils literal notranslate"><span class="pre">string</span></code>): <code class="docutils literal notranslate"><span class="pre">Uint8Array</span></code></p>
 <p>Standardized ‘str2ab()’ function, string to array buffer.
 This assumes on byte per character.</p>
-<section id="id20">
-<h4>Parameters<a class="headerlink" href="#id20" title="Permalink to this heading">#</a></h4>
+<section id="id39">
+<h4>Parameters<a class="headerlink" href="#id39" title="Permalink to this heading">#</a></h4>
 <div class="table-wrapper colwidths-auto docutils container">
 <table class="docutils align-default">
 <thead>
@@ -585,21 +879,21 @@ This assumes on byte per character.</p>
 </table>
 </div>
 </section>
-<section id="id21">
-<h4>Returns<a class="headerlink" href="#id21" title="Permalink to this heading">#</a></h4>
+<section id="id40">
+<h4>Returns<a class="headerlink" href="#id40" title="Permalink to this heading">#</a></h4>
 <p><code class="docutils literal notranslate"><span class="pre">Uint8Array</span></code></p>
 <p>buffer</p>
 </section>
 </section>
 <hr class="docutils" />
 <section id="unwrap">
-<h3>unwrap<a class="headerlink" href="#unwrap" title="Permalink to this heading">#</a></h3>
+<h3><a id="unwrap" name="unwrap"></a> unwrap<a class="headerlink" href="#unwrap" title="Permalink to this heading">#</a></h3>
 <p>▸ <strong>unwrap</strong>(<code class="docutils literal notranslate"><span class="pre">k</span></code>, <code class="docutils literal notranslate"><span class="pre">o</span></code>, <code class="docutils literal notranslate"><span class="pre">returnType</span></code>): <code class="docutils literal notranslate"><span class="pre">Promise</span></code>&lt;<code class="docutils literal notranslate"><span class="pre">string</span></code>&gt;</p>
 <p>SBCrypto.unwrap</p>
 <p>Decrypts a wrapped object, returns (promise to) decrypted contents
 per se (either as a string or arrayBuffer)</p>
-<section id="id22">
-<h4>Parameters<a class="headerlink" href="#id22" title="Permalink to this heading">#</a></h4>
+<section id="id41">
+<h4>Parameters<a class="headerlink" href="#id41" title="Permalink to this heading">#</a></h4>
 <div class="table-wrapper colwidths-auto docutils container">
 <table class="docutils align-default">
 <thead>
@@ -621,13 +915,13 @@ per se (either as a string or arrayBuffer)</p>
 </table>
 </div>
 </section>
-<section id="id23">
-<h4>Returns<a class="headerlink" href="#id23" title="Permalink to this heading">#</a></h4>
+<section id="id42">
+<h4>Returns<a class="headerlink" href="#id42" title="Permalink to this heading">#</a></h4>
 <p><code class="docutils literal notranslate"><span class="pre">Promise</span></code>&lt;<code class="docutils literal notranslate"><span class="pre">string</span></code>&gt;</p>
 <p>▸ <strong>unwrap</strong>(<code class="docutils literal notranslate"><span class="pre">k</span></code>, <code class="docutils literal notranslate"><span class="pre">o</span></code>, <code class="docutils literal notranslate"><span class="pre">returnType</span></code>): <code class="docutils literal notranslate"><span class="pre">Promise</span></code>&lt;<code class="docutils literal notranslate"><span class="pre">ArrayBuffer</span></code>&gt;</p>
 </section>
-<section id="id24">
-<h4>Parameters<a class="headerlink" href="#id24" title="Permalink to this heading">#</a></h4>
+<section id="id43">
+<h4>Parameters<a class="headerlink" href="#id43" title="Permalink to this heading">#</a></h4>
 <div class="table-wrapper colwidths-auto docutils container">
 <table class="docutils align-default">
 <thead>
@@ -649,19 +943,19 @@ per se (either as a string or arrayBuffer)</p>
 </table>
 </div>
 </section>
-<section id="id25">
-<h4>Returns<a class="headerlink" href="#id25" title="Permalink to this heading">#</a></h4>
+<section id="id44">
+<h4>Returns<a class="headerlink" href="#id44" title="Permalink to this heading">#</a></h4>
 <p><code class="docutils literal notranslate"><span class="pre">Promise</span></code>&lt;<code class="docutils literal notranslate"><span class="pre">ArrayBuffer</span></code>&gt;</p>
 </section>
 </section>
 <hr class="docutils" />
 <section id="verify">
-<h3>verify<a class="headerlink" href="#verify" title="Permalink to this heading">#</a></h3>
+<h3><a id="verify" name="verify"></a> verify<a class="headerlink" href="#verify" title="Permalink to this heading">#</a></h3>
 <p>▸ <strong>verify</strong>(<code class="docutils literal notranslate"><span class="pre">verifyKey</span></code>, <code class="docutils literal notranslate"><span class="pre">sign</span></code>, <code class="docutils literal notranslate"><span class="pre">contents</span></code>): <code class="docutils literal notranslate"><span class="pre">Promise</span></code>&lt;<code class="docutils literal notranslate"><span class="pre">boolean</span></code>&gt;</p>
 <p>SBCrypto.verify()</p>
 <p>Verify signature.</p>
-<section id="id26">
-<h4>Parameters<a class="headerlink" href="#id26" title="Permalink to this heading">#</a></h4>
+<section id="id45">
+<h4>Parameters<a class="headerlink" href="#id45" title="Permalink to this heading">#</a></h4>
 <div class="table-wrapper colwidths-auto docutils container">
 <table class="docutils align-default">
 <thead>
@@ -683,17 +977,47 @@ per se (either as a string or arrayBuffer)</p>
 </table>
 </div>
 </section>
-<section id="id27">
-<h4>Returns<a class="headerlink" href="#id27" title="Permalink to this heading">#</a></h4>
+<section id="id46">
+<h4>Returns<a class="headerlink" href="#id46" title="Permalink to this heading">#</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">Promise</span></code>&lt;<code class="docutils literal notranslate"><span class="pre">boolean</span></code>&gt;</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="verifychannelid">
+<h3><a id="verifychannelid" name="verifychannelid"></a> verifyChannelId<a class="headerlink" href="#verifychannelid" title="Permalink to this heading">#</a></h3>
+<p>▸ <strong>verifyChannelId</strong>(<code class="docutils literal notranslate"><span class="pre">owner_key</span></code>, <code class="docutils literal notranslate"><span class="pre">channel_id</span></code>): <code class="docutils literal notranslate"><span class="pre">Promise</span></code>&lt;<code class="docutils literal notranslate"><span class="pre">boolean</span></code>&gt;</p>
+<p>‘Compare’ two channel IDs. Note that this is not constant time.</p>
+<section id="id47">
+<h4>Parameters<a class="headerlink" href="#id47" title="Permalink to this heading">#</a></h4>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Name</p></th>
+<th class="head text-left"><p>Type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">owner_key</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">JsonWebKey</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">channel_id</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">string</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="id48">
+<h4>Returns<a class="headerlink" href="#id48" title="Permalink to this heading">#</a></h4>
 <p><code class="docutils literal notranslate"><span class="pre">Promise</span></code>&lt;<code class="docutils literal notranslate"><span class="pre">boolean</span></code>&gt;</p>
 </section>
 </section>
 <hr class="docutils" />
 <section id="wrap">
-<h3>wrap<a class="headerlink" href="#wrap" title="Permalink to this heading">#</a></h3>
+<h3><a id="wrap" name="wrap"></a> wrap<a class="headerlink" href="#wrap" title="Permalink to this heading">#</a></h3>
 <p>▸ <strong>wrap</strong>(<code class="docutils literal notranslate"><span class="pre">k</span></code>, <code class="docutils literal notranslate"><span class="pre">b</span></code>, <code class="docutils literal notranslate"><span class="pre">bodyType</span></code>): <code class="docutils literal notranslate"><span class="pre">Promise</span></code>&lt;<a class="reference internal" href="../interfaces/EncryptedContents.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">EncryptedContents</span></code></span></a>&gt;</p>
-<section id="id28">
-<h4>Parameters<a class="headerlink" href="#id28" title="Permalink to this heading">#</a></h4>
+<section id="id49">
+<h4>Parameters<a class="headerlink" href="#id49" title="Permalink to this heading">#</a></h4>
 <div class="table-wrapper colwidths-auto docutils container">
 <table class="docutils align-default">
 <thead>
@@ -715,13 +1039,13 @@ per se (either as a string or arrayBuffer)</p>
 </table>
 </div>
 </section>
-<section id="id29">
-<h4>Returns<a class="headerlink" href="#id29" title="Permalink to this heading">#</a></h4>
+<section id="id50">
+<h4>Returns<a class="headerlink" href="#id50" title="Permalink to this heading">#</a></h4>
 <p><code class="docutils literal notranslate"><span class="pre">Promise</span></code>&lt;<a class="reference internal" href="../interfaces/EncryptedContents.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">EncryptedContents</span></code></span></a>&gt;</p>
 <p>▸ <strong>wrap</strong>(<code class="docutils literal notranslate"><span class="pre">k</span></code>, <code class="docutils literal notranslate"><span class="pre">b</span></code>, <code class="docutils literal notranslate"><span class="pre">bodyType</span></code>): <code class="docutils literal notranslate"><span class="pre">Promise</span></code>&lt;<a class="reference internal" href="../interfaces/EncryptedContents.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">EncryptedContents</span></code></span></a>&gt;</p>
 </section>
-<section id="id30">
-<h4>Parameters<a class="headerlink" href="#id30" title="Permalink to this heading">#</a></h4>
+<section id="id51">
+<h4>Parameters<a class="headerlink" href="#id51" title="Permalink to this heading">#</a></h4>
 <div class="table-wrapper colwidths-auto docutils container">
 <table class="docutils align-default">
 <thead>
@@ -743,8 +1067,8 @@ per se (either as a string or arrayBuffer)</p>
 </table>
 </div>
 </section>
-<section id="id31">
-<h4>Returns<a class="headerlink" href="#id31" title="Permalink to this heading">#</a></h4>
+<section id="id52">
+<h4>Returns<a class="headerlink" href="#id52" title="Permalink to this heading">#</a></h4>
 <p><code class="docutils literal notranslate"><span class="pre">Promise</span></code>&lt;<a class="reference internal" href="../interfaces/EncryptedContents.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">EncryptedContents</span></code></span></a>&gt;</p>
 </section>
 </section>
@@ -791,82 +1115,137 @@ per se (either as a string or arrayBuffer)</p>
 <li><a class="reference internal" href="#">Class: SBCrypto</a><ul>
 <li><a class="reference internal" href="#table-of-contents">Table of contents</a><ul>
 <li><a class="reference internal" href="#constructors">Constructors</a></li>
+<li><a class="reference internal" href="#properties">Properties</a></li>
 <li><a class="reference internal" href="#methods">Methods</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#id1">Constructors</a><ul>
-<li><a class="reference internal" href="#constructor">constructor</a></li>
+<li><a class="reference internal" href="#constructor"><a id="constructor" name="constructor"></a> constructor</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id2">Methods</a><ul>
-<li><a class="reference internal" href="#ab2str">ab2str</a><ul>
+<li><a class="reference internal" href="#id2">Properties</a><ul>
+<li><a class="reference internal" href="#knownkeys"><a id="#knownkeys" name="#knownkeys"></a> #knownKeys</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id3">Methods</a><ul>
+<li><a class="reference internal" href="#generatehash"><a id="#generatehash" name="#generatehash"></a> #generateHash</a><ul>
 <li><a class="reference internal" href="#parameters">Parameters</a></li>
 <li><a class="reference internal" href="#returns">Returns</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#comparekeys">compareKeys</a><ul>
-<li><a class="reference internal" href="#id3">Parameters</a></li>
-<li><a class="reference internal" href="#id4">Returns</a></li>
+<li><a class="reference internal" href="#testhash"><a id="#testhash" name="#testhash"></a> #testHash</a><ul>
+<li><a class="reference internal" href="#id4">Parameters</a></li>
+<li><a class="reference internal" href="#id5">Returns</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#derivekey">deriveKey</a><ul>
-<li><a class="reference internal" href="#id5">Parameters</a></li>
-<li><a class="reference internal" href="#id6">Returns</a></li>
+<li><a class="reference internal" href="#ab2str"><a id="ab2str" name="ab2str"></a> ab2str</a><ul>
+<li><a class="reference internal" href="#id6">Parameters</a></li>
+<li><a class="reference internal" href="#id7">Returns</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#encrypt">encrypt</a><ul>
-<li><a class="reference internal" href="#id7">Parameters</a></li>
-<li><a class="reference internal" href="#id8">Returns</a></li>
-<li><a class="reference internal" href="#id9">Parameters</a></li>
-<li><a class="reference internal" href="#id10">Returns</a></li>
+<li><a class="reference internal" href="#addknownkey"><a id="addknownkey" name="addknownkey"></a> addKnownKey</a><ul>
+<li><a class="reference internal" href="#id8">Parameters</a></li>
+<li><a class="reference internal" href="#id9">Returns</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#extractpubkey">extractPubKey</a><ul>
-<li><a class="reference internal" href="#id11">Parameters</a></li>
-<li><a class="reference internal" href="#id12">Returns</a></li>
+<li><a class="reference internal" href="#channelkeystringstocryptokeys"><a id="channelkeystringstocryptokeys" name="channelkeystringstocryptokeys"></a> channelKeyStringsToCryptoKeys</a><ul>
+<li><a class="reference internal" href="#id10">Parameters</a></li>
+<li><a class="reference internal" href="#id11">Returns</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#generateidkey">generateIdKey</a><ul>
-<li><a class="reference internal" href="#id13">Parameters</a></li>
-<li><a class="reference internal" href="#id14">Returns</a></li>
+<li><a class="reference internal" href="#comparehashwithkey"><a id="comparehashwithkey" name="comparehashwithkey"></a> compareHashWithKey</a><ul>
+<li><a class="reference internal" href="#id12">Parameters</a></li>
+<li><a class="reference internal" href="#id13">Returns</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#generatekeys">generateKeys</a><ul>
+<li><a class="reference internal" href="#comparekeys"><a id="comparekeys" name="comparekeys"></a> compareKeys</a><ul>
+<li><a class="reference internal" href="#id14">Parameters</a></li>
 <li><a class="reference internal" href="#id15">Returns</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#importkey">importKey</a><ul>
+<li><a class="reference internal" href="#derivekey"><a id="derivekey" name="derivekey"></a> deriveKey</a><ul>
 <li><a class="reference internal" href="#id16">Parameters</a></li>
 <li><a class="reference internal" href="#id17">Returns</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#sign">sign</a><ul>
+<li><a class="reference internal" href="#encrypt"><a id="encrypt" name="encrypt"></a> encrypt</a><ul>
 <li><a class="reference internal" href="#id18">Parameters</a></li>
 <li><a class="reference internal" href="#id19">Returns</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#str2ab">str2ab</a><ul>
 <li><a class="reference internal" href="#id20">Parameters</a></li>
 <li><a class="reference internal" href="#id21">Returns</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#unwrap">unwrap</a><ul>
+<li><a class="reference internal" href="#exportkey"><a id="exportkey" name="exportkey"></a> exportKey</a><ul>
 <li><a class="reference internal" href="#id22">Parameters</a></li>
 <li><a class="reference internal" href="#id23">Returns</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#extractpubkey"><a id="extractpubkey" name="extractpubkey"></a> extractPubKey</a><ul>
 <li><a class="reference internal" href="#id24">Parameters</a></li>
 <li><a class="reference internal" href="#id25">Returns</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#verify">verify</a><ul>
+<li><a class="reference internal" href="#generateidkey"><a id="generateidkey" name="generateidkey"></a> generateIdKey</a><ul>
 <li><a class="reference internal" href="#id26">Parameters</a></li>
 <li><a class="reference internal" href="#id27">Returns</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#wrap">wrap</a><ul>
-<li><a class="reference internal" href="#id28">Parameters</a></li>
-<li><a class="reference internal" href="#id29">Returns</a></li>
-<li><a class="reference internal" href="#id30">Parameters</a></li>
-<li><a class="reference internal" href="#id31">Returns</a></li>
+<li><a class="reference internal" href="#generatekeys"><a id="generatekeys" name="generatekeys"></a> generateKeys</a><ul>
+<li><a class="reference internal" href="#id28">Returns</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#importkey"><a id="importkey" name="importkey"></a> importKey</a><ul>
+<li><a class="reference internal" href="#id29">Parameters</a></li>
+<li><a class="reference internal" href="#id30">Returns</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#lookupkey"><a id="lookupkey" name="lookupkey"></a> lookupKey</a><ul>
+<li><a class="reference internal" href="#id31">Parameters</a></li>
+<li><a class="reference internal" href="#id32">Returns</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#lookupkeyglobal"><a id="lookupkeyglobal" name="lookupkeyglobal"></a> lookupKeyGlobal</a><ul>
+<li><a class="reference internal" href="#id33">Parameters</a></li>
+<li><a class="reference internal" href="#id34">Returns</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#sb384hash"><a id="sb384hash" name="sb384hash"></a> sb384Hash</a><ul>
+<li><a class="reference internal" href="#id35">Parameters</a></li>
+<li><a class="reference internal" href="#id36">Returns</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#sign"><a id="sign" name="sign"></a> sign</a><ul>
+<li><a class="reference internal" href="#id37">Parameters</a></li>
+<li><a class="reference internal" href="#id38">Returns</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#str2ab"><a id="str2ab" name="str2ab"></a> str2ab</a><ul>
+<li><a class="reference internal" href="#id39">Parameters</a></li>
+<li><a class="reference internal" href="#id40">Returns</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#unwrap"><a id="unwrap" name="unwrap"></a> unwrap</a><ul>
+<li><a class="reference internal" href="#id41">Parameters</a></li>
+<li><a class="reference internal" href="#id42">Returns</a></li>
+<li><a class="reference internal" href="#id43">Parameters</a></li>
+<li><a class="reference internal" href="#id44">Returns</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#verify"><a id="verify" name="verify"></a> verify</a><ul>
+<li><a class="reference internal" href="#id45">Parameters</a></li>
+<li><a class="reference internal" href="#id46">Returns</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#verifychannelid"><a id="verifychannelid" name="verifychannelid"></a> verifyChannelId</a><ul>
+<li><a class="reference internal" href="#id47">Parameters</a></li>
+<li><a class="reference internal" href="#id48">Returns</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#wrap"><a id="wrap" name="wrap"></a> wrap</a><ul>
+<li><a class="reference internal" href="#id49">Parameters</a></li>
+<li><a class="reference internal" href="#id50">Returns</a></li>
+<li><a class="reference internal" href="#id51">Parameters</a></li>
+<li><a class="reference internal" href="#id52">Returns</a></li>
 </ul>
 </li>
 </ul>

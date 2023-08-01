@@ -2,6 +2,8 @@
 
 # Interface: SBServer
 
+***************************************************************************************************
+
 ## Table of contents
 
 ### Properties
@@ -13,7 +15,7 @@
 
 ## Properties
 
-### channel\_server
+### <a id="channel_server" name="channel_server"></a> channel\_server
 
 • **channel\_server**: `string`
 
@@ -23,7 +25,7 @@ handles channel messages.
 
 ___
 
-### channel\_ws
+### <a id="channel_ws" name="channel_ws"></a> channel\_ws
 
 • **channel\_ws**: `string`
 
@@ -33,7 +35,7 @@ different protocol.
 
 ___
 
-### shard\_server
+### <a id="shard_server" name="shard_server"></a> shard\_server
 
 • `Optional` **shard\_server**: `string`
 
@@ -45,7 +47,7 @@ interface, in particular for reading.
 
 ___
 
-### storage\_server
+### <a id="storage_server" name="storage_server"></a> storage\_server
 
 • **storage\_server**: `string`
 
