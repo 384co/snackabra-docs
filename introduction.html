@@ -6,7 +6,7 @@
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Technical Overview" href="overview.html" /><link rel="prev" title="Snackabra" href="index.html" />
 
     <!-- Generated with Sphinx 5.3.0 and Furo 2023.03.27 -->
-        <title>Introduction - snackabra 0.5.x beta documentation</title>
+        <title>Introduction - snackabra 0.6.0 beta documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=fad236701ea90a88636c2a8c73b44ae642ed2a53" />
     <link rel="stylesheet" type="text/css" href="_static/graphviz.css" />
@@ -125,7 +125,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">snackabra 0.5.x beta documentation</div></a>
+      <a href="index.html"><div class="brand">snackabra 0.6.0 beta documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -148,7 +148,7 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
   
   
-  <span class="sidebar-brand-text">snackabra 0.5.x beta documentation</span>
+  <span class="sidebar-brand-text">snackabra 0.6.0 beta documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -176,7 +176,6 @@
 <li class="toctree-l1"><a class="reference internal" href="user-guide.html">Appendix B: Privacy.App Chat Room User Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="diag-sample.html">(ignore)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="motivation.html">Motivation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="updated-glossary.html">Updated Glossary</a></li>
 </ul>
 
 </div>
@@ -388,13 +387,13 @@ keys for the room in question, then it’ll use those,
 otherwise it will generate a new “personal public key”
 pair (and store it locally). That’s your “real” identity in any room.</p></li>
 <li><p>The app connects (web socket) to the room server. In this example
-we will assume you’re connecting to a <a class="reference internal" href="updated-glossary.html#term-Personal-Room-Server"><span class="xref std std-term">Personal Room Server</span></a>
+we will assume you’re connecting to a <a class="reference internal" href="glossary.html#term-Personal-Room-Server"><span class="xref std std-term">Personal Room Server</span></a>
 to keep it simple.</p></li>
 <li><p>The first thing the app does is present the user identity (the
 public key from [3]).</p></li>
 <li><p>The room server will respond with a number of things:
 the room keys (public keys for other participants),
-the <a class="reference internal" href="updated-glossary.html#term-MOTD"><span class="xref std std-term">MOTD</span></a>, and whether the room is <a class="reference internal" href="updated-glossary.html#term-Restricted"><span class="xref std std-term">Restricted</span></a> or not.</p></li>
+the <a class="reference internal" href="glossary.html#term-MOTD"><span class="xref std std-term">MOTD</span></a>, and whether the room is <a class="reference internal" href="glossary.html#term-Restricted"><span class="xref std std-term">Restricted</span></a> or not.</p></li>
 <li><p>Once the app has digested all the info and is all set
 to rock and roll, it sends a “ready” message to the room server.</p></li>
 <li><p>The first thing the room sends upon seeing “ready” is to

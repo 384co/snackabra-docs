@@ -6,7 +6,7 @@
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" />
 
     <!-- Generated with Sphinx 5.3.0 and Furo 2023.03.27 -->
-        <title>Class: SB384 - snackabra 0.5.x beta documentation</title>
+        <title>Class: SB384 - snackabra 0.6.0 beta documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=fad236701ea90a88636c2a8c73b44ae642ed2a53" />
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
@@ -125,7 +125,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">snackabra 0.5.x beta documentation</div></a>
+      <a href="../index.html"><div class="brand">snackabra 0.6.0 beta documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -148,7 +148,7 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
   
   
-  <span class="sidebar-brand-text">snackabra 0.5.x beta documentation</span>
+  <span class="sidebar-brand-text">snackabra 0.6.0 beta documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -176,7 +176,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../user-guide.html">Appendix B: Privacy.App Chat Room User Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../diag-sample.html">(ignore)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../motivation.html">Motivation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../updated-glossary.html">Updated Glossary</a></li>
 </ul>
 
 </div>
@@ -211,7 +210,7 @@
           </label>
         </div>
         <article role="main">
-          <p><a class="reference internal" href="../jslib2.html"><span class="std std-doc">JSLib Reference Manual</span></a> / <a class="reference internal" href="../modules.html"><span class="std std-doc">Exports</span></a> / SB384</p>
+          <p><a class="reference internal" href="#../jslib2.md"><span class="xref myst">JSLib Reference Manual</span></a> / <a class="reference internal" href="../modules.html"><span class="std std-doc">Exports</span></a> / SB384</p>
 <section id="class-sb384">
 <h1>Class: SB384<a class="headerlink" href="#class-sb384" title="Permalink to this heading">#</a></h1>
 <section id="hierarchy">
@@ -233,11 +232,6 @@
 <section id="properties">
 <h3>Properties<a class="headerlink" href="#properties" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
-<li><p><a class="reference internal" href="##sb384readyflag"><span class="std std-ref">#SB384ReadyFlag</span></a></p></li>
-<li><p><a class="reference internal" href="##exportable_privatekey"><span class="std std-ref">#exportable_privateKey</span></a></p></li>
-<li><p><a class="reference internal" href="##exportable_pubkey"><span class="std std-ref">#exportable_pubKey</span></a></p></li>
-<li><p><a class="reference internal" href="##hash"><span class="std std-ref">#hash</span></a></p></li>
-<li><p><a class="reference internal" href="##privatekey"><span class="std std-ref">#privateKey</span></a></p></li>
 <li><p><a class="reference internal" href="#ready"><span class="std std-ref">ready</span></a></p></li>
 <li><p><a class="reference internal" href="#sb384ready"><span class="std std-ref">sb384Ready</span></a></p></li>
 </ul>
@@ -291,31 +285,6 @@ example below. Also see Design Note [4]_.</p>
 </section>
 <section id="id2">
 <h2>Properties<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
-<section id="sb384readyflag">
-<h3><a id="#sb384readyflag" name="#sb384readyflag"></a> #SB384ReadyFlag<a class="headerlink" href="#sb384readyflag" title="Permalink to this heading">#</a></h3>
-<p>• <code class="docutils literal notranslate"><span class="pre">Private</span></code> <strong>#SB384ReadyFlag</strong>: <code class="docutils literal notranslate"><span class="pre">boolean</span></code> = <code class="docutils literal notranslate"><span class="pre">false</span></code></p>
-</section>
-<hr class="docutils" />
-<section id="exportable-privatekey">
-<h3><a id="#exportable_privatekey" name="#exportable_privatekey"></a> #exportable_privateKey<a class="headerlink" href="#exportable-privatekey" title="Permalink to this heading">#</a></h3>
-<p>• <code class="docutils literal notranslate"><span class="pre">Private</span></code> <code class="docutils literal notranslate"><span class="pre">Optional</span></code> <strong>#exportable_privateKey</strong>: <code class="docutils literal notranslate"><span class="pre">JsonWebKey</span></code></p>
-</section>
-<hr class="docutils" />
-<section id="exportable-pubkey">
-<h3><a id="#exportable_pubkey" name="#exportable_pubkey"></a> #exportable_pubKey<a class="headerlink" href="#exportable-pubkey" title="Permalink to this heading">#</a></h3>
-<p>• <code class="docutils literal notranslate"><span class="pre">Private</span></code> <code class="docutils literal notranslate"><span class="pre">Optional</span></code> <strong>#exportable_pubKey</strong>: <code class="docutils literal notranslate"><span class="pre">JsonWebKey</span></code></p>
-</section>
-<hr class="docutils" />
-<section id="hash">
-<h3><a id="#hash" name="#hash"></a> #hash<a class="headerlink" href="#hash" title="Permalink to this heading">#</a></h3>
-<p>• <code class="docutils literal notranslate"><span class="pre">Private</span></code> <code class="docutils literal notranslate"><span class="pre">Optional</span></code> <strong>#hash</strong>: <code class="docutils literal notranslate"><span class="pre">string</span></code></p>
-</section>
-<hr class="docutils" />
-<section id="privatekey">
-<h3><a id="#privatekey" name="#privatekey"></a> #privateKey<a class="headerlink" href="#privatekey" title="Permalink to this heading">#</a></h3>
-<p>• <code class="docutils literal notranslate"><span class="pre">Private</span></code> <code class="docutils literal notranslate"><span class="pre">Optional</span></code> <strong>#privateKey</strong>: <code class="docutils literal notranslate"><span class="pre">CryptoKey</span></code></p>
-</section>
-<hr class="docutils" />
 <section id="ready">
 <h3><a id="ready" name="ready"></a> ready<a class="headerlink" href="#ready" title="Permalink to this heading">#</a></h3>
 <p>• <strong>ready</strong>: <code class="docutils literal notranslate"><span class="pre">Promise</span></code>&lt;<a class="reference internal" href="#"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">SB384</span></code></span></a>&gt;</p>
@@ -337,26 +306,26 @@ example below. Also see Design Note [4]_.</p>
 </section>
 </section>
 <hr class="docutils" />
-<section id="id4">
-<h3><a id="exportable_privatekey" name="exportable_privatekey"></a> exportable_privateKey<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+<section id="exportable-privatekey">
+<h3><a id="exportable_privatekey" name="exportable_privatekey"></a> exportable_privateKey<a class="headerlink" href="#exportable-privatekey" title="Permalink to this heading">#</a></h3>
 <p>• <code class="docutils literal notranslate"><span class="pre">get</span></code> <strong>exportable_privateKey</strong>(): <code class="docutils literal notranslate"><span class="pre">JsonWebKey</span></code></p>
+<section id="id4">
+<h4>Returns<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">JsonWebKey</span></code></p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="exportable-pubkey">
+<h3><a id="exportable_pubkey" name="exportable_pubkey"></a> exportable_pubKey<a class="headerlink" href="#exportable-pubkey" title="Permalink to this heading">#</a></h3>
+<p>• <code class="docutils literal notranslate"><span class="pre">get</span></code> <strong>exportable_pubKey</strong>(): <code class="docutils literal notranslate"><span class="pre">JsonWebKey</span></code></p>
 <section id="id5">
 <h4>Returns<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h4>
 <p><code class="docutils literal notranslate"><span class="pre">JsonWebKey</span></code></p>
 </section>
 </section>
 <hr class="docutils" />
-<section id="id6">
-<h3><a id="exportable_pubkey" name="exportable_pubkey"></a> exportable_pubKey<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
-<p>• <code class="docutils literal notranslate"><span class="pre">get</span></code> <strong>exportable_pubKey</strong>(): <code class="docutils literal notranslate"><span class="pre">JsonWebKey</span></code></p>
-<section id="id7">
-<h4>Returns<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h4>
-<p><code class="docutils literal notranslate"><span class="pre">JsonWebKey</span></code></p>
-</section>
-</section>
-<hr class="docutils" />
-<section id="id8">
-<h3><a id="hash" name="hash"></a> hash<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h3>
+<section id="hash">
+<h3><a id="hash" name="hash"></a> hash<a class="headerlink" href="#hash" title="Permalink to this heading">#</a></h3>
 <p>• <code class="docutils literal notranslate"><span class="pre">get</span></code> <strong>hash</strong>(): <code class="docutils literal notranslate"><span class="pre">string</span></code></p>
 <p>Returns a unique identifier for external use, that will be unique
 for any class or object that uses SB384 as it’s root.</p>
@@ -375,8 +344,8 @@ study material heh>).</p>
 you cannot do so in the general case. You can use sbCrypto.compareHashWithKey()
 to compare a hash with a key, but you cannot compare two hashes. See the
 comparison function for more details.</p>
-<section id="id9">
-<h4>Returns<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h4>
+<section id="id6">
+<h4>Returns<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h4>
 <p><code class="docutils literal notranslate"><span class="pre">string</span></code></p>
 </section>
 </section>
@@ -384,17 +353,17 @@ comparison function for more details.</p>
 <section id="ownerchannelid">
 <h3><a id="ownerchannelid" name="ownerchannelid"></a> ownerChannelId<a class="headerlink" href="#ownerchannelid" title="Permalink to this heading">#</a></h3>
 <p>• <code class="docutils literal notranslate"><span class="pre">get</span></code> <strong>ownerChannelId</strong>(): <code class="docutils literal notranslate"><span class="pre">string</span></code></p>
-<section id="id10">
-<h4>Returns<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h4>
+<section id="id7">
+<h4>Returns<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h4>
 <p><code class="docutils literal notranslate"><span class="pre">string</span></code></p>
 </section>
 </section>
 <hr class="docutils" />
-<section id="id11">
-<h3><a id="privatekey" name="privatekey"></a> privateKey<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h3>
+<section id="privatekey">
+<h3><a id="privatekey" name="privatekey"></a> privateKey<a class="headerlink" href="#privatekey" title="Permalink to this heading">#</a></h3>
 <p>• <code class="docutils literal notranslate"><span class="pre">get</span></code> <strong>privateKey</strong>(): <code class="docutils literal notranslate"><span class="pre">CryptoKey</span></code></p>
-<section id="id12">
-<h4>Returns<a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h4>
+<section id="id8">
+<h4>Returns<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h4>
 <p><code class="docutils literal notranslate"><span class="pre">CryptoKey</span></code></p>
 </section>
 </section>
@@ -402,8 +371,8 @@ comparison function for more details.</p>
 <section id="readyflag">
 <h3><a id="readyflag" name="readyflag"></a> readyFlag<a class="headerlink" href="#readyflag" title="Permalink to this heading">#</a></h3>
 <p>• <code class="docutils literal notranslate"><span class="pre">get</span></code> <strong>readyFlag</strong>(): <code class="docutils literal notranslate"><span class="pre">boolean</span></code></p>
-<section id="id13">
-<h4>Returns<a class="headerlink" href="#id13" title="Permalink to this heading">#</a></h4>
+<section id="id9">
+<h4>Returns<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h4>
 <p><code class="docutils literal notranslate"><span class="pre">boolean</span></code></p>
 </section>
 </section>
@@ -463,11 +432,6 @@ comparison function for more details.</p>
 </ul>
 </li>
 <li><a class="reference internal" href="#id2">Properties</a><ul>
-<li><a class="reference internal" href="#sb384readyflag"><a id="#sb384readyflag" name="#sb384readyflag"></a> #SB384ReadyFlag</a></li>
-<li><a class="reference internal" href="#exportable-privatekey"><a id="#exportable_privatekey" name="#exportable_privatekey"></a> #exportable_privateKey</a></li>
-<li><a class="reference internal" href="#exportable-pubkey"><a id="#exportable_pubkey" name="#exportable_pubkey"></a> #exportable_pubKey</a></li>
-<li><a class="reference internal" href="#hash"><a id="#hash" name="#hash"></a> #hash</a></li>
-<li><a class="reference internal" href="#privatekey"><a id="#privatekey" name="#privatekey"></a> #privateKey</a></li>
 <li><a class="reference internal" href="#ready"><a id="ready" name="ready"></a> ready</a></li>
 <li><a class="reference internal" href="#sb384ready"><a id="sb384ready" name="sb384ready"></a> sb384Ready</a></li>
 </ul>
@@ -477,28 +441,28 @@ comparison function for more details.</p>
 <li><a class="reference internal" href="#returns">Returns</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id4"><a id="exportable_privatekey" name="exportable_privatekey"></a> exportable_privateKey</a><ul>
+<li><a class="reference internal" href="#exportable-privatekey"><a id="exportable_privatekey" name="exportable_privatekey"></a> exportable_privateKey</a><ul>
+<li><a class="reference internal" href="#id4">Returns</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#exportable-pubkey"><a id="exportable_pubkey" name="exportable_pubkey"></a> exportable_pubKey</a><ul>
 <li><a class="reference internal" href="#id5">Returns</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id6"><a id="exportable_pubkey" name="exportable_pubkey"></a> exportable_pubKey</a><ul>
-<li><a class="reference internal" href="#id7">Returns</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#id8"><a id="hash" name="hash"></a> hash</a><ul>
-<li><a class="reference internal" href="#id9">Returns</a></li>
+<li><a class="reference internal" href="#hash"><a id="hash" name="hash"></a> hash</a><ul>
+<li><a class="reference internal" href="#id6">Returns</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#ownerchannelid"><a id="ownerchannelid" name="ownerchannelid"></a> ownerChannelId</a><ul>
-<li><a class="reference internal" href="#id10">Returns</a></li>
+<li><a class="reference internal" href="#id7">Returns</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id11"><a id="privatekey" name="privatekey"></a> privateKey</a><ul>
-<li><a class="reference internal" href="#id12">Returns</a></li>
+<li><a class="reference internal" href="#privatekey"><a id="privatekey" name="privatekey"></a> privateKey</a><ul>
+<li><a class="reference internal" href="#id8">Returns</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#readyflag"><a id="readyflag" name="readyflag"></a> readyFlag</a><ul>
-<li><a class="reference internal" href="#id13">Returns</a></li>
+<li><a class="reference internal" href="#id9">Returns</a></li>
 </ul>
 </li>
 </ul>

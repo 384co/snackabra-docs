@@ -26,5 +26,6 @@
     "name": "JSLib Reference Manual",
     "theme": "default",
     "disableSources": true,
+    "excludePrivate": true,
   },
 }

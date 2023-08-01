@@ -14,7 +14,9 @@ Glossary
       photo, etc.
 
    channel
-      Essentially a synonym for :term:`Room`.
+      Basic communication primitive. Used to be a synonym for :term:`Room`,
+      but now it's more correct to say that a Room is a simple use of a
+      channel.
       
    channel name
       Essentially a synonym for :term:`Room Name`. This is the newer term.
@@ -122,6 +124,9 @@ Glossary
       All discussions or chats or conversations or file or document
       sharing occurs within the context of a :ref:`room <rooms>`, identified
       by a :term:`Room Name`.
+
+   Shard
+      Storage object. Essentially a blob. 
 
    SSO
       Single Sign-On system: an online service through which you can

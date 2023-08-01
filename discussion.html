@@ -6,7 +6,7 @@
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Formal Treatment" href="formal.html" /><link rel="prev" title="System Architecture" href="system-architecture.html" />
 
     <!-- Generated with Sphinx 5.3.0 and Furo 2023.03.27 -->
-        <title>Background and Discussion - snackabra 0.5.x beta documentation</title>
+        <title>Background and Discussion - snackabra 0.6.0 beta documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=fad236701ea90a88636c2a8c73b44ae642ed2a53" />
     <link rel="stylesheet" type="text/css" href="_static/graphviz.css" />
@@ -125,7 +125,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">snackabra 0.5.x beta documentation</div></a>
+      <a href="index.html"><div class="brand">snackabra 0.6.0 beta documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -148,7 +148,7 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
   
   
-  <span class="sidebar-brand-text">snackabra 0.5.x beta documentation</span>
+  <span class="sidebar-brand-text">snackabra 0.6.0 beta documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -176,7 +176,6 @@
 <li class="toctree-l1"><a class="reference internal" href="user-guide.html">Appendix B: Privacy.App Chat Room User Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="diag-sample.html">(ignore)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="motivation.html">Motivation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="updated-glossary.html">Updated Glossary</a></li>
 </ul>
 
 </div>
@@ -427,8 +426,8 @@ and POP3 and IMAP to specify how applications can talk to
 email services.</p>
 <p>With the advent of Internet as a Very Big Business, these traditions
 and principles went away: the “walled garden” rules supreme.</p>
-<p>Snackabra defines two primitives: a <a class="reference internal" href="updated-glossary.html#term-Shard"><span class="xref std std-term">shard</span></a> and a
-<a class="reference internal" href="updated-glossary.html#term-channel"><span class="xref std std-term">channel</span></a>. Services are built on those, and hosting them
+<p>Snackabra defines two primitives: a <a class="reference internal" href="glossary.html#term-Shard"><span class="xref std std-term">shard</span></a> and a
+<a class="reference internal" href="glossary.html#term-channel"><span class="xref std std-term">channel</span></a>. Services are built on those, and hosting them
 is done in a fundamentally interoperable manner: there is no
 central source of authority for logging in, for example, authentication
 is done by means of channels.</p>
@@ -510,7 +509,7 @@ as possible, subject only to the design constraints (below).</p></li>
 as employees of any organization hosting the service. This includes
 making sure to use the latest perspectives on choices of crypto.</p></li>
 <li><p>Owner control: we should enable and facilitate as much as
-possible the ability of an <a class="reference internal" href="updated-glossary.html#term-Owner"><span class="xref std std-term">Owner</span></a> to control (and understand) the
+possible the ability of an <a class="reference internal" href="glossary.html#term-Owner"><span class="xref std std-term">Owner</span></a> to control (and understand) the
 particulars of necessary trade-offs between ease of use, privacy,
 and security.</p></li>
 <li><p>Transparent: from the beginning, prepare for future open sourcing,
@@ -578,7 +577,7 @@ accountability, we currently derive these (strict) decisions:</p>
 <ul class="simple">
 <li><p>All conversations, communications, photo or file sharing,
 etc, occur in a <a class="reference internal" href="glossary.html#term-Room"><span class="xref std std-term">Room</span></a>.</p></li>
-<li><p>All conversations must have an <a class="reference internal" href="updated-glossary.html#term-Owner"><span class="xref std std-term">Owner</span></a> that is responsible and
+<li><p>All conversations must have an <a class="reference internal" href="glossary.html#term-Owner"><span class="xref std std-term">Owner</span></a> that is responsible and
 accountable for any conversations and communications that occur in
 the room <a class="footnote-reference brackets" href="#f134" id="id9" role="doc-noteref"><span class="fn-bracket">[</span>9<span class="fn-bracket">]</span></a></p></li>
 <li><p>Unavoidable trade-offs between privacy, security, and ease of use
@@ -644,7 +643,7 @@ which we have no access to it, nor any of our underlying system or
 service providers.</p>
 <p id="micro-federation">But we also want to eliminate - or at least put into your control -
 any other hidden trust functions. Our key to that is to allow for an
-established chat to “leave” - we call this <a class="reference internal" href="updated-glossary.html#term-Micro-Federation"><span class="xref std std-term">Micro Federation</span></a>
+established chat to “leave” - we call this <a class="reference internal" href="glossary.html#term-Micro-Federation"><span class="xref std std-term">Micro Federation</span></a>
 and we’ve heard it referred to as <em>severability</em>:</p>
 <p>Once a group is up and running, restricted, and the Owner has
 “rotated” (taken control of) their keys, each participant will now
@@ -841,7 +840,7 @@ defense against attempts to interfere with, or stop, a conversation
 (independent of access to content). All the necessary keys and
 identities are contained in the (distributed) set of key files amongst
 the participants. The system is naturally capable of fragmentation
-(<a class="reference internal" href="updated-glossary.html#term-Micro-Federation"><span class="xref std std-term">Micro Federation</span></a>) we aim to make it relatively simple for a group
+(<a class="reference internal" href="glossary.html#term-Micro-Federation"><span class="xref std std-term">Micro Federation</span></a>) we aim to make it relatively simple for a group
 to set up a server, ‘reconnect’ various keys, re-populate messages,
 and get back on track with any ongoing conversation.</p>
 <p>We also plan to support <em>chunking</em> a conversation, a thread, as a

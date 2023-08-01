@@ -31,19 +31,6 @@ right away, but they decide for themselves if they're ready or not.
 
 ### Properties
 
-- [#ChannelReadyFlag](Channel.md##channelreadyflag)
-- [#SB384ReadyFlag](Channel.md##sb384readyflag)
-- [#channelApi](Channel.md##channelapi)
-- [#channelId](Channel.md##channelid)
-- [#channelKeys](Channel.md##channelkeys)
-- [#channelServer](Channel.md##channelserver)
-- [#channelSignKey](Channel.md##channelsignkey)
-- [#cursor](Channel.md##cursor)
-- [#exportable\_privateKey](Channel.md##exportable_privatekey)
-- [#exportable\_pubKey](Channel.md##exportable_pubkey)
-- [#hash](Channel.md##hash)
-- [#privateKey](Channel.md##privatekey)
-- [#sbServer](Channel.md##sbserver)
 - [admin](Channel.md#admin)
 - [adminData](Channel.md#admindata)
 - [channelReady](Channel.md#channelready)
@@ -72,9 +59,6 @@ right away, but they decide for themselves if they're ready or not.
 
 ### Methods
 
-- [#callApi](Channel.md##callapi)
-- [#loadKeys](Channel.md##loadkeys)
-- [#setKeys](Channel.md##setkeys)
 - [acceptVisitor](Channel.md#acceptvisitor)
 - [authorize](Channel.md#authorize)
 - [budd](Channel.md#budd)
@@ -115,104 +99,6 @@ right away, but they decide for themselves if they're ready or not.
 [SB384](SB384.md).[constructor](SB384.md#constructor)
 
 ## Properties
-
-### <a id="#channelreadyflag" name="#channelreadyflag"></a> #ChannelReadyFlag
-
-• `Private` **#ChannelReadyFlag**: `boolean` = `false`
-
-___
-
-### <a id="#sb384readyflag" name="#sb384readyflag"></a> #SB384ReadyFlag
-
-• `Private` **#SB384ReadyFlag**: `boolean` = `false`
-
-#### Inherited from
-
-[SB384](SB384.md).[#SB384ReadyFlag](SB384.md##sb384readyflag)
-
-___
-
-### <a id="#channelapi" name="#channelapi"></a> #channelApi
-
-• `Private` **#channelApi**: `string` = `''`
-
-___
-
-### <a id="#channelid" name="#channelid"></a> #channelId
-
-• `Private` `Optional` **#channelId**: `string`
-
-___
-
-### <a id="#channelkeys" name="#channelkeys"></a> #channelKeys
-
-• `Private` `Optional` **#channelKeys**: [`ChannelKeys`](../interfaces/ChannelKeys.md)
-
-___
-
-### <a id="#channelserver" name="#channelserver"></a> #channelServer
-
-• `Private` **#channelServer**: `string` = `''`
-
-___
-
-### <a id="#channelsignkey" name="#channelsignkey"></a> #channelSignKey
-
-• `Private` `Optional` **#channelSignKey**: `CryptoKey`
-
-___
-
-### <a id="#cursor" name="#cursor"></a> #cursor
-
-• `Private` **#cursor**: `string` = `''`
-
-___
-
-### <a id="#exportable_privatekey" name="#exportable_privatekey"></a> #exportable\_privateKey
-
-• `Private` `Optional` **#exportable\_privateKey**: `JsonWebKey`
-
-#### Inherited from
-
-[SB384](SB384.md).[#exportable_privateKey](SB384.md##exportable_privatekey)
-
-___
-
-### <a id="#exportable_pubkey" name="#exportable_pubkey"></a> #exportable\_pubKey
-
-• `Private` `Optional` **#exportable\_pubKey**: `JsonWebKey`
-
-#### Inherited from
-
-[SB384](SB384.md).[#exportable_pubKey](SB384.md##exportable_pubkey)
-
-___
-
-### <a id="#hash" name="#hash"></a> #hash
-
-• `Private` `Optional` **#hash**: `string`
-
-#### Inherited from
-
-[SB384](SB384.md).[#hash](SB384.md##hash)
-
-___
-
-### <a id="#privatekey" name="#privatekey"></a> #privateKey
-
-• `Private` `Optional` **#privateKey**: `CryptoKey`
-
-#### Inherited from
-
-[SB384](SB384.md).[#privateKey](SB384.md##privatekey)
-
-___
-
-### <a id="#sbserver" name="#sbserver"></a> #sbServer
-
-• `Private` **#sbServer**: [`SBServer`](../interfaces/SBServer.md)
-
-___
 
 ### <a id="admin" name="admin"></a> admin
 
@@ -488,67 +374,6 @@ ___
 [`SBServer`](../interfaces/SBServer.md)
 
 ## Methods
-
-### <a id="#callapi" name="#callapi"></a> #callApi
-
-▸ `Private` **#callApi**(`path`): `Promise`<`any`\>
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `path` | `string` |
-
-#### Returns
-
-`Promise`<`any`\>
-
-▸ `Private` **#callApi**(`path`, `body`): `Promise`<`any`\>
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `path` | `string` |
-| `body` | `any` |
-
-#### Returns
-
-`Promise`<`any`\>
-
-___
-
-### <a id="#loadkeys" name="#loadkeys"></a> #loadKeys
-
-▸ `Private` **#loadKeys**(`keyStrings`): `Promise`<`void`\>
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `keyStrings` | [`ChannelKeyStrings`](../interfaces/ChannelKeyStrings.md) |
-
-#### Returns
-
-`Promise`<`void`\>
-
-___
-
-### <a id="#setkeys" name="#setkeys"></a> #setKeys
-
-▸ `Private` **#setKeys**(`k`): `Promise`<`void`\>
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `k` | [`ChannelKeys`](../interfaces/ChannelKeys.md) |
-
-#### Returns
-
-`Promise`<`void`\>
-
-___
 
 ### <a id="acceptvisitor" name="acceptvisitor"></a> acceptVisitor
 

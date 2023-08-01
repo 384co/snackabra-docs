@@ -109,7 +109,8 @@
 									"sourceFileName": "snackabra-jslib/snackabra.ts",
 									"qualifiedName": "Base62Encoded"
 								},
-								"name": "Base62Encoded"
+								"name": "Base62Encoded",
+								"package": "snackabra"
 							}
 						},
 						{
@@ -164,7 +165,8 @@
 									"sourceFileName": "snackabra-jslib/snackabra.ts",
 									"qualifiedName": "Base62Encoded"
 								},
-								"name": "Base62Encoded"
+								"name": "Base62Encoded",
+								"package": "snackabra"
 							}
 						},
 						{
@@ -242,7 +244,8 @@
 							"type": {
 								"type": "reference",
 								"target": 125,
-								"name": "SBObjectType"
+								"name": "SBObjectType",
+								"package": "snackabra"
 							}
 						},
 						{
@@ -365,7 +368,8 @@
 									"type": {
 										"type": "reference",
 										"target": 61,
-										"name": "SBServer"
+										"name": "SBServer",
+										"package": "snackabra"
 									}
 								},
 								{
@@ -403,7 +407,8 @@
 							"type": {
 								"type": "reference",
 								"target": 546,
-								"name": "Channel"
+								"name": "Channel",
+								"package": "snackabra"
 							},
 							"overwrites": {
 								"type": "reference",
@@ -416,234 +421,6 @@
 						"type": "reference",
 						"target": 832,
 						"name": "SB384.constructor"
-					}
-				},
-				{
-					"id": 553,
-					"name": "#ChannelReadyFlag",
-					"variant": "declaration",
-					"kind": 1024,
-					"flags": {
-						"isPrivate": true
-					},
-					"type": {
-						"type": "intrinsic",
-						"name": "boolean"
-					},
-					"defaultValue": "false"
-				},
-				{
-					"id": 653,
-					"name": "#SB384ReadyFlag",
-					"variant": "declaration",
-					"kind": 1024,
-					"flags": {
-						"isPrivate": true
-					},
-					"type": {
-						"type": "intrinsic",
-						"name": "boolean"
-					},
-					"defaultValue": "false",
-					"inheritedFrom": {
-						"type": "reference",
-						"target": 837,
-						"name": "SB384.#SB384ReadyFlag"
-					}
-				},
-				{
-					"id": 566,
-					"name": "#channelApi",
-					"variant": "declaration",
-					"kind": 1024,
-					"flags": {
-						"isPrivate": true
-					},
-					"type": {
-						"type": "intrinsic",
-						"name": "string"
-					},
-					"defaultValue": "''"
-				},
-				{
-					"id": 564,
-					"name": "#channelId",
-					"variant": "declaration",
-					"kind": 1024,
-					"flags": {
-						"isPrivate": true,
-						"isOptional": true
-					},
-					"type": {
-						"type": "intrinsic",
-						"name": "string"
-					}
-				},
-				{
-					"id": 562,
-					"name": "#channelKeys",
-					"variant": "declaration",
-					"kind": 1024,
-					"flags": {
-						"isPrivate": true,
-						"isOptional": true
-					},
-					"type": {
-						"type": "reference",
-						"target": 105,
-						"name": "ChannelKeys"
-					}
-				},
-				{
-					"id": 567,
-					"name": "#channelServer",
-					"variant": "declaration",
-					"kind": 1024,
-					"flags": {
-						"isPrivate": true
-					},
-					"type": {
-						"type": "intrinsic",
-						"name": "string"
-					},
-					"defaultValue": "''"
-				},
-				{
-					"id": 563,
-					"name": "#channelSignKey",
-					"variant": "declaration",
-					"kind": 1024,
-					"flags": {
-						"isPrivate": true,
-						"isOptional": true
-					},
-					"type": {
-						"type": "reference",
-						"target": {
-							"sourceFileName": "node_modules/typescript/lib/lib.dom.d.ts",
-							"qualifiedName": "CryptoKey"
-						},
-						"name": "CryptoKey",
-						"package": "typescript"
-					}
-				},
-				{
-					"id": 565,
-					"name": "#cursor",
-					"variant": "declaration",
-					"kind": 1024,
-					"flags": {
-						"isPrivate": true
-					},
-					"type": {
-						"type": "intrinsic",
-						"name": "string"
-					},
-					"defaultValue": "''"
-				},
-				{
-					"id": 655,
-					"name": "#exportable_privateKey",
-					"variant": "declaration",
-					"kind": 1024,
-					"flags": {
-						"isPrivate": true,
-						"isOptional": true
-					},
-					"type": {
-						"type": "reference",
-						"target": {
-							"sourceFileName": "node_modules/typescript/lib/lib.dom.d.ts",
-							"qualifiedName": "JsonWebKey"
-						},
-						"name": "JsonWebKey",
-						"package": "typescript"
-					},
-					"inheritedFrom": {
-						"type": "reference",
-						"target": 839,
-						"name": "SB384.#exportable_privateKey"
-					}
-				},
-				{
-					"id": 654,
-					"name": "#exportable_pubKey",
-					"variant": "declaration",
-					"kind": 1024,
-					"flags": {
-						"isPrivate": true,
-						"isOptional": true
-					},
-					"type": {
-						"type": "reference",
-						"target": {
-							"sourceFileName": "node_modules/typescript/lib/lib.dom.d.ts",
-							"qualifiedName": "JsonWebKey"
-						},
-						"name": "JsonWebKey",
-						"package": "typescript"
-					},
-					"inheritedFrom": {
-						"type": "reference",
-						"target": 838,
-						"name": "SB384.#exportable_pubKey"
-					}
-				},
-				{
-					"id": 657,
-					"name": "#hash",
-					"variant": "declaration",
-					"kind": 1024,
-					"flags": {
-						"isPrivate": true,
-						"isOptional": true
-					},
-					"type": {
-						"type": "intrinsic",
-						"name": "string"
-					},
-					"inheritedFrom": {
-						"type": "reference",
-						"target": 841,
-						"name": "SB384.#hash"
-					}
-				},
-				{
-					"id": 656,
-					"name": "#privateKey",
-					"variant": "declaration",
-					"kind": 1024,
-					"flags": {
-						"isPrivate": true,
-						"isOptional": true
-					},
-					"type": {
-						"type": "reference",
-						"target": {
-							"sourceFileName": "node_modules/typescript/lib/lib.dom.d.ts",
-							"qualifiedName": "CryptoKey"
-						},
-						"name": "CryptoKey",
-						"package": "typescript"
-					},
-					"inheritedFrom": {
-						"type": "reference",
-						"target": 840,
-						"name": "SB384.#privateKey"
-					}
-				},
-				{
-					"id": 554,
-					"name": "#sbServer",
-					"variant": "declaration",
-					"kind": 1024,
-					"flags": {
-						"isPrivate": true
-					},
-					"type": {
-						"type": "reference",
-						"target": 61,
-						"name": "SBServer"
 					}
 				},
 				{
@@ -678,7 +455,8 @@
 								"name": "any"
 							}
 						],
-						"name": "Dictionary"
+						"name": "Dictionary",
+						"package": "snackabra"
 					}
 				},
 				{
@@ -737,7 +515,8 @@
 							{
 								"type": "reference",
 								"target": 546,
-								"name": "Channel"
+								"name": "Channel",
+								"package": "snackabra"
 							}
 						],
 						"name": "Promise",
@@ -800,7 +579,8 @@
 							{
 								"type": "reference",
 								"target": 831,
-								"name": "SB384"
+								"name": "SB384",
+								"package": "snackabra"
 							}
 						],
 						"name": "Promise",
@@ -828,7 +608,8 @@
 							{
 								"type": "reference",
 								"target": 831,
-								"name": "SB384"
+								"name": "SB384",
+								"package": "snackabra"
 							}
 						],
 						"name": "Promise",
@@ -1077,7 +858,8 @@
 						"type": {
 							"type": "reference",
 							"target": 105,
-							"name": "ChannelKeys"
+							"name": "ChannelKeys",
+							"package": "snackabra"
 						}
 					}
 				},
@@ -1185,199 +967,10 @@
 						"type": {
 							"type": "reference",
 							"target": 61,
-							"name": "SBServer"
+							"name": "SBServer",
+							"package": "snackabra"
 						}
 					}
-				},
-				{
-					"id": 595,
-					"name": "#callApi",
-					"variant": "declaration",
-					"kind": 2048,
-					"flags": {
-						"isPrivate": true
-					},
-					"signatures": [
-						{
-							"id": 596,
-							"name": "#callApi",
-							"variant": "signature",
-							"kind": 4096,
-							"flags": {},
-							"parameters": [
-								{
-									"id": 597,
-									"name": "path",
-									"variant": "param",
-									"kind": 32768,
-									"flags": {},
-									"type": {
-										"type": "intrinsic",
-										"name": "string"
-									}
-								}
-							],
-							"type": {
-								"type": "reference",
-								"target": {
-									"sourceFileName": "node_modules/typescript/lib/lib.es5.d.ts",
-									"qualifiedName": "Promise"
-								},
-								"typeArguments": [
-									{
-										"type": "intrinsic",
-										"name": "any"
-									}
-								],
-								"name": "Promise",
-								"package": "typescript"
-							}
-						},
-						{
-							"id": 598,
-							"name": "#callApi",
-							"variant": "signature",
-							"kind": 4096,
-							"flags": {},
-							"parameters": [
-								{
-									"id": 599,
-									"name": "path",
-									"variant": "param",
-									"kind": 32768,
-									"flags": {},
-									"type": {
-										"type": "intrinsic",
-										"name": "string"
-									}
-								},
-								{
-									"id": 600,
-									"name": "body",
-									"variant": "param",
-									"kind": 32768,
-									"flags": {},
-									"type": {
-										"type": "intrinsic",
-										"name": "any"
-									}
-								}
-							],
-							"type": {
-								"type": "reference",
-								"target": {
-									"sourceFileName": "node_modules/typescript/lib/lib.es5.d.ts",
-									"qualifiedName": "Promise"
-								},
-								"typeArguments": [
-									{
-										"type": "intrinsic",
-										"name": "any"
-									}
-								],
-								"name": "Promise",
-								"package": "typescript"
-							}
-						}
-					]
-				},
-				{
-					"id": 574,
-					"name": "#loadKeys",
-					"variant": "declaration",
-					"kind": 2048,
-					"flags": {
-						"isPrivate": true
-					},
-					"signatures": [
-						{
-							"id": 575,
-							"name": "#loadKeys",
-							"variant": "signature",
-							"kind": 4096,
-							"flags": {
-								"isPrivate": true
-							},
-							"parameters": [
-								{
-									"id": 576,
-									"name": "keyStrings",
-									"variant": "param",
-									"kind": 32768,
-									"flags": {},
-									"type": {
-										"type": "reference",
-										"target": 532,
-										"name": "ChannelKeyStrings"
-									}
-								}
-							],
-							"type": {
-								"type": "reference",
-								"target": {
-									"sourceFileName": "node_modules/typescript/lib/lib.es5.d.ts",
-									"qualifiedName": "Promise"
-								},
-								"typeArguments": [
-									{
-										"type": "intrinsic",
-										"name": "void"
-									}
-								],
-								"name": "Promise",
-								"package": "typescript"
-							}
-						}
-					]
-				},
-				{
-					"id": 571,
-					"name": "#setKeys",
-					"variant": "declaration",
-					"kind": 2048,
-					"flags": {
-						"isPrivate": true
-					},
-					"signatures": [
-						{
-							"id": 572,
-							"name": "#setKeys",
-							"variant": "signature",
-							"kind": 4096,
-							"flags": {
-								"isPrivate": true
-							},
-							"parameters": [
-								{
-									"id": 573,
-									"name": "k",
-									"variant": "param",
-									"kind": 32768,
-									"flags": {},
-									"type": {
-										"type": "reference",
-										"target": 105,
-										"name": "ChannelKeys"
-									}
-								}
-							],
-							"type": {
-								"type": "reference",
-								"target": {
-									"sourceFileName": "node_modules/typescript/lib/lib.es5.d.ts",
-									"qualifiedName": "Promise"
-								},
-								"typeArguments": [
-									{
-										"type": "intrinsic",
-										"name": "void"
-									}
-								],
-								"name": "Promise",
-								"package": "typescript"
-							}
-						}
-					]
 				},
 				{
 					"id": 638,
@@ -1455,7 +1048,8 @@
 												"name": "any"
 											}
 										],
-										"name": "Dictionary"
+										"name": "Dictionary",
+										"package": "snackabra"
 									}
 								},
 								{
@@ -1519,7 +1113,8 @@
 									{
 										"type": "reference",
 										"target": 66,
-										"name": "SBChannelHandle"
+										"name": "SBChannelHandle",
+										"package": "snackabra"
 									}
 								],
 								"name": "Promise",
@@ -1617,7 +1212,8 @@
 									{
 										"type": "reference",
 										"target": 66,
-										"name": "SBChannelHandle"
+										"name": "SBChannelHandle",
+										"package": "snackabra"
 									}
 								],
 								"name": "Promise",
@@ -1696,7 +1292,8 @@
 									{
 										"type": "reference",
 										"target": 114,
-										"name": "ChannelAdminData"
+										"name": "ChannelAdminData",
+										"package": "snackabra"
 									}
 								],
 								"name": "Promise",
@@ -1936,7 +1533,8 @@
 										"elementType": {
 											"type": "reference",
 											"target": 72,
-											"name": "ChannelMessage"
+											"name": "ChannelMessage",
+											"package": "snackabra"
 										}
 									}
 								],
@@ -2184,7 +1782,8 @@
 									"type": {
 										"type": "reference",
 										"target": 670,
-										"name": "SBMessage"
+										"name": "SBMessage",
+										"package": "snackabra"
 									}
 								}
 							],
@@ -2303,7 +1902,8 @@
 												"name": "any"
 											}
 										],
-										"name": "Dictionary"
+										"name": "Dictionary",
+										"package": "snackabra"
 									}
 								],
 								"name": "Promise",
@@ -2387,7 +1987,8 @@
 									"type": {
 										"type": "reference",
 										"target": 523,
-										"name": "ChannelData"
+										"name": "ChannelData",
+										"package": "snackabra"
 									}
 								}
 							],
@@ -2420,19 +2021,6 @@
 				{
 					"title": "Properties",
 					"children": [
-						553,
-						653,
-						566,
-						564,
-						562,
-						567,
-						563,
-						565,
-						655,
-						654,
-						657,
-						656,
-						554,
 						558,
 						559,
 						552,
@@ -2465,9 +2053,6 @@
 				{
 					"title": "Methods",
 					"children": [
-						595,
-						574,
-						571,
 						638,
 						624,
 						643,
@@ -2495,7 +2080,8 @@
 				{
 					"type": "reference",
 					"target": 831,
-					"name": "SB384"
+					"name": "SB384",
+					"package": "snackabra"
 				}
 			],
 			"extendedBy": [
@@ -2549,7 +2135,8 @@
 									"type": {
 										"type": "reference",
 										"target": 61,
-										"name": "SBServer"
+										"name": "SBServer",
+										"package": "snackabra"
 									}
 								},
 								{
@@ -2587,7 +2174,8 @@
 							"type": {
 								"type": "reference",
 								"target": 353,
-								"name": "ChannelEndpoint"
+								"name": "ChannelEndpoint",
+								"package": "snackabra"
 							},
 							"overwrites": {
 								"type": "reference",
@@ -2600,274 +2188,6 @@
 						"type": "reference",
 						"target": 547,
 						"name": "Channel.constructor"
-					}
-				},
-				{
-					"id": 367,
-					"name": "#ChannelReadyFlag",
-					"variant": "declaration",
-					"kind": 1024,
-					"flags": {
-						"isPrivate": true
-					},
-					"type": {
-						"type": "intrinsic",
-						"name": "boolean"
-					},
-					"defaultValue": "false",
-					"inheritedFrom": {
-						"type": "reference",
-						"target": 553,
-						"name": "Channel.#ChannelReadyFlag"
-					}
-				},
-				{
-					"id": 464,
-					"name": "#SB384ReadyFlag",
-					"variant": "declaration",
-					"kind": 1024,
-					"flags": {
-						"isPrivate": true
-					},
-					"type": {
-						"type": "intrinsic",
-						"name": "boolean"
-					},
-					"defaultValue": "false",
-					"inheritedFrom": {
-						"type": "reference",
-						"target": 653,
-						"name": "Channel.#SB384ReadyFlag"
-					}
-				},
-				{
-					"id": 380,
-					"name": "#channelApi",
-					"variant": "declaration",
-					"kind": 1024,
-					"flags": {
-						"isPrivate": true
-					},
-					"type": {
-						"type": "intrinsic",
-						"name": "string"
-					},
-					"defaultValue": "''",
-					"inheritedFrom": {
-						"type": "reference",
-						"target": 566,
-						"name": "Channel.#channelApi"
-					}
-				},
-				{
-					"id": 378,
-					"name": "#channelId",
-					"variant": "declaration",
-					"kind": 1024,
-					"flags": {
-						"isPrivate": true,
-						"isOptional": true
-					},
-					"type": {
-						"type": "intrinsic",
-						"name": "string"
-					},
-					"inheritedFrom": {
-						"type": "reference",
-						"target": 564,
-						"name": "Channel.#channelId"
-					}
-				},
-				{
-					"id": 376,
-					"name": "#channelKeys",
-					"variant": "declaration",
-					"kind": 1024,
-					"flags": {
-						"isPrivate": true,
-						"isOptional": true
-					},
-					"type": {
-						"type": "reference",
-						"target": 105,
-						"name": "ChannelKeys"
-					},
-					"inheritedFrom": {
-						"type": "reference",
-						"target": 562,
-						"name": "Channel.#channelKeys"
-					}
-				},
-				{
-					"id": 381,
-					"name": "#channelServer",
-					"variant": "declaration",
-					"kind": 1024,
-					"flags": {
-						"isPrivate": true
-					},
-					"type": {
-						"type": "intrinsic",
-						"name": "string"
-					},
-					"defaultValue": "''",
-					"inheritedFrom": {
-						"type": "reference",
-						"target": 567,
-						"name": "Channel.#channelServer"
-					}
-				},
-				{
-					"id": 377,
-					"name": "#channelSignKey",
-					"variant": "declaration",
-					"kind": 1024,
-					"flags": {
-						"isPrivate": true,
-						"isOptional": true
-					},
-					"type": {
-						"type": "reference",
-						"target": {
-							"sourceFileName": "node_modules/typescript/lib/lib.dom.d.ts",
-							"qualifiedName": "CryptoKey"
-						},
-						"name": "CryptoKey",
-						"package": "typescript"
-					},
-					"inheritedFrom": {
-						"type": "reference",
-						"target": 563,
-						"name": "Channel.#channelSignKey"
-					}
-				},
-				{
-					"id": 379,
-					"name": "#cursor",
-					"variant": "declaration",
-					"kind": 1024,
-					"flags": {
-						"isPrivate": true
-					},
-					"type": {
-						"type": "intrinsic",
-						"name": "string"
-					},
-					"defaultValue": "''",
-					"inheritedFrom": {
-						"type": "reference",
-						"target": 565,
-						"name": "Channel.#cursor"
-					}
-				},
-				{
-					"id": 466,
-					"name": "#exportable_privateKey",
-					"variant": "declaration",
-					"kind": 1024,
-					"flags": {
-						"isPrivate": true,
-						"isOptional": true
-					},
-					"type": {
-						"type": "reference",
-						"target": {
-							"sourceFileName": "node_modules/typescript/lib/lib.dom.d.ts",
-							"qualifiedName": "JsonWebKey"
-						},
-						"name": "JsonWebKey",
-						"package": "typescript"
-					},
-					"inheritedFrom": {
-						"type": "reference",
-						"target": 655,
-						"name": "Channel.#exportable_privateKey"
-					}
-				},
-				{
-					"id": 465,
-					"name": "#exportable_pubKey",
-					"variant": "declaration",
-					"kind": 1024,
-					"flags": {
-						"isPrivate": true,
-						"isOptional": true
-					},
-					"type": {
-						"type": "reference",
-						"target": {
-							"sourceFileName": "node_modules/typescript/lib/lib.dom.d.ts",
-							"qualifiedName": "JsonWebKey"
-						},
-						"name": "JsonWebKey",
-						"package": "typescript"
-					},
-					"inheritedFrom": {
-						"type": "reference",
-						"target": 654,
-						"name": "Channel.#exportable_pubKey"
-					}
-				},
-				{
-					"id": 468,
-					"name": "#hash",
-					"variant": "declaration",
-					"kind": 1024,
-					"flags": {
-						"isPrivate": true,
-						"isOptional": true
-					},
-					"type": {
-						"type": "intrinsic",
-						"name": "string"
-					},
-					"inheritedFrom": {
-						"type": "reference",
-						"target": 657,
-						"name": "Channel.#hash"
-					}
-				},
-				{
-					"id": 467,
-					"name": "#privateKey",
-					"variant": "declaration",
-					"kind": 1024,
-					"flags": {
-						"isPrivate": true,
-						"isOptional": true
-					},
-					"type": {
-						"type": "reference",
-						"target": {
-							"sourceFileName": "node_modules/typescript/lib/lib.dom.d.ts",
-							"qualifiedName": "CryptoKey"
-						},
-						"name": "CryptoKey",
-						"package": "typescript"
-					},
-					"inheritedFrom": {
-						"type": "reference",
-						"target": 656,
-						"name": "Channel.#privateKey"
-					}
-				},
-				{
-					"id": 368,
-					"name": "#sbServer",
-					"variant": "declaration",
-					"kind": 1024,
-					"flags": {
-						"isPrivate": true
-					},
-					"type": {
-						"type": "reference",
-						"target": 61,
-						"name": "SBServer"
-					},
-					"inheritedFrom": {
-						"type": "reference",
-						"target": 554,
-						"name": "Channel.#sbServer"
 					}
 				},
 				{
@@ -2907,7 +2227,8 @@
 								"name": "any"
 							}
 						],
-						"name": "Dictionary"
+						"name": "Dictionary",
+						"package": "snackabra"
 					},
 					"inheritedFrom": {
 						"type": "reference",
@@ -2971,7 +2292,8 @@
 							{
 								"type": "reference",
 								"target": 546,
-								"name": "Channel"
+								"name": "Channel",
+								"package": "snackabra"
 							}
 						],
 						"name": "Promise",
@@ -3054,7 +2376,8 @@
 							{
 								"type": "reference",
 								"target": 831,
-								"name": "SB384"
+								"name": "SB384",
+								"package": "snackabra"
 							}
 						],
 						"name": "Promise",
@@ -3082,7 +2405,8 @@
 							{
 								"type": "reference",
 								"target": 831,
-								"name": "SB384"
+								"name": "SB384",
+								"package": "snackabra"
 							}
 						],
 						"name": "Promise",
@@ -3371,7 +2695,8 @@
 						"type": {
 							"type": "reference",
 							"target": 105,
-							"name": "ChannelKeys"
+							"name": "ChannelKeys",
+							"package": "snackabra"
 						},
 						"inheritedFrom": {
 							"type": "reference",
@@ -3525,7 +2850,8 @@
 						"type": {
 							"type": "reference",
 							"target": 61,
-							"name": "SBServer"
+							"name": "SBServer",
+							"package": "snackabra"
 						},
 						"inheritedFrom": {
 							"type": "reference",
@@ -3537,231 +2863,6 @@
 						"type": "reference",
 						"target": 579,
 						"name": "Channel.sbServer"
-					}
-				},
-				{
-					"id": 406,
-					"name": "#callApi",
-					"variant": "declaration",
-					"kind": 2048,
-					"flags": {
-						"isPrivate": true
-					},
-					"signatures": [
-						{
-							"id": 407,
-							"name": "#callApi",
-							"variant": "signature",
-							"kind": 4096,
-							"flags": {},
-							"parameters": [
-								{
-									"id": 408,
-									"name": "path",
-									"variant": "param",
-									"kind": 32768,
-									"flags": {},
-									"type": {
-										"type": "intrinsic",
-										"name": "string"
-									}
-								}
-							],
-							"type": {
-								"type": "reference",
-								"target": {
-									"sourceFileName": "node_modules/typescript/lib/lib.es5.d.ts",
-									"qualifiedName": "Promise"
-								},
-								"typeArguments": [
-									{
-										"type": "intrinsic",
-										"name": "any"
-									}
-								],
-								"name": "Promise",
-								"package": "typescript"
-							},
-							"inheritedFrom": {
-								"type": "reference",
-								"target": 596,
-								"name": "Channel.#callApi"
-							}
-						},
-						{
-							"id": 409,
-							"name": "#callApi",
-							"variant": "signature",
-							"kind": 4096,
-							"flags": {},
-							"parameters": [
-								{
-									"id": 410,
-									"name": "path",
-									"variant": "param",
-									"kind": 32768,
-									"flags": {},
-									"type": {
-										"type": "intrinsic",
-										"name": "string"
-									}
-								},
-								{
-									"id": 411,
-									"name": "body",
-									"variant": "param",
-									"kind": 32768,
-									"flags": {},
-									"type": {
-										"type": "intrinsic",
-										"name": "any"
-									}
-								}
-							],
-							"type": {
-								"type": "reference",
-								"target": {
-									"sourceFileName": "node_modules/typescript/lib/lib.es5.d.ts",
-									"qualifiedName": "Promise"
-								},
-								"typeArguments": [
-									{
-										"type": "intrinsic",
-										"name": "any"
-									}
-								],
-								"name": "Promise",
-								"package": "typescript"
-							},
-							"inheritedFrom": {
-								"type": "reference",
-								"target": 598,
-								"name": "Channel.#callApi"
-							}
-						}
-					],
-					"inheritedFrom": {
-						"type": "reference",
-						"target": 595,
-						"name": "Channel.#callApi"
-					}
-				},
-				{
-					"id": 385,
-					"name": "#loadKeys",
-					"variant": "declaration",
-					"kind": 2048,
-					"flags": {
-						"isPrivate": true
-					},
-					"signatures": [
-						{
-							"id": 386,
-							"name": "#loadKeys",
-							"variant": "signature",
-							"kind": 4096,
-							"flags": {
-								"isPrivate": true
-							},
-							"parameters": [
-								{
-									"id": 387,
-									"name": "keyStrings",
-									"variant": "param",
-									"kind": 32768,
-									"flags": {},
-									"type": {
-										"type": "reference",
-										"target": 532,
-										"name": "ChannelKeyStrings"
-									}
-								}
-							],
-							"type": {
-								"type": "reference",
-								"target": {
-									"sourceFileName": "node_modules/typescript/lib/lib.es5.d.ts",
-									"qualifiedName": "Promise"
-								},
-								"typeArguments": [
-									{
-										"type": "intrinsic",
-										"name": "void"
-									}
-								],
-								"name": "Promise",
-								"package": "typescript"
-							},
-							"inheritedFrom": {
-								"type": "reference",
-								"target": 575,
-								"name": "Channel.#loadKeys"
-							}
-						}
-					],
-					"inheritedFrom": {
-						"type": "reference",
-						"target": 574,
-						"name": "Channel.#loadKeys"
-					}
-				},
-				{
-					"id": 382,
-					"name": "#setKeys",
-					"variant": "declaration",
-					"kind": 2048,
-					"flags": {
-						"isPrivate": true
-					},
-					"signatures": [
-						{
-							"id": 383,
-							"name": "#setKeys",
-							"variant": "signature",
-							"kind": 4096,
-							"flags": {
-								"isPrivate": true
-							},
-							"parameters": [
-								{
-									"id": 384,
-									"name": "k",
-									"variant": "param",
-									"kind": 32768,
-									"flags": {},
-									"type": {
-										"type": "reference",
-										"target": 105,
-										"name": "ChannelKeys"
-									}
-								}
-							],
-							"type": {
-								"type": "reference",
-								"target": {
-									"sourceFileName": "node_modules/typescript/lib/lib.es5.d.ts",
-									"qualifiedName": "Promise"
-								},
-								"typeArguments": [
-									{
-										"type": "intrinsic",
-										"name": "void"
-									}
-								],
-								"name": "Promise",
-								"package": "typescript"
-							},
-							"inheritedFrom": {
-								"type": "reference",
-								"target": 572,
-								"name": "Channel.#setKeys"
-							}
-						}
-					],
-					"inheritedFrom": {
-						"type": "reference",
-						"target": 571,
-						"name": "Channel.#setKeys"
 					}
 				},
 				{
@@ -3850,7 +2951,8 @@
 												"name": "any"
 											}
 										],
-										"name": "Dictionary"
+										"name": "Dictionary",
+										"package": "snackabra"
 									}
 								},
 								{
@@ -3924,7 +3026,8 @@
 									{
 										"type": "reference",
 										"target": 66,
-										"name": "SBChannelHandle"
+										"name": "SBChannelHandle",
+										"package": "snackabra"
 									}
 								],
 								"name": "Promise",
@@ -4027,7 +3130,8 @@
 									{
 										"type": "reference",
 										"target": 66,
-										"name": "SBChannelHandle"
+										"name": "SBChannelHandle",
+										"package": "snackabra"
 									}
 								],
 								"name": "Promise",
@@ -4126,7 +3230,8 @@
 									{
 										"type": "reference",
 										"target": 114,
-										"name": "ChannelAdminData"
+										"name": "ChannelAdminData",
+										"package": "snackabra"
 									}
 								],
 								"name": "Promise",
@@ -4416,7 +3521,8 @@
 										"elementType": {
 											"type": "reference",
 											"target": 72,
-											"name": "ChannelMessage"
+											"name": "ChannelMessage",
+											"package": "snackabra"
 										}
 									}
 								],
@@ -4729,7 +3835,8 @@
 											{
 												"type": "reference",
 												"target": 670,
-												"name": "SBMessage"
+												"name": "SBMessage",
+												"package": "snackabra"
 											}
 										]
 									}
@@ -4892,7 +3999,8 @@
 												"name": "any"
 											}
 										],
-										"name": "Dictionary"
+										"name": "Dictionary",
+										"package": "snackabra"
 									}
 								],
 								"name": "Promise",
@@ -4996,7 +4104,8 @@
 									"type": {
 										"type": "reference",
 										"target": 523,
-										"name": "ChannelData"
+										"name": "ChannelData",
+										"package": "snackabra"
 									}
 								}
 							],
@@ -5039,19 +4148,6 @@
 				{
 					"title": "Properties",
 					"children": [
-						367,
-						464,
-						380,
-						378,
-						376,
-						381,
-						377,
-						379,
-						466,
-						465,
-						468,
-						467,
-						368,
 						372,
 						373,
 						366,
@@ -5085,9 +4181,6 @@
 				{
 					"title": "Methods",
 					"children": [
-						406,
-						385,
-						382,
 						449,
 						435,
 						454,
@@ -5115,7 +4208,8 @@
 				{
 					"type": "reference",
 					"target": 546,
-					"name": "Channel"
+					"name": "Channel",
+					"package": "snackabra"
 				}
 			]
 		},
@@ -5165,7 +4259,8 @@
 									"type": {
 										"type": "reference",
 										"target": 61,
-										"name": "SBServer"
+										"name": "SBServer",
+										"package": "snackabra"
 									}
 								},
 								{
@@ -5199,7 +4294,8 @@
 															"type": {
 																"type": "reference",
 																"target": 72,
-																"name": "ChannelMessage"
+																"name": "ChannelMessage",
+																"package": "snackabra"
 															}
 														}
 													],
@@ -5247,7 +4343,8 @@
 							"type": {
 								"type": "reference",
 								"target": 176,
-								"name": "ChannelSocket"
+								"name": "ChannelSocket",
+								"package": "snackabra"
 							},
 							"overwrites": {
 								"type": "reference",
@@ -5260,591 +4357,6 @@
 						"type": "reference",
 						"target": 547,
 						"name": "Channel.constructor"
-					}
-				},
-				{
-					"id": 240,
-					"name": "#ChannelReadyFlag",
-					"variant": "declaration",
-					"kind": 1024,
-					"flags": {
-						"isPrivate": true
-					},
-					"type": {
-						"type": "intrinsic",
-						"name": "boolean"
-					},
-					"defaultValue": "false",
-					"inheritedFrom": {
-						"type": "reference",
-						"target": 553,
-						"name": "Channel.#ChannelReadyFlag"
-					}
-				},
-				{
-					"id": 188,
-					"name": "#ChannelSocketReadyFlag",
-					"variant": "declaration",
-					"kind": 1024,
-					"flags": {
-						"isPrivate": true
-					},
-					"type": {
-						"type": "intrinsic",
-						"name": "boolean"
-					},
-					"defaultValue": "false"
-				},
-				{
-					"id": 336,
-					"name": "#SB384ReadyFlag",
-					"variant": "declaration",
-					"kind": 1024,
-					"flags": {
-						"isPrivate": true
-					},
-					"type": {
-						"type": "intrinsic",
-						"name": "boolean"
-					},
-					"defaultValue": "false",
-					"inheritedFrom": {
-						"type": "reference",
-						"target": 653,
-						"name": "Channel.#SB384ReadyFlag"
-					}
-				},
-				{
-					"id": 195,
-					"name": "#ack",
-					"variant": "declaration",
-					"kind": 1024,
-					"flags": {
-						"isPrivate": true
-					},
-					"type": {
-						"type": "reference",
-						"target": {
-							"sourceFileName": "node_modules/typescript/lib/lib.es2015.collection.d.ts",
-							"qualifiedName": "Map"
-						},
-						"typeArguments": [
-							{
-								"type": "intrinsic",
-								"name": "string"
-							},
-							{
-								"type": "reflection",
-								"declaration": {
-									"id": 196,
-									"name": "__type",
-									"variant": "declaration",
-									"kind": 65536,
-									"flags": {},
-									"signatures": [
-										{
-											"id": 197,
-											"name": "__type",
-											"variant": "signature",
-											"kind": 4096,
-											"flags": {},
-											"parameters": [
-												{
-													"id": 198,
-													"name": "value",
-													"variant": "param",
-													"kind": 32768,
-													"flags": {},
-													"type": {
-														"type": "union",
-														"types": [
-															{
-																"type": "intrinsic",
-																"name": "string"
-															},
-															{
-																"type": "reference",
-																"target": {
-																	"sourceFileName": "node_modules/typescript/lib/lib.es5.d.ts",
-																	"qualifiedName": "PromiseLike"
-																},
-																"typeArguments": [
-																	{
-																		"type": "intrinsic",
-																		"name": "string"
-																	}
-																],
-																"name": "PromiseLike",
-																"package": "typescript"
-															}
-														]
-													}
-												}
-											],
-											"type": {
-												"type": "intrinsic",
-												"name": "void"
-											}
-										}
-									]
-								}
-							}
-						],
-						"name": "Map",
-						"package": "typescript"
-					},
-					"defaultValue": "..."
-				},
-				{
-					"id": 253,
-					"name": "#channelApi",
-					"variant": "declaration",
-					"kind": 1024,
-					"flags": {
-						"isPrivate": true
-					},
-					"type": {
-						"type": "intrinsic",
-						"name": "string"
-					},
-					"defaultValue": "''",
-					"inheritedFrom": {
-						"type": "reference",
-						"target": 566,
-						"name": "Channel.#channelApi"
-					}
-				},
-				{
-					"id": 251,
-					"name": "#channelId",
-					"variant": "declaration",
-					"kind": 1024,
-					"flags": {
-						"isPrivate": true,
-						"isOptional": true
-					},
-					"type": {
-						"type": "intrinsic",
-						"name": "string"
-					},
-					"inheritedFrom": {
-						"type": "reference",
-						"target": 564,
-						"name": "Channel.#channelId"
-					}
-				},
-				{
-					"id": 249,
-					"name": "#channelKeys",
-					"variant": "declaration",
-					"kind": 1024,
-					"flags": {
-						"isPrivate": true,
-						"isOptional": true
-					},
-					"type": {
-						"type": "reference",
-						"target": 105,
-						"name": "ChannelKeys"
-					},
-					"inheritedFrom": {
-						"type": "reference",
-						"target": 562,
-						"name": "Channel.#channelKeys"
-					}
-				},
-				{
-					"id": 254,
-					"name": "#channelServer",
-					"variant": "declaration",
-					"kind": 1024,
-					"flags": {
-						"isPrivate": true
-					},
-					"type": {
-						"type": "intrinsic",
-						"name": "string"
-					},
-					"defaultValue": "''",
-					"inheritedFrom": {
-						"type": "reference",
-						"target": 567,
-						"name": "Channel.#channelServer"
-					}
-				},
-				{
-					"id": 250,
-					"name": "#channelSignKey",
-					"variant": "declaration",
-					"kind": 1024,
-					"flags": {
-						"isPrivate": true,
-						"isOptional": true
-					},
-					"type": {
-						"type": "reference",
-						"target": {
-							"sourceFileName": "node_modules/typescript/lib/lib.dom.d.ts",
-							"qualifiedName": "CryptoKey"
-						},
-						"name": "CryptoKey",
-						"package": "typescript"
-					},
-					"inheritedFrom": {
-						"type": "reference",
-						"target": 563,
-						"name": "Channel.#channelSignKey"
-					}
-				},
-				{
-					"id": 252,
-					"name": "#cursor",
-					"variant": "declaration",
-					"kind": 1024,
-					"flags": {
-						"isPrivate": true
-					},
-					"type": {
-						"type": "intrinsic",
-						"name": "string"
-					},
-					"defaultValue": "''",
-					"inheritedFrom": {
-						"type": "reference",
-						"target": 565,
-						"name": "Channel.#cursor"
-					}
-				},
-				{
-					"id": 338,
-					"name": "#exportable_privateKey",
-					"variant": "declaration",
-					"kind": 1024,
-					"flags": {
-						"isPrivate": true,
-						"isOptional": true
-					},
-					"type": {
-						"type": "reference",
-						"target": {
-							"sourceFileName": "node_modules/typescript/lib/lib.dom.d.ts",
-							"qualifiedName": "JsonWebKey"
-						},
-						"name": "JsonWebKey",
-						"package": "typescript"
-					},
-					"inheritedFrom": {
-						"type": "reference",
-						"target": 655,
-						"name": "Channel.#exportable_privateKey"
-					}
-				},
-				{
-					"id": 337,
-					"name": "#exportable_pubKey",
-					"variant": "declaration",
-					"kind": 1024,
-					"flags": {
-						"isPrivate": true,
-						"isOptional": true
-					},
-					"type": {
-						"type": "reference",
-						"target": {
-							"sourceFileName": "node_modules/typescript/lib/lib.dom.d.ts",
-							"qualifiedName": "JsonWebKey"
-						},
-						"name": "JsonWebKey",
-						"package": "typescript"
-					},
-					"inheritedFrom": {
-						"type": "reference",
-						"target": 654,
-						"name": "Channel.#exportable_pubKey"
-					}
-				},
-				{
-					"id": 204,
-					"name": "#firstMessageEventHandlerReference",
-					"variant": "declaration",
-					"kind": 1024,
-					"flags": {
-						"isPrivate": true
-					},
-					"type": {
-						"type": "reflection",
-						"declaration": {
-							"id": 205,
-							"name": "__type",
-							"variant": "declaration",
-							"kind": 65536,
-							"flags": {},
-							"signatures": [
-								{
-									"id": 206,
-									"name": "__type",
-									"variant": "signature",
-									"kind": 4096,
-									"flags": {},
-									"parameters": [
-										{
-											"id": 207,
-											"name": "e",
-											"variant": "param",
-											"kind": 32768,
-											"flags": {},
-											"type": {
-												"type": "reference",
-												"target": {
-													"sourceFileName": "node_modules/typescript/lib/lib.dom.d.ts",
-													"qualifiedName": "MessageEvent"
-												},
-												"typeArguments": [
-													{
-														"type": "intrinsic",
-														"name": "any"
-													}
-												],
-												"name": "MessageEvent",
-												"package": "typescript"
-											}
-										}
-									],
-									"type": {
-										"type": "intrinsic",
-										"name": "void"
-									}
-								}
-							]
-						}
-					},
-					"defaultValue": "..."
-				},
-				{
-					"id": 340,
-					"name": "#hash",
-					"variant": "declaration",
-					"kind": 1024,
-					"flags": {
-						"isPrivate": true,
-						"isOptional": true
-					},
-					"type": {
-						"type": "intrinsic",
-						"name": "string"
-					},
-					"inheritedFrom": {
-						"type": "reference",
-						"target": 657,
-						"name": "Channel.#hash"
-					}
-				},
-				{
-					"id": 191,
-					"name": "#onMessage",
-					"variant": "declaration",
-					"kind": 1024,
-					"flags": {
-						"isPrivate": true
-					},
-					"type": {
-						"type": "reflection",
-						"declaration": {
-							"id": 192,
-							"name": "__type",
-							"variant": "declaration",
-							"kind": 65536,
-							"flags": {},
-							"signatures": [
-								{
-									"id": 193,
-									"name": "__type",
-									"variant": "signature",
-									"kind": 4096,
-									"flags": {},
-									"parameters": [
-										{
-											"id": 194,
-											"name": "_m",
-											"variant": "param",
-											"kind": 32768,
-											"flags": {},
-											"type": {
-												"type": "reference",
-												"target": 72,
-												"name": "ChannelMessage"
-											}
-										}
-									],
-									"type": {
-										"type": "intrinsic",
-										"name": "void"
-									}
-								}
-							]
-						}
-					},
-					"defaultValue": "noMessageHandler"
-				},
-				{
-					"id": 339,
-					"name": "#privateKey",
-					"variant": "declaration",
-					"kind": 1024,
-					"flags": {
-						"isPrivate": true,
-						"isOptional": true
-					},
-					"type": {
-						"type": "reference",
-						"target": {
-							"sourceFileName": "node_modules/typescript/lib/lib.dom.d.ts",
-							"qualifiedName": "CryptoKey"
-						},
-						"name": "CryptoKey",
-						"package": "typescript"
-					},
-					"inheritedFrom": {
-						"type": "reference",
-						"target": 656,
-						"name": "Channel.#privateKey"
-					}
-				},
-				{
-					"id": 200,
-					"name": "#resolveFirstMessage",
-					"variant": "declaration",
-					"kind": 1024,
-					"flags": {
-						"isPrivate": true
-					},
-					"type": {
-						"type": "reflection",
-						"declaration": {
-							"id": 201,
-							"name": "__type",
-							"variant": "declaration",
-							"kind": 65536,
-							"flags": {},
-							"signatures": [
-								{
-									"id": 202,
-									"name": "__type",
-									"variant": "signature",
-									"kind": 4096,
-									"flags": {},
-									"parameters": [
-										{
-											"id": 203,
-											"name": "value",
-											"variant": "param",
-											"kind": 32768,
-											"flags": {},
-											"type": {
-												"type": "union",
-												"types": [
-													{
-														"type": "reference",
-														"target": 176,
-														"name": "ChannelSocket"
-													},
-													{
-														"type": "reference",
-														"target": {
-															"sourceFileName": "node_modules/typescript/lib/lib.es5.d.ts",
-															"qualifiedName": "PromiseLike"
-														},
-														"typeArguments": [
-															{
-																"type": "reference",
-																"target": 176,
-																"name": "ChannelSocket"
-															}
-														],
-														"name": "PromiseLike",
-														"package": "typescript"
-													}
-												]
-											}
-										}
-									],
-									"type": {
-										"type": "intrinsic",
-										"name": "void"
-									}
-								}
-							]
-						}
-					},
-					"defaultValue": "..."
-				},
-				{
-					"id": 190,
-					"name": "#sbServer",
-					"variant": "declaration",
-					"kind": 1024,
-					"flags": {
-						"isPrivate": true
-					},
-					"type": {
-						"type": "reference",
-						"target": 61,
-						"name": "SBServer"
-					},
-					"inheritedFrom": {
-						"type": "reference",
-						"target": 554,
-						"name": "Channel.#sbServer"
-					}
-				},
-				{
-					"id": 241,
-					"name": "#sbServer",
-					"variant": "declaration",
-					"kind": 1024,
-					"flags": {
-						"isPrivate": true
-					},
-					"type": {
-						"type": "reference",
-						"target": 61,
-						"name": "SBServer"
-					},
-					"inheritedFrom": {
-						"type": "reference",
-						"target": -1,
-						"name": "Channel.#sbServer"
-					}
-				},
-				{
-					"id": 199,
-					"name": "#traceSocket",
-					"variant": "declaration",
-					"kind": 1024,
-					"flags": {
-						"isPrivate": true
-					},
-					"type": {
-						"type": "intrinsic",
-						"name": "boolean"
-					},
-					"defaultValue": "false"
-				},
-				{
-					"id": 189,
-					"name": "#ws",
-					"variant": "declaration",
-					"kind": 1024,
-					"flags": {
-						"isPrivate": true
-					},
-					"type": {
-						"type": "reference",
-						"target": {
-							"sourceFileName": "snackabra-jslib/snackabra.ts",
-							"qualifiedName": "WSProtocolOptions"
-						},
-						"name": "WSProtocolOptions"
 					}
 				},
 				{
@@ -5884,7 +4396,8 @@
 								"name": "any"
 							}
 						],
-						"name": "Dictionary"
+						"name": "Dictionary",
+						"package": "snackabra"
 					},
 					"inheritedFrom": {
 						"type": "reference",
@@ -5948,7 +4461,8 @@
 							{
 								"type": "reference",
 								"target": 546,
-								"name": "Channel"
+								"name": "Channel",
+								"package": "snackabra"
 							}
 						],
 						"name": "Promise",
@@ -5976,7 +4490,8 @@
 							{
 								"type": "reference",
 								"target": 176,
-								"name": "ChannelSocket"
+								"name": "ChannelSocket",
+								"package": "snackabra"
 							}
 						],
 						"name": "Promise",
@@ -6054,7 +4569,8 @@
 							{
 								"type": "reference",
 								"target": 176,
-								"name": "ChannelSocket"
+								"name": "ChannelSocket",
+								"package": "snackabra"
 							}
 						],
 						"name": "Promise",
@@ -6082,7 +4598,8 @@
 							{
 								"type": "reference",
 								"target": 831,
-								"name": "SB384"
+								"name": "SB384",
+								"package": "snackabra"
 							}
 						],
 						"name": "Promise",
@@ -6433,7 +4950,8 @@
 						"type": {
 							"type": "reference",
 							"target": 105,
-							"name": "ChannelKeys"
+							"name": "ChannelKeys",
+							"package": "snackabra"
 						},
 						"inheritedFrom": {
 							"type": "reference",
@@ -6484,7 +5002,8 @@
 												"type": {
 													"type": "reference",
 													"target": 72,
-													"name": "ChannelMessage"
+													"name": "ChannelMessage",
+													"package": "snackabra"
 												}
 											}
 										],
@@ -6535,7 +5054,8 @@
 														"type": {
 															"type": "reference",
 															"target": 72,
-															"name": "ChannelMessage"
+															"name": "ChannelMessage",
+															"package": "snackabra"
 														}
 													}
 												],
@@ -6659,7 +5179,8 @@
 						"type": {
 							"type": "reference",
 							"target": 61,
-							"name": "SBServer"
+							"name": "SBServer",
+							"package": "snackabra"
 						},
 						"inheritedFrom": {
 							"type": "reference",
@@ -6706,405 +5227,6 @@
 								}
 							]
 						}
-					}
-				},
-				{
-					"id": 279,
-					"name": "#callApi",
-					"variant": "declaration",
-					"kind": 2048,
-					"flags": {
-						"isPrivate": true
-					},
-					"signatures": [
-						{
-							"id": 280,
-							"name": "#callApi",
-							"variant": "signature",
-							"kind": 4096,
-							"flags": {},
-							"parameters": [
-								{
-									"id": 281,
-									"name": "path",
-									"variant": "param",
-									"kind": 32768,
-									"flags": {},
-									"type": {
-										"type": "intrinsic",
-										"name": "string"
-									}
-								}
-							],
-							"type": {
-								"type": "reference",
-								"target": {
-									"sourceFileName": "node_modules/typescript/lib/lib.es5.d.ts",
-									"qualifiedName": "Promise"
-								},
-								"typeArguments": [
-									{
-										"type": "intrinsic",
-										"name": "any"
-									}
-								],
-								"name": "Promise",
-								"package": "typescript"
-							},
-							"inheritedFrom": {
-								"type": "reference",
-								"target": 596,
-								"name": "Channel.#callApi"
-							}
-						},
-						{
-							"id": 282,
-							"name": "#callApi",
-							"variant": "signature",
-							"kind": 4096,
-							"flags": {},
-							"parameters": [
-								{
-									"id": 283,
-									"name": "path",
-									"variant": "param",
-									"kind": 32768,
-									"flags": {},
-									"type": {
-										"type": "intrinsic",
-										"name": "string"
-									}
-								},
-								{
-									"id": 284,
-									"name": "body",
-									"variant": "param",
-									"kind": 32768,
-									"flags": {},
-									"type": {
-										"type": "intrinsic",
-										"name": "any"
-									}
-								}
-							],
-							"type": {
-								"type": "reference",
-								"target": {
-									"sourceFileName": "node_modules/typescript/lib/lib.es5.d.ts",
-									"qualifiedName": "Promise"
-								},
-								"typeArguments": [
-									{
-										"type": "intrinsic",
-										"name": "any"
-									}
-								],
-								"name": "Promise",
-								"package": "typescript"
-							},
-							"inheritedFrom": {
-								"type": "reference",
-								"target": 598,
-								"name": "Channel.#callApi"
-							}
-						}
-					],
-					"inheritedFrom": {
-						"type": "reference",
-						"target": 595,
-						"name": "Channel.#callApi"
-					}
-				},
-				{
-					"id": 208,
-					"name": "#channelSocketReadyFactory",
-					"variant": "declaration",
-					"kind": 2048,
-					"flags": {
-						"isPrivate": true
-					},
-					"signatures": [
-						{
-							"id": 209,
-							"name": "#channelSocketReadyFactory",
-							"variant": "signature",
-							"kind": 4096,
-							"flags": {},
-							"type": {
-								"type": "reference",
-								"target": {
-									"sourceFileName": "node_modules/typescript/lib/lib.es5.d.ts",
-									"qualifiedName": "Promise"
-								},
-								"typeArguments": [
-									{
-										"type": "reference",
-										"target": 176,
-										"name": "ChannelSocket"
-									}
-								],
-								"name": "Promise",
-								"package": "typescript"
-							}
-						}
-					]
-				},
-				{
-					"id": 216,
-					"name": "#firstMessageEventHandler",
-					"variant": "declaration",
-					"kind": 2048,
-					"flags": {
-						"isPrivate": true
-					},
-					"signatures": [
-						{
-							"id": 217,
-							"name": "#firstMessageEventHandler",
-							"variant": "signature",
-							"kind": 4096,
-							"flags": {},
-							"parameters": [
-								{
-									"id": 218,
-									"name": "e",
-									"variant": "param",
-									"kind": 32768,
-									"flags": {},
-									"type": {
-										"type": "reference",
-										"target": {
-											"sourceFileName": "node_modules/typescript/lib/lib.dom.d.ts",
-											"qualifiedName": "MessageEvent"
-										},
-										"typeArguments": [
-											{
-												"type": "intrinsic",
-												"name": "any"
-											}
-										],
-										"name": "MessageEvent",
-										"package": "typescript"
-									}
-								}
-							],
-							"type": {
-								"type": "intrinsic",
-								"name": "void"
-							}
-						}
-					]
-				},
-				{
-					"id": 213,
-					"name": "#insideFirstMessageHandler",
-					"variant": "declaration",
-					"kind": 2048,
-					"flags": {
-						"isPrivate": true
-					},
-					"signatures": [
-						{
-							"id": 214,
-							"name": "#insideFirstMessageHandler",
-							"variant": "signature",
-							"kind": 4096,
-							"flags": {},
-							"parameters": [
-								{
-									"id": 215,
-									"name": "e",
-									"variant": "param",
-									"kind": 32768,
-									"flags": {},
-									"type": {
-										"type": "reference",
-										"target": {
-											"sourceFileName": "node_modules/typescript/lib/lib.dom.d.ts",
-											"qualifiedName": "MessageEvent"
-										},
-										"typeArguments": [
-											{
-												"type": "intrinsic",
-												"name": "any"
-											}
-										],
-										"name": "MessageEvent",
-										"package": "typescript"
-									}
-								}
-							],
-							"type": {
-								"type": "intrinsic",
-								"name": "void"
-							}
-						}
-					]
-				},
-				{
-					"id": 258,
-					"name": "#loadKeys",
-					"variant": "declaration",
-					"kind": 2048,
-					"flags": {
-						"isPrivate": true
-					},
-					"signatures": [
-						{
-							"id": 259,
-							"name": "#loadKeys",
-							"variant": "signature",
-							"kind": 4096,
-							"flags": {
-								"isPrivate": true
-							},
-							"parameters": [
-								{
-									"id": 260,
-									"name": "keyStrings",
-									"variant": "param",
-									"kind": 32768,
-									"flags": {},
-									"type": {
-										"type": "reference",
-										"target": 532,
-										"name": "ChannelKeyStrings"
-									}
-								}
-							],
-							"type": {
-								"type": "reference",
-								"target": {
-									"sourceFileName": "node_modules/typescript/lib/lib.es5.d.ts",
-									"qualifiedName": "Promise"
-								},
-								"typeArguments": [
-									{
-										"type": "intrinsic",
-										"name": "void"
-									}
-								],
-								"name": "Promise",
-								"package": "typescript"
-							},
-							"inheritedFrom": {
-								"type": "reference",
-								"target": 575,
-								"name": "Channel.#loadKeys"
-							}
-						}
-					],
-					"inheritedFrom": {
-						"type": "reference",
-						"target": 574,
-						"name": "Channel.#loadKeys"
-					}
-				},
-				{
-					"id": 210,
-					"name": "#processMessage",
-					"variant": "declaration",
-					"kind": 2048,
-					"flags": {
-						"isPrivate": true
-					},
-					"signatures": [
-						{
-							"id": 211,
-							"name": "#processMessage",
-							"variant": "signature",
-							"kind": 4096,
-							"flags": {
-								"isPrivate": true
-							},
-							"parameters": [
-								{
-									"id": 212,
-									"name": "msg",
-									"variant": "param",
-									"kind": 32768,
-									"flags": {},
-									"type": {
-										"type": "intrinsic",
-										"name": "any"
-									}
-								}
-							],
-							"type": {
-								"type": "reference",
-								"target": {
-									"sourceFileName": "node_modules/typescript/lib/lib.es5.d.ts",
-									"qualifiedName": "Promise"
-								},
-								"typeArguments": [
-									{
-										"type": "intrinsic",
-										"name": "void"
-									}
-								],
-								"name": "Promise",
-								"package": "typescript"
-							}
-						}
-					]
-				},
-				{
-					"id": 255,
-					"name": "#setKeys",
-					"variant": "declaration",
-					"kind": 2048,
-					"flags": {
-						"isPrivate": true
-					},
-					"signatures": [
-						{
-							"id": 256,
-							"name": "#setKeys",
-							"variant": "signature",
-							"kind": 4096,
-							"flags": {
-								"isPrivate": true
-							},
-							"parameters": [
-								{
-									"id": 257,
-									"name": "k",
-									"variant": "param",
-									"kind": 32768,
-									"flags": {},
-									"type": {
-										"type": "reference",
-										"target": 105,
-										"name": "ChannelKeys"
-									}
-								}
-							],
-							"type": {
-								"type": "reference",
-								"target": {
-									"sourceFileName": "node_modules/typescript/lib/lib.es5.d.ts",
-									"qualifiedName": "Promise"
-								},
-								"typeArguments": [
-									{
-										"type": "intrinsic",
-										"name": "void"
-									}
-								],
-								"name": "Promise",
-								"package": "typescript"
-							},
-							"inheritedFrom": {
-								"type": "reference",
-								"target": 572,
-								"name": "Channel.#setKeys"
-							}
-						}
-					],
-					"inheritedFrom": {
-						"type": "reference",
-						"target": 571,
-						"name": "Channel.#setKeys"
 					}
 				},
 				{
@@ -7193,7 +5315,8 @@
 												"name": "any"
 											}
 										],
-										"name": "Dictionary"
+										"name": "Dictionary",
+										"package": "snackabra"
 									}
 								},
 								{
@@ -7267,7 +5390,8 @@
 									{
 										"type": "reference",
 										"target": 66,
-										"name": "SBChannelHandle"
+										"name": "SBChannelHandle",
+										"package": "snackabra"
 									}
 								],
 								"name": "Promise",
@@ -7370,7 +5494,8 @@
 									{
 										"type": "reference",
 										"target": 66,
-										"name": "SBChannelHandle"
+										"name": "SBChannelHandle",
+										"package": "snackabra"
 									}
 								],
 								"name": "Promise",
@@ -7469,7 +5594,8 @@
 									{
 										"type": "reference",
 										"target": 114,
-										"name": "ChannelAdminData"
+										"name": "ChannelAdminData",
+										"package": "snackabra"
 									}
 								],
 								"name": "Promise",
@@ -7759,7 +5885,8 @@
 										"elementType": {
 											"type": "reference",
 											"target": 72,
-											"name": "ChannelMessage"
+											"name": "ChannelMessage",
+											"package": "snackabra"
 										}
 									}
 								],
@@ -8080,7 +6207,8 @@
 											{
 												"type": "reference",
 												"target": 670,
-												"name": "SBMessage"
+												"name": "SBMessage",
+												"package": "snackabra"
 											}
 										]
 									}
@@ -8221,7 +6349,8 @@
 												"name": "any"
 											}
 										],
-										"name": "Dictionary"
+										"name": "Dictionary",
+										"package": "snackabra"
 									}
 								],
 								"name": "Promise",
@@ -8325,7 +6454,8 @@
 									"type": {
 										"type": "reference",
 										"target": 523,
-										"name": "ChannelData"
+										"name": "ChannelData",
+										"package": "snackabra"
 									}
 								}
 							],
@@ -8368,27 +6498,6 @@
 				{
 					"title": "Properties",
 					"children": [
-						240,
-						188,
-						336,
-						195,
-						253,
-						251,
-						249,
-						254,
-						250,
-						252,
-						338,
-						337,
-						204,
-						340,
-						191,
-						339,
-						200,
-						190,
-						241,
-						199,
-						189,
 						245,
 						246,
 						239,
@@ -8426,13 +6535,6 @@
 				{
 					"title": "Methods",
 					"children": [
-						279,
-						208,
-						216,
-						213,
-						258,
-						210,
-						255,
 						322,
 						308,
 						327,
@@ -8460,7 +6562,8 @@
 				{
 					"type": "reference",
 					"target": 546,
-					"name": "Channel"
+					"name": "Channel",
+					"package": "snackabra"
 				}
 			]
 		},
@@ -8495,7 +6598,8 @@
 							"type": {
 								"type": "reference",
 								"target": 154,
-								"name": "MessageBus"
+								"name": "MessageBus",
+								"package": "snackabra"
 							}
 						}
 					]
@@ -8518,52 +6622,10 @@
 								"name": "any"
 							}
 						],
-						"name": "Dictionary"
+						"name": "Dictionary",
+						"package": "snackabra"
 					},
 					"defaultValue": "{}"
-				},
-				{
-					"id": 158,
-					"name": "#select",
-					"variant": "declaration",
-					"kind": 2048,
-					"flags": {
-						"isPrivate": true
-					},
-					"signatures": [
-						{
-							"id": 159,
-							"name": "#select",
-							"variant": "signature",
-							"kind": 4096,
-							"flags": {},
-							"comment": {
-								"summary": [
-									{
-										"kind": "text",
-										"text": "Safely returns handler for any event"
-									}
-								]
-							},
-							"parameters": [
-								{
-									"id": 160,
-									"name": "event",
-									"variant": "param",
-									"kind": 32768,
-									"flags": {},
-									"type": {
-										"type": "intrinsic",
-										"name": "string"
-									}
-								}
-							],
-							"type": {
-								"type": "intrinsic",
-								"name": "any"
-							}
-						}
-					]
 				},
 				{
 					"id": 169,
@@ -8753,7 +6815,6 @@
 				{
 					"title": "Methods",
 					"children": [
-						158,
 						169,
 						161,
 						165
@@ -8836,95 +6897,11 @@
 							"type": {
 								"type": "reference",
 								"target": 831,
-								"name": "SB384"
+								"name": "SB384",
+								"package": "snackabra"
 							}
 						}
 					]
-				},
-				{
-					"id": 837,
-					"name": "#SB384ReadyFlag",
-					"variant": "declaration",
-					"kind": 1024,
-					"flags": {
-						"isPrivate": true
-					},
-					"type": {
-						"type": "intrinsic",
-						"name": "boolean"
-					},
-					"defaultValue": "false"
-				},
-				{
-					"id": 839,
-					"name": "#exportable_privateKey",
-					"variant": "declaration",
-					"kind": 1024,
-					"flags": {
-						"isPrivate": true,
-						"isOptional": true
-					},
-					"type": {
-						"type": "reference",
-						"target": {
-							"sourceFileName": "node_modules/typescript/lib/lib.dom.d.ts",
-							"qualifiedName": "JsonWebKey"
-						},
-						"name": "JsonWebKey",
-						"package": "typescript"
-					}
-				},
-				{
-					"id": 838,
-					"name": "#exportable_pubKey",
-					"variant": "declaration",
-					"kind": 1024,
-					"flags": {
-						"isPrivate": true,
-						"isOptional": true
-					},
-					"type": {
-						"type": "reference",
-						"target": {
-							"sourceFileName": "node_modules/typescript/lib/lib.dom.d.ts",
-							"qualifiedName": "JsonWebKey"
-						},
-						"name": "JsonWebKey",
-						"package": "typescript"
-					}
-				},
-				{
-					"id": 841,
-					"name": "#hash",
-					"variant": "declaration",
-					"kind": 1024,
-					"flags": {
-						"isPrivate": true,
-						"isOptional": true
-					},
-					"type": {
-						"type": "intrinsic",
-						"name": "string"
-					}
-				},
-				{
-					"id": 840,
-					"name": "#privateKey",
-					"variant": "declaration",
-					"kind": 1024,
-					"flags": {
-						"isPrivate": true,
-						"isOptional": true
-					},
-					"type": {
-						"type": "reference",
-						"target": {
-							"sourceFileName": "node_modules/typescript/lib/lib.dom.d.ts",
-							"qualifiedName": "CryptoKey"
-						},
-						"name": "CryptoKey",
-						"package": "typescript"
-					}
 				},
 				{
 					"id": 835,
@@ -8942,7 +6919,8 @@
 							{
 								"type": "reference",
 								"target": 831,
-								"name": "SB384"
+								"name": "SB384",
+								"package": "snackabra"
 							}
 						],
 						"name": "Promise",
@@ -8965,7 +6943,8 @@
 							{
 								"type": "reference",
 								"target": 831,
-								"name": "SB384"
+								"name": "SB384",
+								"package": "snackabra"
 							}
 						],
 						"name": "Promise",
@@ -9132,11 +7111,6 @@
 				{
 					"title": "Properties",
 					"children": [
-						837,
-						839,
-						838,
-						841,
-						840,
 						835,
 						836
 					]
@@ -9195,157 +7169,8 @@
 							"type": {
 								"type": "reference",
 								"target": 719,
-								"name": "SBCrypto"
-							}
-						}
-					]
-				},
-				{
-					"id": 722,
-					"name": "#knownKeys",
-					"variant": "declaration",
-					"kind": 1024,
-					"flags": {
-						"isPrivate": true
-					},
-					"type": {
-						"type": "reference",
-						"target": {
-							"sourceFileName": "node_modules/typescript/lib/lib.es2015.collection.d.ts",
-							"qualifiedName": "Map"
-						},
-						"typeArguments": [
-							{
-								"type": "intrinsic",
-								"name": "string"
-							},
-							{
-								"type": "reference",
-								"target": {
-									"sourceFileName": "snackabra-jslib/snackabra.ts",
-									"qualifiedName": "knownKeysInfo"
-								},
-								"name": "knownKeysInfo"
-							}
-						],
-						"name": "Map",
-						"package": "typescript"
-					},
-					"defaultValue": "..."
-				},
-				{
-					"id": 738,
-					"name": "#generateHash",
-					"variant": "declaration",
-					"kind": 2048,
-					"flags": {
-						"isPrivate": true
-					},
-					"signatures": [
-						{
-							"id": 739,
-							"name": "#generateHash",
-							"variant": "signature",
-							"kind": 4096,
-							"flags": {
-								"isPrivate": true
-							},
-							"parameters": [
-								{
-									"id": 740,
-									"name": "rawBytes",
-									"variant": "param",
-									"kind": 32768,
-									"flags": {},
-									"type": {
-										"type": "reference",
-										"target": {
-											"sourceFileName": "node_modules/typescript/lib/lib.es5.d.ts",
-											"qualifiedName": "ArrayBuffer"
-										},
-										"name": "ArrayBuffer",
-										"package": "typescript"
-									}
-								}
-							],
-							"type": {
-								"type": "reference",
-								"target": {
-									"sourceFileName": "node_modules/typescript/lib/lib.es5.d.ts",
-									"qualifiedName": "Promise"
-								},
-								"typeArguments": [
-									{
-										"type": "intrinsic",
-										"name": "string"
-									}
-								],
-								"name": "Promise",
-								"package": "typescript"
-							}
-						}
-					]
-				},
-				{
-					"id": 741,
-					"name": "#testHash",
-					"variant": "declaration",
-					"kind": 2048,
-					"flags": {
-						"isPrivate": true
-					},
-					"signatures": [
-						{
-							"id": 742,
-							"name": "#testHash",
-							"variant": "signature",
-							"kind": 4096,
-							"flags": {
-								"isPrivate": true
-							},
-							"parameters": [
-								{
-									"id": 743,
-									"name": "channelBytes",
-									"variant": "param",
-									"kind": 32768,
-									"flags": {},
-									"type": {
-										"type": "reference",
-										"target": {
-											"sourceFileName": "node_modules/typescript/lib/lib.es5.d.ts",
-											"qualifiedName": "ArrayBuffer"
-										},
-										"name": "ArrayBuffer",
-										"package": "typescript"
-									}
-								},
-								{
-									"id": 744,
-									"name": "channel_id",
-									"variant": "param",
-									"kind": 32768,
-									"flags": {},
-									"type": {
-										"type": "intrinsic",
-										"name": "string"
-									}
-								}
-							],
-							"type": {
-								"type": "reference",
-								"target": {
-									"sourceFileName": "node_modules/typescript/lib/lib.es5.d.ts",
-									"qualifiedName": "Promise"
-								},
-								"typeArguments": [
-									{
-										"type": "intrinsic",
-										"name": "boolean"
-									}
-								],
-								"name": "Promise",
-								"package": "typescript"
+								"name": "SBCrypto",
+								"package": "snackabra"
 							}
 						}
 					]
@@ -9459,7 +7284,8 @@
 											{
 												"type": "reference",
 												"target": 831,
-												"name": "SB384"
+												"name": "SB384",
+												"package": "snackabra"
 											}
 										]
 									}
@@ -9506,7 +7332,8 @@
 									"type": {
 										"type": "reference",
 										"target": 532,
-										"name": "ChannelKeyStrings"
+										"name": "ChannelKeyStrings",
+										"package": "snackabra"
 									}
 								}
 							],
@@ -9520,7 +7347,8 @@
 									{
 										"type": "reference",
 										"target": 105,
-										"name": "ChannelKeys"
+										"name": "ChannelKeys",
+										"package": "snackabra"
 									}
 								],
 								"name": "Promise",
@@ -9637,7 +7465,8 @@
 												"name": "any"
 											}
 										],
-										"name": "Dictionary"
+										"name": "Dictionary",
+										"package": "snackabra"
 									}
 								},
 								{
@@ -9658,7 +7487,8 @@
 												"name": "any"
 											}
 										],
-										"name": "Dictionary"
+										"name": "Dictionary",
+										"package": "snackabra"
 									}
 								}
 							],
@@ -9893,7 +7723,8 @@
 									{
 										"type": "reference",
 										"target": 118,
-										"name": "EncryptedContents"
+										"name": "EncryptedContents",
+										"package": "snackabra"
 									}
 								],
 								"name": "Promise",
@@ -10567,7 +8398,8 @@
 											"sourceFileName": "snackabra-jslib/snackabra.ts",
 											"qualifiedName": "knownKeysInfo"
 										},
-										"name": "knownKeysInfo"
+										"name": "knownKeysInfo",
+										"package": "snackabra"
 									}
 								]
 							}
@@ -10828,7 +8660,8 @@
 									"type": {
 										"type": "reference",
 										"target": 118,
-										"name": "EncryptedContents"
+										"name": "EncryptedContents",
+										"package": "snackabra"
 									}
 								},
 								{
@@ -10891,7 +8724,8 @@
 									"type": {
 										"type": "reference",
 										"target": 118,
-										"name": "EncryptedContents"
+										"name": "EncryptedContents",
+										"package": "snackabra"
 									}
 								},
 								{
@@ -11139,7 +8973,8 @@
 									{
 										"type": "reference",
 										"target": 118,
-										"name": "EncryptedContents"
+										"name": "EncryptedContents",
+										"package": "snackabra"
 									}
 								],
 								"name": "Promise",
@@ -11207,7 +9042,8 @@
 									{
 										"type": "reference",
 										"target": 118,
-										"name": "EncryptedContents"
+										"name": "EncryptedContents",
+										"package": "snackabra"
 									}
 								],
 								"name": "Promise",
@@ -11225,16 +9061,8 @@
 					]
 				},
 				{
-					"title": "Properties",
-					"children": [
-						722
-					]
-				},
-				{
 					"title": "Methods",
 					"children": [
-						738,
-						741,
 						817,
 						723,
 						828,
@@ -11300,7 +9128,8 @@
 									"type": {
 										"type": "reference",
 										"target": 546,
-										"name": "Channel"
+										"name": "Channel",
+										"package": "snackabra"
 									}
 								},
 								{
@@ -11322,7 +9151,8 @@
 													"sourceFileName": "snackabra-jslib/snackabra.ts",
 													"qualifiedName": "SBMessageContents"
 												},
-												"name": "SBMessageContents"
+												"name": "SBMessageContents",
+												"package": "snackabra"
 											}
 										]
 									},
@@ -11350,48 +9180,11 @@
 							"type": {
 								"type": "reference",
 								"target": 670,
-								"name": "SBMessage"
+								"name": "SBMessage",
+								"package": "snackabra"
 							}
 						}
 					]
-				},
-				{
-					"id": 679,
-					"name": "#encryptionKey",
-					"variant": "declaration",
-					"kind": 1024,
-					"flags": {
-						"isPrivate": true,
-						"isOptional": true
-					},
-					"type": {
-						"type": "reference",
-						"target": {
-							"sourceFileName": "node_modules/typescript/lib/lib.dom.d.ts",
-							"qualifiedName": "CryptoKey"
-						},
-						"name": "CryptoKey",
-						"package": "typescript"
-					}
-				},
-				{
-					"id": 680,
-					"name": "#sendToPubKey",
-					"variant": "declaration",
-					"kind": 1024,
-					"flags": {
-						"isPrivate": true,
-						"isOptional": true
-					},
-					"type": {
-						"type": "reference",
-						"target": {
-							"sourceFileName": "node_modules/typescript/lib/lib.dom.d.ts",
-							"qualifiedName": "JsonWebKey"
-						},
-						"name": "JsonWebKey",
-						"package": "typescript"
-					}
 				},
 				{
 					"id": 681,
@@ -11426,7 +9219,8 @@
 					"type": {
 						"type": "reference",
 						"target": 546,
-						"name": "Channel"
+						"name": "Channel",
+						"package": "snackabra"
 					}
 				},
 				{
@@ -11441,7 +9235,8 @@
 							"sourceFileName": "snackabra-jslib/snackabra.ts",
 							"qualifiedName": "SBMessageContents"
 						},
-						"name": "SBMessageContents"
+						"name": "SBMessageContents",
+						"package": "snackabra"
 					}
 				},
 				{
@@ -11460,7 +9255,8 @@
 							{
 								"type": "reference",
 								"target": 670,
-								"name": "SBMessage"
+								"name": "SBMessage",
+								"package": "snackabra"
 							}
 						],
 						"name": "Promise",
@@ -11581,8 +9377,6 @@
 				{
 					"title": "Properties",
 					"children": [
-						679,
-						680,
 						681,
 						688,
 						677,
@@ -11643,160 +9437,19 @@
 									"type": {
 										"type": "reference",
 										"target": 481,
-										"name": "SBObjectHandle"
+										"name": "SBObjectHandle",
+										"package": "snackabra"
 									}
 								}
 							],
 							"type": {
 								"type": "reference",
 								"target": 481,
-								"name": "SBObjectHandle"
+								"name": "SBObjectHandle",
+								"package": "snackabra"
 							}
 						}
 					]
-				},
-				{
-					"id": 486,
-					"name": "#_type",
-					"variant": "declaration",
-					"kind": 1024,
-					"flags": {
-						"isPrivate": true
-					},
-					"type": {
-						"type": "reference",
-						"target": 125,
-						"name": "SBObjectType"
-					},
-					"defaultValue": "'b'",
-					"implementationOf": {
-						"type": "reference",
-						"target": -1,
-						"name": "SBObjectHandle.#_type"
-					}
-				},
-				{
-					"id": 487,
-					"name": "#id",
-					"variant": "declaration",
-					"kind": 1024,
-					"flags": {
-						"isPrivate": true,
-						"isOptional": true
-					},
-					"type": {
-						"type": "intrinsic",
-						"name": "string"
-					},
-					"implementationOf": {
-						"type": "reference",
-						"target": -1,
-						"name": "SBObjectHandle.#id"
-					}
-				},
-				{
-					"id": 489,
-					"name": "#id32",
-					"variant": "declaration",
-					"kind": 1024,
-					"flags": {
-						"isPrivate": true,
-						"isOptional": true
-					},
-					"type": {
-						"type": "reference",
-						"target": {
-							"sourceFileName": "snackabra-jslib/snackabra.ts",
-							"qualifiedName": "Base62Encoded"
-						},
-						"name": "Base62Encoded"
-					},
-					"implementationOf": {
-						"type": "reference",
-						"target": -1,
-						"name": "SBObjectHandle.#id32"
-					}
-				},
-				{
-					"id": 488,
-					"name": "#key",
-					"variant": "declaration",
-					"kind": 1024,
-					"flags": {
-						"isPrivate": true,
-						"isOptional": true
-					},
-					"type": {
-						"type": "intrinsic",
-						"name": "string"
-					},
-					"implementationOf": {
-						"type": "reference",
-						"target": -1,
-						"name": "SBObjectHandle.#key"
-					}
-				},
-				{
-					"id": 490,
-					"name": "#key32",
-					"variant": "declaration",
-					"kind": 1024,
-					"flags": {
-						"isPrivate": true,
-						"isOptional": true
-					},
-					"type": {
-						"type": "reference",
-						"target": {
-							"sourceFileName": "snackabra-jslib/snackabra.ts",
-							"qualifiedName": "Base62Encoded"
-						},
-						"name": "Base62Encoded"
-					},
-					"implementationOf": {
-						"type": "reference",
-						"target": -1,
-						"name": "SBObjectHandle.#key32"
-					}
-				},
-				{
-					"id": 491,
-					"name": "#verification",
-					"variant": "declaration",
-					"kind": 1024,
-					"flags": {
-						"isPrivate": true,
-						"isOptional": true
-					},
-					"type": {
-						"type": "union",
-						"types": [
-							{
-								"type": "intrinsic",
-								"name": "string"
-							},
-							{
-								"type": "reference",
-								"target": {
-									"sourceFileName": "node_modules/typescript/lib/lib.es5.d.ts",
-									"qualifiedName": "Promise"
-								},
-								"typeArguments": [
-									{
-										"type": "intrinsic",
-										"name": "string"
-									}
-								],
-								"name": "Promise",
-								"package": "typescript"
-							}
-						]
-					},
-					"implementationOf": {
-						"type": "reference",
-						"target": -1,
-						"name": "SBObjectHandle.#verification"
-					}
 				},
 				{
 					"id": 499,
@@ -12186,7 +9839,8 @@
 								"sourceFileName": "snackabra-jslib/snackabra.ts",
 								"qualifiedName": "Base62Encoded"
 							},
-							"name": "Base62Encoded"
+							"name": "Base62Encoded",
+							"package": "snackabra"
 						},
 						"implementationOf": {
 							"type": "reference",
@@ -12221,7 +9875,8 @@
 										"sourceFileName": "snackabra-jslib/snackabra.ts",
 										"qualifiedName": "Base62Encoded"
 									},
-									"name": "Base62Encoded"
+									"name": "Base62Encoded",
+									"package": "snackabra"
 								}
 							}
 						],
@@ -12340,7 +9995,8 @@
 								"sourceFileName": "snackabra-jslib/snackabra.ts",
 								"qualifiedName": "Base62Encoded"
 							},
-							"name": "Base62Encoded"
+							"name": "Base62Encoded",
+							"package": "snackabra"
 						},
 						"implementationOf": {
 							"type": "reference",
@@ -12375,7 +10031,8 @@
 										"sourceFileName": "snackabra-jslib/snackabra.ts",
 										"qualifiedName": "Base62Encoded"
 									},
-									"name": "Base62Encoded"
+									"name": "Base62Encoded",
+									"package": "snackabra"
 								}
 							}
 						],
@@ -12418,7 +10075,8 @@
 						"type": {
 							"type": "reference",
 							"target": 125,
-							"name": "SBObjectType"
+							"name": "SBObjectType",
+							"package": "snackabra"
 						},
 						"implementationOf": {
 							"type": "reference",
@@ -12556,12 +10214,6 @@
 				{
 					"title": "Properties",
 					"children": [
-						486,
-						487,
-						489,
-						488,
-						490,
-						491,
 						499,
 						495,
 						494,
@@ -12590,7 +10242,8 @@
 				{
 					"type": "reference",
 					"target": 481,
-					"name": "SBObjectHandle"
+					"name": "SBObjectHandle",
+					"package": "snackabra"
 				}
 			],
 			"implementedBy": [
@@ -12660,7 +10313,8 @@
 									"type": {
 										"type": "reference",
 										"target": 61,
-										"name": "SBServer"
+										"name": "SBServer",
+										"package": "snackabra"
 									}
 								},
 								{
@@ -12687,70 +10341,11 @@
 							"type": {
 								"type": "reference",
 								"target": 689,
-								"name": "Snackabra"
+								"name": "Snackabra",
+								"package": "snackabra"
 							}
 						}
 					]
-				},
-				{
-					"id": 695,
-					"name": "#channel",
-					"variant": "declaration",
-					"kind": 1024,
-					"flags": {
-						"isPrivate": true
-					},
-					"type": {
-						"type": "reference",
-						"target": 546,
-						"name": "Channel"
-					}
-				},
-				{
-					"id": 696,
-					"name": "#preferredServer",
-					"variant": "declaration",
-					"kind": 1024,
-					"flags": {
-						"isPrivate": true,
-						"isOptional": true
-					},
-					"type": {
-						"type": "reference",
-						"target": 61,
-						"name": "SBServer"
-					}
-				},
-				{
-					"id": 694,
-					"name": "#storage",
-					"variant": "declaration",
-					"kind": 1024,
-					"flags": {
-						"isPrivate": true
-					},
-					"type": {
-						"type": "reference",
-						"target": {
-							"sourceFileName": "snackabra-jslib/snackabra.ts",
-							"qualifiedName": "StorageApi"
-						},
-						"name": "StorageApi"
-					}
-				},
-				{
-					"id": 697,
-					"name": "#version",
-					"variant": "declaration",
-					"kind": 1024,
-					"flags": {
-						"isPrivate": true
-					},
-					"type": {
-						"type": "intrinsic",
-						"name": "string"
-					},
-					"defaultValue": "version"
 				},
 				{
 					"id": 711,
@@ -12775,7 +10370,8 @@
 						"type": {
 							"type": "reference",
 							"target": 546,
-							"name": "Channel"
+							"name": "Channel",
+							"package": "snackabra"
 						}
 					}
 				},
@@ -12802,7 +10398,8 @@
 						"type": {
 							"type": "reference",
 							"target": 719,
-							"name": "SBCrypto"
+							"name": "SBCrypto",
+							"package": "snackabra"
 						}
 					}
 				},
@@ -12832,7 +10429,8 @@
 								"sourceFileName": "snackabra-jslib/snackabra.ts",
 								"qualifiedName": "StorageApi"
 							},
-							"name": "StorageApi"
+							"name": "StorageApi",
+							"package": "snackabra"
 						}
 					}
 				},
@@ -12950,7 +10548,8 @@
 															"type": {
 																"type": "reference",
 																"target": 72,
-																"name": "ChannelMessage"
+																"name": "ChannelMessage",
+																"package": "snackabra"
 															}
 														}
 													],
@@ -13021,7 +10620,8 @@
 									{
 										"type": "reference",
 										"target": 176,
-										"name": "ChannelSocket"
+										"name": "ChannelSocket",
+										"package": "snackabra"
 									}
 								],
 								"name": "Promise",
@@ -13077,7 +10677,8 @@
 									"type": {
 										"type": "reference",
 										"target": 61,
-										"name": "SBServer"
+										"name": "SBServer",
+										"package": "snackabra"
 									}
 								},
 								{
@@ -13136,7 +10737,8 @@
 									{
 										"type": "reference",
 										"target": 66,
-										"name": "SBChannelHandle"
+										"name": "SBChannelHandle",
+										"package": "snackabra"
 									}
 								],
 								"name": "Promise",
@@ -13151,15 +10753,6 @@
 					"title": "Constructors",
 					"children": [
 						690
-					]
-				},
-				{
-					"title": "Properties",
-					"children": [
-						695,
-						696,
-						694,
-						697
 					]
 				},
 				{
@@ -13732,7 +11325,8 @@
 					"type": {
 						"type": "reference",
 						"target": 118,
-						"name": "EncryptedContents"
+						"name": "EncryptedContents",
+						"package": "snackabra"
 					}
 				},
 				{
@@ -13772,7 +11366,8 @@
 					"type": {
 						"type": "reference",
 						"target": 539,
-						"name": "ImageMetaData"
+						"name": "ImageMetaData",
+						"package": "snackabra"
 					}
 				},
 				{
@@ -13812,7 +11407,8 @@
 					"type": {
 						"type": "reference",
 						"target": 532,
-						"name": "ChannelKeyStrings"
+						"name": "ChannelKeyStrings",
+						"package": "snackabra"
 					}
 				},
 				{
@@ -13992,7 +11588,8 @@
 					"type": {
 						"type": "reference",
 						"target": 124,
-						"name": "ChannelMessageTypes"
+						"name": "ChannelMessageTypes",
+						"package": "snackabra"
 					}
 				},
 				{
@@ -14523,7 +12120,8 @@
 					"type": {
 						"type": "reference",
 						"target": 125,
-						"name": "SBObjectType"
+						"name": "SBObjectType",
+						"package": "snackabra"
 					}
 				},
 				{
@@ -14756,7 +12354,8 @@
 			"type": {
 				"type": "reference",
 				"target": 69,
-				"name": "SB384Hash"
+				"name": "SB384Hash",
+				"package": "snackabra"
 			}
 		},
 		{
@@ -14796,7 +12395,8 @@
 			"type": {
 				"type": "reference",
 				"target": 69,
-				"name": "SB384Hash"
+				"name": "SB384Hash",
+				"package": "snackabra"
 			}
 		},
 		{
@@ -14825,7 +12425,8 @@
 								"queryType": {
 									"type": "reference",
 									"target": 546,
-									"name": "Channel"
+									"name": "Channel",
+									"package": "snackabra"
 								}
 							},
 							"defaultValue": "Channel"
@@ -14841,7 +12442,8 @@
 								"queryType": {
 									"type": "reference",
 									"target": 831,
-									"name": "SB384"
+									"name": "SB384",
+									"package": "snackabra"
 								}
 							},
 							"defaultValue": "SB384"
@@ -14857,7 +12459,8 @@
 								"queryType": {
 									"type": "reference",
 									"target": 719,
-									"name": "SBCrypto"
+									"name": "SBCrypto",
+									"package": "snackabra"
 								}
 							},
 							"defaultValue": "SBCrypto"
@@ -14873,7 +12476,8 @@
 								"queryType": {
 									"type": "reference",
 									"target": 670,
-									"name": "SBMessage"
+									"name": "SBMessage",
+									"package": "snackabra"
 								}
 							},
 							"defaultValue": "SBMessage"
@@ -14889,7 +12493,8 @@
 								"queryType": {
 									"type": "reference",
 									"target": 689,
-									"name": "Snackabra"
+									"name": "Snackabra",
+									"package": "snackabra"
 								}
 							},
 							"defaultValue": "Snackabra"
@@ -15026,7 +12631,8 @@
 							"type": {
 								"type": "reference",
 								"target": 719,
-								"name": "SBCrypto"
+								"name": "SBCrypto",
+								"package": "snackabra"
 							},
 							"defaultValue": "sbCrypto"
 						},
@@ -15081,7 +12687,8 @@
 			"type": {
 				"type": "reference",
 				"target": 719,
-				"name": "SBCrypto"
+				"name": "SBCrypto",
+				"package": "snackabra"
 			},
 			"defaultValue": "..."
 		},
@@ -15307,7 +12914,8 @@
 							"type": {
 								"type": "reference",
 								"target": 173,
-								"name": "SBPayload"
+								"name": "SBPayload",
+								"package": "snackabra"
 							}
 						}
 					],
@@ -15895,14 +13503,16 @@
 							"type": {
 								"type": "reference",
 								"target": 118,
-								"name": "EncryptedContents"
+								"name": "EncryptedContents",
+								"package": "snackabra"
 							}
 						}
 					],
 					"type": {
 						"type": "reference",
 						"target": 121,
-						"name": "EncryptedContentsBin"
+						"name": "EncryptedContentsBin",
+						"package": "snackabra"
 					}
 				}
 			]
@@ -15949,50 +13559,8 @@
 					"type": {
 						"type": "reference",
 						"target": 173,
-						"name": "SBPayload"
-					}
-				}
-			]
-		},
-		{
-			"id": 46,
-			"name": "extractPayloadV1",
-			"variant": "declaration",
-			"kind": 64,
-			"flags": {
-				"isPrivate": true
-			},
-			"signatures": [
-				{
-					"id": 47,
-					"name": "extractPayloadV1",
-					"variant": "signature",
-					"kind": 4096,
-					"flags": {
-						"isPrivate": true
-					},
-					"parameters": [
-						{
-							"id": 48,
-							"name": "payload",
-							"variant": "param",
-							"kind": 32768,
-							"flags": {},
-							"type": {
-								"type": "reference",
-								"target": {
-									"sourceFileName": "node_modules/typescript/lib/lib.es5.d.ts",
-									"qualifiedName": "ArrayBuffer"
-								},
-								"name": "ArrayBuffer",
-								"package": "typescript"
-							}
-						}
-					],
-					"type": {
-						"type": "reference",
-						"target": 173,
-						"name": "SBPayload"
+						"name": "SBPayload",
+						"package": "snackabra"
 					}
 				}
 			]
@@ -16084,7 +13652,8 @@
 								"sourceFileName": "snackabra-jslib/snackabra.ts",
 								"qualifiedName": "Base62Encoded"
 							},
-							"name": "Base62Encoded"
+							"name": "Base62Encoded",
+							"package": "snackabra"
 						}
 					}
 				}
@@ -16382,7 +13951,6 @@
 				55,
 				1,
 				52,
-				46,
 				4,
 				26,
 				42,
@@ -16392,6 +13960,7 @@
 			]
 		}
 	],
+	"packageName": "snackabra",
 	"symbolIdMap": {
 		"0": {
 			"sourceFileName": "snackabra-jslib/snackabra.ts",
@@ -16576,18 +14145,6 @@
 		"45": {
 			"sourceFileName": "snackabra-jslib/snackabra.ts",
 			"qualifiedName": "loc"
-		},
-		"46": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "extractPayloadV1"
-		},
-		"47": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "extractPayloadV1"
-		},
-		"48": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "payload"
 		},
 		"49": {
 			"sourceFileName": "snackabra-jslib/snackabra.ts",
@@ -17017,18 +14574,6 @@
 			"sourceFileName": "snackabra-jslib/snackabra.ts",
 			"qualifiedName": "MessageBus.bus"
 		},
-		"158": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "MessageBus.#select"
-		},
-		"159": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "MessageBus.#select"
-		},
-		"160": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "event"
-		},
 		"161": {
 			"sourceFileName": "snackabra-jslib/snackabra.ts",
 			"qualifiedName": "MessageBus.subscribe"
@@ -17133,130 +14678,6 @@
 			"sourceFileName": "snackabra-jslib/snackabra.ts",
 			"qualifiedName": "ChannelSocket.channelSocketReady"
 		},
-		"188": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "ChannelSocket.#ChannelSocketReadyFlag"
-		},
-		"189": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "ChannelSocket.#ws"
-		},
-		"190": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "ChannelSocket.#sbServer"
-		},
-		"191": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "ChannelSocket.#onMessage"
-		},
-		"192": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "noMessageHandler"
-		},
-		"193": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "noMessageHandler"
-		},
-		"194": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "_m"
-		},
-		"195": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "ChannelSocket.#ack"
-		},
-		"196": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "__type"
-		},
-		"197": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "__type"
-		},
-		"198": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "value"
-		},
-		"199": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "ChannelSocket.#traceSocket"
-		},
-		"200": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "ChannelSocket.#resolveFirstMessage"
-		},
-		"201": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "__type"
-		},
-		"202": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "__type"
-		},
-		"203": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "value"
-		},
-		"204": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "ChannelSocket.#firstMessageEventHandlerReference"
-		},
-		"205": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "__type"
-		},
-		"206": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "__type"
-		},
-		"207": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "e"
-		},
-		"208": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "ChannelSocket.#channelSocketReadyFactory"
-		},
-		"209": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "ChannelSocket.#channelSocketReadyFactory"
-		},
-		"210": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "ChannelSocket.#processMessage"
-		},
-		"211": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "ChannelSocket.#processMessage"
-		},
-		"212": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "msg"
-		},
-		"213": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "ChannelSocket.#insideFirstMessageHandler"
-		},
-		"214": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "ChannelSocket.#insideFirstMessageHandler"
-		},
-		"215": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "e"
-		},
-		"216": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "ChannelSocket.#firstMessageEventHandler"
-		},
-		"217": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "ChannelSocket.#firstMessageEventHandler"
-		},
-		"218": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "e"
-		},
 		"219": {
 			"sourceFileName": "snackabra-jslib/snackabra.ts",
 			"qualifiedName": "ChannelSocket.status"
@@ -17341,14 +14762,6 @@
 			"sourceFileName": "snackabra-jslib/snackabra.ts",
 			"qualifiedName": "Channel.channelReady"
 		},
-		"240": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "Channel.#ChannelReadyFlag"
-		},
-		"241": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "Channel.#sbServer"
-		},
 		"242": {
 			"sourceFileName": "snackabra-jslib/snackabra.ts",
 			"qualifiedName": "Channel.motd"
@@ -17376,54 +14789,6 @@
 		"248": {
 			"sourceFileName": "snackabra-jslib/snackabra.ts",
 			"qualifiedName": "Channel.userName"
-		},
-		"249": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "Channel.#channelKeys"
-		},
-		"250": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "Channel.#channelSignKey"
-		},
-		"251": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "Channel.#channelId"
-		},
-		"252": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "Channel.#cursor"
-		},
-		"253": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "Channel.#channelApi"
-		},
-		"254": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "Channel.#channelServer"
-		},
-		"255": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "Channel.#setKeys"
-		},
-		"256": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "Channel.#setKeys"
-		},
-		"257": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "k"
-		},
-		"258": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "Channel.#loadKeys"
-		},
-		"259": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "Channel.#loadKeys"
-		},
-		"260": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "keyStrings"
 		},
 		"261": {
 			"sourceFileName": "snackabra-jslib/snackabra.ts",
@@ -17496,30 +14861,6 @@
 		"278": {
 			"sourceFileName": "snackabra-jslib/snackabra.ts",
 			"qualifiedName": "paginate"
-		},
-		"279": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "Channel.#callApi"
-		},
-		"280": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "Channel.#callApi"
-		},
-		"281": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "path"
-		},
-		"282": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "Channel.#callApi"
-		},
-		"283": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "path"
-		},
-		"284": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "body"
 		},
 		"285": {
 			"sourceFileName": "snackabra-jslib/snackabra.ts",
@@ -17725,26 +15066,6 @@
 			"sourceFileName": "snackabra-jslib/snackabra.ts",
 			"qualifiedName": "SB384.sb384Ready"
 		},
-		"336": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "SB384.#SB384ReadyFlag"
-		},
-		"337": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "SB384.#exportable_pubKey"
-		},
-		"338": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "SB384.#exportable_privateKey"
-		},
-		"339": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "SB384.#privateKey"
-		},
-		"340": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "SB384.#hash"
-		},
 		"341": {
 			"sourceFileName": "snackabra-jslib/snackabra.ts",
 			"qualifiedName": "SB384.exportable_pubKey"
@@ -17849,14 +15170,6 @@
 			"sourceFileName": "snackabra-jslib/snackabra.ts",
 			"qualifiedName": "Channel.channelReady"
 		},
-		"367": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "Channel.#ChannelReadyFlag"
-		},
-		"368": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "Channel.#sbServer"
-		},
 		"369": {
 			"sourceFileName": "snackabra-jslib/snackabra.ts",
 			"qualifiedName": "Channel.motd"
@@ -17884,54 +15197,6 @@
 		"375": {
 			"sourceFileName": "snackabra-jslib/snackabra.ts",
 			"qualifiedName": "Channel.userName"
-		},
-		"376": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "Channel.#channelKeys"
-		},
-		"377": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "Channel.#channelSignKey"
-		},
-		"378": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "Channel.#channelId"
-		},
-		"379": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "Channel.#cursor"
-		},
-		"380": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "Channel.#channelApi"
-		},
-		"381": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "Channel.#channelServer"
-		},
-		"382": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "Channel.#setKeys"
-		},
-		"383": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "Channel.#setKeys"
-		},
-		"384": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "k"
-		},
-		"385": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "Channel.#loadKeys"
-		},
-		"386": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "Channel.#loadKeys"
-		},
-		"387": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "keyStrings"
 		},
 		"388": {
 			"sourceFileName": "snackabra-jslib/snackabra.ts",
@@ -18004,30 +15269,6 @@
 		"405": {
 			"sourceFileName": "snackabra-jslib/snackabra.ts",
 			"qualifiedName": "paginate"
-		},
-		"406": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "Channel.#callApi"
-		},
-		"407": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "Channel.#callApi"
-		},
-		"408": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "path"
-		},
-		"409": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "Channel.#callApi"
-		},
-		"410": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "path"
-		},
-		"411": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "body"
 		},
 		"412": {
 			"sourceFileName": "snackabra-jslib/snackabra.ts",
@@ -18237,26 +15478,6 @@
 			"sourceFileName": "snackabra-jslib/snackabra.ts",
 			"qualifiedName": "SB384.sb384Ready"
 		},
-		"464": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "SB384.#SB384ReadyFlag"
-		},
-		"465": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "SB384.#exportable_pubKey"
-		},
-		"466": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "SB384.#exportable_privateKey"
-		},
-		"467": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "SB384.#privateKey"
-		},
-		"468": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "SB384.#hash"
-		},
 		"469": {
 			"sourceFileName": "snackabra-jslib/snackabra.ts",
 			"qualifiedName": "SB384.exportable_pubKey"
@@ -18324,30 +15545,6 @@
 		"485": {
 			"sourceFileName": "snackabra-jslib/snackabra.ts",
 			"qualifiedName": "SBObjectHandle.version"
-		},
-		"486": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "SBObjectHandle.#_type"
-		},
-		"487": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "SBObjectHandle.#id"
-		},
-		"488": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "SBObjectHandle.#key"
-		},
-		"489": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "SBObjectHandle.#id32"
-		},
-		"490": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "SBObjectHandle.#key32"
-		},
-		"491": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "SBObjectHandle.#verification"
 		},
 		"492": {
 			"sourceFileName": "snackabra-jslib/snackabra.ts",
@@ -18593,14 +15790,6 @@
 			"sourceFileName": "snackabra-jslib/snackabra.ts",
 			"qualifiedName": "Channel.channelReady"
 		},
-		"553": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "Channel.#ChannelReadyFlag"
-		},
-		"554": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "Channel.#sbServer"
-		},
 		"555": {
 			"sourceFileName": "snackabra-jslib/snackabra.ts",
 			"qualifiedName": "Channel.motd"
@@ -18629,30 +15818,6 @@
 			"sourceFileName": "snackabra-jslib/snackabra.ts",
 			"qualifiedName": "Channel.userName"
 		},
-		"562": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "Channel.#channelKeys"
-		},
-		"563": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "Channel.#channelSignKey"
-		},
-		"564": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "Channel.#channelId"
-		},
-		"565": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "Channel.#cursor"
-		},
-		"566": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "Channel.#channelApi"
-		},
-		"567": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "Channel.#channelServer"
-		},
 		"568": {
 			"sourceFileName": "snackabra-jslib/snackabra.ts",
 			"qualifiedName": "Channel.send"
@@ -18664,30 +15829,6 @@
 		"570": {
 			"sourceFileName": "snackabra-jslib/snackabra.ts",
 			"qualifiedName": "message"
-		},
-		"571": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "Channel.#setKeys"
-		},
-		"572": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "Channel.#setKeys"
-		},
-		"573": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "k"
-		},
-		"574": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "Channel.#loadKeys"
-		},
-		"575": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "Channel.#loadKeys"
-		},
-		"576": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "keyStrings"
 		},
 		"577": {
 			"sourceFileName": "snackabra-jslib/snackabra.ts",
@@ -18760,30 +15901,6 @@
 		"594": {
 			"sourceFileName": "snackabra-jslib/snackabra.ts",
 			"qualifiedName": "paginate"
-		},
-		"595": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "Channel.#callApi"
-		},
-		"596": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "Channel.#callApi"
-		},
-		"597": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "path"
-		},
-		"598": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "Channel.#callApi"
-		},
-		"599": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "path"
-		},
-		"600": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "body"
 		},
 		"601": {
 			"sourceFileName": "snackabra-jslib/snackabra.ts",
@@ -18993,26 +16110,6 @@
 			"sourceFileName": "snackabra-jslib/snackabra.ts",
 			"qualifiedName": "SB384.sb384Ready"
 		},
-		"653": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "SB384.#SB384ReadyFlag"
-		},
-		"654": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "SB384.#exportable_pubKey"
-		},
-		"655": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "SB384.#exportable_privateKey"
-		},
-		"656": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "SB384.#privateKey"
-		},
-		"657": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "SB384.#hash"
-		},
 		"658": {
 			"sourceFileName": "snackabra-jslib/snackabra.ts",
 			"qualifiedName": "SB384.exportable_pubKey"
@@ -19097,14 +16194,6 @@
 			"sourceFileName": "snackabra-jslib/snackabra.ts",
 			"qualifiedName": "SBMessage.contents"
 		},
-		"679": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "SBMessage.#encryptionKey"
-		},
-		"680": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "SBMessage.#sendToPubKey"
-		},
 		"681": {
 			"sourceFileName": "snackabra-jslib/snackabra.ts",
 			"qualifiedName": "SBMessage.MAX_SB_BODY_SIZE"
@@ -19156,22 +16245,6 @@
 		"693": {
 			"sourceFileName": "snackabra-jslib/snackabra.ts",
 			"qualifiedName": "DEBUG"
-		},
-		"694": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "Snackabra.#storage"
-		},
-		"695": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "Snackabra.#channel"
-		},
-		"696": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "Snackabra.#preferredServer"
-		},
-		"697": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "Snackabra.#version"
 		},
 		"698": {
 			"sourceFileName": "snackabra-jslib/snackabra.ts",
@@ -19261,10 +16334,6 @@
 			"sourceFileName": "snackabra-jslib/snackabra.ts",
 			"qualifiedName": "SBCrypto"
 		},
-		"722": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "SBCrypto.#knownKeys"
-		},
 		"723": {
 			"sourceFileName": "snackabra-jslib/snackabra.ts",
 			"qualifiedName": "SBCrypto.addKnownKey"
@@ -19324,34 +16393,6 @@
 		"737": {
 			"sourceFileName": "snackabra-jslib/snackabra.ts",
 			"qualifiedName": "privateKey"
-		},
-		"738": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "SBCrypto.#generateHash"
-		},
-		"739": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "SBCrypto.#generateHash"
-		},
-		"740": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "rawBytes"
-		},
-		"741": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "SBCrypto.#testHash"
-		},
-		"742": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "SBCrypto.#testHash"
-		},
-		"743": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "channelBytes"
-		},
-		"744": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "channel_id"
 		},
 		"745": {
 			"sourceFileName": "snackabra-jslib/snackabra.ts",
@@ -19720,26 +16761,6 @@
 		"836": {
 			"sourceFileName": "snackabra-jslib/snackabra.ts",
 			"qualifiedName": "SB384.sb384Ready"
-		},
-		"837": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "SB384.#SB384ReadyFlag"
-		},
-		"838": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "SB384.#exportable_pubKey"
-		},
-		"839": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "SB384.#exportable_privateKey"
-		},
-		"840": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "SB384.#privateKey"
-		},
-		"841": {
-			"sourceFileName": "snackabra-jslib/snackabra.ts",
-			"qualifiedName": "SB384.#hash"
 		},
 		"842": {
 			"sourceFileName": "snackabra-jslib/snackabra.ts",

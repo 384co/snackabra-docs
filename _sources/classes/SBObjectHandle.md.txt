@@ -35,12 +35,6 @@ are guaranteed to be random, the fourth may be "designed".
 
 ### Properties
 
-- [#\_type](SBObjectHandle.md##_type)
-- [#id](SBObjectHandle.md##id)
-- [#id32](SBObjectHandle.md##id32)
-- [#key](SBObjectHandle.md##key)
-- [#key32](SBObjectHandle.md##key32)
-- [#verification](SBObjectHandle.md##verification)
 - [actualSize](SBObjectHandle.md#actualsize)
 - [dateAndTime](SBObjectHandle.md#dateandtime)
 - [fileName](SBObjectHandle.md#filename)
@@ -74,66 +68,6 @@ are guaranteed to be random, the fourth may be "designed".
 | `options` | [`SBObjectHandle`](SBObjectHandle.md) |
 
 ## Properties
-
-### <a id="#_type" name="#_type"></a> #\_type
-
-• `Private` **#\_type**: [`SBObjectType`](../modules.md#sbobjecttype) = `'b'`
-
-#### Implementation of
-
-SBObjectHandle.#\_type
-
-___
-
-### <a id="#id" name="#id"></a> #id
-
-• `Private` `Optional` **#id**: `string`
-
-#### Implementation of
-
-SBObjectHandle.#id
-
-___
-
-### <a id="#id32" name="#id32"></a> #id32
-
-• `Private` `Optional` **#id32**: `Base62Encoded`
-
-#### Implementation of
-
-SBObjectHandle.#id32
-
-___
-
-### <a id="#key" name="#key"></a> #key
-
-• `Private` `Optional` **#key**: `string`
-
-#### Implementation of
-
-SBObjectHandle.#key
-
-___
-
-### <a id="#key32" name="#key32"></a> #key32
-
-• `Private` `Optional` **#key32**: `Base62Encoded`
-
-#### Implementation of
-
-SBObjectHandle.#key32
-
-___
-
-### <a id="#verification" name="#verification"></a> #verification
-
-• `Private` `Optional` **#verification**: `string` \| `Promise`<`string`\>
-
-#### Implementation of
-
-SBObjectHandle.#verification
-
-___
 
 ### <a id="actualsize" name="actualsize"></a> actualSize
 

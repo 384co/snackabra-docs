@@ -6,7 +6,7 @@
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="System Architecture" href="system-architecture.html" /><link rel="prev" title="Introduction" href="introduction.html" />
 
     <!-- Generated with Sphinx 5.3.0 and Furo 2023.03.27 -->
-        <title>Technical Overview - snackabra 0.5.x beta documentation</title>
+        <title>Technical Overview - snackabra 0.6.0 beta documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=fad236701ea90a88636c2a8c73b44ae642ed2a53" />
     <link rel="stylesheet" type="text/css" href="_static/graphviz.css" />
@@ -125,7 +125,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">snackabra 0.5.x beta documentation</div></a>
+      <a href="index.html"><div class="brand">snackabra 0.6.0 beta documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -148,7 +148,7 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
   
   
-  <span class="sidebar-brand-text">snackabra 0.5.x beta documentation</span>
+  <span class="sidebar-brand-text">snackabra 0.6.0 beta documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -176,7 +176,6 @@
 <li class="toctree-l1"><a class="reference internal" href="user-guide.html">Appendix B: Privacy.App Chat Room User Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="diag-sample.html">(ignore)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="motivation.html">Motivation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="updated-glossary.html">Updated Glossary</a></li>
 </ul>
 
 </div>
@@ -227,14 +226,14 @@ load keys from backup.</p>
 localstorage.</p>
 <p>Otherwise, the client connects to websocket and sends their public
 participant key to the DO. The DO replies with a ‘ready’ message
-containing the following data from <a class="reference internal" href="updated-glossary.html#term-KV_local"><span class="xref std std-term">KV_local</span></a>:</p>
+containing the following data from <a class="reference internal" href="glossary.html#term-KV_local"><span class="xref std std-term">KV_local</span></a>:</p>
 <ul class="simple">
 <li><p>keys:</p>
 <ul>
 <li><p>&lt;room&gt;_ownerKey</p></li>
 <li><p>&lt;room&gt;_encryptionKey</p></li>
 <li><p>&lt;room&gt;_signKey</p></li>
-<li><p>&lt;room&gt;_guestKey  (‘Null’ if not present in <a class="reference internal" href="updated-glossary.html#term-KV_global"><span class="xref std std-term">KV_global</span></a>)</p></li>
+<li><p>&lt;room&gt;_guestKey  (‘Null’ if not present in <a class="reference internal" href="glossary.html#term-KV_global"><span class="xref std std-term">KV_global</span></a>)</p></li>
 <li><p>&lt;room&gt;_authorizationKey</p></li>
 </ul>
 </li>
@@ -273,7 +272,7 @@ such as by using sendMessage/iFrame.</p></li>
 <li><p>In default setup, the Owner’s (private) room owner keys need to be
 kept separate; in our SSO database.</p>
 <p>If the Owner so wishes, they can generate a new pair in the SSO,
-overwrite the corresponding room ownerKey in <a class="reference internal" href="updated-glossary.html#term-KV_global"><span class="xref std std-term">KV_global</span></a>, and store the
+overwrite the corresponding room ownerKey in <a class="reference internal" href="glossary.html#term-KV_global"><span class="xref std std-term">KV_global</span></a>, and store the
 private key <em>only</em> in their localstorage.</p>
 <p>[internal: In a future upgrade to the membership kits, we can
 include the private keys for all the rooms (current and future!) on
@@ -343,7 +342,7 @@ messages).</p>
 Owner.</p>
 <p>A restricted room has a green “locked” icon next to its name.</p>
 <p>The Durable Object backend maintains a list of the public key of
-‘accepted visitors’ in <a class="reference internal" href="updated-glossary.html#term-KV_local"><span class="xref std std-term">KV_local</span></a>. The Durable Object backend also
+‘accepted visitors’ in <a class="reference internal" href="glossary.html#term-KV_local"><span class="xref std std-term">KV_local</span></a>. The Durable Object backend also
 maintains a JavaScript Object of all ‘locked_keys’ wherein the
 ‘encrypted’ locked_key for each ‘accepted guest’ (look at the section
 ‘Accepting a guest’) is stored corresponding to the public half of the
@@ -355,7 +354,7 @@ visitor’s participant or &lt;room&gt; key.</p>
 stored in the local_storage of the owner as &lt;room&gt;_lockedKey will be
 encrypted using the encryption key derived from the private key of the
 owner and public key of the guest. This encrypted key will be sent to
-the Durable Objects backend and stored there (<a class="reference internal" href="updated-glossary.html#term-KV_local"><span class="xref std std-term">KV_local</span></a>).</p>
+the Durable Objects backend and stored there (<a class="reference internal" href="glossary.html#term-KV_local"><span class="xref std std-term">KV_local</span></a>).</p>
 <p>Whenever a guest joins a restricted room, if they have been accepted,
 this encrypted key will be sent to them as the first ‘message’ from
 the Websocket. The key will be decrypted using the key derived from
@@ -377,15 +376,15 @@ page. When that happens, a new public ECDH key pair is created in the
 client. However the <em>private</em> key is <em>not</em> stored in the SSO
 system. The public half of this key is then signed using the current
 &lt;room&gt;_ownerKey (the key before rotation occurs). The sign and the
-public half of the new key are then sent to <a class="reference internal" href="updated-glossary.html#term-KV_global"><span class="xref std std-term">KV_global</span></a> in a fetch
+public half of the new key are then sent to <a class="reference internal" href="glossary.html#term-KV_global"><span class="xref std std-term">KV_global</span></a> in a fetch
 request which stores the received value (key + sign) as
 &lt;room&gt;_ownerKey&lt;ts&gt;, where ts is the timestamp when it performs the
 store operation. (We also refer to this as ‘key rotation’ or ‘locking’
 a room.)</p>
 <p>The owner’s chat client will then make a fetch request to the Durable
 Object to refresh it’s maintained copy of the ownerKey in
-<a class="reference internal" href="updated-glossary.html#term-KV_local"><span class="xref std std-term">KV_local</span></a>. The Durable Object pings <a class="reference internal" href="updated-glossary.html#term-KV_global"><span class="xref std std-term">KV_global</span></a> and if the <a class="reference internal" href="updated-glossary.html#term-KV_global"><span class="xref std std-term">KV_global</span></a>
-returns an ownerKey different from the ownerKey in <a class="reference internal" href="updated-glossary.html#term-KV_local"><span class="xref std std-term">KV_local</span></a>, the DO
+<a class="reference internal" href="glossary.html#term-KV_local"><span class="xref std std-term">KV_local</span></a>. The Durable Object pings <a class="reference internal" href="glossary.html#term-KV_global"><span class="xref std std-term">KV_global</span></a> and if the <a class="reference internal" href="glossary.html#term-KV_global"><span class="xref std std-term">KV_global</span></a>
+returns an ownerKey different from the ownerKey in <a class="reference internal" href="glossary.html#term-KV_local"><span class="xref std std-term">KV_local</span></a>, the DO
 broadcasts it to all active chat clients using websockets.</p>
 <p>Note: In the current design, the sign which is stored along with the
 key is not utilized. However, in future iterations, any user will
@@ -414,36 +413,36 @@ effect that any metadata is removed.</p>
 <p>If the image in the message is “sent”, then in fact three versions are
 processed:</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="updated-glossary.html#term-thumbnail"><span class="xref std std-term">thumbnail</span></a> - this is a (max) 20KB version of the processed
+<li><p><a class="reference internal" href="glossary.html#term-thumbnail"><span class="xref std std-term">thumbnail</span></a> - this is a (max) 20KB version of the processed
 image. This is transmitted using websockets and stored within the
 message as a DataURL (<em>not</em> an image link) and should appear close
 to instantly for all participants. The 20KB limit was originally chosen to allow
-the full image to fit in the <a class="reference internal" href="updated-glossary.html#term-KV_local"><span class="xref std std-term">KV_local</span></a>. The entire object is enclosed
+the full image to fit in the <a class="reference internal" href="glossary.html#term-KV_local"><span class="xref std std-term">KV_local</span></a>. The entire object is enclosed
 in the (encrypted) image.</p></li>
-<li><p><a class="reference internal" href="updated-glossary.html#term-preview"><span class="xref std std-term">preview</span></a> - this is a (max) 4MB processed image. This is stored in
-the <a class="reference internal" href="updated-glossary.html#term-KV_global"><span class="xref std std-term">KV_global</span></a> (see next section) and can be retrieved by anyone who
+<li><p><a class="reference internal" href="glossary.html#term-preview"><span class="xref std std-term">preview</span></a> - this is a (max) 4MB processed image. This is stored in
+the <a class="reference internal" href="glossary.html#term-KV_global"><span class="xref std std-term">KV_global</span></a> (see next section) and can be retrieved by anyone who
 has access to the message with which it was shared (and that has the
-<a class="reference internal" href="updated-glossary.html#term-thumbnail"><span class="xref std std-term">thumbnail</span></a>).</p></li>
+<a class="reference internal" href="glossary.html#term-thumbnail"><span class="xref std std-term">thumbnail</span></a>).</p></li>
 <li><p><strong>full</strong> - this is the 16MB or less version of the image. If the
 “original” is small enough, then it is stored unaltered. If it’s
 bigger, then it is processed as above. <a class="footnote-reference brackets" href="#f031" id="id6" role="doc-noteref"><span class="fn-bracket">[</span>5<span class="fn-bracket">]</span></a> This is stored
-in the <a class="reference internal" href="updated-glossary.html#term-KV_global"><span class="xref std std-term">KV_global</span></a> in the same way as the preview. Only the owner has
+in the <a class="reference internal" href="glossary.html#term-KV_global"><span class="xref std std-term">KV_global</span></a> in the same way as the preview. Only the owner has
 access to the original.</p></li>
 </ul>
 <p>Thus, a small thumbnail is sent and shared synchronously and
 immediately in the front end, and should appear almost instantly to
 everybody connected to that room. The larger versions are sent with
-eventual-consistency to <a class="reference internal" href="updated-glossary.html#term-KV_global"><span class="xref std std-term">KV_global</span></a>-backed workers as detailed in the
+eventual-consistency to <a class="reference internal" href="glossary.html#term-KV_global"><span class="xref std std-term">KV_global</span></a>-backed workers as detailed in the
 next section.</p>
 </section>
 <section id="image-dedup-encryption-storage">
 <h2>Image Dedup + Encryption + Storage:<a class="headerlink" href="#image-dedup-encryption-storage" title="Permalink to this heading">#</a></h2>
-<p>The preview and full image are stored as secure ‘objects.’ An <a class="reference internal" href="updated-glossary.html#term-object"><span class="xref std std-term">object</span></a> is
+<p>The preview and full image are stored as secure ‘objects.’ An <a class="reference internal" href="glossary.html#term-object"><span class="xref std std-term">object</span></a> is
 a specific construct that is particular to this design. The image
 information itself is referred to below as ‘data’. Objects are
-ultimately stored in <a class="reference internal" href="updated-glossary.html#term-KV_global"><span class="xref std std-term">KV_global</span></a> with the following information:</p>
+ultimately stored in <a class="reference internal" href="glossary.html#term-KV_global"><span class="xref std std-term">KV_global</span></a> with the following information:</p>
 <ul class="simple" id="object">
-<li><p>Their full name (also the <a class="reference internal" href="updated-glossary.html#term-KV_global"><span class="xref std std-term">KV_global</span></a> key). The name is a 512-bit
+<li><p>Their full name (also the <a class="reference internal" href="glossary.html#term-KV_global"><span class="xref std std-term">KV_global</span></a> key). The name is a 512-bit
 string constructed in two halves, in two steps. The first half is
 the first half of the SHA-512 hash of the original (unencrypted)
 contents, the second half is a SHA-256 hash of (final) encrypted
@@ -452,7 +451,7 @@ contents.</p></li>
 just the first half of the full name (prefix search).</p></li>
 <li><p>Contents, which is the encrypted version of the padded form of the
 original contents.</p></li>
-<li><p>A random 16-byte value, the <a class="reference internal" href="updated-glossary.html#term-verification"><span class="xref std std-term">verification</span></a>.</p></li>
+<li><p>A random 16-byte value, the <a class="reference internal" href="glossary.html#term-verification"><span class="xref std std-term">verification</span></a>.</p></li>
 <li><p>A random 48-bit value, the ‘version_id’ which might be used in the
 future for version control on files</p></li>
 </ul>
@@ -464,12 +463,12 @@ image). It sends a ‘request to store’ query with the first half of
 this hash (the ‘partial name’); it will eventually receive a 12-byte
 nonce and a 16-byte salt.</p></li>
 <li><p>While waiting for this, the client constructs the ‘shared image’
-message, with the <a class="reference internal" href="updated-glossary.html#term-thumbnail"><span class="xref std std-term">thumbnail</span></a>, and forwards data and the first half of
+message, with the <a class="reference internal" href="glossary.html#term-thumbnail"><span class="xref std std-term">thumbnail</span></a>, and forwards data and the first half of
 the SHA-512 hash for the compressed data (preview) and original data
 (full image), and sends the message.</p></li>
 <li><p>Next, the client makes a fetch request (once each for the preview
-and full <a class="reference internal" href="updated-glossary.html#term-object"><span class="xref std std-term">object</span></a>) to <a class="reference internal" href="updated-glossary.html#term-KV_global"><span class="xref std std-term">KV_global</span></a> with the first half of the full name
-of the file. When the <a class="reference internal" href="updated-glossary.html#term-KV_global"><span class="xref std std-term">KV_global</span></a> receives the ‘request to store’
+and full <a class="reference internal" href="glossary.html#term-object"><span class="xref std std-term">object</span></a>) to <a class="reference internal" href="glossary.html#term-KV_global"><span class="xref std std-term">KV_global</span></a> with the first half of the full name
+of the file. When the <a class="reference internal" href="glossary.html#term-KV_global"><span class="xref std std-term">KV_global</span></a> receives the ‘request to store’
 query, if it’s a new object, then it generates random new nonce and
 salt and stores those with the partial name (it doesn’t have the
 full name yet); if it’s not a new object, it returns previously
@@ -494,32 +493,32 @@ block (which after encryption should be on a perfect exponent-of-2
 boundary) and concatenates with the ‘partial name’ from earlier to
 form the ‘full name.’</p></li>
 <li><p>The client then makes API calls (once each for the preview and full
-<a class="reference internal" href="updated-glossary.html#term-object"><span class="xref std std-term">object</span></a>) to the <a class="reference internal" href="updated-glossary.html#term-KV_local"><span class="xref std std-term">KV_local</span></a> with the final size value (in cleartext) of
+<a class="reference internal" href="glossary.html#term-object"><span class="xref std std-term">object</span></a>) to the <a class="reference internal" href="glossary.html#term-KV_local"><span class="xref std std-term">KV_local</span></a> with the final size value (in cleartext) of
 the object (preview/full) (rounded up as per below); the room server
 inspects and approves the size (or not).</p></li>
-<li><p>If approved, the <a class="reference internal" href="updated-glossary.html#term-KV_local"><span class="xref std std-term">KV_local</span></a> makes a fetch request to the
-<a class="reference internal" href="updated-glossary.html#term-Ledger-Backend"><span class="xref std std-term">Ledger Backend</span></a> to generate a token for the requested
-size. The Ledger Backend returns a token_id. The <a class="reference internal" href="updated-glossary.html#term-KV_local"><span class="xref std std-term">KV_local</span></a>
+<li><p>If approved, the <a class="reference internal" href="glossary.html#term-KV_local"><span class="xref std std-term">KV_local</span></a> makes a fetch request to the
+<a class="reference internal" href="glossary.html#term-Ledger-Backend"><span class="xref std std-term">Ledger Backend</span></a> to generate a token for the requested
+size. The Ledger Backend returns a token_id. The <a class="reference internal" href="glossary.html#term-KV_local"><span class="xref std std-term">KV_local</span></a>
 then encrypts this token_id with the public half of the
-<a class="reference internal" href="updated-glossary.html#term-LEDGER_KEY"><span class="xref std std-term">LEDGER_KEY</span></a>. Finally, the <a class="reference internal" href="updated-glossary.html#term-KV_local"><span class="xref std std-term">KV_local</span></a> returns the hash of the
+<a class="reference internal" href="glossary.html#term-LEDGER_KEY"><span class="xref std std-term">LEDGER_KEY</span></a>. Finally, the <a class="reference internal" href="glossary.html#term-KV_local"><span class="xref std std-term">KV_local</span></a> returns the hash of the
 token_id, the encrypted token_id and the hashed roomId as the
 storage token back to the client. <a class="footnote-reference brackets" href="#f034" id="id10" role="doc-noteref"><span class="fn-bracket">[</span>9<span class="fn-bracket">]</span></a></p></li>
-<li><p>The client then requests this encrypted <a class="reference internal" href="updated-glossary.html#term-object"><span class="xref std std-term">object</span></a> to be stored under
+<li><p>The client then requests this encrypted <a class="reference internal" href="glossary.html#term-object"><span class="xref std std-term">object</span></a> to be stored under
 the full name provided, including token approving storage usage; in
-reply it will receive the 16-byte <a class="reference internal" href="updated-glossary.html#term-verification"><span class="xref std std-term">verification</span></a>. This encrypted
+reply it will receive the 16-byte <a class="reference internal" href="glossary.html#term-verification"><span class="xref std std-term">verification</span></a>. This encrypted
 object is sent asynchronously to the (non-room) worker API.</p></li>
 <li><p>The client then generates a control message that contains the full
-name of previously shared (<a class="reference internal" href="updated-glossary.html#term-thumbnail"><span class="xref std std-term">thumbnail</span></a> only) image together with the
-<a class="reference internal" href="updated-glossary.html#term-verification"><span class="xref std std-term">verification</span></a> as well as (again) the storage token. This control
+name of previously shared (<a class="reference internal" href="glossary.html#term-thumbnail"><span class="xref std std-term">thumbnail</span></a> only) image together with the
+<a class="reference internal" href="glossary.html#term-verification"><span class="xref std std-term">verification</span></a> as well as (again) the storage token. This control
 message would be sent with the same encryption layers as the
 original message containing the thumbnail.</p></li>
 <li><p>When the backend receives the object, it independently generates the
 same second hash based on the encrypted object to verify the
 integrity. It then verifies the storage token is valid (i.e. has
-been created by <a class="reference internal" href="updated-glossary.html#term-KV_local"><span class="xref std std-term">KV_local</span></a>, hasn’t already been spent and the size of
+been created by <a class="reference internal" href="glossary.html#term-KV_local"><span class="xref std std-term">KV_local</span></a>, hasn’t already been spent and the size of
 the object sent to be stored does not exceed the size stored in the
 ledger) by making a fetch request to the ledger backend. If valid,
-the <a class="reference internal" href="updated-glossary.html#term-KV_global"><span class="xref std std-term">KV_global</span></a> stores three separate entries in the
+the <a class="reference internal" href="glossary.html#term-KV_global"><span class="xref std std-term">KV_global</span></a> stores three separate entries in the
 RECOVERY_NAMESPACE (“D3”) -</p>
 <ul>
 <li><p>&lt;hashed_room_id&gt;_&lt;encrypted_token_id&gt;</p></li>
@@ -529,23 +528,23 @@ RECOVERY_NAMESPACE (“D3”) -</p>
 </li>
 <li><p>If this full name of the object requested to be stored exists in its
 storage, then it can discard the received data, and return the
-stored <a class="reference internal" href="updated-glossary.html#term-verification"><span class="xref std std-term">verification</span></a>. If it doesn’t, it creates an entry, with the
+stored <a class="reference internal" href="glossary.html#term-verification"><span class="xref std std-term">verification</span></a>. If it doesn’t, it creates an entry, with the
 <em>full</em> name as the key, and saves the encrypted object <a class="footnote-reference brackets" href="#f035" id="id11" role="doc-noteref"><span class="fn-bracket">[</span>10<span class="fn-bracket">]</span></a>
 together with nonce and salt, generates a random 48-bit version_id,
 generates a random 16-byte verification, and returns that.</p></li>
 </ul>
 <p>When a client wants to open a preview, the following happens:</p>
 <ul class="simple">
-<li><p>The <a class="reference internal" href="updated-glossary.html#term-thumbnail"><span class="xref std std-term">thumbnail</span></a> needs to have been matched with a control message with
-the full name and the final <a class="reference internal" href="updated-glossary.html#term-verification"><span class="xref std std-term">verification</span></a> returned by a previous
+<li><p>The <a class="reference internal" href="glossary.html#term-thumbnail"><span class="xref std std-term">thumbnail</span></a> needs to have been matched with a control message with
+the full name and the final <a class="reference internal" href="glossary.html#term-verification"><span class="xref std std-term">verification</span></a> returned by a previous
 storage.</p></li>
 <li><p>The client requests to read the object based on the full name with
-the <a class="reference internal" href="updated-glossary.html#term-verification"><span class="xref std std-term">verification</span></a> token.</p></li>
+the <a class="reference internal" href="glossary.html#term-verification"><span class="xref std std-term">verification</span></a> token.</p></li>
 <li><p>When the client receives the (raw) contents, it will also receive
 the nonce and salt, it applies the stored (secret) key, and decrypts
 and displays the object.</p></li>
 <li><p>The backend will only reply if the full name corresponds to an
-entry, and the <a class="reference internal" href="updated-glossary.html#term-verification"><span class="xref std std-term">verification</span></a> number matches the stored verification
+entry, and the <a class="reference internal" href="glossary.html#term-verification"><span class="xref std std-term">verification</span></a> number matches the stored verification
 number..</p></li>
 <li><p>An honest client will also confirm that the partial name (and key)
 matches a regenerated SHA-512 hash of the decrypted object, and
@@ -657,7 +656,7 @@ internalized to the room in a personal server setup.
 These keeps current “account balances” of everything.</p></li>
 </ul>
 <ul class="simple" id="ledgernamespace">
-<li><p>D2: LEDGER_NAMESPACE - tracks spending of approved <a class="reference internal" href="updated-glossary.html#term-TID"><span class="xref std std-term">&lt;TID&gt;</span></a>.
+<li><p>D2: LEDGER_NAMESPACE - tracks spending of approved <a class="reference internal" href="glossary.html#term-TID"><span class="xref std std-term">&lt;TID&gt;</span></a>.
 To spend storage space, you’re “issued” a kind of token,
 which is simply a reference into D2, which in turn
 will track if it’s been “cashed” or not.</p></li>
@@ -670,26 +669,26 @@ don’t need to worry much about it.</p></li>
 </ul>
 <p>Now we can untangle the diagram a bit (you can follow along in the code <a class="footnote-reference brackets" href="#f046" id="id14" role="doc-noteref"><span class="fn-bracket">[</span>20<span class="fn-bracket">]</span></a>):</p>
 <ol class="arabic simple">
-<li><p>The client requests to store a <a class="reference internal" href="updated-glossary.html#term-file"><span class="xref std std-term">file</span></a>.
+<li><p>The client requests to store a <a class="reference internal" href="glossary.html#term-file"><span class="xref std std-term">file</span></a>.
 It generates the first “half” of the name, and sends it
 to the storage server. What it needs is help to
-“construct” the “true name” for the <a class="reference internal" href="updated-glossary.html#term-object"><span class="xref std std-term">object</span></a>.</p></li>
+“construct” the “true name” for the <a class="reference internal" href="glossary.html#term-object"><span class="xref std std-term">object</span></a>.</p></li>
 <li><p>Storage server checks if the data exists already.
 Regardless, it replies with the assigned salt and iv
-to be used for the corresponding <a class="reference internal" href="updated-glossary.html#term-object"><span class="xref std std-term">object</span></a>.</p></li>
+to be used for the corresponding <a class="reference internal" href="glossary.html#term-object"><span class="xref std std-term">object</span></a>.</p></li>
 <li><p>The client encrypts the full set of data
 and sorts out padding. The blob is ready
 to save, and client has the “true name” of
-the object (”<a class="reference internal" href="updated-glossary.html#term-FN"><span class="xref std std-term">&lt;FN&gt;</span></a>:”).</p></li>
+the object (”<a class="reference internal" href="glossary.html#term-FN"><span class="xref std std-term">&lt;FN&gt;</span></a>:”).</p></li>
 <li><p>The client next requests from the room server
 permission to store the amount of data needed. <a class="footnote-reference brackets" href="#f050" id="id15" role="doc-noteref"><span class="fn-bracket">[</span>21<span class="fn-bracket">]</span></a></p></li>
 <li><p>The room checks if it has budget:
 it asks the Ledger to “spend” storage bytes:
 it generates a transaction of class
 “token”, with properties “size, random id, used”,
-and asks the ledger for an identifier (”<a class="reference internal" href="updated-glossary.html#term-TID"><span class="xref std std-term">&lt;TID&gt;</span></a>”.</p></li>
+and asks the ledger for an identifier (”<a class="reference internal" href="glossary.html#term-TID"><span class="xref std std-term">&lt;TID&gt;</span></a>”.</p></li>
 <li><p>The ledger spends ‘size’ from the room’s
-budget ([B]-&gt;[C]), and generates <a class="reference internal" href="updated-glossary.html#term-TID"><span class="xref std std-term">&lt;TID&gt;</span></a>.
+budget ([B]-&gt;[C]), and generates <a class="reference internal" href="glossary.html#term-TID"><span class="xref std std-term">&lt;TID&gt;</span></a>.
 The key details are the approved
 size, and if it’s been “spent” yet.
 This is stored with a one-way
@@ -697,7 +696,7 @@ hash in ‘D2’ - thus “h(&lt;TID&gt;)”
 If all is well and good,
 responds with &lt;TID&gt;.</p></li>
 <li><p>On a personal server, step 5/6 is done
-locally instead, self-generating a <a class="reference internal" href="updated-glossary.html#term-TID"><span class="xref std std-term">&lt;TID&gt;</span></a>.</p></li>
+locally instead, self-generating a <a class="reference internal" href="glossary.html#term-TID"><span class="xref std std-term">&lt;TID&gt;</span></a>.</p></li>
 <li><p>The Room now creates a special object,
 sort of a “token”: <code class="docutils literal notranslate"><span class="pre">&lt;hash(&lt;TID&gt;),</span> <span class="pre">R(&lt;TID&gt;),</span> <span class="pre">R(h&lt;TID&gt;)&gt;</span></code>.
 This bundle is encrypted (and padded),
@@ -706,7 +705,7 @@ and returned with h(&lt;TID&gt;) to the client.</p></li>
 the store to be done. It sends the “magical
 token” along with the blob of data.</p></li>
 <li><p>Storage now checks with the Ledger (‘D2’):
-the hash of the <a class="reference internal" href="updated-glossary.html#term-TID"><span class="xref std std-term">&lt;TID&gt;</span></a> (“h(&lt;TID&gt;)”), checks
+the hash of the <a class="reference internal" href="glossary.html#term-TID"><span class="xref std std-term">&lt;TID&gt;</span></a> (“h(&lt;TID&gt;)”), checks
 that the ‘size’ is correct, and
 “spends” it (finalizing [B]-&gt;[C]).</p></li>
 <li><p>Storage now updates ‘D3’ with some special info:
@@ -715,14 +714,14 @@ for offline recovery / garbage collection.
 (you can see the keys stowed away
 by <code class="docutils literal notranslate"><span class="pre">handleStoredata()</span></code> <a class="footnote-reference brackets" href="#f048" id="id16" role="doc-noteref"><span class="fn-bracket">[</span>23<span class="fn-bracket">]</span></a>).
 The <code class="docutils literal notranslate"><span class="pre">R()</span></code> notation shows it has been encrypted
-by the <a class="reference internal" href="updated-glossary.html#term-LEDGER_KEY"><span class="xref std std-term">LEDGER_KEY</span></a> <a class="footnote-reference brackets" href="#f049" id="id17" role="doc-noteref"><span class="fn-bracket">[</span>24<span class="fn-bracket">]</span></a> .</p></li>
+by the <a class="reference internal" href="glossary.html#term-LEDGER_KEY"><span class="xref std std-term">LEDGER_KEY</span></a> <a class="footnote-reference brackets" href="#f049" id="id17" role="doc-noteref"><span class="fn-bracket">[</span>24<span class="fn-bracket">]</span></a> .</p></li>
 <li><p>Finally, the storage server will generate a random
-<a class="reference internal" href="updated-glossary.html#term-verification"><span class="xref std std-term">verification</span></a> number - unique for every <a class="reference internal" href="updated-glossary.html#term-FN"><span class="xref std std-term">&lt;FN&gt;</span></a>.
+<a class="reference internal" href="glossary.html#term-verification"><span class="xref std std-term">verification</span></a> number - unique for every <a class="reference internal" href="glossary.html#term-FN"><span class="xref std std-term">&lt;FN&gt;</span></a>.
 When the client receives it, it can <em>finally</em>
 construct the control message with all
 the details about the object, which
 altogether we loosely refer to as
-the <a class="reference internal" href="updated-glossary.html#term-manifest"><span class="xref std std-term">manifest</span></a>. This is sent to
+the <a class="reference internal" href="glossary.html#term-manifest"><span class="xref std std-term">manifest</span></a>. This is sent to
 all chat room participants.</p></li>
 </ol>
 <p>Various things to note:</p>
@@ -741,9 +740,9 @@ It can “independently” authorize messages
 and files up to that total amount.
 Once that’s exceeded, then on a personal
 server you need to directly change the
-budget using the <a class="reference internal" href="updated-glossary.html#term-CLI"><span class="xref std std-term">CLI</span></a>, on a multi-user
+budget using the <a class="reference internal" href="glossary.html#term-CLI"><span class="xref std std-term">CLI</span></a>, on a multi-user
 server it needs to request more allocation
-from the <a class="reference internal" href="updated-glossary.html#term-Ledger-Backend"><span class="xref std std-term">Ledger Backend</span></a>.</p></li>
+from the <a class="reference internal" href="glossary.html#term-Ledger-Backend"><span class="xref std std-term">Ledger Backend</span></a>.</p></li>
 <li><p>Note that in around step [5], neither the Room
 nor the Ledger actually need to know <em>what</em>
 object is being stored, just it’s size
@@ -752,13 +751,13 @@ options to further obfuscate correlation
 between specific objects and coresponding
 storage budget “spend”).</p></li>
 <li><p>You can think of part of the transactions
-around <a class="reference internal" href="updated-glossary.html#term-TID"><span class="xref std std-term">&lt;TID&gt;</span></a> as a sort of local cryptocurrency,
+around <a class="reference internal" href="glossary.html#term-TID"><span class="xref std std-term">&lt;TID&gt;</span></a> as a sort of local cryptocurrency,
 a “token” in the old-fashioned sense:
 it’s a thing that can be “printed” by
 asking the Ledger to approve [B]-&gt;[C],
 and cashed in by “spending” it with
 the storage server ([C]).</p></li>
-<li><p>The <a class="reference internal" href="updated-glossary.html#term-manifest"><span class="xref std std-term">manifest</span></a> can be used anywhere:
+<li><p>The <a class="reference internal" href="glossary.html#term-manifest"><span class="xref std std-term">manifest</span></a> can be used anywhere:
 command line, other clients, etc. There’s two
 versions of it - one that is share with
 everybody, and one that includes the additional
@@ -819,7 +818,7 @@ correct term might be “wire transfer format.”</p>
 <p>For storage, data in key-value stores in various Cloudflare services
 typically support either a string (JSON) object, or a purely binary
 object. <a class="footnote-reference brackets" href="#f038" id="id21" role="doc-noteref"><span class="fn-bracket">[</span>13<span class="fn-bracket">]</span></a> If we were to Base64 encode these, it would cause a
-8/6 (1.33) factor expansion, which matters less for a <a class="reference internal" href="updated-glossary.html#term-thumbnail"><span class="xref std std-term">thumbnail</span></a>, but on
+8/6 (1.33) factor expansion, which matters less for a <a class="reference internal" href="glossary.html#term-thumbnail"><span class="xref std std-term">thumbnail</span></a>, but on
 full sized images starts adding up. We’ve therefore designed <a class="footnote-reference brackets" href="#f039" id="id22" role="doc-noteref"><span class="fn-bracket">[</span>14<span class="fn-bracket">]</span></a>
 a simple manner in which to store a more or less arbitrary JS data
 structure in binary format.</p>
@@ -879,7 +878,7 @@ subtle.crypto standard )</p>
 <section id="rooms-technical-details">
 <span id="id25"></span><h2>Rooms: Technical Details<a class="headerlink" href="#rooms-technical-details" title="Permalink to this heading">#</a></h2>
 <p>All communication is centered around a <a class="reference internal" href="glossary.html#term-Room"><span class="xref std std-term">Room</span></a>.</p>
-<p>The <a class="reference internal" href="updated-glossary.html#term-Room-Name"><span class="xref std std-term">Room Name</span></a> is a 48-byte <a class="footnote-reference brackets" href="#f011" id="id26" role="doc-noteref"><span class="fn-bracket">[</span>26<span class="fn-bracket">]</span></a> URI <a class="footnote-reference brackets" href="#f012" id="id27" role="doc-noteref"><span class="fn-bracket">[</span>27<span class="fn-bracket">]</span></a> encoded in 64
+<p>The <a class="reference internal" href="glossary.html#term-Room-Name"><span class="xref std std-term">Room Name</span></a> is a 48-byte <a class="footnote-reference brackets" href="#f011" id="id26" role="doc-noteref"><span class="fn-bracket">[</span>26<span class="fn-bracket">]</span></a> URI <a class="footnote-reference brackets" href="#f012" id="id27" role="doc-noteref"><span class="fn-bracket">[</span>27<span class="fn-bracket">]</span></a> encoded in 64
 characters of b64 <a class="footnote-reference brackets" href="#f013" id="id28" role="doc-noteref"><span class="fn-bracket">[</span>28<span class="fn-bracket">]</span></a>. This name is globally unique <a class="footnote-reference brackets" href="#f014" id="id29" role="doc-noteref"><span class="fn-bracket">[</span>29<span class="fn-bracket">]</span></a>, including
 across servers.</p>
 <p>An example would be:</p>
@@ -892,7 +891,7 @@ identifier”, or “room name”.</p>
 <a class="footnote-reference brackets" href="#f010" id="id30" role="doc-noteref"><span class="fn-bracket">[</span>25<span class="fn-bracket">]</span></a> in the <a class="reference internal" href="#command-line"><span class="std std-ref">command line tools</span></a>.
 (UPDATE: this is changing to be derived from a generated owner public key.)</p>
 <p>The location (server) where a room is created is called the
-<a class="reference internal" href="updated-glossary.html#term-Origin-Server"><span class="xref std std-term">Origin Server</span></a>. Note that the identity of the origin server is
+<a class="reference internal" href="glossary.html#term-Origin-Server"><span class="xref std std-term">Origin Server</span></a>. Note that the identity of the origin server is
 in no manner reflected in the name of a room. <a class="footnote-reference brackets" href="#f015" id="id31" role="doc-noteref"><span class="fn-bracket">[</span>30<span class="fn-bracket">]</span></a></p>
 <p>The same &lt;room&gt; identifier is used on different servers: if you
 have a staging environment for your front end code, for example,
@@ -901,8 +900,8 @@ but share backend databases.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">https</span><span class="o">//</span><span class="n">s</span><span class="o">.</span><span class="n">privacy</span><span class="o">.</span><span class="n">app</span><span class="o">/&lt;</span><span class="n">room</span><span class="o">&gt;</span>
 </pre></div>
 </div>
-<p>Or you can run a <a class="reference internal" href="updated-glossary.html#term-Personal-Room-Server"><span class="xref std std-term">Personal Room Server</span></a> if you like.</p>
-<p id="owner-definition">An <a class="reference internal" href="updated-glossary.html#term-Owner"><span class="xref std std-term">Owner</span></a> is a verified user, authenticated in some manner;
+<p>Or you can run a <a class="reference internal" href="glossary.html#term-Personal-Room-Server"><span class="xref std std-term">Personal Room Server</span></a> if you like.</p>
+<p id="owner-definition">An <a class="reference internal" href="glossary.html#term-Owner"><span class="xref std std-term">Owner</span></a> is a verified user, authenticated in some manner;
 for a public server typically through an <a class="reference internal" href="glossary.html#term-SSO"><span class="xref std std-term">SSO</span></a></p>
 <p>Our baseline use case is an MI Member
 <a class="reference external" href="https://privacy.app">https://privacy.app</a> where owners are authenticated with an MI
@@ -910,7 +909,7 @@ membership number, an assigned Yubico hardware security key, and PIN
 code. However, the intent of this design is that it should be
 stand-alone from any particulars of authentication, but it does assume
 the presence of some such authentication.
-For example, for a <a class="reference internal" href="updated-glossary.html#term-Personal-Room-Server"><span class="xref std std-term">Personal Room Server</span></a>, it’s a server secret
+For example, for a <a class="reference internal" href="glossary.html#term-Personal-Room-Server"><span class="xref std std-term">Personal Room Server</span></a>, it’s a server secret
 that the admin of the site has.</p>
 <p>Room identifiers are unique, global, and persistent. <a class="footnote-reference brackets" href="#f016" id="id32" role="doc-noteref"><span class="fn-bracket">[</span>31<span class="fn-bracket">]</span></a> They are
 transportable in a natural way: no matter how many people host a
@@ -921,7 +920,7 @@ support export / import of conversations. See our discussion on
 <p>The <a class="reference internal" href="#command-line"><span class="std std-ref">command line tools</span></a> include support
 for generating “business cards” with QR codes for a room, the
 idea being that you can share these with people you meet, instead
-of <a class="reference internal" href="updated-glossary.html#term-PII"><span class="xref std std-term">PII</span></a> like emails or phone numbers.</p>
+of <a class="reference internal" href="glossary.html#term-PII"><span class="xref std std-term">PII</span></a> like emails or phone numbers.</p>
 </section>
 <section id="room-and-user-keys">
 <span id="roomuserkeydetails"></span><h2>Room and User Keys<a class="headerlink" href="#room-and-user-keys" title="Permalink to this heading">#</a></h2>
@@ -1024,7 +1023,7 @@ similarly matches the &lt;room&gt;_guestKey</p></li>
 </ul>
 </li>
 </ul>
-<p>In addition to all of the above, a ‘global’ <a class="reference internal" href="updated-glossary.html#term-LEDGER_KEY"><span class="xref std std-term">LEDGER_KEY</span></a> (RSA keyPair) is
+<p>In addition to all of the above, a ‘global’ <a class="reference internal" href="glossary.html#term-LEDGER_KEY"><span class="xref std std-term">LEDGER_KEY</span></a> (RSA keyPair) is
 also generated.</p>
 <ul class="simple">
 <li><p>The public half is used to encrypt the storage token id by KV_local
@@ -1086,7 +1085,7 @@ Owner needs to keep track of their key files.</p>
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id5">4</a><span class="fn-bracket">]</span></span>
 <p>The Javascript code for the processing is publicly available to experiment with at:
 <a class="reference external" href="https://cdn.privacy.app/util/photoTesting.html">https://cdn.privacy.app/util/photoTesting.html</a> in the
-client to generate a <a class="reference internal" href="updated-glossary.html#term-thumbnail"><span class="xref std std-term">thumbnail</span></a> as well as a standardized
+client to generate a <a class="reference internal" href="glossary.html#term-thumbnail"><span class="xref std std-term">thumbnail</span></a> as well as a standardized
 version; when the thumbnail appears <em>locally *on the client
 both versions are ready to be used. The code used will
 transform into any desired *maximum</em> size (iteratively
@@ -1098,7 +1097,7 @@ in <a class="reference external" href="https://github.com/snackabra/snackabra-io
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id6">5</a><span class="fn-bracket">]</span></span>
 <p>Which means metadata will be removed as a side-effect, if
 and only if the image is bigger than 16 MB. The 16 MB
-limit was chosen to bo fit within the current <a class="reference internal" href="updated-glossary.html#term-KV_global"><span class="xref std std-term">KV_global</span></a>
+limit was chosen to bo fit within the current <a class="reference internal" href="glossary.html#term-KV_global"><span class="xref std std-term">KV_global</span></a>
 limits, and also to be conventient “page size” for future
 abstraction layers that would treat such a blob as a basic
 building block for more complex data structures (larger files,
@@ -1219,9 +1218,9 @@ DDOS protection for the OPRF() endpoints.</p>
 <aside class="footnote brackets" id="f047" role="note">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id18">22</a><span class="fn-bracket">]</span></span>
 <p>TODO: we have an outstanding design concern here, which is
-to retain a hash or encrypted copy of the <a class="reference internal" href="updated-glossary.html#term-TID"><span class="xref std std-term">&lt;TID&gt;</span></a> that only
+to retain a hash or encrypted copy of the <a class="reference internal" href="glossary.html#term-TID"><span class="xref std std-term">&lt;TID&gt;</span></a> that only
 the owner can take advantage of in a future
-“free(&lt;TID&gt;, &lt;FN&gt;)” which would queue up <a class="reference internal" href="updated-glossary.html#term-FN"><span class="xref std std-term">&lt;FN&gt;</span></a> for offline resolution
+“free(&lt;TID&gt;, &lt;FN&gt;)” which would queue up <a class="reference internal" href="glossary.html#term-FN"><span class="xref std std-term">&lt;FN&gt;</span></a> for offline resolution
 (to deallocated the storage budget accrued for that specific &lt;FN&gt;
 for that specific user, with minimal privacy leakage).</p>
 </aside>

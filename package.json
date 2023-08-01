@@ -1,10 +1,20 @@
 {
-  "dependencies": {
-    "@types/node": "^18.15.13",
-    "typescript": "^5.0.4"
+  "name": "snackabra",
+  "author": "Magnusson Institute",
+  "license": "GPL-3.0-only",
+  "homepage": "https://snackabra.io",
+
+  "//": "Pre-relase of 0.6.0",
+  "version": "0.6.0-0",
+  "scripts": {
+    "start": "make html",
+    "build": "make jslib && make html && make html"
   },
   "devDependencies": {
+    "@types/node": "^18.15.13",
+    "typescript": "^5.0.4",
     "typedoc": "^0.24.5",
-    "typedoc-plugin-markdown": "^3.15.2"
+    "typedoc-plugin-markdown": "^3.15.2",
+    "snackabra": "^0.5.189"
   }
 }

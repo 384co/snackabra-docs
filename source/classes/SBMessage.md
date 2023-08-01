@@ -14,8 +14,6 @@ Body should be below 32KiB, though it tolerates up to 64KiB
 
 ### Properties
 
-- [#encryptionKey](SBMessage.md##encryptionkey)
-- [#sendToPubKey](SBMessage.md##sendtopubkey)
 - [MAX\_SB\_BODY\_SIZE](SBMessage.md#max_sb_body_size)
 - [[SB\_MESSAGE\_SYMBOL]](SBMessage.md#[sb_message_symbol])
 - [channel](SBMessage.md#channel)
@@ -46,18 +44,6 @@ Body should be below 32KiB, though it tolerates up to 64KiB
 | `sendToJsonWebKey?` | `JsonWebKey` | `undefined` |
 
 ## Properties
-
-### <a id="#encryptionkey" name="#encryptionkey"></a> #encryptionKey
-
-• `Private` `Optional` **#encryptionKey**: `CryptoKey`
-
-___
-
-### <a id="#sendtopubkey" name="#sendtopubkey"></a> #sendToPubKey
-
-• `Private` `Optional` **#sendToPubKey**: `JsonWebKey`
-
-___
 
 ### <a id="max_sb_body_size" name="max_sb_body_size"></a> MAX\_SB\_BODY\_SIZE
 

@@ -6,7 +6,7 @@
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" />
 
     <!-- Generated with Sphinx 5.3.0 and Furo 2023.03.27 -->
-        <title>Class: SBObjectHandle - snackabra 0.5.x beta documentation</title>
+        <title>Class: SBObjectHandle - snackabra 0.6.0 beta documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=fad236701ea90a88636c2a8c73b44ae642ed2a53" />
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
@@ -125,7 +125,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">snackabra 0.5.x beta documentation</div></a>
+      <a href="../index.html"><div class="brand">snackabra 0.6.0 beta documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -148,7 +148,7 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
   
   
-  <span class="sidebar-brand-text">snackabra 0.5.x beta documentation</span>
+  <span class="sidebar-brand-text">snackabra 0.6.0 beta documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -176,7 +176,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../user-guide.html">Appendix B: Privacy.App Chat Room User Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../diag-sample.html">(ignore)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../motivation.html">Motivation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../updated-glossary.html">Updated Glossary</a></li>
 </ul>
 
 </div>
@@ -211,7 +210,7 @@
           </label>
         </div>
         <article role="main">
-          <p><a class="reference internal" href="../jslib2.html"><span class="std std-doc">JSLib Reference Manual</span></a> / <a class="reference internal" href="../modules.html"><span class="std std-doc">Exports</span></a> / SBObjectHandle</p>
+          <p><a class="reference internal" href="#../jslib2.md"><span class="xref myst">JSLib Reference Manual</span></a> / <a class="reference internal" href="../modules.html"><span class="std std-doc">Exports</span></a> / SBObjectHandle</p>
 <section id="class-sbobjecthandle">
 <h1>Class: SBObjectHandle<a class="headerlink" href="#class-sbobjecthandle" title="Permalink to this heading">#</a></h1>
 <p>Basic object handle for a shard (all storage).</p>
@@ -249,12 +248,6 @@ are guaranteed to be random, the fourth may be “designed”.</p>
 <section id="properties">
 <h3>Properties<a class="headerlink" href="#properties" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
-<li><p><a class="reference internal" href="##_type"><span class="std std-ref">#_type</span></a></p></li>
-<li><p><a class="reference internal" href="##id"><span class="std std-ref">#id</span></a></p></li>
-<li><p><a class="reference internal" href="##id32"><span class="std std-ref">#id32</span></a></p></li>
-<li><p><a class="reference internal" href="##key"><span class="std std-ref">#key</span></a></p></li>
-<li><p><a class="reference internal" href="##key32"><span class="std std-ref">#key32</span></a></p></li>
-<li><p><a class="reference internal" href="##verification"><span class="std std-ref">#verification</span></a></p></li>
 <li><p><a class="reference internal" href="#actualsize"><span class="std std-ref">actualSize</span></a></p></li>
 <li><p><a class="reference internal" href="#dateandtime"><span class="std std-ref">dateAndTime</span></a></p></li>
 <li><p><a class="reference internal" href="#filename"><span class="std std-ref">fileName</span></a></p></li>
@@ -305,66 +298,12 @@ are guaranteed to be random, the fourth may be “designed”.</p>
 </section>
 <section id="id2">
 <h2>Properties<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
-<section id="type">
-<h3><a id="#_type" name="#_type"></a> #_type<a class="headerlink" href="#type" title="Permalink to this heading">#</a></h3>
-<p>• <code class="docutils literal notranslate"><span class="pre">Private</span></code> <strong>#_type</strong>: <a class="reference internal" href="../modules.html#sbobjecttype"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">SBObjectType</span></code></span></a> = <code class="docutils literal notranslate"><span class="pre">'b'</span></code></p>
-<section id="implementation-of">
-<h4>Implementation of<a class="headerlink" href="#implementation-of" title="Permalink to this heading">#</a></h4>
-<p>SBObjectHandle.#_type</p>
-</section>
-</section>
-<hr class="docutils" />
-<section id="id">
-<h3><a id="#id" name="#id"></a> #id<a class="headerlink" href="#id" title="Permalink to this heading">#</a></h3>
-<p>• <code class="docutils literal notranslate"><span class="pre">Private</span></code> <code class="docutils literal notranslate"><span class="pre">Optional</span></code> <strong>#id</strong>: <code class="docutils literal notranslate"><span class="pre">string</span></code></p>
-<section id="id3">
-<h4>Implementation of<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h4>
-<p>SBObjectHandle.#id</p>
-</section>
-</section>
-<hr class="docutils" />
-<section id="id32">
-<h3><a id="#id32" name="#id32"></a> #id32<a class="headerlink" href="#id32" title="Permalink to this heading">#</a></h3>
-<p>• <code class="docutils literal notranslate"><span class="pre">Private</span></code> <code class="docutils literal notranslate"><span class="pre">Optional</span></code> <strong>#id32</strong>: <code class="docutils literal notranslate"><span class="pre">Base62Encoded</span></code></p>
-<section id="id4">
-<h4>Implementation of<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h4>
-<p>SBObjectHandle.#id32</p>
-</section>
-</section>
-<hr class="docutils" />
-<section id="key">
-<h3><a id="#key" name="#key"></a> #key<a class="headerlink" href="#key" title="Permalink to this heading">#</a></h3>
-<p>• <code class="docutils literal notranslate"><span class="pre">Private</span></code> <code class="docutils literal notranslate"><span class="pre">Optional</span></code> <strong>#key</strong>: <code class="docutils literal notranslate"><span class="pre">string</span></code></p>
-<section id="id5">
-<h4>Implementation of<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h4>
-<p>SBObjectHandle.#key</p>
-</section>
-</section>
-<hr class="docutils" />
-<section id="key32">
-<h3><a id="#key32" name="#key32"></a> #key32<a class="headerlink" href="#key32" title="Permalink to this heading">#</a></h3>
-<p>• <code class="docutils literal notranslate"><span class="pre">Private</span></code> <code class="docutils literal notranslate"><span class="pre">Optional</span></code> <strong>#key32</strong>: <code class="docutils literal notranslate"><span class="pre">Base62Encoded</span></code></p>
-<section id="id6">
-<h4>Implementation of<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h4>
-<p>SBObjectHandle.#key32</p>
-</section>
-</section>
-<hr class="docutils" />
-<section id="verification">
-<h3><a id="#verification" name="#verification"></a> #verification<a class="headerlink" href="#verification" title="Permalink to this heading">#</a></h3>
-<p>• <code class="docutils literal notranslate"><span class="pre">Private</span></code> <code class="docutils literal notranslate"><span class="pre">Optional</span></code> <strong>#verification</strong>: <code class="docutils literal notranslate"><span class="pre">string</span></code> | <code class="docutils literal notranslate"><span class="pre">Promise</span></code>&lt;<code class="docutils literal notranslate"><span class="pre">string</span></code>&gt;</p>
-<section id="id7">
-<h4>Implementation of<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h4>
-<p>SBObjectHandle.#verification</p>
-</section>
-</section>
-<hr class="docutils" />
 <section id="actualsize">
 <h3><a id="actualsize" name="actualsize"></a> actualSize<a class="headerlink" href="#actualsize" title="Permalink to this heading">#</a></h3>
 <p>• <code class="docutils literal notranslate"><span class="pre">Optional</span></code> <strong>actualSize</strong>: <code class="docutils literal notranslate"><span class="pre">number</span></code></p>
 <p>optional: actual size of underlying file, if any</p>
-<section id="id8">
-<h4>Implementation of<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h4>
+<section id="implementation-of">
+<h4>Implementation of<a class="headerlink" href="#implementation-of" title="Permalink to this heading">#</a></h4>
 <p>SBObjectHandle.actualSize</p>
 </section>
 </section>
@@ -373,8 +312,8 @@ are guaranteed to be random, the fourth may be “designed”.</p>
 <h3><a id="dateandtime" name="dateandtime"></a> dateAndTime<a class="headerlink" href="#dateandtime" title="Permalink to this heading">#</a></h3>
 <p>• <code class="docutils literal notranslate"><span class="pre">Optional</span></code> <strong>dateAndTime</strong>: <code class="docutils literal notranslate"><span class="pre">string</span></code></p>
 <p>optional: time of shard creation</p>
-<section id="id9">
-<h4>Implementation of<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h4>
+<section id="id3">
+<h4>Implementation of<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h4>
 <p>SBObjectHandle.dateAndTime</p>
 </section>
 </section>
@@ -383,8 +322,8 @@ are guaranteed to be random, the fourth may be “designed”.</p>
 <h3><a id="filename" name="filename"></a> fileName<a class="headerlink" href="#filename" title="Permalink to this heading">#</a></h3>
 <p>• <code class="docutils literal notranslate"><span class="pre">Optional</span></code> <strong>fileName</strong>: <code class="docutils literal notranslate"><span class="pre">string</span></code></p>
 <p>by convention will be “PAYLOAD” if it’s a set of objects</p>
-<section id="id10">
-<h4>Implementation of<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h4>
+<section id="id4">
+<h4>Implementation of<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h4>
 <p>SBObjectHandle.fileName</p>
 </section>
 </section>
@@ -393,8 +332,8 @@ are guaranteed to be random, the fourth may be “designed”.</p>
 <h3><a id="filetype" name="filetype"></a> fileType<a class="headerlink" href="#filetype" title="Permalink to this heading">#</a></h3>
 <p>• <code class="docutils literal notranslate"><span class="pre">Optional</span></code> <strong>fileType</strong>: <code class="docutils literal notranslate"><span class="pre">string</span></code></p>
 <p>optional: file type (mime)</p>
-<section id="id11">
-<h4>Implementation of<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h4>
+<section id="id5">
+<h4>Implementation of<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h4>
 <p>SBObjectHandle.fileType</p>
 </section>
 </section>
@@ -405,8 +344,8 @@ are guaranteed to be random, the fourth may be “designed”.</p>
 <p>you’ll need these in case you want to track an object
 across future (storage) servers, but as long as you
 are within the same SB servers you can request them.</p>
-<section id="id12">
-<h4>Implementation of<a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h4>
+<section id="id6">
+<h4>Implementation of<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h4>
 <p>SBObjectHandle.iv</p>
 </section>
 </section>
@@ -415,8 +354,8 @@ are within the same SB servers you can request them.</p>
 <h3><a id="lastmodified" name="lastmodified"></a> lastModified<a class="headerlink" href="#lastmodified" title="Permalink to this heading">#</a></h3>
 <p>• <code class="docutils literal notranslate"><span class="pre">Optional</span></code> <strong>lastModified</strong>: <code class="docutils literal notranslate"><span class="pre">number</span></code></p>
 <p>optional: last modified time (of underlying file, if any)</p>
-<section id="id13">
-<h4>Implementation of<a class="headerlink" href="#id13" title="Permalink to this heading">#</a></h4>
+<section id="id7">
+<h4>Implementation of<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h4>
 <p>SBObjectHandle.lastModified</p>
 </section>
 </section>
@@ -427,8 +366,8 @@ are within the same SB servers you can request them.</p>
 <p>you’ll need these in case you want to track an object
 across future (storage) servers, but as long as you
 are within the same SB servers you can request them.</p>
-<section id="id14">
-<h4>Implementation of<a class="headerlink" href="#id14" title="Permalink to this heading">#</a></h4>
+<section id="id8">
+<h4>Implementation of<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h4>
 <p>SBObjectHandle.salt</p>
 </section>
 </section>
@@ -437,8 +376,8 @@ are within the same SB servers you can request them.</p>
 <h3><a id="savedsize" name="savedsize"></a> savedSize<a class="headerlink" href="#savedsize" title="Permalink to this heading">#</a></h3>
 <p>• <code class="docutils literal notranslate"><span class="pre">Optional</span></code> <strong>savedSize</strong>: <code class="docutils literal notranslate"><span class="pre">number</span></code></p>
 <p>optional: size of shard (may be different from actualSize)</p>
-<section id="id15">
-<h4>Implementation of<a class="headerlink" href="#id15" title="Permalink to this heading">#</a></h4>
+<section id="id9">
+<h4>Implementation of<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h4>
 <p>SBObjectHandle.savedSize</p>
 </section>
 </section>
@@ -447,8 +386,8 @@ are within the same SB servers you can request them.</p>
 <h3><a id="shardserver" name="shardserver"></a> shardServer<a class="headerlink" href="#shardserver" title="Permalink to this heading">#</a></h3>
 <p>• <code class="docutils literal notranslate"><span class="pre">Optional</span></code> <strong>shardServer</strong>: <code class="docutils literal notranslate"><span class="pre">string</span></code></p>
 <p>optionally direct a shard to a specific server (especially for reads)</p>
-<section id="id16">
-<h4>Implementation of<a class="headerlink" href="#id16" title="Permalink to this heading">#</a></h4>
+<section id="id10">
+<h4>Implementation of<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h4>
 <p>SBObjectHandle.shardServer</p>
 </section>
 </section>
@@ -457,30 +396,30 @@ are within the same SB servers you can request them.</p>
 <h3><a id="version" name="version"></a> version<a class="headerlink" href="#version" title="Permalink to this heading">#</a></h3>
 <p>• <code class="docutils literal notranslate"><span class="pre">Optional</span></code> <strong>version</strong>: <code class="docutils literal notranslate"><span class="pre">string</span></code> = <code class="docutils literal notranslate"><span class="pre">'1'</span></code></p>
 <p>version of this object</p>
-<section id="id17">
-<h4>Implementation of<a class="headerlink" href="#id17" title="Permalink to this heading">#</a></h4>
+<section id="id11">
+<h4>Implementation of<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h4>
 <p>SBObjectHandle.version</p>
 </section>
 </section>
 </section>
-<section id="id18">
-<h2>Accessors<a class="headerlink" href="#id18" title="Permalink to this heading">#</a></h2>
-<section id="id19">
-<h3><a id="id" name="id"></a> id<a class="headerlink" href="#id19" title="Permalink to this heading">#</a></h3>
+<section id="id12">
+<h2>Accessors<a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h2>
+<section id="id">
+<h3><a id="id" name="id"></a> id<a class="headerlink" href="#id" title="Permalink to this heading">#</a></h3>
 <p>• <code class="docutils literal notranslate"><span class="pre">get</span></code> <strong>id</strong>(): <code class="docutils literal notranslate"><span class="pre">string</span></code></p>
 <p>id of object</p>
 <section id="returns">
 <h4>Returns<a class="headerlink" href="#returns" title="Permalink to this heading">#</a></h4>
 <p><code class="docutils literal notranslate"><span class="pre">string</span></code></p>
 </section>
-<section id="id20">
-<h4>Implementation of<a class="headerlink" href="#id20" title="Permalink to this heading">#</a></h4>
+<section id="id13">
+<h4>Implementation of<a class="headerlink" href="#id13" title="Permalink to this heading">#</a></h4>
 <p>SBObjectHandle.id</p>
 <p>• <code class="docutils literal notranslate"><span class="pre">set</span></code> <strong>id</strong>(<code class="docutils literal notranslate"><span class="pre">value</span></code>): <code class="docutils literal notranslate"><span class="pre">void</span></code></p>
 <p>id of object</p>
 </section>
-<section id="id21">
-<h4>Parameters<a class="headerlink" href="#id21" title="Permalink to this heading">#</a></h4>
+<section id="id14">
+<h4>Parameters<a class="headerlink" href="#id14" title="Permalink to this heading">#</a></h4>
 <div class="table-wrapper colwidths-auto docutils container">
 <table class="docutils align-default">
 <thead>
@@ -496,32 +435,32 @@ are within the same SB servers you can request them.</p>
 </table>
 </div>
 </section>
-<section id="id22">
-<h4>Returns<a class="headerlink" href="#id22" title="Permalink to this heading">#</a></h4>
+<section id="id15">
+<h4>Returns<a class="headerlink" href="#id15" title="Permalink to this heading">#</a></h4>
 <p><code class="docutils literal notranslate"><span class="pre">void</span></code></p>
 </section>
-<section id="id23">
-<h4>Implementation of<a class="headerlink" href="#id23" title="Permalink to this heading">#</a></h4>
+<section id="id16">
+<h4>Implementation of<a class="headerlink" href="#id16" title="Permalink to this heading">#</a></h4>
 <p>SBObjectHandle.id</p>
 </section>
 </section>
 <hr class="docutils" />
-<section id="id24">
-<h3><a id="id32" name="id32"></a> id32<a class="headerlink" href="#id24" title="Permalink to this heading">#</a></h3>
+<section id="id32">
+<h3><a id="id32" name="id32"></a> id32<a class="headerlink" href="#id32" title="Permalink to this heading">#</a></h3>
 <p>• <code class="docutils literal notranslate"><span class="pre">get</span></code> <strong>id32</strong>(): <code class="docutils literal notranslate"><span class="pre">Base62Encoded</span></code></p>
 <p>optional: array32 format of id</p>
-<section id="id25">
-<h4>Returns<a class="headerlink" href="#id25" title="Permalink to this heading">#</a></h4>
+<section id="id17">
+<h4>Returns<a class="headerlink" href="#id17" title="Permalink to this heading">#</a></h4>
 <p><code class="docutils literal notranslate"><span class="pre">Base62Encoded</span></code></p>
 </section>
-<section id="id26">
-<h4>Implementation of<a class="headerlink" href="#id26" title="Permalink to this heading">#</a></h4>
+<section id="id18">
+<h4>Implementation of<a class="headerlink" href="#id18" title="Permalink to this heading">#</a></h4>
 <p>SBObjectHandle.id32</p>
 <p>• <code class="docutils literal notranslate"><span class="pre">set</span></code> <strong>id32</strong>(<code class="docutils literal notranslate"><span class="pre">value</span></code>): <code class="docutils literal notranslate"><span class="pre">void</span></code></p>
 <p>optional: array32 format of id</p>
 </section>
-<section id="id27">
-<h4>Parameters<a class="headerlink" href="#id27" title="Permalink to this heading">#</a></h4>
+<section id="id19">
+<h4>Parameters<a class="headerlink" href="#id19" title="Permalink to this heading">#</a></h4>
 <div class="table-wrapper colwidths-auto docutils container">
 <table class="docutils align-default">
 <thead>
@@ -537,32 +476,32 @@ are within the same SB servers you can request them.</p>
 </table>
 </div>
 </section>
-<section id="id28">
-<h4>Returns<a class="headerlink" href="#id28" title="Permalink to this heading">#</a></h4>
+<section id="id20">
+<h4>Returns<a class="headerlink" href="#id20" title="Permalink to this heading">#</a></h4>
 <p><code class="docutils literal notranslate"><span class="pre">void</span></code></p>
 </section>
-<section id="id29">
-<h4>Implementation of<a class="headerlink" href="#id29" title="Permalink to this heading">#</a></h4>
+<section id="id21">
+<h4>Implementation of<a class="headerlink" href="#id21" title="Permalink to this heading">#</a></h4>
 <p>SBObjectHandle.id32</p>
 </section>
 </section>
 <hr class="docutils" />
-<section id="id30">
-<h3><a id="key" name="key"></a> key<a class="headerlink" href="#id30" title="Permalink to this heading">#</a></h3>
+<section id="key">
+<h3><a id="key" name="key"></a> key<a class="headerlink" href="#key" title="Permalink to this heading">#</a></h3>
 <p>• <code class="docutils literal notranslate"><span class="pre">get</span></code> <strong>key</strong>(): <code class="docutils literal notranslate"><span class="pre">string</span></code></p>
 <p>key of object</p>
-<section id="id31">
-<h4>Returns<a class="headerlink" href="#id31" title="Permalink to this heading">#</a></h4>
+<section id="id22">
+<h4>Returns<a class="headerlink" href="#id22" title="Permalink to this heading">#</a></h4>
 <p><code class="docutils literal notranslate"><span class="pre">string</span></code></p>
 </section>
-<section id="id33">
-<h4>Implementation of<a class="headerlink" href="#id33" title="Permalink to this heading">#</a></h4>
+<section id="id23">
+<h4>Implementation of<a class="headerlink" href="#id23" title="Permalink to this heading">#</a></h4>
 <p>SBObjectHandle.key</p>
 <p>• <code class="docutils literal notranslate"><span class="pre">set</span></code> <strong>key</strong>(<code class="docutils literal notranslate"><span class="pre">value</span></code>): <code class="docutils literal notranslate"><span class="pre">void</span></code></p>
 <p>key of object</p>
 </section>
-<section id="id34">
-<h4>Parameters<a class="headerlink" href="#id34" title="Permalink to this heading">#</a></h4>
+<section id="id24">
+<h4>Parameters<a class="headerlink" href="#id24" title="Permalink to this heading">#</a></h4>
 <div class="table-wrapper colwidths-auto docutils container">
 <table class="docutils align-default">
 <thead>
@@ -578,32 +517,32 @@ are within the same SB servers you can request them.</p>
 </table>
 </div>
 </section>
-<section id="id35">
-<h4>Returns<a class="headerlink" href="#id35" title="Permalink to this heading">#</a></h4>
+<section id="id25">
+<h4>Returns<a class="headerlink" href="#id25" title="Permalink to this heading">#</a></h4>
 <p><code class="docutils literal notranslate"><span class="pre">void</span></code></p>
 </section>
-<section id="id36">
-<h4>Implementation of<a class="headerlink" href="#id36" title="Permalink to this heading">#</a></h4>
+<section id="id26">
+<h4>Implementation of<a class="headerlink" href="#id26" title="Permalink to this heading">#</a></h4>
 <p>SBObjectHandle.key</p>
 </section>
 </section>
 <hr class="docutils" />
-<section id="id37">
-<h3><a id="key32" name="key32"></a> key32<a class="headerlink" href="#id37" title="Permalink to this heading">#</a></h3>
+<section id="key32">
+<h3><a id="key32" name="key32"></a> key32<a class="headerlink" href="#key32" title="Permalink to this heading">#</a></h3>
 <p>• <code class="docutils literal notranslate"><span class="pre">get</span></code> <strong>key32</strong>(): <code class="docutils literal notranslate"><span class="pre">Base62Encoded</span></code></p>
 <p>optional: array32 format of key</p>
-<section id="id38">
-<h4>Returns<a class="headerlink" href="#id38" title="Permalink to this heading">#</a></h4>
+<section id="id27">
+<h4>Returns<a class="headerlink" href="#id27" title="Permalink to this heading">#</a></h4>
 <p><code class="docutils literal notranslate"><span class="pre">Base62Encoded</span></code></p>
 </section>
-<section id="id39">
-<h4>Implementation of<a class="headerlink" href="#id39" title="Permalink to this heading">#</a></h4>
+<section id="id28">
+<h4>Implementation of<a class="headerlink" href="#id28" title="Permalink to this heading">#</a></h4>
 <p>SBObjectHandle.key32</p>
 <p>• <code class="docutils literal notranslate"><span class="pre">set</span></code> <strong>key32</strong>(<code class="docutils literal notranslate"><span class="pre">value</span></code>): <code class="docutils literal notranslate"><span class="pre">void</span></code></p>
 <p>optional: array32 format of key</p>
 </section>
-<section id="id40">
-<h4>Parameters<a class="headerlink" href="#id40" title="Permalink to this heading">#</a></h4>
+<section id="id29">
+<h4>Parameters<a class="headerlink" href="#id29" title="Permalink to this heading">#</a></h4>
 <div class="table-wrapper colwidths-auto docutils container">
 <table class="docutils align-default">
 <thead>
@@ -619,43 +558,43 @@ are within the same SB servers you can request them.</p>
 </table>
 </div>
 </section>
-<section id="id41">
-<h4>Returns<a class="headerlink" href="#id41" title="Permalink to this heading">#</a></h4>
+<section id="id30">
+<h4>Returns<a class="headerlink" href="#id30" title="Permalink to this heading">#</a></h4>
 <p><code class="docutils literal notranslate"><span class="pre">void</span></code></p>
 </section>
-<section id="id42">
-<h4>Implementation of<a class="headerlink" href="#id42" title="Permalink to this heading">#</a></h4>
+<section id="id31">
+<h4>Implementation of<a class="headerlink" href="#id31" title="Permalink to this heading">#</a></h4>
 <p>SBObjectHandle.key32</p>
 </section>
 </section>
 <hr class="docutils" />
-<section id="id43">
-<h3><a id="type" name="type"></a> type<a class="headerlink" href="#id43" title="Permalink to this heading">#</a></h3>
+<section id="type">
+<h3><a id="type" name="type"></a> type<a class="headerlink" href="#type" title="Permalink to this heading">#</a></h3>
 <p>• <code class="docutils literal notranslate"><span class="pre">get</span></code> <strong>type</strong>(): <a class="reference internal" href="../modules.html#sbobjecttype"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">SBObjectType</span></code></span></a></p>
 <p>type of object</p>
-<section id="id44">
-<h4>Returns<a class="headerlink" href="#id44" title="Permalink to this heading">#</a></h4>
+<section id="id33">
+<h4>Returns<a class="headerlink" href="#id33" title="Permalink to this heading">#</a></h4>
 <p><a class="reference internal" href="../modules.html#sbobjecttype"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">SBObjectType</span></code></span></a></p>
 </section>
-<section id="id45">
-<h4>Implementation of<a class="headerlink" href="#id45" title="Permalink to this heading">#</a></h4>
+<section id="id34">
+<h4>Implementation of<a class="headerlink" href="#id34" title="Permalink to this heading">#</a></h4>
 <p>SBObjectHandle.type</p>
 </section>
 </section>
 <hr class="docutils" />
-<section id="id46">
-<h3><a id="verification" name="verification"></a> verification<a class="headerlink" href="#id46" title="Permalink to this heading">#</a></h3>
+<section id="verification">
+<h3><a id="verification" name="verification"></a> verification<a class="headerlink" href="#verification" title="Permalink to this heading">#</a></h3>
 <p>• <code class="docutils literal notranslate"><span class="pre">get</span></code> <strong>verification</strong>(): <code class="docutils literal notranslate"><span class="pre">string</span></code> | <code class="docutils literal notranslate"><span class="pre">Promise</span></code>&lt;<code class="docutils literal notranslate"><span class="pre">string</span></code>&gt;</p>
 <p>and currently you also need to keep track of this,
 but you can start sharing / communicating the
 object before it’s resolved: among other things it
 serves as a ‘write-through’ verification</p>
-<section id="id47">
-<h4>Returns<a class="headerlink" href="#id47" title="Permalink to this heading">#</a></h4>
+<section id="id35">
+<h4>Returns<a class="headerlink" href="#id35" title="Permalink to this heading">#</a></h4>
 <p><code class="docutils literal notranslate"><span class="pre">string</span></code> | <code class="docutils literal notranslate"><span class="pre">Promise</span></code>&lt;<code class="docutils literal notranslate"><span class="pre">string</span></code>&gt;</p>
 </section>
-<section id="id48">
-<h4>Implementation of<a class="headerlink" href="#id48" title="Permalink to this heading">#</a></h4>
+<section id="id36">
+<h4>Implementation of<a class="headerlink" href="#id36" title="Permalink to this heading">#</a></h4>
 <p>SBObjectHandle.verification</p>
 <p>• <code class="docutils literal notranslate"><span class="pre">set</span></code> <strong>verification</strong>(<code class="docutils literal notranslate"><span class="pre">value</span></code>): <code class="docutils literal notranslate"><span class="pre">void</span></code></p>
 <p>and currently you also need to keep track of this,
@@ -663,8 +602,8 @@ but you can start sharing / communicating the
 object before it’s resolved: among other things it
 serves as a ‘write-through’ verification</p>
 </section>
-<section id="id49">
-<h4>Parameters<a class="headerlink" href="#id49" title="Permalink to this heading">#</a></h4>
+<section id="id37">
+<h4>Parameters<a class="headerlink" href="#id37" title="Permalink to this heading">#</a></h4>
 <div class="table-wrapper colwidths-auto docutils container">
 <table class="docutils align-default">
 <thead>
@@ -680,12 +619,12 @@ serves as a ‘write-through’ verification</p>
 </table>
 </div>
 </section>
-<section id="id50">
-<h4>Returns<a class="headerlink" href="#id50" title="Permalink to this heading">#</a></h4>
+<section id="id38">
+<h4>Returns<a class="headerlink" href="#id38" title="Permalink to this heading">#</a></h4>
 <p><code class="docutils literal notranslate"><span class="pre">void</span></code></p>
 </section>
-<section id="id51">
-<h4>Implementation of<a class="headerlink" href="#id51" title="Permalink to this heading">#</a></h4>
+<section id="id39">
+<h4>Implementation of<a class="headerlink" href="#id39" title="Permalink to this heading">#</a></h4>
 <p>SBObjectHandle.verification</p>
 </section>
 </section>
@@ -746,116 +685,92 @@ serves as a ‘write-through’ verification</p>
 </ul>
 </li>
 <li><a class="reference internal" href="#id2">Properties</a><ul>
-<li><a class="reference internal" href="#type"><a id="#_type" name="#_type"></a> #_type</a><ul>
+<li><a class="reference internal" href="#actualsize"><a id="actualsize" name="actualsize"></a> actualSize</a><ul>
 <li><a class="reference internal" href="#implementation-of">Implementation of</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id"><a id="#id" name="#id"></a> #id</a><ul>
+<li><a class="reference internal" href="#dateandtime"><a id="dateandtime" name="dateandtime"></a> dateAndTime</a><ul>
 <li><a class="reference internal" href="#id3">Implementation of</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id32"><a id="#id32" name="#id32"></a> #id32</a><ul>
+<li><a class="reference internal" href="#filename"><a id="filename" name="filename"></a> fileName</a><ul>
 <li><a class="reference internal" href="#id4">Implementation of</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#key"><a id="#key" name="#key"></a> #key</a><ul>
+<li><a class="reference internal" href="#filetype"><a id="filetype" name="filetype"></a> fileType</a><ul>
 <li><a class="reference internal" href="#id5">Implementation of</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#key32"><a id="#key32" name="#key32"></a> #key32</a><ul>
+<li><a class="reference internal" href="#iv"><a id="iv" name="iv"></a> iv</a><ul>
 <li><a class="reference internal" href="#id6">Implementation of</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#verification"><a id="#verification" name="#verification"></a> #verification</a><ul>
+<li><a class="reference internal" href="#lastmodified"><a id="lastmodified" name="lastmodified"></a> lastModified</a><ul>
 <li><a class="reference internal" href="#id7">Implementation of</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#actualsize"><a id="actualsize" name="actualsize"></a> actualSize</a><ul>
+<li><a class="reference internal" href="#salt"><a id="salt" name="salt"></a> salt</a><ul>
 <li><a class="reference internal" href="#id8">Implementation of</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#dateandtime"><a id="dateandtime" name="dateandtime"></a> dateAndTime</a><ul>
+<li><a class="reference internal" href="#savedsize"><a id="savedsize" name="savedsize"></a> savedSize</a><ul>
 <li><a class="reference internal" href="#id9">Implementation of</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#filename"><a id="filename" name="filename"></a> fileName</a><ul>
+<li><a class="reference internal" href="#shardserver"><a id="shardserver" name="shardserver"></a> shardServer</a><ul>
 <li><a class="reference internal" href="#id10">Implementation of</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#filetype"><a id="filetype" name="filetype"></a> fileType</a><ul>
+<li><a class="reference internal" href="#version"><a id="version" name="version"></a> version</a><ul>
 <li><a class="reference internal" href="#id11">Implementation of</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#iv"><a id="iv" name="iv"></a> iv</a><ul>
-<li><a class="reference internal" href="#id12">Implementation of</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#lastmodified"><a id="lastmodified" name="lastmodified"></a> lastModified</a><ul>
+<li><a class="reference internal" href="#id12">Accessors</a><ul>
+<li><a class="reference internal" href="#id"><a id="id" name="id"></a> id</a><ul>
+<li><a class="reference internal" href="#returns">Returns</a></li>
 <li><a class="reference internal" href="#id13">Implementation of</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#salt"><a id="salt" name="salt"></a> salt</a><ul>
-<li><a class="reference internal" href="#id14">Implementation of</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#savedsize"><a id="savedsize" name="savedsize"></a> savedSize</a><ul>
-<li><a class="reference internal" href="#id15">Implementation of</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#shardserver"><a id="shardserver" name="shardserver"></a> shardServer</a><ul>
+<li><a class="reference internal" href="#id14">Parameters</a></li>
+<li><a class="reference internal" href="#id15">Returns</a></li>
 <li><a class="reference internal" href="#id16">Implementation of</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#version"><a id="version" name="version"></a> version</a><ul>
-<li><a class="reference internal" href="#id17">Implementation of</a></li>
+<li><a class="reference internal" href="#id32"><a id="id32" name="id32"></a> id32</a><ul>
+<li><a class="reference internal" href="#id17">Returns</a></li>
+<li><a class="reference internal" href="#id18">Implementation of</a></li>
+<li><a class="reference internal" href="#id19">Parameters</a></li>
+<li><a class="reference internal" href="#id20">Returns</a></li>
+<li><a class="reference internal" href="#id21">Implementation of</a></li>
 </ul>
 </li>
-</ul>
-</li>
-<li><a class="reference internal" href="#id18">Accessors</a><ul>
-<li><a class="reference internal" href="#id19"><a id="id" name="id"></a> id</a><ul>
-<li><a class="reference internal" href="#returns">Returns</a></li>
-<li><a class="reference internal" href="#id20">Implementation of</a></li>
-<li><a class="reference internal" href="#id21">Parameters</a></li>
+<li><a class="reference internal" href="#key"><a id="key" name="key"></a> key</a><ul>
 <li><a class="reference internal" href="#id22">Returns</a></li>
 <li><a class="reference internal" href="#id23">Implementation of</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#id24"><a id="id32" name="id32"></a> id32</a><ul>
+<li><a class="reference internal" href="#id24">Parameters</a></li>
 <li><a class="reference internal" href="#id25">Returns</a></li>
 <li><a class="reference internal" href="#id26">Implementation of</a></li>
-<li><a class="reference internal" href="#id27">Parameters</a></li>
-<li><a class="reference internal" href="#id28">Returns</a></li>
-<li><a class="reference internal" href="#id29">Implementation of</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id30"><a id="key" name="key"></a> key</a><ul>
-<li><a class="reference internal" href="#id31">Returns</a></li>
-<li><a class="reference internal" href="#id33">Implementation of</a></li>
-<li><a class="reference internal" href="#id34">Parameters</a></li>
+<li><a class="reference internal" href="#key32"><a id="key32" name="key32"></a> key32</a><ul>
+<li><a class="reference internal" href="#id27">Returns</a></li>
+<li><a class="reference internal" href="#id28">Implementation of</a></li>
+<li><a class="reference internal" href="#id29">Parameters</a></li>
+<li><a class="reference internal" href="#id30">Returns</a></li>
+<li><a class="reference internal" href="#id31">Implementation of</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#type"><a id="type" name="type"></a> type</a><ul>
+<li><a class="reference internal" href="#id33">Returns</a></li>
+<li><a class="reference internal" href="#id34">Implementation of</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#verification"><a id="verification" name="verification"></a> verification</a><ul>
 <li><a class="reference internal" href="#id35">Returns</a></li>
 <li><a class="reference internal" href="#id36">Implementation of</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#id37"><a id="key32" name="key32"></a> key32</a><ul>
+<li><a class="reference internal" href="#id37">Parameters</a></li>
 <li><a class="reference internal" href="#id38">Returns</a></li>
 <li><a class="reference internal" href="#id39">Implementation of</a></li>
-<li><a class="reference internal" href="#id40">Parameters</a></li>
-<li><a class="reference internal" href="#id41">Returns</a></li>
-<li><a class="reference internal" href="#id42">Implementation of</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#id43"><a id="type" name="type"></a> type</a><ul>
-<li><a class="reference internal" href="#id44">Returns</a></li>
-<li><a class="reference internal" href="#id45">Implementation of</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#id46"><a id="verification" name="verification"></a> verification</a><ul>
-<li><a class="reference internal" href="#id47">Returns</a></li>
-<li><a class="reference internal" href="#id48">Implementation of</a></li>
-<li><a class="reference internal" href="#id49">Parameters</a></li>
-<li><a class="reference internal" href="#id50">Returns</a></li>
-<li><a class="reference internal" href="#id51">Implementation of</a></li>
 </ul>
 </li>
 </ul>

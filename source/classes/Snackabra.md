@@ -31,13 +31,6 @@ without a parameter in which case SB will ping known servers.
 
 - [constructor](Snackabra.md#constructor)
 
-### Properties
-
-- [#channel](Snackabra.md##channel)
-- [#preferredServer](Snackabra.md##preferredserver)
-- [#storage](Snackabra.md##storage)
-- [#version](Snackabra.md##version)
-
 ### Accessors
 
 - [channel](Snackabra.md#channel)
@@ -62,30 +55,6 @@ without a parameter in which case SB will ping known servers.
 | :------ | :------ | :------ | :------ |
 | `args?` | [`SBServer`](../interfaces/SBServer.md) | `undefined` | optional object with the names of the matching servers, for example below shows the miniflare local dev config. Note that 'new Snackabra()' is guaranteed synchronous, so can be 'used' right away. You can optionally call without a parameter in which case SB will ping known servers. |
 | `DEBUG` | `boolean` | `false` | optional boolean to enable debug logging |
-
-## Properties
-
-### <a id="#channel" name="#channel"></a> #channel
-
-• `Private` **#channel**: [`Channel`](Channel.md)
-
-___
-
-### <a id="#preferredserver" name="#preferredserver"></a> #preferredServer
-
-• `Private` `Optional` **#preferredServer**: [`SBServer`](../interfaces/SBServer.md)
-
-___
-
-### <a id="#storage" name="#storage"></a> #storage
-
-• `Private` **#storage**: `StorageApi`
-
-___
-
-### <a id="#version" name="#version"></a> #version
-
-• `Private` **#version**: `string` = `version`
 
 ## Accessors
 

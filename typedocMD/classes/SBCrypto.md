@@ -13,14 +13,8 @@ as well as some general utility functions.
 
 - [constructor](SBCrypto.md#constructor)
 
-### Properties
-
-- [#knownKeys](SBCrypto.md##knownkeys)
-
 ### Methods
 
-- [#generateHash](SBCrypto.md##generatehash)
-- [#testHash](SBCrypto.md##testhash)
 - [ab2str](SBCrypto.md#ab2str)
 - [addKnownKey](SBCrypto.md#addknownkey)
 - [channelKeyStringsToCryptoKeys](SBCrypto.md#channelkeystringstocryptokeys)
@@ -49,46 +43,7 @@ as well as some general utility functions.
 
 • **new SBCrypto**()
 
-## Properties
-
-### <a id="#knownkeys" name="#knownkeys"></a> #knownKeys
-
-• `Private` **#knownKeys**: `Map`<`string`, `knownKeysInfo`\>
-
 ## Methods
-
-### <a id="#generatehash" name="#generatehash"></a> #generateHash
-
-▸ `Private` **#generateHash**(`rawBytes`): `Promise`<`string`\>
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `rawBytes` | `ArrayBuffer` |
-
-#### Returns
-
-`Promise`<`string`\>
-
-___
-
-### <a id="#testhash" name="#testhash"></a> #testHash
-
-▸ `Private` **#testHash**(`channelBytes`, `channel_id`): `Promise`<`boolean`\>
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `channelBytes` | `ArrayBuffer` |
-| `channel_id` | `string` |
-
-#### Returns
-
-`Promise`<`boolean`\>
-
-___
 
 ### <a id="ab2str" name="ab2str"></a> ab2str
 

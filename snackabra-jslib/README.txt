@@ -1,13 +1,12 @@
 
-You will need the javascript files in here.
+You will need JS and TS files here.
 
-We don't automatically pull from git latest javascript
-version of library (eg snackabra-jslib), you will need
-to copy (overwrite) the version you want in the 
-documentation into this directory.
+This links into whatever comes from 'yarn install'.
 
-You can do ``make jslib`` in the top directory.
+Note that if you're developing jslib locally, you will
+need to do 'yarn link'.
+
 
 Any other javascript files you want jsdoc/sphinx to find
-also need to be here.
+in the future, will also need to be here.
 

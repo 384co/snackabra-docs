@@ -18,8 +18,6 @@ If you would like to contribute or help out with the snackabra
 project, please feel free to reach out to us at snackabra@gmail.com or
 snackabra@protonmail.com
 
-
-
 Installation
 ------------
 
@@ -29,14 +27,17 @@ To setup working with the ``snackabra`` documentation per se:
 
     $ git clone https://github.com/snackabra/snackabra-docs
     $ cd snackabra-docs
+
+    $ # main elements are typedoc
+    $ yarn install
+    
     $ # note we do not support 3.10 yet (some package issues)
     $ python3.9 -m venv venv
     $ source venv/bin/activate
     $ pip install -r ./requirements.txt
 
-TODO: complete list of system requirements (eg including some not
-super common stuff like latexlive for confluence support).
-
+(This will pull in jslib from npm; if you're working with another
+version, use 'yarn link', see 'snackabra-jslib/README.txt').
 
 Development
 -----------
@@ -45,17 +46,18 @@ Package requirements (node) include:
 
 .. code-block:: console
 
-    $ npm install -g typedoc
-    $ npm install -g jsdoc
+    $ yarn add typedoc
+    $ yarn add jsdoc
 
 You work with files in 'source', after you've made any changes, run
 'make html' [#r03]_ and results will be in the 'build' directory:
 
 .. code-block:: console
 
-    $ make html  # you sometimes need to run this twice
-    $ make jslib # optional - this just copies over from ../snackabra-jslib
-    $ open index.html  # should open nicely, note this is root dir
+    $ # you sometimes need to run this twice
+    $ make html
+    $ # should open nicely, note this is root dir
+    $ open index.html
 
 Note that the makefile will copy the results from the 'build'
 directory to the root directory.
@@ -68,41 +70,22 @@ needing upwards 10 GB of disk space.
 
 For the jsdoc (documenting snackabra.js), you need to copy the
 javascript code you want documented to the ''snackabra-jslib''
-directory, ''make'' won't pull anything for you.
+directory, ''make'' won't pull anything for you. 
+
+Note: if you're developing jslib, you'll need 'yarn link', see
+the READEM in the 'snackabra-jslib' directory.
 
 _UPDATE: we just got typedoc to work in this setup, thx to a recent
 typedoc plugin (typedoc-plugin-sphinx) combined with myst-parser.
 So jslib is being refactored with typedoc. So perhaps should be 
 called tslib soon ... _
 
-*Note: Documenation strings for ``snackabra-pylib`` are pulled from
-the docstrings that come with ``pip install snackabara``,
-and will just happen magically. Pylib development is currently on
-hiatus (with the arrival of Deno) but if you wish to contribute 
-it's at https://github.com/snackabra/snackabra-pylib*
-
-
-Confluence
-----------
-
-You need to set environment variables:
-
-.. code-block:: console
-    export confluence_server_url='https://<YourCompany>.atlassian.net/wiki/'
-    export confluence_server_user='<YourEmail>'
-    # see below for API key
-    export confluence_server_pass=YourAPIKey
-    export confluence_space_key=snackabra
-
-You will need an API key from Atlassian, eg from here: https://id.atlassian.com/manage-profile/security/api-tokens
-
-
 
     
 LICENSE
 -------
 
-Copyright (c) 2016-2022 Magnusson Institute, All Rights Reserved.
+Copyright (c) 2016-2023 Magnusson Institute, All Rights Reserved.
 
 "Snackabra" is a registered trademark
 

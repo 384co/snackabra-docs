@@ -6,7 +6,7 @@
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Future Work" href="future.html" /><link rel="prev" title="Contact and Feedback" href="contact.html" />
 
     <!-- Generated with Sphinx 5.3.0 and Furo 2023.03.27 -->
-        <title>Glossary - snackabra 0.5.x beta documentation</title>
+        <title>Glossary - snackabra 0.6.0 beta documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=fad236701ea90a88636c2a8c73b44ae642ed2a53" />
     <link rel="stylesheet" type="text/css" href="_static/graphviz.css" />
@@ -125,7 +125,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">snackabra 0.5.x beta documentation</div></a>
+      <a href="index.html"><div class="brand">snackabra 0.6.0 beta documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -148,7 +148,7 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
   
   
-  <span class="sidebar-brand-text">snackabra 0.5.x beta documentation</span>
+  <span class="sidebar-brand-text">snackabra 0.6.0 beta documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -176,7 +176,6 @@
 <li class="toctree-l1"><a class="reference internal" href="user-guide.html">Appendix B: Privacy.App Chat Room User Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="diag-sample.html">(ignore)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="motivation.html">Motivation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="updated-glossary.html">Updated Glossary</a></li>
 </ul>
 
 </div>
@@ -230,14 +229,16 @@ It’s never retained (at rest) anywhere except in either hashed
 or encrypted form.</p>
 </dd>
 <dt id="term-addressable-worker">addressable worker<a class="headerlink" href="#term-addressable-worker" title="Permalink to this term">#</a></dt><dd><p>See discussion in <a class="reference internal" href="system-architecture.html#computing"><span class="std std-ref">the computing section</span></a>. As distinct
-from <a class="reference internal" href="updated-glossary.html#term-non-addressable-worker"><span class="xref std std-term">non-addressable worker</span></a>.</p>
+from <a class="reference internal" href="#term-non-addressable-worker"><span class="xref std std-term">non-addressable worker</span></a>.</p>
 </dd>
-<dt id="term-channel">channel<a class="headerlink" href="#term-channel" title="Permalink to this term">#</a></dt><dd><p>Essentially a synonym for <a class="reference internal" href="#term-Room"><span class="xref std std-term">Room</span></a>.</p>
+<dt id="term-channel">channel<a class="headerlink" href="#term-channel" title="Permalink to this term">#</a></dt><dd><p>Basic communication primitive. Used to be a synonym for <a class="reference internal" href="#term-Room"><span class="xref std std-term">Room</span></a>,
+but now it’s more correct to say that a Room is a simple use of a
+channel.</p>
 </dd>
-<dt id="term-channel-name">channel name<a class="headerlink" href="#term-channel-name" title="Permalink to this term">#</a></dt><dd><p>Essentially a synonym for <a class="reference internal" href="updated-glossary.html#term-Room-Name"><span class="xref std std-term">Room Name</span></a>. This is the newer term.</p>
+<dt id="term-channel-name">channel name<a class="headerlink" href="#term-channel-name" title="Permalink to this term">#</a></dt><dd><p>Essentially a synonym for <a class="reference internal" href="#term-Room-Name"><span class="xref std std-term">Room Name</span></a>. This is the newer term.</p>
 </dd>
 <dt id="term-CLI">CLI<a class="headerlink" href="#term-CLI" title="Permalink to this term">#</a></dt><dd><p>The command line interface; relevant for administering a
-<a class="reference internal" href="updated-glossary.html#term-Personal-Room-Server"><span class="xref std std-term">Personal Room Server</span></a>. See <a class="reference internal" href="overview.html#command-line"><span class="std std-ref">command line tools</span></a>.</p>
+<a class="reference internal" href="#term-Personal-Room-Server"><span class="xref std std-term">Personal Room Server</span></a>. See <a class="reference internal" href="overview.html#command-line"><span class="std std-ref">command line tools</span></a>.</p>
 </dd>
 <dt id="term-Durable-Object">Durable Object<a class="headerlink" href="#term-Durable-Object" title="Permalink to this term">#</a></dt><dd><p>These are “addressable workers”, as implemented by Cloudflare
 (<a class="reference external" href="https://developers.cloudflare.com/workers/learning/using-durable-objects">https://developers.cloudflare.com/workers/learning/using-durable-objects</a>).
@@ -264,24 +265,24 @@ this refers to <code class="docutils literal notranslate"><span class="pre">Wind
 on mobile it will be secure on-device equivalent.</p>
 </dd>
 <dt id="term-manifest">manifest<a class="headerlink" href="#term-manifest" title="Permalink to this term">#</a></dt><dd><p>The set of information needed to convince the storage server
-that you are allowed to fetch a certain <a class="reference internal" href="updated-glossary.html#term-object"><span class="xref std std-term">object</span></a>, including
+that you are allowed to fetch a certain <a class="reference internal" href="#term-object"><span class="xref std std-term">object</span></a>, including
 the parts needed to decrypt it. Specifically: &lt;FN&gt;, &lt;verification&gt;,
 &lt;salt&gt;, &lt;iv&gt;, &lt;size&gt;.</p>
 </dd>
 <dt id="term-Micro-Federation">Micro Federation<a class="headerlink" href="#term-Micro-Federation" title="Permalink to this term">#</a></dt><dd><p>See <a class="reference internal" href="discussion.html#micro-federation"><span class="std std-ref">micro-federation</span></a> for a discussion.</p>
 </dd>
-<dt id="term-MOTD">MOTD<a class="headerlink" href="#term-MOTD" title="Permalink to this term">#</a></dt><dd><p>The “Message of the Day” - can be set by the <a class="reference internal" href="updated-glossary.html#term-Owner"><span class="xref std std-term">Owner</span></a> of
+<dt id="term-MOTD">MOTD<a class="headerlink" href="#term-MOTD" title="Permalink to this term">#</a></dt><dd><p>The “Message of the Day” - can be set by the <a class="reference internal" href="#term-Owner"><span class="xref std std-term">Owner</span></a> of
 any <a class="reference internal" href="#term-Room"><span class="xref std std-term">Room</span></a>, and is presented to anybody joining the room.</p>
 </dd>
 <dt id="term-non-addressable-worker">non-addressable worker<a class="headerlink" href="#term-non-addressable-worker" title="Permalink to this term">#</a></dt><dd><p>See discussion in <a class="reference internal" href="system-architecture.html#computing"><span class="std std-ref">the computing section</span></a>. As distinct
-from <a class="reference internal" href="updated-glossary.html#term-addressable-worker"><span class="xref std std-term">addressable worker</span></a>.</p>
+from <a class="reference internal" href="#term-addressable-worker"><span class="xref std std-term">addressable worker</span></a>.</p>
 </dd>
 <dt id="term-object">object<a class="headerlink" href="#term-object" title="Permalink to this term">#</a></dt><dd><p>Think of this as a “blob of data”, packaged up in a manner
 that’s secure, private, and with a globally unique name.
 See <a class="reference internal" href="overview.html#object"><span class="std std-ref">the discussion on images and storage</span></a> for details.</p>
 </dd>
 <dt id="term-Origin-Server">Origin Server<a class="headerlink" href="#term-Origin-Server" title="Permalink to this term">#</a></dt><dd><p>The web site or domain that first generated or allocated
-a particular <a class="reference internal" href="updated-glossary.html#term-Room-Name"><span class="xref std std-term">Room Name</span></a>. It’s not identified or tracked.</p>
+a particular <a class="reference internal" href="#term-Room-Name"><span class="xref std std-term">Room Name</span></a>. It’s not identified or tracked.</p>
 </dd>
 <dt id="term-Owner">Owner<a class="headerlink" href="#term-Owner" title="Permalink to this term">#</a></dt><dd><p>Every <a class="reference internal" href="#term-Room"><span class="xref std std-term">Room</span></a> must have an owner, namely, somebody
 (a human) that is responsible for it’s contents and policies,
@@ -289,14 +290,14 @@ and who thus also has certain administrative abilities.
 See <a class="reference internal" href="overview.html#owner-definition"><span class="std std-ref">here</span></a> for more details.
 Owners need to be authenticated by an <a class="reference internal" href="#term-SSO"><span class="xref std std-term">SSO</span></a> or equivalent.</p>
 </dd>
-<dt id="term-Owner-Key">Owner Key<a class="headerlink" href="#term-Owner-Key" title="Permalink to this term">#</a></dt><dd><p>The <a class="reference internal" href="updated-glossary.html#term-Public-Key-Pair"><span class="xref std std-term">Public Key Pair</span></a> corresponding to the <a class="reference internal" href="updated-glossary.html#term-Owner"><span class="xref std std-term">Owner</span></a>
+<dt id="term-Owner-Key">Owner Key<a class="headerlink" href="#term-Owner-Key" title="Permalink to this term">#</a></dt><dd><p>The <a class="reference internal" href="#term-Public-Key-Pair"><span class="xref std std-term">Public Key Pair</span></a> corresponding to the <a class="reference internal" href="#term-Owner"><span class="xref std std-term">Owner</span></a>
 of a <a class="reference internal" href="#term-Room"><span class="xref std std-term">Room</span></a>. Every room has an owner, and the owner
-keys for every room are unique for that room. The <a class="reference internal" href="updated-glossary.html#term-Room-Name"><span class="xref std std-term">Room Name</span></a>
+keys for every room are unique for that room. The <a class="reference internal" href="#term-Room-Name"><span class="xref std std-term">Room Name</span></a>
 is derived from the owner key.</p>
 </dd>
 <dt id="term-Personal-Room-Server">Personal Room Server<a class="headerlink" href="#term-Personal-Room-Server" title="Permalink to this term">#</a></dt><dd><p>A <a class="reference internal" href="#term-Room"><span class="xref std std-term">Room</span></a> server that you are running for yourself
 or for friends and family. On a personal room server,
-the <a class="reference internal" href="updated-glossary.html#term-Owner"><span class="xref std std-term">Owner</span></a> of every room is the individual
+the <a class="reference internal" href="#term-Owner"><span class="xref std std-term">Owner</span></a> of every room is the individual
 operating the room server.</p>
 </dd>
 <dt id="term-PII">PII<a class="headerlink" href="#term-PII" title="Permalink to this term">#</a></dt><dd><p>Personal Indtifiable Information - any information that
@@ -309,18 +310,20 @@ allows for “you” (the human being) to be uniquely identified
 For public room servers they are generated off-line with
 command line utility and <code class="xref py py-func docutils literal notranslate"><span class="pre">snackabra.crypto.gen_p384_pair()</span></code>.</p>
 </dd>
-<dt id="term-Restricted">Restricted<a class="headerlink" href="#term-Restricted" title="Permalink to this term">#</a></dt><dd><p>Rooms can be “restricted” by the <a class="reference internal" href="updated-glossary.html#term-Owner"><span class="xref std std-term">Owner</span></a>. This means
+<dt id="term-Restricted">Restricted<a class="headerlink" href="#term-Restricted" title="Permalink to this term">#</a></dt><dd><p>Rooms can be “restricted” by the <a class="reference internal" href="#term-Owner"><span class="xref std std-term">Owner</span></a>. This means
 that all participants must be approved by the owner. Any new
 participant will be automatically queued for admission.</p>
 </dd>
 <dt id="term-Room">Room<a class="headerlink" href="#term-Room" title="Permalink to this term">#</a></dt><dd><p>All discussions or chats or conversations or file or document
 sharing occurs within the context of a <a class="reference internal" href="overview.html#id25"><span class="std std-ref">room</span></a>, identified
-by a <a class="reference internal" href="updated-glossary.html#term-Room-Name"><span class="xref std std-term">Room Name</span></a>.</p>
+by a <a class="reference internal" href="#term-Room-Name"><span class="xref std std-term">Room Name</span></a>.</p>
 </dd>
 <dt id="term-Room-Name">Room Name<a class="headerlink" href="#term-Room-Name" title="Permalink to this term">#</a></dt><dd><p>The unique 48-byte (64-character b64) string that
 uniquely identifies a <a class="reference internal" href="overview.html#id25"><span class="std std-ref">room</span></a>.
-It is derived from the <a class="reference internal" href="updated-glossary.html#term-Owner-Key"><span class="xref std std-term">Owner Key</span></a>.
-Note that the newer name for this is <a class="reference internal" href="updated-glossary.html#term-channel-name"><span class="xref std std-term">Channel Name</span></a>.</p>
+It is derived from the <a class="reference internal" href="#term-Owner-Key"><span class="xref std std-term">Owner Key</span></a>.
+Note that the newer name for this is <a class="reference internal" href="#term-channel-name"><span class="xref std std-term">Channel Name</span></a>.</p>
+</dd>
+<dt id="term-Shard">Shard<a class="headerlink" href="#term-Shard" title="Permalink to this term">#</a></dt><dd><p>Storage object. Essentially a blob.</p>
 </dd>
 <dt id="term-Social-Card-ID">Social Card ID<a class="headerlink" href="#term-Social-Card-ID" title="Permalink to this term">#</a></dt><dd><p>To Be Written. It’s a random 11-digit number (constrained to
 always start with a ‘1’).</p>
@@ -331,7 +334,7 @@ always start with a ‘1’).</p>
 authenticate to multiple systems. In snackabra, we use “SSO”
 losely to either reference the <a class="reference external" href="https://privacy.app">https://privacy.app</a> membership
 service, or whatever you are using in it’s stead. It’s main
-purpose for snackabra is authenticating an <a class="reference internal" href="updated-glossary.html#term-Owner"><span class="xref std std-term">Owner</span></a>, and
+purpose for snackabra is authenticating an <a class="reference internal" href="#term-Owner"><span class="xref std std-term">Owner</span></a>, and
 to manage the <cite>Storage Budget</cite> of any <a class="reference internal" href="#term-Room"><span class="xref std std-term">Room</span></a>.</p>
 </dd>
 <dt id="term-Storage-Budget">Storage Budget<a class="headerlink" href="#term-Storage-Budget" title="Permalink to this term">#</a></dt><dd><p>The amount of storage (bytes) any particular <a class="reference internal" href="#term-Room"><span class="xref std std-term">Room</span></a> is
@@ -341,7 +344,7 @@ any uploaded images or files.</p>
 <dt id="term-thumbnail">thumbnail<a class="headerlink" href="#term-thumbnail" title="Permalink to this term">#</a></dt><dd><p>See <a class="reference internal" href="overview.html#photosharing"><span class="std std-ref">section on photo sharing</span></a></p>
 </dd>
 <dt id="term-verification">verification<a class="headerlink" href="#term-verification" title="Permalink to this term">#</a></dt><dd><p>This is a random 16-byte value associated with every
-<a class="reference internal" href="updated-glossary.html#term-object"><span class="xref std std-term">object</span></a> and serves to defend against various
+<a class="reference internal" href="#term-object"><span class="xref std std-term">object</span></a> and serves to defend against various
 types of side-leakage of privacy.
 See <a class="reference internal" href="overview.html#object"><span class="std std-ref">the discussion on images and storage</span></a> for details.</p>
 </dd>

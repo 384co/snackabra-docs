@@ -6,7 +6,7 @@
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Background and Discussion" href="discussion.html" /><link rel="prev" title="Technical Overview" href="overview.html" />
 
     <!-- Generated with Sphinx 5.3.0 and Furo 2023.03.27 -->
-        <title>System Architecture - snackabra 0.5.x beta documentation</title>
+        <title>System Architecture - snackabra 0.6.0 beta documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=fad236701ea90a88636c2a8c73b44ae642ed2a53" />
     <link rel="stylesheet" type="text/css" href="_static/graphviz.css" />
@@ -125,7 +125,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">snackabra 0.5.x beta documentation</div></a>
+      <a href="index.html"><div class="brand">snackabra 0.6.0 beta documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -148,7 +148,7 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
   
   
-  <span class="sidebar-brand-text">snackabra 0.5.x beta documentation</span>
+  <span class="sidebar-brand-text">snackabra 0.6.0 beta documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -176,7 +176,6 @@
 <li class="toctree-l1"><a class="reference internal" href="user-guide.html">Appendix B: Privacy.App Chat Room User Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="diag-sample.html">(ignore)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="motivation.html">Motivation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="updated-glossary.html">Updated Glossary</a></li>
 </ul>
 
 </div>
@@ -242,7 +241,7 @@ API. <a href="#id17"><span class="problematic" id="id4">[#153]_</span></a> As th
 “computational node,” we will refer to them as “worker nodes”, or
 “workers” for short.</p>
 <p>We will further assume these workers come in two flavors:
-<a class="reference internal" href="updated-glossary.html#term-addressable-worker"><span class="xref std std-term">addressable worker</span></a> and <a class="reference internal" href="updated-glossary.html#term-non-addressable-worker"><span class="xref std std-term">non-addressable worker</span></a>:</p>
+<a class="reference internal" href="glossary.html#term-addressable-worker"><span class="xref std std-term">addressable worker</span></a> and <a class="reference internal" href="glossary.html#term-non-addressable-worker"><span class="xref std std-term">non-addressable worker</span></a>:</p>
 <ul>
 <li><p>Non-addressable workers are the “conventional” form of “PaaS” cloud
 computing, brought to the edge. <a href="#id18"><span class="problematic" id="id5">[#154]_</span></a> They can be reached over the
@@ -253,7 +252,7 @@ every time. The underlying infrastructure can scale up and down the
 number of servers it needs to run the number of containers needed to
 serve the number of (and load from) clients. <a href="#id19"><span class="problematic" id="id6">[#155]_</span></a>
 Furthermore, a non-addressable worker does not have local storage;
-any state needed is accessed from a separate (<a class="reference internal" href="updated-glossary.html#term-KV_global"><span class="xref std std-term">KV_global</span></a>) service such
+any state needed is accessed from a separate (<a class="reference internal" href="glossary.html#term-KV_global"><span class="xref std std-term">KV_global</span></a>) service such
 as a key-value store API.</p></li>
 <li><p>A non-addressable worker does not have an addressable global
 identity: a client has no control over what specific container or
@@ -264,7 +263,7 @@ running, the infrastructure will start one, and handle any data race
 or location issues transparently. In this manner, an addressable
 worker can have ‘local’ storage (in addition to ‘global’), since it
 doesn’t move (at least not as much). We refer to this as
-<a class="reference internal" href="updated-glossary.html#term-KV_local"><span class="xref std std-term">KV_local</span></a> (not to be confused with the <em>client</em> <a class="reference internal" href="updated-glossary.html#term-Local-Storage"><span class="xref std std-term">Local Storage</span></a>).
+<a class="reference internal" href="glossary.html#term-KV_local"><span class="xref std std-term">KV_local</span></a> (not to be confused with the <em>client</em> <a class="reference internal" href="glossary.html#term-Local-Storage"><span class="xref std std-term">Local Storage</span></a>).
 With local worker storage now</p>
 <p>possible, an addressable worker can now provide storage with both
 stronger consistency models and higher performance, since there is
@@ -294,15 +293,15 @@ used for specific purposes; furthermore we strive for these to be
 will make minimum assumptions on features; for searches we will only
 need “prefix” storage queries. <a href="#id20"><span class="problematic" id="id8">[#156]_</span></a> We will also assume that
 the value can either be a string or a binary object. <a href="#id21"><span class="problematic" id="id9">[#157]_</span></a></p>
-<p>The global key-value storage system we will refer to as <a class="reference internal" href="updated-glossary.html#term-KV_global"><span class="xref std std-term">KV_global</span></a>,
-and the local (for an addressable worker, see above) as <a class="reference internal" href="updated-glossary.html#term-KV_local"><span class="xref std std-term">KV_local</span></a>:</p>
+<p>The global key-value storage system we will refer to as <a class="reference internal" href="glossary.html#term-KV_global"><span class="xref std std-term">KV_global</span></a>,
+and the local (for an addressable worker, see above) as <a class="reference internal" href="glossary.html#term-KV_local"><span class="xref std std-term">KV_local</span></a>:</p>
 <ul class="simple">
 <li><p>We will aim to design for high tolerance of loose memory coherency
-in <a class="reference internal" href="updated-glossary.html#term-KV_global"><span class="xref std std-term">KV_global</span></a>, including eventual consistency. The size limits of
+in <a class="reference internal" href="glossary.html#term-KV_global"><span class="xref std std-term">KV_global</span></a>, including eventual consistency. The size limits of
 individual values will (currently) determine the largest document
 that can be shared. <a href="#id22"><span class="problematic" id="id10">[#158]_</span></a></p></li>
 <li><p>We will require a fairly strict consistency model for
-<a class="reference internal" href="updated-glossary.html#term-KV_local"><span class="xref std std-term">KV_local</span></a>. The design can handle value size limits down to 32KB.</p></li>
+<a class="reference internal" href="glossary.html#term-KV_local"><span class="xref std std-term">KV_local</span></a>. The design can handle value size limits down to 32KB.</p></li>
 </ul>
 <p>We will design our keys to be friendly towards any hashing
 mechanism. Reading a specific item in a KV system can generally be
@@ -348,16 +347,16 @@ Cloudflare Workers for “<strong>workers</strong>.”</p>
 </ul>
 </li>
 <li><p>Cloudflare recently introduced “Unique Durable Objects”, or “Durable
-Object Workers” (<a class="reference internal" href="updated-glossary.html#term-Durable-Object"><span class="xref std std-term">Durable Object</span></a>). These correspond to what we above call
+Object Workers” (<a class="reference internal" href="glossary.html#term-Durable-Object"><span class="xref std std-term">Durable Object</span></a>). These correspond to what we above call
 “<em>addressable workers</em>” including both strong (transactional)
-consistency in their <a class="reference internal" href="updated-glossary.html#term-KV_local"><span class="xref std std-term">KV_local</span></a> storage, as well as support for
+consistency in their <a class="reference internal" href="glossary.html#term-KV_local"><span class="xref std std-term">KV_local</span></a> storage, as well as support for
 websockets. <a href="#id25"><span class="problematic" id="id14">[#161]_</span></a>  (Out of habit we
-will sometimes refer to this as <a class="reference internal" href="updated-glossary.html#term-Durable-Object"><span class="xref std std-term">Durable Object</span></a>.)</p></li>
+will sometimes refer to this as <a class="reference internal" href="glossary.html#term-Durable-Object"><span class="xref std std-term">Durable Object</span></a>.)</p></li>
 <li><p>Workers Durable Objects Beta: A New Approach to Stateful Serverless
 <a class="reference external" href="https://blog.cloudflare.com/introducing-workers-durable-objects">https://blog.cloudflare.com/introducing-workers-durable-objects</a>
 Durable Objects: Easy, Fast, Correct — Choose three
 <a class="reference external" href="https://blog.cloudflare.com/durable-objects-easy-fast-correct-choose-three">https://blog.cloudflare.com/durable-objects-easy-fast-correct-choose-three</a></p></li>
-<li><p>Cloudflare workers have easy access to their KV system, <a class="reference internal" href="updated-glossary.html#term-KV_global"><span class="xref std std-term">KV_global</span></a>.
+<li><p>Cloudflare workers have easy access to their KV system, <a class="reference internal" href="glossary.html#term-KV_global"><span class="xref std std-term">KV_global</span></a>.
 <a class="reference external" href="https://developers.cloudflare.com/workers/runtime-apis/kv">https://developers.cloudflare.com/workers/runtime-apis/kv</a></p></li>
 </ul>
 <p class="rubric">Footnotes</p>

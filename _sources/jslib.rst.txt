@@ -178,9 +178,6 @@ Testing Related
 - [compareBuffers](modules.md#comparebuffers)
 
 
-Other
-=====
-
               
                   
 ------------------

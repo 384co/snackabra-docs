@@ -64,7 +64,6 @@
 - [encodeB64Url](modules.md#encodeb64url)
 - [encryptedContentsMakeBinary](modules.md#encryptedcontentsmakebinary)
 - [extractPayload](modules.md#extractpayload)
-- [extractPayloadV1](modules.md#extractpayloadv1)
 - [getRandomValues](modules.md#getrandomvalues)
 - [isBase62Encoded](modules.md#isbase62encoded)
 - [jsonParseWrapper](modules.md#jsonparsewrapper)
@@ -430,22 +429,6 @@ ___
 Extract payload - this decodes from our binary (wire) format
 to a JS object. This provides a binary encoding of any JSON,
 and it allows some elements of the JSON to be raw (binary).
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `payload` | `ArrayBuffer` |
-
-#### Returns
-
-[`SBPayload`](interfaces/SBPayload.md)
-
-___
-
-### <a id="extractpayloadv1" name="extractpayloadv1"></a> extractPayloadV1
-
-▸ `Private` **extractPayloadV1**(`payload`): [`SBPayload`](interfaces/SBPayload.md)
 
 #### Parameters
 

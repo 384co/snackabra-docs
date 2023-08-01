@@ -16,7 +16,6 @@ SB simple events (mesage bus) class
 
 ### Methods
 
-- [#select](MessageBus.md##select)
 - [publish](MessageBus.md#publish)
 - [subscribe](MessageBus.md#subscribe)
 - [unsubscribe](MessageBus.md#unsubscribe)
@@ -34,24 +33,6 @@ SB simple events (mesage bus) class
 • **bus**: `Dictionary`<`any`\> = `{}`
 
 ## Methods
-
-### <a id="#select" name="#select"></a> #select
-
-▸ `Private` **#select**(`event`): `any`
-
-Safely returns handler for any event
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `event` | `string` |
-
-#### Returns
-
-`any`
-
-___
 
 ### <a id="publish" name="publish"></a> publish
 

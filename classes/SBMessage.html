@@ -6,7 +6,7 @@
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" />
 
     <!-- Generated with Sphinx 5.3.0 and Furo 2023.03.27 -->
-        <title>Class: SBMessage - snackabra 0.5.x beta documentation</title>
+        <title>Class: SBMessage - snackabra 0.6.0 beta documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=fad236701ea90a88636c2a8c73b44ae642ed2a53" />
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
@@ -125,7 +125,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">snackabra 0.5.x beta documentation</div></a>
+      <a href="../index.html"><div class="brand">snackabra 0.6.0 beta documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -148,7 +148,7 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
   
   
-  <span class="sidebar-brand-text">snackabra 0.5.x beta documentation</span>
+  <span class="sidebar-brand-text">snackabra 0.6.0 beta documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -176,7 +176,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../user-guide.html">Appendix B: Privacy.App Chat Room User Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../diag-sample.html">(ignore)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../motivation.html">Motivation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../updated-glossary.html">Updated Glossary</a></li>
 </ul>
 
 </div>
@@ -211,7 +210,7 @@
           </label>
         </div>
         <article role="main">
-          <p><a class="reference internal" href="../jslib2.html"><span class="std std-doc">JSLib Reference Manual</span></a> / <a class="reference internal" href="../modules.html"><span class="std std-doc">Exports</span></a> / SBMessage</p>
+          <p><a class="reference internal" href="#../jslib2.md"><span class="xref myst">JSLib Reference Manual</span></a> / <a class="reference internal" href="../modules.html"><span class="std std-doc">Exports</span></a> / SBMessage</p>
 <section id="class-sbmessage">
 <h1>Class: SBMessage<a class="headerlink" href="#class-sbmessage" title="Permalink to this heading">#</a></h1>
 <p>Class SBMessage</p>
@@ -227,8 +226,6 @@
 <section id="properties">
 <h3>Properties<a class="headerlink" href="#properties" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
-<li><p><a class="reference internal" href="##encryptionkey"><span class="std std-ref">#encryptionKey</span></a></p></li>
-<li><p><a class="reference internal" href="##sendtopubkey"><span class="std std-ref">#sendToPubKey</span></a></p></li>
 <li><p><a class="reference internal" href="#max_sb_body_size"><span class="std std-ref">MAX_SB_BODY_SIZE</span></a></p></li>
 <li><p><a class="reference internal" href="#[sb_message_symbol]"><span class="std std-ref">[SB_MESSAGE_SYMBOL]</span></a></p></li>
 <li><p><a class="reference internal" href="#channel"><span class="std std-ref">channel</span></a></p></li>
@@ -286,16 +283,6 @@
 </section>
 <section id="id2">
 <h2>Properties<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
-<section id="encryptionkey">
-<h3><a id="#encryptionkey" name="#encryptionkey"></a> #encryptionKey<a class="headerlink" href="#encryptionkey" title="Permalink to this heading">#</a></h3>
-<p>• <code class="docutils literal notranslate"><span class="pre">Private</span></code> <code class="docutils literal notranslate"><span class="pre">Optional</span></code> <strong>#encryptionKey</strong>: <code class="docutils literal notranslate"><span class="pre">CryptoKey</span></code></p>
-</section>
-<hr class="docutils" />
-<section id="sendtopubkey">
-<h3><a id="#sendtopubkey" name="#sendtopubkey"></a> #sendToPubKey<a class="headerlink" href="#sendtopubkey" title="Permalink to this heading">#</a></h3>
-<p>• <code class="docutils literal notranslate"><span class="pre">Private</span></code> <code class="docutils literal notranslate"><span class="pre">Optional</span></code> <strong>#sendToPubKey</strong>: <code class="docutils literal notranslate"><span class="pre">JsonWebKey</span></code></p>
-</section>
-<hr class="docutils" />
 <section id="max-sb-body-size">
 <h3><a id="max_sb_body_size" name="max_sb_body_size"></a> MAX_SB_BODY_SIZE<a class="headerlink" href="#max-sb-body-size" title="Permalink to this heading">#</a></h3>
 <p>• <strong>MAX_SB_BODY_SIZE</strong>: <code class="docutils literal notranslate"><span class="pre">number</span></code></p>
@@ -323,8 +310,8 @@
 </section>
 <section id="id3">
 <h2>Accessors<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
-<section id="id4">
-<h3><a id="encryptionkey" name="encryptionkey"></a> encryptionKey<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+<section id="encryptionkey">
+<h3><a id="encryptionkey" name="encryptionkey"></a> encryptionKey<a class="headerlink" href="#encryptionkey" title="Permalink to this heading">#</a></h3>
 <p>• <code class="docutils literal notranslate"><span class="pre">get</span></code> <strong>encryptionKey</strong>(): <code class="docutils literal notranslate"><span class="pre">undefined</span></code> | <code class="docutils literal notranslate"><span class="pre">CryptoKey</span></code></p>
 <section id="returns">
 <h4>Returns<a class="headerlink" href="#returns" title="Permalink to this heading">#</a></h4>
@@ -332,23 +319,23 @@
 </section>
 </section>
 <hr class="docutils" />
-<section id="id5">
-<h3><a id="sendtopubkey" name="sendtopubkey"></a> sendToPubKey<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
+<section id="sendtopubkey">
+<h3><a id="sendtopubkey" name="sendtopubkey"></a> sendToPubKey<a class="headerlink" href="#sendtopubkey" title="Permalink to this heading">#</a></h3>
 <p>• <code class="docutils literal notranslate"><span class="pre">get</span></code> <strong>sendToPubKey</strong>(): <code class="docutils literal notranslate"><span class="pre">undefined</span></code> | <code class="docutils literal notranslate"><span class="pre">JsonWebKey</span></code></p>
-<section id="id6">
-<h4>Returns<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h4>
+<section id="id4">
+<h4>Returns<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h4>
 <p><code class="docutils literal notranslate"><span class="pre">undefined</span></code> | <code class="docutils literal notranslate"><span class="pre">JsonWebKey</span></code></p>
 </section>
 </section>
 </section>
-<section id="id7">
-<h2>Methods<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h2>
+<section id="id5">
+<h2>Methods<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h2>
 <section id="send">
 <h3><a id="send" name="send"></a> send<a class="headerlink" href="#send" title="Permalink to this heading">#</a></h3>
 <p>▸ <strong>send</strong>(): <code class="docutils literal notranslate"><span class="pre">Promise</span></code>&lt;<code class="docutils literal notranslate"><span class="pre">string</span></code>&gt;</p>
 <p>SBMessage.send()</p>
-<section id="id8">
-<h4>Returns<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h4>
+<section id="id6">
+<h4>Returns<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h4>
 <p><code class="docutils literal notranslate"><span class="pre">Promise</span></code>&lt;<code class="docutils literal notranslate"><span class="pre">string</span></code>&gt;</p>
 </section>
 </section>
@@ -408,8 +395,6 @@
 </ul>
 </li>
 <li><a class="reference internal" href="#id2">Properties</a><ul>
-<li><a class="reference internal" href="#encryptionkey"><a id="#encryptionkey" name="#encryptionkey"></a> #encryptionKey</a></li>
-<li><a class="reference internal" href="#sendtopubkey"><a id="#sendtopubkey" name="#sendtopubkey"></a> #sendToPubKey</a></li>
 <li><a class="reference internal" href="#max-sb-body-size"><a id="max_sb_body_size" name="max_sb_body_size"></a> MAX_SB_BODY_SIZE</a></li>
 <li><a class="reference internal" href="#sb-message-symbol"><a id="[sb_message_symbol]" name="[sb_message_symbol]"></a> [SB_MESSAGE_SYMBOL]</a></li>
 <li><a class="reference internal" href="#channel"><a id="channel" name="channel"></a> channel</a></li>
@@ -418,19 +403,19 @@
 </ul>
 </li>
 <li><a class="reference internal" href="#id3">Accessors</a><ul>
-<li><a class="reference internal" href="#id4"><a id="encryptionkey" name="encryptionkey"></a> encryptionKey</a><ul>
+<li><a class="reference internal" href="#encryptionkey"><a id="encryptionkey" name="encryptionkey"></a> encryptionKey</a><ul>
 <li><a class="reference internal" href="#returns">Returns</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id5"><a id="sendtopubkey" name="sendtopubkey"></a> sendToPubKey</a><ul>
-<li><a class="reference internal" href="#id6">Returns</a></li>
+<li><a class="reference internal" href="#sendtopubkey"><a id="sendtopubkey" name="sendtopubkey"></a> sendToPubKey</a><ul>
+<li><a class="reference internal" href="#id4">Returns</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id7">Methods</a><ul>
+<li><a class="reference internal" href="#id5">Methods</a><ul>
 <li><a class="reference internal" href="#send"><a id="send" name="send"></a> send</a><ul>
-<li><a class="reference internal" href="#id8">Returns</a></li>
+<li><a class="reference internal" href="#id6">Returns</a></li>
 </ul>
 </li>
 </ul>
