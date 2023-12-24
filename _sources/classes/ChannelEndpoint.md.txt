@@ -52,6 +52,7 @@ in the future for non-socket use cases)
 
 ### Methods
 
+<<<<<<< HEAD
 - [acceptVisitor](ChannelEndpoint.md#acceptvisitor)
 - [authorize](ChannelEndpoint.md#authorize)
 - [budd](ChannelEndpoint.md#budd)
@@ -67,6 +68,8 @@ in the future for non-socket use cases)
 - [lock](ChannelEndpoint.md#lock)
 - [ownerKeyRotation](ChannelEndpoint.md#ownerkeyrotation)
 - [postPubKey](ChannelEndpoint.md#postpubkey)
+=======
+>>>>>>> 177d9944336b334bbf1ba1ab847c5038b9fc9afd
 - [send](ChannelEndpoint.md#send)
 - [setMOTD](ChannelEndpoint.md#setmotd)
 - [storageRequest](ChannelEndpoint.md#storagerequest)
@@ -436,6 +439,7 @@ Channel.sbServer
 
 ## Methods
 
+<<<<<<< HEAD
 ### <a id="acceptvisitor" name="acceptvisitor"></a> acceptVisitor
 
 ▸ **acceptVisitor**(`pubKey`): `Promise`<`unknown`\>
@@ -745,6 +749,9 @@ ___
 ___
 
 ### <a id="send" name="send"></a> send
+=======
+### send
+>>>>>>> 177d9944336b334bbf1ba1ab847c5038b9fc9afd
 
 ▸ **send**(`_m`, `_messageType?`): `Promise`<`string`\>
 

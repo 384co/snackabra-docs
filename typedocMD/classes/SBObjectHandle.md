@@ -2,30 +2,11 @@
 
 # Class: SBObjectHandle
 
-Basic object handle for a shard (all storage).
-
-To RETRIEVE a shard, you need id and verification.
-
-To DECRYPT a shard, you need key, iv, and salt. Current
-generation of shard servers will provide (iv, salt) upon
-request if (and only if) you have id and verification.
-
-Note that id32/key32 are array32 encoded (a32). (Both 
-id and key are 256-bit entities).
-
-'verification' is a 64-bit integer, encoded as a string
-of up 23 characters: it is four 16-bit integers, either
-joined by '.' or simply concatenated. Currently all four
-values are random, future generation only first three
-are guaranteed to be random, the fourth may be "designed".
+SBObjecdtHandle
 
 ## Implements
 
-- [`SBObjectHandle`](SBObjectHandle.md)
-
-## Implemented by
-
-- [`SBObjectHandle`](SBObjectHandle.md)
+- [`SBObjectHandle_base`](../interfaces/Interfaces.SBObjectHandle_base.md)
 
 ## Table of contents
 
@@ -50,8 +31,12 @@ are guaranteed to be random, the fourth may be "designed".
 
 - [id](SBObjectHandle.md#id)
 - [id32](SBObjectHandle.md#id32)
+- [id64](SBObjectHandle.md#id64)
+- [id\_binary](SBObjectHandle.md#id_binary)
 - [key](SBObjectHandle.md#key)
 - [key32](SBObjectHandle.md#key32)
+- [key64](SBObjectHandle.md#key64)
+- [key\_binary](SBObjectHandle.md#key_binary)
 - [type](SBObjectHandle.md#type)
 - [verification](SBObjectHandle.md#verification)
 
@@ -59,13 +44,33 @@ are guaranteed to be random, the fourth may be "designed".
 
 ### <a id="constructor" name="constructor"></a> constructor
 
-• **new SBObjectHandle**(`options`)
+• **new SBObjectHandle**(`options`): [`SBObjectHandle`](SBObjectHandle.md)
+
+Basic object handle for a shard (all storage).
+
+To RETRIEVE a shard, you need id and verification.
+
+To DECRYPT a shard, you need key, iv, and salt. Current
+generation of shard servers will provide (iv, salt) upon
+request if (and only if) you have id and verification.
+
+Note that id32/key32 are array32 encoded base62 encoded.
+
+'verification' is a 64-bit integer, encoded as a string
+of up 23 characters: it is four 16-bit integers, either
+joined by '.' or simply concatenated. Currently all four
+values are random, future generation only first three
+are guaranteed to be random, the fourth may be "designed".
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `options` | [`SBObjectHandle`](SBObjectHandle.md) |
+| `options` | [`SBObjectHandle`](../modules/Interfaces.md#sbobjecthandle) |
+
+#### Returns
+
+[`SBObjectHandle`](SBObjectHandle.md)
 
 ## Properties
 
@@ -73,11 +78,9 @@ are guaranteed to be random, the fourth may be "designed".
 
 • `Optional` **actualSize**: `number`
 
-optional: actual size of underlying file, if any
-
 #### Implementation of
 
-SBObjectHandle.actualSize
+[SBObjectHandle_base](../interfaces/Interfaces.SBObjectHandle_base.md).[actualSize](../interfaces/Interfaces.SBObjectHandle_base.md#actualsize)
 
 ___
 
@@ -85,11 +88,9 @@ ___
 
 • `Optional` **dateAndTime**: `string`
 
-optional: time of shard creation
-
 #### Implementation of
 
-SBObjectHandle.dateAndTime
+[SBObjectHandle_base](../interfaces/Interfaces.SBObjectHandle_base.md).[dateAndTime](../interfaces/Interfaces.SBObjectHandle_base.md#dateandtime)
 
 ___
 
@@ -97,11 +98,9 @@ ___
 
 • `Optional` **fileName**: `string`
 
-by convention will be "PAYLOAD" if it's a set of objects
-
 #### Implementation of
 
-SBObjectHandle.fileName
+[SBObjectHandle_base](../interfaces/Interfaces.SBObjectHandle_base.md).[fileName](../interfaces/Interfaces.SBObjectHandle_base.md#filename)
 
 ___
 
@@ -109,11 +108,9 @@ ___
 
 • `Optional` **fileType**: `string`
 
-optional: file type (mime)
-
 #### Implementation of
 
-SBObjectHandle.fileType
+[SBObjectHandle_base](../interfaces/Interfaces.SBObjectHandle_base.md).[fileType](../interfaces/Interfaces.SBObjectHandle_base.md#filetype)
 
 ___
 
@@ -121,13 +118,9 @@ ___
 
 • `Optional` **iv**: `string` \| `Uint8Array`
 
-you'll need these in case you want to track an object
-across future (storage) servers, but as long as you
-are within the same SB servers you can request them.
-
 #### Implementation of
 
-SBObjectHandle.iv
+[SBObjectHandle_base](../interfaces/Interfaces.SBObjectHandle_base.md).[iv](../interfaces/Interfaces.SBObjectHandle_base.md#iv)
 
 ___
 
@@ -135,11 +128,9 @@ ___
 
 • `Optional` **lastModified**: `number`
 
-optional: last modified time (of underlying file, if any)
-
 #### Implementation of
 
-SBObjectHandle.lastModified
+[SBObjectHandle_base](../interfaces/Interfaces.SBObjectHandle_base.md).[lastModified](../interfaces/Interfaces.SBObjectHandle_base.md#lastmodified)
 
 ___
 
@@ -147,13 +138,9 @@ ___
 
 • `Optional` **salt**: `string` \| `Uint8Array`
 
-you'll need these in case you want to track an object
-across future (storage) servers, but as long as you
-are within the same SB servers you can request them.
-
 #### Implementation of
 
-SBObjectHandle.salt
+[SBObjectHandle_base](../interfaces/Interfaces.SBObjectHandle_base.md).[salt](../interfaces/Interfaces.SBObjectHandle_base.md#salt)
 
 ___
 
@@ -161,11 +148,9 @@ ___
 
 • `Optional` **savedSize**: `number`
 
-optional: size of shard (may be different from actualSize)
-
 #### Implementation of
 
-SBObjectHandle.savedSize
+[SBObjectHandle_base](../interfaces/Interfaces.SBObjectHandle_base.md).[savedSize](../interfaces/Interfaces.SBObjectHandle_base.md#savedsize)
 
 ___
 
@@ -173,23 +158,15 @@ ___
 
 • `Optional` **shardServer**: `string`
 
-optionally direct a shard to a specific server (especially for reads)
-
-#### Implementation of
-
-SBObjectHandle.shardServer
-
 ___
 
 ### <a id="version" name="version"></a> version
 
-• `Optional` **version**: `string` = `'1'`
-
-version of this object
+• **version**: [`SBObjectHandleVersions`](../modules.md#sbobjecthandleversions) = `currentSBOHVersion`
 
 #### Implementation of
 
-SBObjectHandle.version
+[SBObjectHandle_base](../interfaces/Interfaces.SBObjectHandle_base.md).[version](../interfaces/Interfaces.SBObjectHandle_base.md#version)
 
 ## Accessors
 
@@ -197,33 +174,21 @@ SBObjectHandle.version
 
 • `get` **id**(): `string`
 
-id of object
-
 #### Returns
 
 `string`
 
-#### Implementation of
-
-SBObjectHandle.id
-
 • `set` **id**(`value`): `void`
-
-id of object
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `value` | `string` |
+| `value` | `string` \| `ArrayBuffer` \| `Base62Encoded` |
 
 #### Returns
 
 `void`
-
-#### Implementation of
-
-SBObjectHandle.id
 
 ___
 
@@ -231,33 +196,35 @@ ___
 
 • `get` **id32**(): `Base62Encoded`
 
-optional: array32 format of id
-
 #### Returns
 
 `Base62Encoded`
 
-#### Implementation of
+___
 
-SBObjectHandle.id32
+### <a id="id64" name="id64"></a> id64
 
-• `set` **id32**(`value`): `void`
+• `get` **id64**(): `string`
 
-optional: array32 format of id
+#### Returns
+
+`string`
+
+___
+
+### <a id="id_binary" name="id_binary"></a> id\_binary
+
+• `set` **id_binary**(`value`): `void`
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `value` | `Base62Encoded` |
+| `value` | `ArrayBuffer` |
 
 #### Returns
 
 `void`
-
-#### Implementation of
-
-SBObjectHandle.id32
 
 ___
 
@@ -265,33 +232,21 @@ ___
 
 • `get` **key**(): `string`
 
-key of object
-
 #### Returns
 
 `string`
 
-#### Implementation of
-
-SBObjectHandle.key
-
 • `set` **key**(`value`): `void`
-
-key of object
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `value` | `string` |
+| `value` | `string` \| `ArrayBuffer` \| `Base62Encoded` |
 
 #### Returns
 
 `void`
-
-#### Implementation of
-
-SBObjectHandle.key
 
 ___
 
@@ -299,33 +254,35 @@ ___
 
 • `get` **key32**(): `Base62Encoded`
 
-optional: array32 format of key
-
 #### Returns
 
 `Base62Encoded`
 
-#### Implementation of
+___
 
-SBObjectHandle.key32
+### <a id="key64" name="key64"></a> key64
 
-• `set` **key32**(`value`): `void`
+• `get` **key64**(): `string`
 
-optional: array32 format of key
+#### Returns
+
+`string`
+
+___
+
+### <a id="key_binary" name="key_binary"></a> key\_binary
+
+• `set` **key_binary**(`value`): `void`
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `value` | `Base62Encoded` |
+| `value` | `ArrayBuffer` |
 
 #### Returns
 
 `void`
-
-#### Implementation of
-
-SBObjectHandle.key32
 
 ___
 
@@ -333,47 +290,35 @@ ___
 
 • `get` **type**(): [`SBObjectType`](../modules.md#sbobjecttype)
 
-type of object
-
 #### Returns
 
 [`SBObjectType`](../modules.md#sbobjecttype)
 
 #### Implementation of
 
-SBObjectHandle.type
+[SBObjectHandle_base](../interfaces/Interfaces.SBObjectHandle_base.md).[type](../interfaces/Interfaces.SBObjectHandle_base.md#type)
 
 ___
 
 ### <a id="verification" name="verification"></a> verification
 
-• `get` **verification**(): `string` \| `Promise`<`string`\>
-
-and currently you also need to keep track of this,
-but you can start sharing / communicating the
-object before it's resolved: among other things it
-serves as a 'write-through' verification
+• `get` **verification**(): `string` \| `Promise`\<`string`\>
 
 #### Returns
 
-`string` \| `Promise`<`string`\>
+`string` \| `Promise`\<`string`\>
 
 #### Implementation of
 
-SBObjectHandle.verification
+[SBObjectHandle_base](../interfaces/Interfaces.SBObjectHandle_base.md).[verification](../interfaces/Interfaces.SBObjectHandle_base.md#verification)
 
 • `set` **verification**(`value`): `void`
-
-and currently you also need to keep track of this,
-but you can start sharing / communicating the
-object before it's resolved: among other things it
-serves as a 'write-through' verification
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `value` | `string` \| `Promise`<`string`\> |
+| `value` | `string` \| `Promise`\<`string`\> |
 
 #### Returns
 
@@ -381,4 +326,4 @@ serves as a 'write-through' verification
 
 #### Implementation of
 
-SBObjectHandle.verification
+[SBObjectHandle_base](../interfaces/Interfaces.SBObjectHandle_base.md).[verification](../interfaces/Interfaces.SBObjectHandle_base.md#verification)

@@ -6,7 +6,7 @@
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" />
 
     <!-- Generated with Sphinx 5.3.0 and Furo 2023.03.27 -->
-        <title>Class: MessageBus - snackabra 0.6.0 beta documentation</title>
+        <title>Class: MessageBus - snackabra 1.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=fad236701ea90a88636c2a8c73b44ae642ed2a53" />
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
@@ -125,7 +125,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">snackabra 0.6.0 beta documentation</div></a>
+      <a href="../index.html"><div class="brand">snackabra 1.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -148,7 +148,7 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
   
   
-  <span class="sidebar-brand-text">snackabra 0.6.0 beta documentation</span>
+  <span class="sidebar-brand-text">snackabra 1.0 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -213,7 +213,7 @@
           <p><a class="reference internal" href="#../jslib2.md"><span class="xref myst">JSLib Reference Manual</span></a> / <a class="reference internal" href="../modules.html"><span class="std std-doc">Exports</span></a> / MessageBus</p>
 <section id="class-messagebus">
 <h1>Class: MessageBus<a class="headerlink" href="#class-messagebus" title="Permalink to this heading">#</a></h1>
-<p>SB simple events (mesage bus) class</p>
+<p>MessageBus</p>
 <section id="table-of-contents">
 <h2>Table of contents<a class="headerlink" href="#table-of-contents" title="Permalink to this heading">#</a></h2>
 <section id="constructors">
@@ -241,7 +241,11 @@
 <h2>Constructors<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
 <section id="constructor">
 <h3><a id="constructor" name="constructor"></a> constructor<a class="headerlink" href="#constructor" title="Permalink to this heading">#</a></h3>
-<p>• <strong>new MessageBus</strong>()</p>
+<p>• <strong>new MessageBus</strong>(): <a class="reference internal" href="#"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">MessageBus</span></code></span></a></p>
+<section id="returns">
+<h4>Returns<a class="headerlink" href="#returns" title="Permalink to this heading">#</a></h4>
+<p><a class="reference internal" href="#"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">MessageBus</span></code></span></a></p>
+</section>
 </section>
 </section>
 <section id="id2">
@@ -277,8 +281,8 @@
 </table>
 </div>
 </section>
-<section id="returns">
-<h4>Returns<a class="headerlink" href="#returns" title="Permalink to this heading">#</a></h4>
+<section id="id4">
+<h4>Returns<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h4>
 <p><code class="docutils literal notranslate"><span class="pre">void</span></code></p>
 </section>
 </section>
@@ -288,8 +292,8 @@
 <p>▸ <strong>subscribe</strong>(<code class="docutils literal notranslate"><span class="pre">event</span></code>, <code class="docutils literal notranslate"><span class="pre">handler</span></code>): <code class="docutils literal notranslate"><span class="pre">void</span></code></p>
 <p>Subscribe. ‘event’ is a string, special case ‘*’ means everything
 (in which case the handler is also given the message)</p>
-<section id="id4">
-<h4>Parameters<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h4>
+<section id="id5">
+<h4>Parameters<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h4>
 <div class="table-wrapper colwidths-auto docutils container">
 <table class="docutils align-default">
 <thead>
@@ -308,8 +312,8 @@
 </table>
 </div>
 </section>
-<section id="id5">
-<h4>Returns<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h4>
+<section id="id6">
+<h4>Returns<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h4>
 <p><code class="docutils literal notranslate"><span class="pre">void</span></code></p>
 </section>
 </section>
@@ -318,8 +322,8 @@
 <h3><a id="unsubscribe" name="unsubscribe"></a> unsubscribe<a class="headerlink" href="#unsubscribe" title="Permalink to this heading">#</a></h3>
 <p>▸ <strong>unsubscribe</strong>(<code class="docutils literal notranslate"><span class="pre">event</span></code>, <code class="docutils literal notranslate"><span class="pre">handler</span></code>): <code class="docutils literal notranslate"><span class="pre">void</span></code></p>
 <p>Unsubscribe</p>
-<section id="id6">
-<h4>Parameters<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h4>
+<section id="id7">
+<h4>Parameters<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h4>
 <div class="table-wrapper colwidths-auto docutils container">
 <table class="docutils align-default">
 <thead>
@@ -338,8 +342,8 @@
 </table>
 </div>
 </section>
-<section id="id7">
-<h4>Returns<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h4>
+<section id="id8">
+<h4>Returns<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h4>
 <p><code class="docutils literal notranslate"><span class="pre">void</span></code></p>
 </section>
 </section>
@@ -391,7 +395,10 @@
 </ul>
 </li>
 <li><a class="reference internal" href="#id1">Constructors</a><ul>
-<li><a class="reference internal" href="#constructor"><a id="constructor" name="constructor"></a> constructor</a></li>
+<li><a class="reference internal" href="#constructor"><a id="constructor" name="constructor"></a> constructor</a><ul>
+<li><a class="reference internal" href="#returns">Returns</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a class="reference internal" href="#id2">Properties</a><ul>
@@ -401,17 +408,17 @@
 <li><a class="reference internal" href="#id3">Methods</a><ul>
 <li><a class="reference internal" href="#publish"><a id="publish" name="publish"></a> publish</a><ul>
 <li><a class="reference internal" href="#parameters">Parameters</a></li>
-<li><a class="reference internal" href="#returns">Returns</a></li>
+<li><a class="reference internal" href="#id4">Returns</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#subscribe"><a id="subscribe" name="subscribe"></a> subscribe</a><ul>
-<li><a class="reference internal" href="#id4">Parameters</a></li>
-<li><a class="reference internal" href="#id5">Returns</a></li>
+<li><a class="reference internal" href="#id5">Parameters</a></li>
+<li><a class="reference internal" href="#id6">Returns</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#unsubscribe"><a id="unsubscribe" name="unsubscribe"></a> unsubscribe</a><ul>
-<li><a class="reference internal" href="#id6">Parameters</a></li>
-<li><a class="reference internal" href="#id7">Returns</a></li>
+<li><a class="reference internal" href="#id7">Parameters</a></li>
+<li><a class="reference internal" href="#id8">Returns</a></li>
 </ul>
 </li>
 </ul>

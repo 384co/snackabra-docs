@@ -15,6 +15,12 @@
     // "watch": true,
     "declaration": true,
     "forceConsistentCasingInFileNames": true,
+    "paths": {
+      // see README
+      "undici-types": [
+        "./node_modules/undici-types/index.d.ts"
+      ],
+    },
   },
   "exclude": [ "node_modules", "dist", "typedoc", "venv", "*.js" ],
   "include": [ "snackabra-jslib/*.ts" ],

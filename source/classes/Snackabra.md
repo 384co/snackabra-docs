@@ -3,27 +3,6 @@
 # Class: Snackabra
 
 Snackabra
-The main class for interacting with SB servers
-
-It is a singleton, so you can only have one instance of it.
-It is guaranteed to be synchronous, so you can use it right away.
-It is also guaranteed to be thread-safe, so you can use it from multiple
-threads.
-
-Constructor expects an object with the names of the matching servers, for example
-below shows the miniflare local dev config. Note that 'new Snackabra()' is
-guaranteed synchronous, so can be 'used' right away. You can optionally call
-without a parameter in which case SB will ping known servers.
-
-**`Example`**
-
-```typescript
-    const sb = new Snackabra({
-      channel_server: 'http://127.0.0.1:4001',
-      channel_ws: 'ws://127.0.0.1:4001',
-      storage_server: 'http://127.0.0.1:4000'
-    })
-```
 
 ## Table of contents
 
@@ -31,15 +10,20 @@ without a parameter in which case SB will ping known servers.
 
 - [constructor](Snackabra.md#constructor)
 
+### Properties
+
+- [channelServer](Snackabra.md#channelserver)
+- [storageServer](Snackabra.md#storageserver)
+
 ### Accessors
 
-- [channel](Snackabra.md#channel)
 - [crypto](Snackabra.md#crypto)
 - [storage](Snackabra.md#storage)
 - [version](Snackabra.md#version)
 
 ### Methods
 
+- [attach](Snackabra.md#attach)
 - [connect](Snackabra.md#connect)
 - [create](Snackabra.md#create)
 
@@ -47,28 +31,68 @@ without a parameter in which case SB will ping known servers.
 
 ### <a id="constructor" name="constructor"></a> constructor
 
-• **new Snackabra**(`args?`, `DEBUG?`)
+• **new Snackabra**(`sbServerOrChannelServer`, `setDBG?`, `setDBG2?`): [`Snackabra`](Snackabra.md)
+
+class Snackabra
+
+Main class. It corresponds to a single channel server. Most apps
+will only be talking to one channel server, but it is possible
+to have multiple instances of Snackabra, each talking to a
+different channel server.
+
+SB 2.0 prefers a single parameter, the URL to the channel server.
 
 #### Parameters
 
-| Name | Type | Default value | Description |
-| :------ | :------ | :------ | :------ |
-| `args?` | [`SBServer`](../interfaces/SBServer.md) | `undefined` | optional object with the names of the matching servers, for example below shows the miniflare local dev config. Note that 'new Snackabra()' is guaranteed synchronous, so can be 'used' right away. You can optionally call without a parameter in which case SB will ping known servers. |
-| `DEBUG` | `boolean` | `false` | optional boolean to enable debug logging |
-
-## Accessors
-
-### <a id="channel" name="channel"></a> channel
-
-• `get` **channel**(): [`Channel`](Channel.md)
-
-Connects to a channel.
+| Name | Type |
+| :------ | :------ |
+| `sbServerOrChannelServer` | `string` \| [`SBServer`](../interfaces/SBServer.md) |
+| `setDBG?` | `boolean` |
+| `setDBG2?` | `boolean` |
 
 #### Returns
 
-[`Channel`](Channel.md)
+[`Snackabra`](Snackabra.md)
+
+**`Example`**
+
+```typescript
+    const sb = new Snackabra('http://localhost:3845')
+```
+
+Websocket server is always the same server (just different protocol),
+storage server is now provided by '/api/info' endpoint, and shard
+servers are orthogonal anyway (any shard server can talk to any
+storage server).
+
+Note that 'new Snackabra()' is guaranteed synchronous.
+
+SB 1.x interface was to provide a set of servers, eg:
+
+**`Example`**
+
+```typescript
+    const sb = new Snackabra({
+      channel_server: 'http://localhost:3845',
+      channel_ws: 'ws://localhost:3845',
+      storage_server: 'http://localhost:3843',
+      shard_server: 'http://localhost:3841',
+    })
+```
+
+## Properties
+
+### <a id="channelserver" name="channelserver"></a> channelServer
+
+• **channelServer**: `string`
 
 ___
+
+### <a id="storageserver" name="storageserver"></a> storageServer
+
+• **storageServer**: `string`
+
+## Accessors
 
 ### <a id="crypto" name="crypto"></a> crypto
 
@@ -104,9 +128,25 @@ ___
 
 ## Methods
 
+### <a id="attach" name="attach"></a> attach
+
+▸ **attach**(`handle`): `Promise`\<[`Channel`](Channel.md)\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `handle` | [`SBChannelHandle`](../interfaces/SBChannelHandle.md) |
+
+#### Returns
+
+`Promise`\<[`Channel`](Channel.md)\>
+
+___
+
 ### <a id="connect" name="connect"></a> connect
 
-▸ **connect**(`onMessage`, `key?`, `channelId?`): `Promise`<[`ChannelSocket`](ChannelSocket.md)\>
+▸ **connect**(`handle`, `onMessage?`): [`ChannelSocket`](ChannelSocket.md)
 
 Connects to :term:`Channel Name` on this SB config.
 Returns a channel socket promise right away, but it
@@ -120,15 +160,14 @@ one of the known servers is responding and ready.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `onMessage` | (`m`: [`ChannelMessage`](../interfaces/ChannelMessage.md)) => `void` | - |
-| `key?` | `JsonWebKey` | optional key to use for encryption/decryption |
-| `channelId?` | `string` | optional channel id to use for encryption/decryption |
+| Name | Type |
+| :------ | :------ |
+| `handle` | [`SBChannelHandle`](../interfaces/SBChannelHandle.md) |
+| `onMessage?` | (`m`: [`ChannelMessage`](../interfaces/ChannelMessage.md)) => `void` |
 
 #### Returns
 
-`Promise`<[`ChannelSocket`](ChannelSocket.md)\>
+[`ChannelSocket`](ChannelSocket.md)
 
 a channel object
 
@@ -136,22 +175,36 @@ ___
 
 ### <a id="create" name="create"></a> create
 
-▸ **create**(`sbServer`, `serverSecret`, `keys?`): `Promise`<[`SBChannelHandle`](../interfaces/SBChannelHandle.md)\>
+▸ **create**(`ownerKeys`, `budgetChannel`): `Promise`\<[`SBChannelHandle`](../interfaces/SBChannelHandle.md)\>
 
-Creates a new channel. Currently uses trivial authentication.
-Returns a promise to a ''SBChannelHandle'' object
-(which includes the :term:`Channel Name`).
+Creates a new channel.
+Returns a promise to a ''SBChannelHandle'' object.
 Note that this method does not connect to the channel,
-it just creates (authorizes) it.
+it just creates (authorizes) it and allocates storage budget.
+
+New (2.0) interface:
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `sbServer` | [`SBServer`](../interfaces/SBServer.md) | the server to use |
-| `serverSecret` | `string` | the server secret |
-| `keys?` | `JsonWebKey` | optional keys to use for encryption/decryption |
+| `ownerKeys` | [`SB384`](SB384.md) | - |
+| `budgetChannel` | [`Channel`](Channel.md) | NECESSARY unless local/dev; provides a channel to pay for storage |
 
 #### Returns
 
-`Promise`<[`SBChannelHandle`](../interfaces/SBChannelHandle.md)\>
+`Promise`\<[`SBChannelHandle`](../interfaces/SBChannelHandle.md)\>
+
+▸ **create**(`sbServer`, `serverSecretOrBudgetChannel?`, `keys?`): `Promise`\<[`SBChannelHandle`](../interfaces/SBChannelHandle.md)\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `sbServer` | [`SBServer`](../interfaces/SBServer.md) |
+| `serverSecretOrBudgetChannel?` | `string` \| [`Channel`](Channel.md) |
+| `keys?` | `JsonWebKey` |
+
+#### Returns
+
+`Promise`\<[`SBChannelHandle`](../interfaces/SBChannelHandle.md)\>

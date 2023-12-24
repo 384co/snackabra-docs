@@ -12,49 +12,33 @@
 Snackabra
 =========
 
-Snackabra is a from-scratch implementation of many-to-many
-conversation and document sharing.  It is made up of a set of designs,
-reference implementations, and a reference service.  It is intended to
-address a number of concerns and constraints with present systems. For
-motivation and design principles, see the :ref:`general discussion
+Snackabra is a new technology stack for building private, secure, and sovereign applications. 
+It revisits and redefines the conventional architecture of apps on the internet.
+
+Why did we need to construct a whole new stack? When we embarked on a mission to create chat and social media applications from scratch, integrating 2020s' ideals of privacy, security, and sovereignty, we discovered that this was unattainable with existing technologies. Many small building blocks were 'lying around', but with many gaps. As we tried to assemble these pieces and fill in the gaps, we realized that we were inadvertently building a whole new stack. And so we did.
+
+Whereas conventionally the 'platform' layer resides on servers - whether they be edge-based or in datacenters - the Snackabra (SB) architecture is fundamentally different: the application layer remains the same (eg static web sites, React applications, etc), but the platform layer has migrated from servers “behind” the internet backbone into your client (browser). The platform layer in turn still talks to servers somewhere, but now in the form of two composable low-level primitives: channels (communication) and shards (block storage).
+
+The platform layer is encapsulated in a `single, standalone Typescript library <https://github.com/snackabra/snackabra-jslib/blob/main/src/snackabra.ts>`_. The infrastructure layer is defined by protocols, with reference server implementations `available on Github <https://github.com/snackabra>`_.
+
+For motivation and design principles, see the :ref:`general discussion
 <discussion>` section.
 
-Though it initially presents as a simple chat and file sharing service, 
-it is in fact a whole (new) stack - application, platform, and 
-infrastructure. Whereas conventionally, the 'platform' layer resides on
-servers - whether they be edge-based or in datacenters - the SB
-architecture is fundamentally different: the application layer remains
-the same (eg web pages, React applications, etc), but the platform 
-layer has migrated from servers into your client (browser). It in 
-turn still talks to 'servers somewhere', but now in the form of 
-two low-level primitives: 'channels' (communication) and 'shards'
-(block storage).
-
-Furthermore, Snackabra [#f02]_ adheres to strict design principles of not merely
-privacy and security, but also 'sovereignty': your data and your
-identity are yours. Full stop. That was our goal, and it is what
-forced us to not just revisit the 'app' part, but also the 'platform'
-and 'infrastructure' layers.
-
-To jump into some of the technical details, you might want to start with a
+To jump into some of the technical design details, you might want to start with a
 :ref:`slightly technical introduction <introduction>` and then dig
-into :ref:`more detailed overview <overview>`. If you're a member of
-public server such https://Privacy.App then you might be looking for a
-short :ref:`user manual <userGuide>` instead.
+into :ref:`more detailed overview <overview>`.
 
 Commercial development is being pursued by 384 (https://384.co),
-but all the core pieces (platform library, reference servers, and template clients)
-are open source (https://github.com/snackabra). If you would like to contribute
+but all the core pieces (platform library, reference servers, template clients, etc)
+are open source. If you would like to contribute
 or help out with the snackabra project, please feel free to :ref:`reach out to us <contact>`.
 
 This is work in progress, there's much left to do. Design was begun in
 2020 and implementation was begun in 2021, and first public release
-was in February, 2022. In turn the design and implementation work leveraged 
-various projects done at the Institute in 2017-2020.
+was in February, 2022. The design and implementation leveraged 
+various other projects done at the `Institute <https://Magnusson.Institute>`_ in 2018-2021.
 
-So please be patient if and when we need to change (sometimes fundamental) things.
-Until there are (many) more miles on this design and implementation, you should *not yet*
-rely on it for highly critical information if you are running the servers yourself. [#f04]_
+So please be patient if and when we need to change (sometimes fundamental) things. [#f04]_
 
 .. toctree::
    :hidden:
@@ -82,14 +66,6 @@ rely on it for highly critical information if you are running the servers yourse
    updated-glossary
 
 
-.. note::
-
-   References to the "Institute" or “MI” (or sometimes “us/our”) refers
-   to the https://Magnusson.Institute - which is funding the
-   development of snackabra as part of a (paid) membership package of
-   privacy services (see http://Privacy.App). References to "Members"
-   refer to either such users, or users of an equivalent public hosting
-   of snackabra.
 
 
 ----------------
@@ -103,22 +79,18 @@ rely on it for highly critical information if you are running the servers yourse
 
 .. [#f03] Though bear in mind that the :ref:`license language <license>` will never cease to apply: this is provided "as is".
 
-.. [#f04] We have various "canary functions" in place.
-   The canary function for all of snackabra's open source technology is @psm's
+.. [#f04] The canary function for all of Snackabra's open source technology is @psm's
    personal twitter (https://twitter.com/petersmagnusson).
-   You can DM at any time to ask if there are any court orders
-   or similar constraints in effect of any sort that might impact the integrity
-   of any parts of the design, implemtation, algorithms, etc.
-   @psm will reply if (and only if) he is not aware of any.
-   At this time, 384co does _not_ have a canary function.
-   If you don't know what this footnote means, don't worry about it...
+   You can DM at any time to ask if there are any known "constraints"
+   in effect that might impact the integrity of any parts of the design, implementation, algorithms, etc.
+   You will get a reply iff there are not any. If you don't know what this footnote means, don't worry about it.
 
 
 ----------------
 
 **LICENSE**
 
-Copyright (c) 2016-2021 Magnusson Institute, All Rights Reserved.
+Copyright (c) 2016-2023 Magnusson Institute, All Rights Reserved.
 
 "Snackabra" is a registered trademark
 

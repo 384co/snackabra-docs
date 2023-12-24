@@ -9,6 +9,8 @@ They are sent over channels as a message (see ChannelKeysMessage);
 in export/import code they may be in the intermediary form of
 strings (see ChannelKeyStrings).
 
+If the room is Locked, encryption key is different (lockedKey)
+
 **`Example`**
 
 ```ts
@@ -37,16 +39,22 @@ strings (see ChannelKeyStrings).
 
 ### Properties
 
+- [encryptedLockedKey](ChannelKeys.md#encryptedlockedkey)
 - [encryptionKey](ChannelKeys.md#encryptionkey)
 - [guestKey](ChannelKeys.md#guestkey)
 - [lockedKey](ChannelKeys.md#lockedkey)
 - [ownerKey](ChannelKeys.md#ownerkey)
-- [ownerPubKeyX](ChannelKeys.md#ownerpubkeyx)
 - [privateKey](ChannelKeys.md#privatekey)
 - [publicSignKey](ChannelKeys.md#publicsignkey)
 - [signKey](ChannelKeys.md#signkey)
 
 ## Properties
+
+### <a id="encryptedlockedkey" name="encryptedlockedkey"></a> encryptedLockedKey
+
+• `Optional` **encryptedLockedKey**: `string`
+
+___
 
 ### <a id="encryptionkey" name="encryptionkey"></a> encryptionKey
 
@@ -62,19 +70,13 @@ ___
 
 ### <a id="lockedkey" name="lockedkey"></a> lockedKey
 
-• `Optional` **lockedKey**: `JsonWebKey`
+• `Optional` **lockedKey**: `CryptoKey`
 
 ___
 
 ### <a id="ownerkey" name="ownerkey"></a> ownerKey
 
 • **ownerKey**: `CryptoKey`
-
-___
-
-### <a id="ownerpubkeyx" name="ownerpubkeyx"></a> ownerPubKeyX
-
-• **ownerPubKeyX**: `string`
 
 ___
 

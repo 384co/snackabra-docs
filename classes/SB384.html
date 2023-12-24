@@ -6,7 +6,7 @@
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" />
 
     <!-- Generated with Sphinx 5.3.0 and Furo 2023.03.27 -->
-        <title>Class: SB384 - snackabra 0.6.0 beta documentation</title>
+        <title>Class: SB384 - snackabra 1.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=fad236701ea90a88636c2a8c73b44ae642ed2a53" />
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
@@ -125,7 +125,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">snackabra 0.6.0 beta documentation</div></a>
+      <a href="../index.html"><div class="brand">snackabra 1.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -148,7 +148,7 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
   
   
-  <span class="sidebar-brand-text">snackabra 0.6.0 beta documentation</span>
+  <span class="sidebar-brand-text">snackabra 1.0 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -213,14 +213,7 @@
           <p><a class="reference internal" href="#../jslib2.md"><span class="xref myst">JSLib Reference Manual</span></a> / <a class="reference internal" href="../modules.html"><span class="std std-doc">Exports</span></a> / SB384</p>
 <section id="class-sb384">
 <h1>Class: SB384<a class="headerlink" href="#class-sb384" title="Permalink to this heading">#</a></h1>
-<section id="hierarchy">
-<h2>Hierarchy<a class="headerlink" href="#hierarchy" title="Permalink to this heading">#</a></h2>
-<ul>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">SB384</span></code></strong></p>
-<p>↳ <a class="reference internal" href="Channel.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">Channel</span></code></span></a></p>
-</li>
-</ul>
-</section>
+<p>SB384</p>
 <section id="table-of-contents">
 <h2>Table of contents<a class="headerlink" href="#table-of-contents" title="Permalink to this heading">#</a></h2>
 <section id="constructors">
@@ -239,13 +232,15 @@
 <section id="accessors">
 <h3>Accessors<a class="headerlink" href="#accessors" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
-<li><p><a class="reference internal" href="#_id"><span class="std std-ref">_id</span></a></p></li>
-<li><p><a class="reference internal" href="#exportable_privatekey"><span class="std std-ref">exportable_privateKey</span></a></p></li>
 <li><p><a class="reference internal" href="#exportable_pubkey"><span class="std std-ref">exportable_pubKey</span></a></p></li>
 <li><p><a class="reference internal" href="#hash"><span class="std std-ref">hash</span></a></p></li>
+<li><p><a class="reference internal" href="#jwk"><span class="std std-ref">jwk</span></a></p></li>
+<li><p><a class="reference internal" href="#key"><span class="std std-ref">key</span></a></p></li>
 <li><p><a class="reference internal" href="#ownerchannelid"><span class="std std-ref">ownerChannelId</span></a></p></li>
-<li><p><a class="reference internal" href="#privatekey"><span class="std std-ref">privateKey</span></a></p></li>
+<li><p><a class="reference internal" href="#private"><span class="std std-ref">private</span></a></p></li>
 <li><p><a class="reference internal" href="#readyflag"><span class="std std-ref">readyFlag</span></a></p></li>
+<li><p><a class="reference internal" href="#userid"><span class="std std-ref">userId</span></a></p></li>
+<li><p><a class="reference internal" href="#userkeystring"><span class="std std-ref">userKeyString</span></a></p></li>
 </ul>
 </section>
 </section>
@@ -253,14 +248,13 @@
 <h2>Constructors<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
 <section id="constructor">
 <h3><a id="constructor" name="constructor"></a> constructor<a class="headerlink" href="#constructor" title="Permalink to this heading">#</a></h3>
-<p>• <strong>new SB384</strong>(<code class="docutils literal notranslate"><span class="pre">key?</span></code>)</p>
+<p>• <strong>new SB384</strong>(<code class="docutils literal notranslate"><span class="pre">key?</span></code>, <code class="docutils literal notranslate"><span class="pre">forcePrivate?</span></code>): <a class="reference internal" href="#"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">SB384</span></code></span></a></p>
 <p>Basic (core) capability object in SB.</p>
-<p>Note that all the getters below will throw an exception if the
-corresponding information is not ready.</p>
 <p>Like most SB classes, SB384 follows the “ready template” design
 pattern: the object is immediately available upon creation,
 but isn’t “ready” until it says it’s ready. See <code class="docutils literal notranslate"><span class="pre">Channel</span> <span class="pre">Class</span></code>_
-example below. Also see Design Note [4]_.</p>
+example below. Getters will throw exceptions if the object
+isn’t sufficiently initialized. Also see Design Note [4]_.</p>
 <p><a class="reference external" href="https://snackabra.io/jslib.html#dn-004-the-ready-pattern">https://snackabra.io/jslib.html#dn-004-the-ready-pattern</a></p>
 <section id="parameters">
 <h4>Parameters<a class="headerlink" href="#parameters" title="Permalink to this heading">#</a></h4>
@@ -274,12 +268,20 @@ example below. Also see Design Note [4]_.</p>
 </thead>
 <tbody>
 <tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">key?</span></code></p></td>
-<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">JsonWebKey</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">string</span></code> | <code class="docutils literal notranslate"><span class="pre">JsonWebKey</span></code></p></td>
 <td class="text-left"><p>a jwk with which to create identity; if not provided, it will ‘mint’ (generate) them randomly, in other words it will default to creating a new identity (“384”).</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">forcePrivate?</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">boolean</span></code></p></td>
+<td class="text-left"><p>if true, will force SB384 to include private key; it will throw an exception if the key is not private. If SB384 is used to mint, then it’s always private.</p></td>
 </tr>
 </tbody>
 </table>
 </div>
+</section>
+<section id="returns">
+<h4>Returns<a class="headerlink" href="#returns" title="Permalink to this heading">#</a></h4>
+<p><a class="reference internal" href="#"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">SB384</span></code></span></a></p>
 </section>
 </section>
 </section>
@@ -297,29 +299,12 @@ example below. Also see Design Note [4]_.</p>
 </section>
 <section id="id3">
 <h2>Accessors<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
-<section id="id">
-<h3><a id="_id" name="_id"></a> _id<a class="headerlink" href="#id" title="Permalink to this heading">#</a></h3>
-<p>• <code class="docutils literal notranslate"><span class="pre">get</span></code> <strong>_id</strong>(): <code class="docutils literal notranslate"><span class="pre">string</span></code></p>
-<section id="returns">
-<h4>Returns<a class="headerlink" href="#returns" title="Permalink to this heading">#</a></h4>
-<p><code class="docutils literal notranslate"><span class="pre">string</span></code></p>
-</section>
-</section>
-<hr class="docutils" />
-<section id="exportable-privatekey">
-<h3><a id="exportable_privatekey" name="exportable_privatekey"></a> exportable_privateKey<a class="headerlink" href="#exportable-privatekey" title="Permalink to this heading">#</a></h3>
-<p>• <code class="docutils literal notranslate"><span class="pre">get</span></code> <strong>exportable_privateKey</strong>(): <code class="docutils literal notranslate"><span class="pre">JsonWebKey</span></code></p>
-<section id="id4">
-<h4>Returns<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h4>
-<p><code class="docutils literal notranslate"><span class="pre">JsonWebKey</span></code></p>
-</section>
-</section>
-<hr class="docutils" />
 <section id="exportable-pubkey">
 <h3><a id="exportable_pubkey" name="exportable_pubkey"></a> exportable_pubKey<a class="headerlink" href="#exportable-pubkey" title="Permalink to this heading">#</a></h3>
 <p>• <code class="docutils literal notranslate"><span class="pre">get</span></code> <strong>exportable_pubKey</strong>(): <code class="docutils literal notranslate"><span class="pre">JsonWebKey</span></code></p>
-<section id="id5">
-<h4>Returns<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h4>
+<p>For ‘jwk’ format use cases.</p>
+<section id="id4">
+<h4>Returns<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h4>
 <p><code class="docutils literal notranslate"><span class="pre">JsonWebKey</span></code></p>
 </section>
 </section>
@@ -329,7 +314,9 @@ example below. Also see Design Note [4]_.</p>
 <p>• <code class="docutils literal notranslate"><span class="pre">get</span></code> <strong>hash</strong>(): <code class="docutils literal notranslate"><span class="pre">string</span></code></p>
 <p>Returns a unique identifier for external use, that will be unique
 for any class or object that uses SB384 as it’s root.</p>
-<p>This is deterministic, used to identify users, channels, etc.</p>
+<p>This is deterministic. Important use case is to translate a user id
+into a channel id (eg the channel that any user id is inherently
+the owner of).</p>
 <p>The hash is base64 encoding of the SHA-384 hash of the public key,
 taking the ‘x’ and ‘y’ fields. Note that it is slightly restricted, it only
 allows [A-Za-z0-9], eg does not allow the ‘_’ or ‘-’ characters. This makes the
@@ -338,42 +325,82 @@ is accomplished by simply re-hashing until the result is valid. This
 reduces the entropy of the channel ID by a neglible amount.</p>
 <p>Note this is not b62 encoding, which we use for 256-bit entities. This
 is still ~384 bits (e.g. x and y fields are each 384 bits, but of course
-the underlying total entropy isn’t that, see <insert lots of fun math crypto
-study material heh>).</p>
-<p>NOTE: if you ever need to COMPARE hashes, well short version is that
-you cannot do so in the general case. You can use sbCrypto.compareHashWithKey()
-to compare a hash with a key, but you cannot compare two hashes. See the
-comparison function for more details.</p>
+the underlying total entropy isn’t that (exercise left to the reader).</p>
+<p>NOTE: if you ever need to COMPARE hashes, the short version is that
+you cannot do so in the general case: you need to use sbCrypto.compareHashWithKey()</p>
+<section id="id5">
+<h4>Returns<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">string</span></code></p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="jwk">
+<h3><a id="jwk" name="jwk"></a> jwk<a class="headerlink" href="#jwk" title="Permalink to this heading">#</a></h3>
+<p>• <code class="docutils literal notranslate"><span class="pre">get</span></code> <strong>jwk</strong>(): <code class="docutils literal notranslate"><span class="pre">JsonWebKey</span></code></p>
 <section id="id6">
 <h4>Returns<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h4>
-<p><code class="docutils literal notranslate"><span class="pre">string</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">JsonWebKey</span></code></p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="key">
+<h3><a id="key" name="key"></a> key<a class="headerlink" href="#key" title="Permalink to this heading">#</a></h3>
+<p>• <code class="docutils literal notranslate"><span class="pre">get</span></code> <strong>key</strong>(): <code class="docutils literal notranslate"><span class="pre">CryptoKey</span></code></p>
+<section id="id7">
+<h4>Returns<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">CryptoKey</span></code></p>
 </section>
 </section>
 <hr class="docutils" />
 <section id="ownerchannelid">
 <h3><a id="ownerchannelid" name="ownerchannelid"></a> ownerChannelId<a class="headerlink" href="#ownerchannelid" title="Permalink to this heading">#</a></h3>
 <p>• <code class="docutils literal notranslate"><span class="pre">get</span></code> <strong>ownerChannelId</strong>(): <code class="docutils literal notranslate"><span class="pre">string</span></code></p>
-<section id="id7">
-<h4>Returns<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h4>
+<p>ChannelID that corresponds to this, if it’s an owner</p>
+<section id="id8">
+<h4>Returns<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h4>
 <p><code class="docutils literal notranslate"><span class="pre">string</span></code></p>
 </section>
 </section>
 <hr class="docutils" />
-<section id="privatekey">
-<h3><a id="privatekey" name="privatekey"></a> privateKey<a class="headerlink" href="#privatekey" title="Permalink to this heading">#</a></h3>
-<p>• <code class="docutils literal notranslate"><span class="pre">get</span></code> <strong>privateKey</strong>(): <code class="docutils literal notranslate"><span class="pre">CryptoKey</span></code></p>
-<section id="id8">
-<h4>Returns<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h4>
-<p><code class="docutils literal notranslate"><span class="pre">CryptoKey</span></code></p>
+<section id="private">
+<h3><a id="private" name="private"></a> private<a class="headerlink" href="#private" title="Permalink to this heading">#</a></h3>
+<p>• <code class="docutils literal notranslate"><span class="pre">get</span></code> <strong>private</strong>(): <code class="docutils literal notranslate"><span class="pre">boolean</span></code></p>
+<p>Returns true if this is a private key, otherwise false.
+Will throw an exception if the object is not ready.</p>
+<section id="id9">
+<h4>Returns<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">boolean</span></code></p>
 </section>
 </section>
 <hr class="docutils" />
 <section id="readyflag">
 <h3><a id="readyflag" name="readyflag"></a> readyFlag<a class="headerlink" href="#readyflag" title="Permalink to this heading">#</a></h3>
 <p>• <code class="docutils literal notranslate"><span class="pre">get</span></code> <strong>readyFlag</strong>(): <code class="docutils literal notranslate"><span class="pre">boolean</span></code></p>
-<section id="id9">
-<h4>Returns<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h4>
+<section id="id10">
+<h4>Returns<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h4>
 <p><code class="docutils literal notranslate"><span class="pre">boolean</span></code></p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="userid">
+<h3><a id="userid" name="userid"></a> userId<a class="headerlink" href="#userid" title="Permalink to this heading">#</a></h3>
+<p>• <code class="docutils literal notranslate"><span class="pre">get</span></code> <strong>userId</strong>(): <code class="docutils literal notranslate"><span class="pre">string</span></code></p>
+<p>Somewhat confusing at times, the string version of the user key per se is
+different from “hash” (the full public key can be recovered from SBUserId).
+Eg this is the public identifier.</p>
+<section id="id11">
+<h4>Returns<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">string</span></code></p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="userkeystring">
+<h3><a id="userkeystring" name="userkeystring"></a> userKeyString<a class="headerlink" href="#userkeystring" title="Permalink to this heading">#</a></h3>
+<p>• <code class="docutils literal notranslate"><span class="pre">get</span></code> <strong>userKeyString</strong>(): <code class="docutils literal notranslate"><span class="pre">string</span></code></p>
+<p>Wire format of full info of key (eg private key).</p>
+<section id="id12">
+<h4>Returns<a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">string</span></code></p>
 </section>
 </section>
 </section>
@@ -417,7 +444,6 @@ comparison function for more details.</p>
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Class: SB384</a><ul>
-<li><a class="reference internal" href="#hierarchy">Hierarchy</a></li>
 <li><a class="reference internal" href="#table-of-contents">Table of contents</a><ul>
 <li><a class="reference internal" href="#constructors">Constructors</a></li>
 <li><a class="reference internal" href="#properties">Properties</a></li>
@@ -427,6 +453,7 @@ comparison function for more details.</p>
 <li><a class="reference internal" href="#id1">Constructors</a><ul>
 <li><a class="reference internal" href="#constructor"><a id="constructor" name="constructor"></a> constructor</a><ul>
 <li><a class="reference internal" href="#parameters">Parameters</a></li>
+<li><a class="reference internal" href="#returns">Returns</a></li>
 </ul>
 </li>
 </ul>
@@ -437,32 +464,40 @@ comparison function for more details.</p>
 </ul>
 </li>
 <li><a class="reference internal" href="#id3">Accessors</a><ul>
-<li><a class="reference internal" href="#id"><a id="_id" name="_id"></a> _id</a><ul>
-<li><a class="reference internal" href="#returns">Returns</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#exportable-privatekey"><a id="exportable_privatekey" name="exportable_privatekey"></a> exportable_privateKey</a><ul>
+<li><a class="reference internal" href="#exportable-pubkey"><a id="exportable_pubkey" name="exportable_pubkey"></a> exportable_pubKey</a><ul>
 <li><a class="reference internal" href="#id4">Returns</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#exportable-pubkey"><a id="exportable_pubkey" name="exportable_pubkey"></a> exportable_pubKey</a><ul>
+<li><a class="reference internal" href="#hash"><a id="hash" name="hash"></a> hash</a><ul>
 <li><a class="reference internal" href="#id5">Returns</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#hash"><a id="hash" name="hash"></a> hash</a><ul>
+<li><a class="reference internal" href="#jwk"><a id="jwk" name="jwk"></a> jwk</a><ul>
 <li><a class="reference internal" href="#id6">Returns</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#ownerchannelid"><a id="ownerchannelid" name="ownerchannelid"></a> ownerChannelId</a><ul>
+<li><a class="reference internal" href="#key"><a id="key" name="key"></a> key</a><ul>
 <li><a class="reference internal" href="#id7">Returns</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#privatekey"><a id="privatekey" name="privatekey"></a> privateKey</a><ul>
+<li><a class="reference internal" href="#ownerchannelid"><a id="ownerchannelid" name="ownerchannelid"></a> ownerChannelId</a><ul>
 <li><a class="reference internal" href="#id8">Returns</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#readyflag"><a id="readyflag" name="readyflag"></a> readyFlag</a><ul>
+<li><a class="reference internal" href="#private"><a id="private" name="private"></a> private</a><ul>
 <li><a class="reference internal" href="#id9">Returns</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#readyflag"><a id="readyflag" name="readyflag"></a> readyFlag</a><ul>
+<li><a class="reference internal" href="#id10">Returns</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#userid"><a id="userid" name="userid"></a> userId</a><ul>
+<li><a class="reference internal" href="#id11">Returns</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#userkeystring"><a id="userkeystring" name="userkeystring"></a> userKeyString</a><ul>
+<li><a class="reference internal" href="#id12">Returns</a></li>
 </ul>
 </li>
 </ul>

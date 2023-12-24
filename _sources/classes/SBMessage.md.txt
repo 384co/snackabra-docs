@@ -2,9 +2,7 @@
 
 # Class: SBMessage
 
-Class SBMessage
-
-Body should be below 32KiB, though it tolerates up to 64KiB
+SBMessage
 
 ## Table of contents
 
@@ -33,7 +31,11 @@ Body should be below 32KiB, though it tolerates up to 64KiB
 
 ### <a id="constructor" name="constructor"></a> constructor
 
-• **new SBMessage**(`channel`, `bodyParameter?`, `sendToJsonWebKey?`)
+• **new SBMessage**(`channel`, `bodyParameter?`, `sendToJsonWebKey?`): [`SBMessage`](SBMessage.md)
+
+SBMessage
+
+Body should be below 32KiB, though it tolerates up to 64KiB
 
 #### Parameters
 
@@ -42,6 +44,10 @@ Body should be below 32KiB, though it tolerates up to 64KiB
 | `channel` | [`Channel`](Channel.md) | `undefined` |
 | `bodyParameter` | `string` \| `SBMessageContents` | `''` |
 | `sendToJsonWebKey?` | `JsonWebKey` | `undefined` |
+
+#### Returns
+
+[`SBMessage`](SBMessage.md)
 
 ## Properties
 
@@ -71,7 +77,7 @@ ___
 
 ### <a id="ready" name="ready"></a> ready
 
-• **ready**: `Promise`<[`SBMessage`](SBMessage.md)\>
+• **ready**: `Promise`\<[`SBMessage`](SBMessage.md)\>
 
 ## Accessors
 
@@ -97,10 +103,10 @@ ___
 
 ### <a id="send" name="send"></a> send
 
-▸ **send**(): `Promise`<`string`\>
+▸ **send**(): `Promise`\<`string`\>
 
 SBMessage.send()
 
 #### Returns
 
-`Promise`<`string`\>
+`Promise`\<`string`\>

@@ -51,9 +51,7 @@ ChannelSocket
 
 ### Methods
 
-- [checkServerStatus](ChannelSocket.md#checkserverstatus)
 - [close](ChannelSocket.md#close)
-- [importKeys](ChannelSocket.md#importkeys)
 - [send](ChannelSocket.md#send)
 
 ## Constructors
@@ -251,6 +249,8 @@ ___
 
 • `set` **enableTrace**(`b`): `void`
 
+Enables debug output
+
 #### Parameters
 
 | Name | Type |
@@ -415,24 +415,6 @@ ___
 
 ## Methods
 
-### checkServerStatus
-
-▸ **checkServerStatus**(`url`, `timeout`, `callback`): `void`
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `url` | `string` |
-| `timeout` | `number` |
-| `callback` | (`online`: `boolean`) => `void` |
-
-#### Returns
-
-`void`
-
-___
-
 ### close
 
 ▸ **close**(): `void`
@@ -440,26 +422,6 @@ ___
 #### Returns
 
 `void`
-
-___
-
-### importKeys
-
-▸ **importKeys**(`keyStrings`): `Promise`<`void`\>
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `keyStrings` | [`ChannelKeyStrings`](../interfaces/ChannelKeyStrings.md) |
-
-#### Returns
-
-`Promise`<`void`\>
-
-#### Inherited from
-
-[Channel](Channel.md).[importKeys](Channel.md#importkeys)
 
 ___
 

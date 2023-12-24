@@ -11,7 +11,6 @@
 ### Classes
 
 - [Channel](classes/Channel.md)
-- [ChannelEndpoint](classes/ChannelEndpoint.md)
 - [ChannelSocket](classes/ChannelSocket.md)
 - [MessageBus](classes/MessageBus.md)
 - [SB384](classes/SB384.md)
@@ -31,7 +30,6 @@
 - [EncryptedContentsBin](interfaces/EncryptedContentsBin.md)
 - [ImageMetaData](interfaces/ImageMetaData.md)
 - [SBChannelHandle](interfaces/SBChannelHandle.md)
-- [SBObjectMetadata](interfaces/SBObjectMetadata.md)
 - [SBPayload](interfaces/SBPayload.md)
 - [SBServer](interfaces/SBServer.md)
 
@@ -40,8 +38,12 @@
 - [ChannelMessageTypes](modules.md#channelmessagetypes)
 - [SB384Hash](modules.md#sb384hash)
 - [SBChannelId](modules.md#sbchannelid)
+- [SBKey](modules.md#sbkey)
+- [SBObjectHandleVersions](modules.md#sbobjecthandleversions)
 - [SBObjectType](modules.md#sbobjecttype)
 - [SBUserId](modules.md#sbuserid)
+- [SBUserKey](modules.md#sbuserkey)
+- [SBUserKeyString](modules.md#sbuserkeystring)
 
 ### Variables
 
@@ -52,13 +54,14 @@
 ### Functions
 
 - [arrayBuffer32ToBase62](modules.md#arraybuffer32tobase62)
+- [arrayBufferToBase62](modules.md#arraybuffertobase62)
 - [arrayBufferToBase64](modules.md#arraybuffertobase64)
 - [assemblePayload](modules.md#assemblepayload)
+- [base62ToArrayBuffer](modules.md#base62toarraybuffer)
 - [base62ToArrayBuffer32](modules.md#base62toarraybuffer32)
 - [base62ToBase64](modules.md#base62tobase64)
 - [base64ToArrayBuffer](modules.md#base64toarraybuffer)
 - [base64ToBase62](modules.md#base64tobase62)
-- [cleanBase32mi](modules.md#cleanbase32mi)
 - [compareBuffers](modules.md#comparebuffers)
 - [decodeB64Url](modules.md#decodeb64url)
 - [encodeB64Url](modules.md#encodeb64url)
@@ -66,10 +69,9 @@
 - [extractPayload](modules.md#extractpayload)
 - [getRandomValues](modules.md#getrandomvalues)
 - [isBase62Encoded](modules.md#isbase62encoded)
+- [isSBKey](modules.md#issbkey)
 - [jsonParseWrapper](modules.md#jsonparsewrapper)
 - [partition](modules.md#partition)
-- [simpleRand256](modules.md#simplerand256)
-- [simpleRandomString](modules.md#simplerandomstring)
 
 ## Type Aliases
 
@@ -91,15 +93,55 @@ ___
 
 ___
 
+### <a id="sbkey" name="sbkey"></a> SBKey
+
+Ƭ **SBKey**: `SBAES256Key` \| `SBPrivateKey` \| `SBPublicKey`
+
+___
+
+### <a id="sbobjecthandleversions" name="sbobjecthandleversions"></a> SBObjectHandleVersions
+
+Ƭ **SBObjectHandleVersions**: ``"1"`` \| ``"2"``
+
+___
+
 ### <a id="sbobjecttype" name="sbobjecttype"></a> SBObjectType
 
 Ƭ **SBObjectType**: ``"f"`` \| ``"p"`` \| ``"b"`` \| ``"t"``
+
+SBObjectType
+
+SBObjectType is a single character string that indicates the
+type of object. Currently, the following types are supported:
+
+- 'f' : full object (e.g. image, this is the most common)
+- 'p' : preview object (e.g. thumbnail)
+- 'b' : block/binary object (e.g. 64KB block)
+- 't' : test object (for testing purposes)
+
+The 't' type is used for testing purposes, and you should
+not expect it to have any particular SLA or longevity.
+
+Note that when you retrieve any object, you must have the
+matching object type.
 
 ___
 
 ### <a id="sbuserid" name="sbuserid"></a> SBUserId
 
-Ƭ **SBUserId**: [`SB384Hash`](modules.md#sb384hash)
+Ƭ **SBUserId**: `string`
+
+___
+
+### <a id="sbuserkey" name="sbuserkey"></a> SBUserKey
+
+Ƭ **SBUserKey**: `SBPrivateKey` \| `SBPublicKey`
+
+___
+
+### <a id="sbuserkeystring" name="sbuserkeystring"></a> SBUserKeyString
+
+Ƭ **SBUserKeyString**: `string`
 
 ## Variables
 
@@ -129,33 +171,52 @@ ___
 This is the GLOBAL SBCrypto object, which is instantiated
 immediately upon loading the jslib library.
 
-You should use this guy, not instantiate your own.
+You should use this guy, not instantiate your own. We don't
+use static functions in SBCrypto(), because we want to be
+able to add features (like global key store) incrementally.
 
 ___
 
 ### <a id="version" name="version"></a> version
 
-• `Const` **version**: ``"1.1.25 (pre) build 01"``
+• `Const` **version**: ``"2.0.0-alpha.5 (build 20)"``
 
 ## Functions
 
 ### <a id="arraybuffer32tobase62" name="arraybuffer32tobase62"></a> arrayBuffer32ToBase62
 
-▸ **arrayBuffer32ToBase62**(`buffer`): `string`
+▸ **arrayBuffer32ToBase62**(`buffer`): `Base62Encoded`
 
-arrayBuffer32ToBase62 converts an ArrayBuffer32 to a base62 encoded string.
+Convenience wrapper.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `buffer` | `ArrayBuffer` | ArrayBuffer32 |
+| Name | Type |
+| :------ | :------ |
+| `buffer` | `ArrayBuffer` |
+
+#### Returns
+
+`Base62Encoded`
+
+___
+
+### <a id="arraybuffertobase62" name="arraybuffertobase62"></a> arrayBufferToBase62
+
+▸ **arrayBufferToBase62**(`buffer`): `string`
+
+Converts any array buffer to base62.
+Restriction: ArrayBuffer must be size multiple of 4 bytes (32 bits).
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `buffer` | `ArrayBuffer` |
 
 #### Returns
 
 `string`
-
-base62 encoded string
 
 ___
 
@@ -165,7 +226,8 @@ ___
 
 Standardized 'btoa()'-like function, e.g., takes a binary string
 ('b') and returns a Base64 encoded version ('a' used to be short
-for 'ascii').
+for 'ascii'). Defaults to URL safe ('url') but can be overriden
+to use standardized Base64 ('b64').
 
 #### Parameters
 
@@ -184,7 +246,7 @@ ___
 
 ### <a id="assemblepayload" name="assemblepayload"></a> assemblePayload
 
-▸ **assemblePayload**(`data`): `BodyInit` \| ``null``
+▸ **assemblePayload**(`data`): `ArrayBuffer` \| ``null``
 
 Assemble payload. This creates a single binary (wire) format
 of an arbitrary set of (named) binary objects.
@@ -197,7 +259,30 @@ of an arbitrary set of (named) binary objects.
 
 #### Returns
 
-`BodyInit` \| ``null``
+`ArrayBuffer` \| ``null``
+
+___
+
+### <a id="base62toarraybuffer" name="base62toarraybuffer"></a> base62ToArrayBuffer
+
+▸ **base62ToArrayBuffer**(`s`): `ArrayBuffer`
+
+base62ToArrayBuffer
+
+Converts a base62 string to matchin ArrayBuffer.
+Restriction: the original array buffer size must have
+been a multiple of 4 bytes (32 bits), eg. this
+function will always return such an ArrayBuffer.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `s` | `string` |
+
+#### Returns
+
+`ArrayBuffer`
 
 ___
 
@@ -205,19 +290,17 @@ ___
 
 ▸ **base62ToArrayBuffer32**(`s`): `ArrayBuffer`
 
-base62ToArrayBuffer32 converts a base62 encoded string to an ArrayBuffer32.
+Convenience wrapper, enforces array32 format
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `s` | `string` | base62 encoded string |
+| Name | Type |
+| :------ | :------ |
+| `s` | `Base62Encoded` |
 
 #### Returns
 
 `ArrayBuffer`
-
-ArrayBuffer32
 
 ___
 
@@ -227,21 +310,21 @@ ___
 
 base62ToBase64 converts a base62 encoded string to a base64 encoded string.
 
-**`Throws`**
-
-Error if the string is not a valid base62 encoded string
-
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `s` | `string` | base62 encoded string |
+| `s` | `Base62Encoded` | base62 encoded string |
 
 #### Returns
 
 `string`
 
 base64 encoded string
+
+**`Throws`**
+
+Error if the string is not a valid base62 encoded string
 
 ___
 
@@ -270,13 +353,11 @@ ___
 
 ### <a id="base64tobase62" name="base64tobase62"></a> base64ToBase62
 
-▸ **base64ToBase62**(`s`): `string`
+▸ **base64ToBase62**(`s`): `Base62Encoded`
+
+Convenience function.
 
 base64ToBase62 converts a base64 encoded string to a base62 encoded string.
-
-**`Throws`**
-
-Error if the string is not a valid base64 encoded string
 
 #### Parameters
 
@@ -286,64 +367,13 @@ Error if the string is not a valid base64 encoded string
 
 #### Returns
 
-`string`
+`Base62Encoded`
 
 base62 encoded string
 
-___
+**`Throws`**
 
-### <a id="cleanbase32mi" name="cleanbase32mi"></a> cleanBase32mi
-
-▸ **cleanBase32mi**(`s`): `string`
-
-This function disambiguates strings that are known to be 'base32mi' type.
-Below is the list of base32 characters, and the disambiguation table.
-base32mi is designed to be human-friendly, so this function can be 
-safely called anywhere you have human input - including as an 
-event on an input field that immediately makes any correction. 
-
-You can think of the translation either in terms of many-to-one
-(all entered characters that map to a specific base32mi character),
-or as a one-to-one correspondence (where '.' means 'no change').
-
-**`Example`**
-
-```ts
-'base32mi': '0123456789abcdefyhEjkLmNHpFrRTUW'
-
-    Disambiguation transformations:
-
-    [OoQD] -> '0'
-    [lIiJ] -> '1'
-    [Zz] -> '2'
-    [A] -> '4'
-    [Ss] -> '5'
-    [G] -> '6'
-    [t] -> '7'
-    [B] -> '8'
-    [gq] -> '9'
-    [C] -> 'c'
-    [Y] -> 'y'
-    [KxX] -> 'k'
-    [M] -> 'm'
-    [n] -> 'N'
-    [P] -> 'p'
-    [uvV] -> 'U'
-    [w] -> 'W'
-
-    0123456789abcdefghijklmnopqrstuvxyzABCDEFGHIJKLMNOPQRSTUVXYZ
-    ................9.1..1.N0.9.57UUk.248c0EF6.11kLm.0p0.5..Uky2
-```
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `s` | `string` |
-
-#### Returns
-
-`string`
+Error if the string is not a valid base64 encoded string
 
 ___
 
@@ -468,7 +498,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `value` | `string` |
+| `value` | `string` \| `Base62Encoded` |
 
 #### Returns
 
@@ -476,20 +506,36 @@ value is Base62Encoded
 
 ___
 
+### <a id="issbkey" name="issbkey"></a> isSBKey
+
+▸ **isSBKey**(`key`): key is SBKey
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `key` | `any` |
+
+#### Returns
+
+key is SBKey
+
+___
+
 ### <a id="jsonparsewrapper" name="jsonparsewrapper"></a> jsonParseWrapper
 
-▸ **jsonParseWrapper**(`str`, `loc`): `any`
+▸ **jsonParseWrapper**(`str`, `loc?`): `any`
 
-There are many problems with JSON parsing, adding a wrapper to capture more info.
+There are many problems with JSON parsing, adding a resilient wrapper to capture more info.
 The 'loc' parameter should be a (unique) string that allows you to find the usage
-in the code; one approach is the line number in the file (at some point).
+in the code; one approach is the line number in the file.
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
 | `str` | ``null`` \| `string` |
-| `loc` | `string` |
+| `loc?` | `string` |
 
 #### Returns
 
@@ -513,40 +559,3 @@ Partition
 #### Returns
 
 `void`
-
-___
-
-### <a id="simplerand256" name="simplerand256"></a> simpleRand256
-
-▸ **simpleRand256**(): `number`
-
-Returns random number
-
-#### Returns
-
-`number`
-
-integer 0..255
-
-___
-
-### <a id="simplerandomstring" name="simplerandomstring"></a> simpleRandomString
-
-▸ **simpleRandomString**(`n`, `code`): `string`
-
-Returns a random string in requested encoding
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `n` | `number` |
-| `code` | `string` |
-
-#### Returns
-
-`string`
-
-random string
-
-base32mi: ``0123456789abcdefyhEjkLmNHpFrRTUW``

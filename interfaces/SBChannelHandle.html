@@ -6,7 +6,7 @@
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" />
 
     <!-- Generated with Sphinx 5.3.0 and Furo 2023.03.27 -->
-        <title>Interface: SBChannelHandle - snackabra 0.6.0 beta documentation</title>
+        <title>Interface: SBChannelHandle - snackabra 1.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=fad236701ea90a88636c2a8c73b44ae642ed2a53" />
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
@@ -125,7 +125,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">snackabra 0.6.0 beta documentation</div></a>
+      <a href="../index.html"><div class="brand">snackabra 1.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -148,7 +148,7 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
   
   
-  <span class="sidebar-brand-text">snackabra 0.6.0 beta documentation</span>
+  <span class="sidebar-brand-text">snackabra 1.0 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -214,29 +214,42 @@
 <section id="interface-sbchannelhandle">
 <h1>Interface: SBChannelHandle<a class="headerlink" href="#interface-sbchannelhandle" title="Permalink to this heading">#</a></h1>
 <p>SBChannelHandle</p>
-<p>Complete descriptor of a channel. ‘key’ is stringified ‘jwk’ key.
-The key is always private. If it matches the channelId, then it’s
-an ‘owner’ key.</p>
+<p>Complete descriptor of a channel. SBUserKeyString (previously ‘key’)
+is a canonical format of stringified version of ‘jwk’..
+The underlying key is always private. If it corresponds to the channelId,
+then it’s an ‘owner’ key.</p>
 <section id="table-of-contents">
 <h2>Table of contents<a class="headerlink" href="#table-of-contents" title="Permalink to this heading">#</a></h2>
 <section id="properties">
 <h3>Properties<a class="headerlink" href="#properties" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
+<li><p><a class="reference internal" href="#[sb_channel_handle_symbol]"><span class="std std-ref">[SB_CHANNEL_HANDLE_SYMBOL]</span></a></p></li>
 <li><p><a class="reference internal" href="#channelid"><span class="std std-ref">channelId</span></a></p></li>
-<li><p><a class="reference internal" href="#key"><span class="std std-ref">key</span></a></p></li>
+<li><p><a class="reference internal" href="#channelserver"><span class="std std-ref">channelServer</span></a></p></li>
+<li><p><a class="reference internal" href="#userkeystring"><span class="std std-ref">userKeyString</span></a></p></li>
 </ul>
 </section>
 </section>
 <section id="id1">
 <h2>Properties<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<section id="sb-channel-handle-symbol">
+<h3><a id="[sb_channel_handle_symbol]" name="[sb_channel_handle_symbol]"></a> [SB_CHANNEL_HANDLE_SYMBOL]<a class="headerlink" href="#sb-channel-handle-symbol" title="Permalink to this heading">#</a></h3>
+<p>• <code class="docutils literal notranslate"><span class="pre">Optional</span></code> <strong>[SB_CHANNEL_HANDLE_SYMBOL]</strong>: <code class="docutils literal notranslate"><span class="pre">boolean</span></code></p>
+</section>
+<hr class="docutils" />
 <section id="channelid">
 <h3><a id="channelid" name="channelid"></a> channelId<a class="headerlink" href="#channelid" title="Permalink to this heading">#</a></h3>
 <p>• <strong>channelId</strong>: <code class="docutils literal notranslate"><span class="pre">string</span></code></p>
 </section>
 <hr class="docutils" />
-<section id="key">
-<h3><a id="key" name="key"></a> key<a class="headerlink" href="#key" title="Permalink to this heading">#</a></h3>
-<p>• <strong>key</strong>: <code class="docutils literal notranslate"><span class="pre">JsonWebKey</span></code></p>
+<section id="channelserver">
+<h3><a id="channelserver" name="channelserver"></a> channelServer<a class="headerlink" href="#channelserver" title="Permalink to this heading">#</a></h3>
+<p>• <code class="docutils literal notranslate"><span class="pre">Optional</span></code> <strong>channelServer</strong>: <code class="docutils literal notranslate"><span class="pre">string</span></code></p>
+</section>
+<hr class="docutils" />
+<section id="userkeystring">
+<h3><a id="userkeystring" name="userkeystring"></a> userKeyString<a class="headerlink" href="#userkeystring" title="Permalink to this heading">#</a></h3>
+<p>• <strong>userKeyString</strong>: <code class="docutils literal notranslate"><span class="pre">string</span></code></p>
 </section>
 </section>
 </section>
@@ -284,8 +297,10 @@ an ‘owner’ key.</p>
 </ul>
 </li>
 <li><a class="reference internal" href="#id1">Properties</a><ul>
+<li><a class="reference internal" href="#sb-channel-handle-symbol"><a id="[sb_channel_handle_symbol]" name="[sb_channel_handle_symbol]"></a> [SB_CHANNEL_HANDLE_SYMBOL]</a></li>
 <li><a class="reference internal" href="#channelid"><a id="channelid" name="channelid"></a> channelId</a></li>
-<li><a class="reference internal" href="#key"><a id="key" name="key"></a> key</a></li>
+<li><a class="reference internal" href="#channelserver"><a id="channelserver" name="channelserver"></a> channelServer</a></li>
+<li><a class="reference internal" href="#userkeystring"><a id="userkeystring" name="userkeystring"></a> userKeyString</a></li>
 </ul>
 </li>
 </ul>

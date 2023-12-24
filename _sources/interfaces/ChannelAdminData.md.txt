@@ -20,7 +20,7 @@ ___
 
 ### <a id="join_requests" name="join_requests"></a> join\_requests
 
-• **join\_requests**: `JsonWebKey`[]
+• **join\_requests**: `string`[]
 
 ___
 

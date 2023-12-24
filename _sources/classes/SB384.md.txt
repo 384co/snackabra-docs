@@ -2,11 +2,7 @@
 
 # Class: SB384
 
-## Hierarchy
-
-- **`SB384`**
-
-  ↳ [`Channel`](Channel.md)
+SB384
 
 ## Table of contents
 
@@ -21,29 +17,29 @@
 
 ### Accessors
 
-- [\_id](SB384.md#_id)
-- [exportable\_privateKey](SB384.md#exportable_privatekey)
 - [exportable\_pubKey](SB384.md#exportable_pubkey)
 - [hash](SB384.md#hash)
+- [jwk](SB384.md#jwk)
+- [key](SB384.md#key)
 - [ownerChannelId](SB384.md#ownerchannelid)
-- [privateKey](SB384.md#privatekey)
+- [private](SB384.md#private)
 - [readyFlag](SB384.md#readyflag)
+- [userId](SB384.md#userid)
+- [userKeyString](SB384.md#userkeystring)
 
 ## Constructors
 
 ### <a id="constructor" name="constructor"></a> constructor
 
-• **new SB384**(`key?`)
+• **new SB384**(`key?`, `forcePrivate?`): [`SB384`](SB384.md)
 
 Basic (core) capability object in SB.
-
-Note that all the getters below will throw an exception if the
-corresponding information is not ready.
 
 Like most SB classes, SB384 follows the "ready template" design
 pattern: the object is immediately available upon creation,
 but isn't "ready" until it says it's ready. See `Channel Class`_
-example below. Also see Design Note [4]_.
+example below. Getters will throw exceptions if the object
+isn't sufficiently initialized. Also see Design Note [4]_.
 
 [https://snackabra.io/jslib.html#dn-004-the-ready-pattern](https://snackabra.io/jslib.html#dn-004-the-ready-pattern)
 
@@ -51,45 +47,32 @@ example below. Also see Design Note [4]_.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `key?` | `JsonWebKey` | a jwk with which to create identity; if not provided, it will 'mint' (generate) them randomly, in other words it will default to creating a new identity ("384"). |
+| `key?` | `string` \| `JsonWebKey` | a jwk with which to create identity; if not provided, it will 'mint' (generate) them randomly, in other words it will default to creating a new identity ("384"). |
+| `forcePrivate?` | `boolean` | if true, will force SB384 to include private key; it will throw an exception if the key is not private. If SB384 is used to mint, then it's always private. |
+
+#### Returns
+
+[`SB384`](SB384.md)
 
 ## Properties
 
 ### <a id="ready" name="ready"></a> ready
 
-• **ready**: `Promise`<[`SB384`](SB384.md)\>
+• **ready**: `Promise`\<[`SB384`](SB384.md)\>
 
 ___
 
 ### <a id="sb384ready" name="sb384ready"></a> sb384Ready
 
-• **sb384Ready**: `Promise`<[`SB384`](SB384.md)\>
+• **sb384Ready**: `Promise`\<[`SB384`](SB384.md)\>
 
 ## Accessors
-
-### <a id="_id" name="_id"></a> \_id
-
-• `get` **_id**(): `string`
-
-#### Returns
-
-`string`
-
-___
-
-### <a id="exportable_privatekey" name="exportable_privatekey"></a> exportable\_privateKey
-
-• `get` **exportable_privateKey**(): `JsonWebKey`
-
-#### Returns
-
-`JsonWebKey`
-
-___
 
 ### <a id="exportable_pubkey" name="exportable_pubkey"></a> exportable\_pubKey
 
 • `get` **exportable_pubKey**(): `JsonWebKey`
+
+For 'jwk' format use cases.
 
 #### Returns
 
@@ -104,7 +87,9 @@ ___
 Returns a unique identifier for external use, that will be unique
 for any class or object that uses SB384 as it's root.
 
-This is deterministic, used to identify users, channels, etc.
+This is deterministic. Important use case is to translate a user id
+into a channel id (eg the channel that any user id is inherently
+the owner of).
 
 The hash is base64 encoding of the SHA-384 hash of the public key,
 taking the 'x' and 'y' fields. Note that it is slightly restricted, it only
@@ -115,17 +100,34 @@ reduces the entropy of the channel ID by a neglible amount.
 
 Note this is not b62 encoding, which we use for 256-bit entities. This
 is still ~384 bits (e.g. x and y fields are each 384 bits, but of course
-the underlying total entropy isn't that, see <insert lots of fun math crypto
-study material heh>).
+the underlying total entropy isn't that (exercise left to the reader).
 
-NOTE: if you ever need to COMPARE hashes, well short version is that
-you cannot do so in the general case. You can use sbCrypto.compareHashWithKey()
-to compare a hash with a key, but you cannot compare two hashes. See the
-comparison function for more details.
+NOTE: if you ever need to COMPARE hashes, the short version is that
+you cannot do so in the general case: you need to use sbCrypto.compareHashWithKey()
 
 #### Returns
 
 `string`
+
+___
+
+### <a id="jwk" name="jwk"></a> jwk
+
+• `get` **jwk**(): `JsonWebKey`
+
+#### Returns
+
+`JsonWebKey`
+
+___
+
+### <a id="key" name="key"></a> key
+
+• `get` **key**(): `CryptoKey`
+
+#### Returns
+
+`CryptoKey`
 
 ___
 
@@ -133,19 +135,24 @@ ___
 
 • `get` **ownerChannelId**(): `string`
 
+ChannelID that corresponds to this, if it's an owner
+
 #### Returns
 
 `string`
 
 ___
 
-### <a id="privatekey" name="privatekey"></a> privateKey
+### <a id="private" name="private"></a> private
 
-• `get` **privateKey**(): `CryptoKey`
+• `get` **private**(): `boolean`
+
+Returns true if this is a private key, otherwise false.
+Will throw an exception if the object is not ready.
 
 #### Returns
 
-`CryptoKey`
+`boolean`
 
 ___
 
@@ -156,3 +163,29 @@ ___
 #### Returns
 
 `boolean`
+
+___
+
+### <a id="userid" name="userid"></a> userId
+
+• `get` **userId**(): `string`
+
+Somewhat confusing at times, the string version of the user key per se is
+different from "hash" (the full public key can be recovered from SBUserId).
+Eg this is the public identifier.
+
+#### Returns
+
+`string`
+
+___
+
+### <a id="userkeystring" name="userkeystring"></a> userKeyString
+
+• `get` **userKeyString**(): `string`
+
+Wire format of full info of key (eg private key).
+
+#### Returns
+
+`string`

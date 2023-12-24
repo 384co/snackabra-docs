@@ -58,7 +58,6 @@ right away, but they decide for themselves if they're ready or not.
 
 ### Methods
 
-- [importKeys](Channel.md#importkeys)
 - [send](Channel.md#send)
 
 ## Constructors
@@ -294,22 +293,6 @@ ___
 [`SBServer`](../interfaces/SBServer.md)
 
 ## Methods
-
-### importKeys
-
-▸ **importKeys**(`keyStrings`): `Promise`<`void`\>
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `keyStrings` | [`ChannelKeyStrings`](../interfaces/ChannelKeyStrings.md) |
-
-#### Returns
-
-`Promise`<`void`\>
-
-___
 
 ### send
 

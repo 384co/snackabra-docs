@@ -2,26 +2,15 @@
 
 # Class: Channel
 
-Channel Class
-
-Join a channel, returns channel object.
-
-Currently, you must have an identity when connecting, because every single
-message is signed by sender. TODO is to look at how to provide a 'listening'
-mode on channels.
-
-Most classes in SB follow the "ready" template: objects can be used
-right away, but they decide for themselves if they're ready or not.
+Channel
 
 ## Hierarchy
 
-- [`SB384`](SB384.md)
+- `SBChannelKeys`
 
   ↳ **`Channel`**
 
   ↳↳ [`ChannelSocket`](ChannelSocket.md)
-
-  ↳↳ [`ChannelEndpoint`](ChannelEndpoint.md)
 
 ## Table of contents
 
@@ -31,37 +20,41 @@ right away, but they decide for themselves if they're ready or not.
 
 ### Properties
 
-- [admin](Channel.md#admin)
 - [adminData](Channel.md#admindata)
 - [channelReady](Channel.md#channelready)
 - [locked](Channel.md#locked)
 - [motd](Channel.md#motd)
-- [owner](Channel.md#owner)
 - [ready](Channel.md#ready)
 - [sb384Ready](Channel.md#sb384ready)
-- [userName](Channel.md#username)
+- [sbChannelKeysReady](Channel.md#sbchannelkeysready)
 - [verifiedGuest](Channel.md#verifiedguest)
 
 ### Accessors
 
-- [\_id](Channel.md#_id)
 - [api](Channel.md#api)
+- [channelData](Channel.md#channeldata)
 - [channelId](Channel.md#channelid)
+- [channelServer](Channel.md#channelserver)
 - [channelSignKey](Channel.md#channelsignkey)
-- [exportable\_privateKey](Channel.md#exportable_privatekey)
+- [encryptionKey](Channel.md#encryptionkey)
 - [exportable\_pubKey](Channel.md#exportable_pubkey)
 - [hash](Channel.md#hash)
+- [jwk](Channel.md#jwk)
+- [key](Channel.md#key)
 - [keys](Channel.md#keys)
+- [owner](Channel.md#owner)
 - [ownerChannelId](Channel.md#ownerchannelid)
-- [privateKey](Channel.md#privatekey)
+- [private](Channel.md#private)
 - [readyFlag](Channel.md#readyflag)
-- [sbServer](Channel.md#sbserver)
+- [userId](Channel.md#userid)
+- [userKeyString](Channel.md#userkeystring)
 
 ### Methods
 
 - [acceptVisitor](Channel.md#acceptvisitor)
 - [authorize](Channel.md#authorize)
 - [budd](Channel.md#budd)
+- [deCryptChannelMessage](Channel.md#decryptchannelmessage)
 - [downloadData](Channel.md#downloaddata)
 - [getAdminData](Channel.md#getadmindata)
 - [getCapacity](Channel.md#getcapacity)
@@ -70,6 +63,7 @@ right away, but they decide for themselves if they're ready or not.
 - [getMother](Channel.md#getmother)
 - [getOldMessages](Channel.md#getoldmessages)
 - [getStorageLimit](Channel.md#getstoragelimit)
+- [getStorageToken](Channel.md#getstoragetoken)
 - [isLocked](Channel.md#islocked)
 - [lock](Channel.md#lock)
 - [ownerKeyRotation](Channel.md#ownerkeyrotation)
@@ -84,74 +78,73 @@ right away, but they decide for themselves if they're ready or not.
 
 ### <a id="constructor" name="constructor"></a> constructor
 
-• **new Channel**(`sbServer`, `key?`, `channelId?`)
+• **new Channel**(`handle`): [`Channel`](Channel.md)
+
+Join a channel, taking a channel handle. Returns channel object.
+
+You must have an identity when connecting, because every single
+message is signed by sender.
+
+Most classes in SB follow the "ready" template: objects can be used
+right away, but they decide for themselves if they're ready or not.
+The SB384 state is the *user* of the channel, not the channel
+itself; it has an Owner (also SB384 object), which can be the
+same as the user/visitor, but that requires finalizing creating
+the channel to find out (from the channel server).
+
+The Channel class communicates asynchronously with the channel.
+
+The ChannelSocket class is a subclass of Channel, and it communicates
+synchronously (via websockets).
+
+Note that you don't need to worry about what API calls involve race
+conditions and which don't, the library will do that for you.
+
+Current (2.x) interface:
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `handle` | [`SBChannelHandle`](../interfaces/SBChannelHandle.md) |
+
+#### Returns
+
+[`Channel`](Channel.md)
+
+#### Overrides
+
+SBChannelKeys.constructor
+
+• **new Channel**(`sbServer`, `userKey`, `channelId`): [`Channel`](Channel.md)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
 | `sbServer` | [`SBServer`](../interfaces/SBServer.md) |
-| `key?` | `JsonWebKey` |
-| `channelId?` | `string` |
+| `userKey` | `JsonWebKey` |
+| `channelId` | `string` |
+
+#### Returns
+
+[`Channel`](Channel.md)
 
 #### Overrides
 
-[SB384](SB384.md).[constructor](SB384.md#constructor)
+SBChannelKeys.constructor
 
 ## Properties
 
-### <a id="admin" name="admin"></a> admin
-
-• **admin**: `boolean` = `false`
-
-___
-
 ### <a id="admindata" name="admindata"></a> adminData
 
-• `Optional` **adminData**: `Dictionary`<`any`\>
+• `Optional` **adminData**: `Dictionary`\<`any`\>
 
 ___
 
 ### <a id="channelready" name="channelready"></a> channelReady
 
-• **channelReady**: `Promise`<[`Channel`](Channel.md)\>
-
-Channel Class
-
-This is the main work horse for channels. However, it is ABSTRACT,
-meaning you need a 'concrete' class to use it.
-
-Currently you have two options:
-
-You can create a ChannelEndpoint object. That can do everything against
-a channel except send/receive messages synchronously.
-
-The other option is ChannelSocket, which does everything ChannelEndpoint
-does, but ALSO connects with a web socket.
-
-So unless you're actually connecting with intent on interactive, fast
-messaging, an endpoint is sufficient. In fact, UNLESS you are going to
-do send/receive, you should use ChannelEndpoint, not ChannelSocket.
-
-In our current thinking, 'Channel' captures pretty much everything, 
-except how you want (instant) messaging to be hooked up. So for example, our
-next class might be 'ChannelP2P', which would be setting up webrtc
-data channel connections in a mesh.
-
-Note that you don't need to worry about what API calls involve race
-conditions and which don't, jslib will do that for you.
-
-**`Param`**
-
-server to join
-
-**`Param`**
-
-key to use to join (optional)
-
-**`Param`**
-
-the <a href="../glossary.html#term-channel-name">Channel Name</a> to find on that server (optional)
+• **channelReady**: `Promise`\<[`Channel`](Channel.md)\>
 
 ___
 
@@ -167,35 +160,33 @@ ___
 
 ___
 
-### <a id="owner" name="owner"></a> owner
-
-• **owner**: `boolean` = `false`
-
-___
-
 ### <a id="ready" name="ready"></a> ready
 
-• **ready**: `Promise`<[`SB384`](SB384.md)\>
+• **ready**: `Promise`\<[`Channel`](Channel.md)\>
 
-#### Inherited from
+#### Overrides
 
-[SB384](SB384.md).[ready](SB384.md#ready)
+SBChannelKeys.ready
 
 ___
 
 ### <a id="sb384ready" name="sb384ready"></a> sb384Ready
 
-• **sb384Ready**: `Promise`<[`SB384`](SB384.md)\>
+• **sb384Ready**: `Promise`\<[`SB384`](SB384.md)\>
 
 #### Inherited from
 
-[SB384](SB384.md).[sb384Ready](SB384.md#sb384ready)
+SBChannelKeys.sb384Ready
 
 ___
 
-### <a id="username" name="username"></a> userName
+### <a id="sbchannelkeysready" name="sbchannelkeysready"></a> sbChannelKeysReady
 
-• **userName**: `string` = `''`
+• **sbChannelKeysReady**: `Promise`\<`SBChannelKeys`\>
+
+#### Inherited from
+
+SBChannelKeys.sbChannelKeysReady
 
 ___
 
@@ -204,20 +195,6 @@ ___
 • **verifiedGuest**: `boolean` = `false`
 
 ## Accessors
-
-### <a id="_id" name="_id"></a> \_id
-
-• `get` **_id**(): `string`
-
-#### Returns
-
-`string`
-
-#### Inherited from
-
-SB384.\_id
-
-___
 
 ### <a id="api" name="api"></a> api
 
@@ -229,6 +206,20 @@ ___
 
 ___
 
+### <a id="channeldata" name="channeldata"></a> channelData
+
+• `get` **channelData**(): [`ChannelData`](../interfaces/ChannelData.md)
+
+#### Returns
+
+[`ChannelData`](../interfaces/ChannelData.md)
+
+#### Inherited from
+
+SBChannelKeys.channelData
+
+___
+
 ### <a id="channelid" name="channelid"></a> channelId
 
 • `get` **channelId**(): `undefined` \| `string`
@@ -236,6 +227,40 @@ ___
 #### Returns
 
 `undefined` \| `string`
+
+#### Inherited from
+
+SBChannelKeys.channelId
+
+___
+
+### <a id="channelserver" name="channelserver"></a> channelServer
+
+• `get` **channelServer**(): `string`
+
+#### Returns
+
+`string`
+
+#### Inherited from
+
+SBChannelKeys.channelServer
+
+• `set` **channelServer**(`channelServer`): `void`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `channelServer` | `string` |
+
+#### Returns
+
+`void`
+
+#### Inherited from
+
+SBChannelKeys.channelServer
 
 ___
 
@@ -247,19 +272,23 @@ ___
 
 `CryptoKey`
 
+#### Inherited from
+
+SBChannelKeys.channelSignKey
+
 ___
 
-### <a id="exportable_privatekey" name="exportable_privatekey"></a> exportable\_privateKey
+### <a id="encryptionkey" name="encryptionkey"></a> encryptionKey
 
-• `get` **exportable_privateKey**(): `JsonWebKey`
+• `get` **encryptionKey**(): `CryptoKey`
 
 #### Returns
 
-`JsonWebKey`
+`CryptoKey`
 
 #### Inherited from
 
-SB384.exportable\_privateKey
+SBChannelKeys.encryptionKey
 
 ___
 
@@ -267,13 +296,15 @@ ___
 
 • `get` **exportable_pubKey**(): `JsonWebKey`
 
+For 'jwk' format use cases.
+
 #### Returns
 
 `JsonWebKey`
 
 #### Inherited from
 
-SB384.exportable\_pubKey
+SBChannelKeys.exportable\_pubKey
 
 ___
 
@@ -284,7 +315,9 @@ ___
 Returns a unique identifier for external use, that will be unique
 for any class or object that uses SB384 as it's root.
 
-This is deterministic, used to identify users, channels, etc.
+This is deterministic. Important use case is to translate a user id
+into a channel id (eg the channel that any user id is inherently
+the owner of).
 
 The hash is base64 encoding of the SHA-384 hash of the public key,
 taking the 'x' and 'y' fields. Note that it is slightly restricted, it only
@@ -295,13 +328,10 @@ reduces the entropy of the channel ID by a neglible amount.
 
 Note this is not b62 encoding, which we use for 256-bit entities. This
 is still ~384 bits (e.g. x and y fields are each 384 bits, but of course
-the underlying total entropy isn't that, see <insert lots of fun math crypto
-study material heh>).
+the underlying total entropy isn't that (exercise left to the reader).
 
-NOTE: if you ever need to COMPARE hashes, well short version is that
-you cannot do so in the general case. You can use sbCrypto.compareHashWithKey()
-to compare a hash with a key, but you cannot compare two hashes. See the
-comparison function for more details.
+NOTE: if you ever need to COMPARE hashes, the short version is that
+you cannot do so in the general case: you need to use sbCrypto.compareHashWithKey()
 
 #### Returns
 
@@ -309,7 +339,35 @@ comparison function for more details.
 
 #### Inherited from
 
-SB384.hash
+SBChannelKeys.hash
+
+___
+
+### <a id="jwk" name="jwk"></a> jwk
+
+• `get` **jwk**(): `JsonWebKey`
+
+#### Returns
+
+`JsonWebKey`
+
+#### Inherited from
+
+SBChannelKeys.jwk
+
+___
+
+### <a id="key" name="key"></a> key
+
+• `get` **key**(): `CryptoKey`
+
+#### Returns
+
+`CryptoKey`
+
+#### Inherited from
+
+SBChannelKeys.key
 
 ___
 
@@ -321,11 +379,31 @@ ___
 
 [`ChannelKeys`](../interfaces/ChannelKeys.md)
 
+#### Inherited from
+
+SBChannelKeys.keys
+
+___
+
+### <a id="owner" name="owner"></a> owner
+
+• `get` **owner**(): `boolean`
+
+#### Returns
+
+`boolean`
+
+#### Inherited from
+
+SBChannelKeys.owner
+
 ___
 
 ### <a id="ownerchannelid" name="ownerchannelid"></a> ownerChannelId
 
 • `get` **ownerChannelId**(): `string`
+
+ChannelID that corresponds to this, if it's an owner
 
 #### Returns
 
@@ -333,21 +411,24 @@ ___
 
 #### Inherited from
 
-SB384.ownerChannelId
+SBChannelKeys.ownerChannelId
 
 ___
 
-### <a id="privatekey" name="privatekey"></a> privateKey
+### <a id="private" name="private"></a> private
 
-• `get` **privateKey**(): `CryptoKey`
+• `get` **private**(): `boolean`
+
+Returns true if this is a private key, otherwise false.
+Will throw an exception if the object is not ready.
 
 #### Returns
 
-`CryptoKey`
+`boolean`
 
 #### Inherited from
 
-SB384.privateKey
+SBChannelKeys.private
 
 ___
 
@@ -361,56 +442,80 @@ ___
 
 #### Overrides
 
-SB384.readyFlag
+SBChannelKeys.readyFlag
 
 ___
 
-### <a id="sbserver" name="sbserver"></a> sbServer
+### <a id="userid" name="userid"></a> userId
 
-• `get` **sbServer**(): [`SBServer`](../interfaces/SBServer.md)
+• `get` **userId**(): `string`
+
+Somewhat confusing at times, the string version of the user key per se is
+different from "hash" (the full public key can be recovered from SBUserId).
+Eg this is the public identifier.
 
 #### Returns
 
-[`SBServer`](../interfaces/SBServer.md)
+`string`
+
+#### Inherited from
+
+SBChannelKeys.userId
+
+___
+
+### <a id="userkeystring" name="userkeystring"></a> userKeyString
+
+• `get` **userKeyString**(): `string`
+
+Wire format of full info of key (eg private key).
+
+#### Returns
+
+`string`
+
+#### Inherited from
+
+SBChannelKeys.userKeyString
 
 ## Methods
 
 ### <a id="acceptvisitor" name="acceptvisitor"></a> acceptVisitor
 
-▸ **acceptVisitor**(`pubKey`): `Promise`<`unknown`\>
+▸ **acceptVisitor**(`userId`): `Promise`\<`unknown`\>
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `pubKey` | `string` |
+| `userId` | `string` |
 
 #### Returns
 
-`Promise`<`unknown`\>
+`Promise`\<`unknown`\>
 
 ___
 
 ### <a id="authorize" name="authorize"></a> authorize
 
-▸ **authorize**(`ownerPublicKey`, `serverSecret`): `Promise`<`any`\>
+▸ **authorize**(`ownerPublicKey`, `serverSecret`): `Promise`\<`any`\>
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `ownerPublicKey` | `Dictionary`<`any`\> |
+| `ownerPublicKey` | `Dictionary`\<`any`\> |
 | `serverSecret` | `string` |
 
 #### Returns
 
-`Promise`<`any`\>
+`Promise`\<`any`\>
 
 ___
 
 ### <a id="budd" name="budd"></a> budd
 
-▸ **budd**(): `Promise`<[`SBChannelHandle`](../interfaces/SBChannelHandle.md)\>
+▸ **budd**(): `Promise`\<[`SBChannelHandle`](../interfaces/SBChannelHandle.md)\>
 
 "budd" will spin a channel off an existing one.
 You need to provide one of the following combinations of info:
@@ -440,9 +545,9 @@ Future: negative amount of storage leaves that amount behind, the rest is transf
 
 #### Returns
 
-`Promise`<[`SBChannelHandle`](../interfaces/SBChannelHandle.md)\>
+`Promise`\<[`SBChannelHandle`](../interfaces/SBChannelHandle.md)\>
 
-▸ **budd**(`options`): `Promise`<[`SBChannelHandle`](../interfaces/SBChannelHandle.md)\>
+▸ **budd**(`options`): `Promise`\<[`SBChannelHandle`](../interfaces/SBChannelHandle.md)\>
 
 #### Parameters
 
@@ -455,73 +560,90 @@ Future: negative amount of storage leaves that amount behind, the rest is transf
 
 #### Returns
 
-`Promise`<[`SBChannelHandle`](../interfaces/SBChannelHandle.md)\>
+`Promise`\<[`SBChannelHandle`](../interfaces/SBChannelHandle.md)\>
+
+___
+
+### <a id="decryptchannelmessage" name="decryptchannelmessage"></a> deCryptChannelMessage
+
+▸ **deCryptChannelMessage**(`m00`, `m01`): `Promise`\<`undefined` \| [`ChannelMessage`](../interfaces/ChannelMessage.md)\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `m00` | `string` |
+| `m01` | [`EncryptedContents`](../interfaces/EncryptedContents.md) |
+
+#### Returns
+
+`Promise`\<`undefined` \| [`ChannelMessage`](../interfaces/ChannelMessage.md)\>
 
 ___
 
 ### <a id="downloaddata" name="downloaddata"></a> downloadData
 
-▸ **downloadData**(): `Promise`<`unknown`\>
+▸ **downloadData**(): `Promise`\<`unknown`\>
 
 Channel.downloadData
 
 #### Returns
 
-`Promise`<`unknown`\>
+`Promise`\<`unknown`\>
 
 ___
 
 ### <a id="getadmindata" name="getadmindata"></a> getAdminData
 
-▸ **getAdminData**(): `Promise`<[`ChannelAdminData`](../interfaces/ChannelAdminData.md)\>
+▸ **getAdminData**(): `Promise`\<[`ChannelAdminData`](../interfaces/ChannelAdminData.md)\>
 
 Channel.getAdminData
 
 #### Returns
 
-`Promise`<[`ChannelAdminData`](../interfaces/ChannelAdminData.md)\>
+`Promise`\<[`ChannelAdminData`](../interfaces/ChannelAdminData.md)\>
 
 ___
 
 ### <a id="getcapacity" name="getcapacity"></a> getCapacity
 
-▸ **getCapacity**(): `Promise`<`any`\>
+▸ **getCapacity**(): `Promise`\<`any`\>
 
 getCapacity
 
 #### Returns
 
-`Promise`<`any`\>
+`Promise`\<`any`\>
 
 ___
 
 ### <a id="getjoinrequests" name="getjoinrequests"></a> getJoinRequests
 
-▸ **getJoinRequests**(): `Promise`<`any`\>
+▸ **getJoinRequests**(): `Promise`\<`any`\>
 
 getJoinRequests
 
 #### Returns
 
-`Promise`<`any`\>
+`Promise`\<`any`\>
 
 ___
 
 ### <a id="getlastmessagetimes" name="getlastmessagetimes"></a> getLastMessageTimes
 
-▸ **getLastMessageTimes**(): `Promise`<`unknown`\>
+▸ **getLastMessageTimes**(): `void`
 
 Channel.getLastMessageTimes
 
 #### Returns
 
-`Promise`<`unknown`\>
+`void`
 
 ___
 
 ### <a id="getmother" name="getmother"></a> getMother
 
-▸ **getMother**(): `Promise`<`any`\>
+▸ **getMother**(): `Promise`\<`any`\>
 
 getMother
 
@@ -530,13 +652,13 @@ this is only accessible by Owner (as well as hosting server)
 
 #### Returns
 
-`Promise`<`any`\>
+`Promise`\<`any`\>
 
 ___
 
 ### <a id="getoldmessages" name="getoldmessages"></a> getOldMessages
 
-▸ **getOldMessages**(`currentMessagesLength?`, `paginate?`): `Promise`<[`ChannelMessage`](../interfaces/ChannelMessage.md)[]\>
+▸ **getOldMessages**(`currentMessagesLength?`, `paginate?`): `Promise`\<[`ChannelMessage`](../interfaces/ChannelMessage.md)[]\>
 
 Channel.getOldMessages
 
@@ -551,45 +673,69 @@ Will return most recent messages from the channel.
 
 #### Returns
 
-`Promise`<[`ChannelMessage`](../interfaces/ChannelMessage.md)[]\>
+`Promise`\<[`ChannelMessage`](../interfaces/ChannelMessage.md)[]\>
 
 ___
 
 ### <a id="getstoragelimit" name="getstoragelimit"></a> getStorageLimit
 
-▸ **getStorageLimit**(): `Promise`<`any`\>
+▸ **getStorageLimit**(): `Promise`\<`any`\>
 
 getStorageLimit (current storage budget)
 
 #### Returns
 
-`Promise`<`any`\>
+`Promise`\<`any`\>
+
+___
+
+### <a id="getstoragetoken" name="getstoragetoken"></a> getStorageToken
+
+▸ **getStorageToken**(`size`): `Promise`\<`string`\>
+
+returns a storage token (promise); basic consumption of channel budget
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `size` | `number` |
+
+#### Returns
+
+`Promise`\<`string`\>
 
 ___
 
 ### <a id="islocked" name="islocked"></a> isLocked
 
-▸ **isLocked**(): `Promise`<`boolean`\>
+▸ **isLocked**(): `Promise`\<`boolean`\>
 
 isLocked
 
 #### Returns
 
-`Promise`<`boolean`\>
+`Promise`\<`boolean`\>
 
 ___
 
 ### <a id="lock" name="lock"></a> lock
 
-▸ **lock**(): `Promise`<`unknown`\>
+▸ **lock**(`key?`): `Promise`\<\{ `locked`: `boolean` ; `lockedKey`: `JsonWebKey`  }\>
 
 Channel.lock()
 
-Locks the channel, so that new visitors need an "ack" to join..
+Locks the channel, so that new visitors need an "ack" to join.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `key?` | `CryptoKey` |
 
 #### Returns
 
-`Promise`<`unknown`\>
+`Promise`\<\{ `locked`: `boolean` ; `lockedKey`: `JsonWebKey`  }\>
 
 ___
 
@@ -605,7 +751,7 @@ ___
 
 ### <a id="postpubkey" name="postpubkey"></a> postPubKey
 
-▸ **postPubKey**(`_exportable_pubKey`): `Promise`<{ `success`: `boolean`  }\>
+▸ **postPubKey**(`_exportable_pubKey`): `Promise`\<\{ `success`: `boolean`  }\>
 
 #### Parameters
 
@@ -615,29 +761,29 @@ ___
 
 #### Returns
 
-`Promise`<{ `success`: `boolean`  }\>
+`Promise`\<\{ `success`: `boolean`  }\>
 
 ___
 
 ### <a id="send" name="send"></a> send
 
-▸ `Abstract` **send**(`message`): `Promise`<`string`\>
+▸ **send**(`_msg`): `Promise`\<`string`\>
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `message` | [`SBMessage`](SBMessage.md) |
+| `_msg` | `string` \| [`SBMessage`](SBMessage.md) |
 
 #### Returns
 
-`Promise`<`string`\>
+`Promise`\<`string`\>
 
 ___
 
 ### <a id="setmotd" name="setmotd"></a> setMOTD
 
-▸ **setMOTD**(`motd`): `Promise`<`any`\>
+▸ **setMOTD**(`motd`): `Promise`\<`any`\>
 
 Set message of the day
 
@@ -649,13 +795,13 @@ Set message of the day
 
 #### Returns
 
-`Promise`<`any`\>
+`Promise`\<`any`\>
 
 ___
 
 ### <a id="storagerequest" name="storagerequest"></a> storageRequest
 
-▸ **storageRequest**(`byteLength`): `Promise`<`Dictionary`<`any`\>\>
+▸ **storageRequest**(`byteLength`): `Promise`\<`Dictionary`\<`any`\>\>
 
 #### Parameters
 
@@ -665,13 +811,13 @@ ___
 
 #### Returns
 
-`Promise`<`Dictionary`<`any`\>\>
+`Promise`\<`Dictionary`\<`any`\>\>
 
 ___
 
 ### <a id="updatecapacity" name="updatecapacity"></a> updateCapacity
 
-▸ **updateCapacity**(`capacity`): `Promise`<`any`\>
+▸ **updateCapacity**(`capacity`): `Promise`\<`any`\>
 
 Update (set) the capacity of the channel; Owner only
 
@@ -683,13 +829,13 @@ Update (set) the capacity of the channel; Owner only
 
 #### Returns
 
-`Promise`<`any`\>
+`Promise`\<`any`\>
 
 ___
 
 ### <a id="uploadchannel" name="uploadchannel"></a> uploadChannel
 
-▸ **uploadChannel**(`channelData`): `Promise`<`any`\>
+▸ **uploadChannel**(`channelData`): `Promise`\<`any`\>
 
 #### Parameters
 
@@ -699,4 +845,4 @@ ___
 
 #### Returns
 
-`Promise`<`any`\>
+`Promise`\<`any`\>

@@ -6,7 +6,7 @@
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Introduction" href="introduction.html" />
 
     <!-- Generated with Sphinx 5.3.0 and Furo 2023.03.27 -->
-        <title>snackabra 0.6.0 beta documentation</title>
+        <title>snackabra 1.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=fad236701ea90a88636c2a8c73b44ae642ed2a53" />
     <link rel="stylesheet" type="text/css" href="_static/graphviz.css" />
@@ -125,7 +125,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="#"><div class="brand">snackabra 0.6.0 beta documentation</div></a>
+      <a href="#"><div class="brand">snackabra 1.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -148,7 +148,7 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="#">
   
   
-  <span class="sidebar-brand-text">snackabra 0.6.0 beta documentation</span>
+  <span class="sidebar-brand-text">snackabra 1.0 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -217,58 +217,31 @@
 <a class="reference internal image-reference" href="_images/snackabra.svg"><img alt="The 'michat' Pet Logo" class="align-center" height="100px" src="_images/snackabra.svg" width="100px" /></a>
 <section id="snackabra">
 <h1>Snackabra<a class="headerlink" href="#snackabra" title="Permalink to this heading">#</a></h1>
-<p>Snackabra is a from-scratch implementation of many-to-many
-conversation and document sharing.  It is made up of a set of designs,
-reference implementations, and a reference service.  It is intended to
-address a number of concerns and constraints with present systems. For
-motivation and design principles, see the <a class="reference internal" href="discussion.html#discussion"><span class="std std-ref">general discussion</span></a> section.</p>
-<p>Though it initially presents as a simple chat and file sharing service,
-it is in fact a whole (new) stack - application, platform, and
-infrastructure. Whereas conventionally, the ‘platform’ layer resides on
-servers - whether they be edge-based or in datacenters - the SB
-architecture is fundamentally different: the application layer remains
-the same (eg web pages, React applications, etc), but the platform
-layer has migrated from servers into your client (browser). It in
-turn still talks to ‘servers somewhere’, but now in the form of
-two low-level primitives: ‘channels’ (communication) and ‘shards’
-(block storage).</p>
-<p>Furthermore, Snackabra <a class="footnote-reference brackets" href="#f02" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> adheres to strict design principles of not merely
-privacy and security, but also ‘sovereignty’: your data and your
-identity are yours. Full stop. That was our goal, and it is what
-forced us to not just revisit the ‘app’ part, but also the ‘platform’
-and ‘infrastructure’ layers.</p>
-<p>To jump into some of the technical details, you might want to start with a
+<p>Snackabra is a new technology stack for building private, secure, and sovereign applications.
+It revisits and redefines the conventional architecture of apps on the internet.</p>
+<p>Why did we need to construct a whole new stack? When we embarked on a mission to create chat and social media applications from scratch, integrating 2020s’ ideals of privacy, security, and sovereignty, we discovered that this was unattainable with existing technologies. Many small building blocks were ‘lying around’, but with many gaps. As we tried to assemble these pieces and fill in the gaps, we realized that we were inadvertently building a whole new stack. And so we did.</p>
+<p>Whereas conventionally the ‘platform’ layer resides on servers - whether they be edge-based or in datacenters - the Snackabra (SB) architecture is fundamentally different: the application layer remains the same (eg static web sites, React applications, etc), but the platform layer has migrated from servers “behind” the internet backbone into your client (browser). The platform layer in turn still talks to servers somewhere, but now in the form of two composable low-level primitives: channels (communication) and shards (block storage).</p>
+<p>The platform layer is encapsulated in a <a class="reference external" href="https://github.com/snackabra/snackabra-jslib/blob/main/src/snackabra.ts">single, standalone Typescript library</a>. The infrastructure layer is defined by protocols, with reference server implementations <a class="reference external" href="https://github.com/snackabra">available on Github</a>.</p>
+<p>For motivation and design principles, see the <a class="reference internal" href="discussion.html#discussion"><span class="std std-ref">general discussion</span></a> section.</p>
+<p>To jump into some of the technical design details, you might want to start with a
 <a class="reference internal" href="introduction.html#introduction"><span class="std std-ref">slightly technical introduction</span></a> and then dig
-into <a class="reference internal" href="overview.html#overview"><span class="std std-ref">more detailed overview</span></a>. If you’re a member of
-public server such <a class="reference external" href="https://Privacy.App">https://Privacy.App</a> then you might be looking for a
-short <a class="reference internal" href="user-guide.html#userguide"><span class="std std-ref">user manual</span></a> instead.</p>
+into <a class="reference internal" href="overview.html#overview"><span class="std std-ref">more detailed overview</span></a>.</p>
 <p>Commercial development is being pursued by 384 (<a class="reference external" href="https://384.co">https://384.co</a>),
-but all the core pieces (platform library, reference servers, and template clients)
-are open source (<a class="reference external" href="https://github.com/snackabra">https://github.com/snackabra</a>). If you would like to contribute
+but all the core pieces (platform library, reference servers, template clients, etc)
+are open source. If you would like to contribute
 or help out with the snackabra project, please feel free to <a class="reference internal" href="contact.html#contact"><span class="std std-ref">reach out to us</span></a>.</p>
 <p>This is work in progress, there’s much left to do. Design was begun in
 2020 and implementation was begun in 2021, and first public release
-was in February, 2022. In turn the design and implementation work leveraged
-various projects done at the Institute in 2017-2020.</p>
-<p>So please be patient if and when we need to change (sometimes fundamental) things.
-Until there are (many) more miles on this design and implementation, you should <em>not yet</em>
-rely on it for highly critical information if you are running the servers yourself. <a class="footnote-reference brackets" href="#f04" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a></p>
+was in February, 2022. The design and implementation leveraged
+various other projects done at the <a class="reference external" href="https://Magnusson.Institute">Institute</a> in 2018-2021.</p>
+<p>So please be patient if and when we need to change (sometimes fundamental) things. <a class="footnote-reference brackets" href="#f04" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a></p>
 <div class="toctree-wrapper compound">
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>References to the “Institute” or “MI” (or sometimes “us/our”) refers
-to the <a class="reference external" href="https://Magnusson.Institute">https://Magnusson.Institute</a> - which is funding the
-development of snackabra as part of a (paid) membership package of
-privacy services (see <a class="reference external" href="http://Privacy.App">http://Privacy.App</a>). References to “Members”
-refer to either such users, or users of an equivalent public hosting
-of snackabra.</p>
 </div>
 <hr class="docutils" />
 <p class="rubric">Footnotes</p>
 <aside class="footnote-list brackets">
 <aside class="footnote brackets" id="f02" role="note">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<span class="label"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></span>
 <p>“SNACKABRA” is pronounced “snack” and then the first part of
 “abracadabra”. Accent is on the second “a” (the first “a” in
 “abracadabra”). It’s as easy to use as having a snack. And
@@ -279,21 +252,17 @@ it’s magical.</p>
 <p>Though bear in mind that the <a class="reference internal" href="license.html#license"><span class="std std-ref">license language</span></a> will never cease to apply: this is provided “as is”.</p>
 </aside>
 <aside class="footnote brackets" id="f04" role="note">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">3</a><span class="fn-bracket">]</span></span>
-<p>We have various “canary functions” in place.
-The canary function for all of snackabra’s open source technology is &#64;psm’s
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">3</a><span class="fn-bracket">]</span></span>
+<p>The canary function for all of Snackabra’s open source technology is &#64;psm’s
 personal twitter (<a class="reference external" href="https://twitter.com/petersmagnusson">https://twitter.com/petersmagnusson</a>).
-You can DM at any time to ask if there are any court orders
-or similar constraints in effect of any sort that might impact the integrity
-of any parts of the design, implemtation, algorithms, etc.
-&#64;psm will reply if (and only if) he is not aware of any.
-At this time, 384co does _not_ have a canary function.
-If you don’t know what this footnote means, don’t worry about it…</p>
+You can DM at any time to ask if there are any known “constraints”
+in effect that might impact the integrity of any parts of the design, implementation, algorithms, etc.
+You will get a reply iff there are not any. If you don’t know what this footnote means, don’t worry about it.</p>
 </aside>
 </aside>
 <hr class="docutils" />
 <p><strong>LICENSE</strong></p>
-<p>Copyright (c) 2016-2021 Magnusson Institute, All Rights Reserved.</p>
+<p>Copyright (c) 2016-2023 Magnusson Institute, All Rights Reserved.</p>
 <p>“Snackabra” is a registered trademark</p>
 <p>This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU Affero General Public License as

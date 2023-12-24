@@ -6,7 +6,7 @@
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" />
 
     <!-- Generated with Sphinx 5.3.0 and Furo 2023.03.27 -->
-        <title>Class: Snackabra - snackabra 0.6.0 beta documentation</title>
+        <title>Class: Snackabra - snackabra 1.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=fad236701ea90a88636c2a8c73b44ae642ed2a53" />
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
@@ -125,7 +125,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">snackabra 0.6.0 beta documentation</div></a>
+      <a href="../index.html"><div class="brand">snackabra 1.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -148,7 +148,7 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
   
   
-  <span class="sidebar-brand-text">snackabra 0.6.0 beta documentation</span>
+  <span class="sidebar-brand-text">snackabra 1.0 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -213,24 +213,7 @@
           <p><a class="reference internal" href="#../jslib2.md"><span class="xref myst">JSLib Reference Manual</span></a> / <a class="reference internal" href="../modules.html"><span class="std std-doc">Exports</span></a> / Snackabra</p>
 <section id="class-snackabra">
 <h1>Class: Snackabra<a class="headerlink" href="#class-snackabra" title="Permalink to this heading">#</a></h1>
-<p>Snackabra
-The main class for interacting with SB servers</p>
-<p>It is a singleton, so you can only have one instance of it.
-It is guaranteed to be synchronous, so you can use it right away.
-It is also guaranteed to be thread-safe, so you can use it from multiple
-threads.</p>
-<p>Constructor expects an object with the names of the matching servers, for example
-below shows the miniflare local dev config. Note that ‘new Snackabra()’ is
-guaranteed synchronous, so can be ‘used’ right away. You can optionally call
-without a parameter in which case SB will ping known servers.</p>
-<p><strong><code class="docutils literal notranslate"><span class="pre">Example</span></code></strong></p>
-<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">sb</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Snackabra</span><span class="p">({</span>
-<span class="w">      </span><span class="nx">channel_server</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;http://127.0.0.1:4001&#39;</span><span class="p">,</span>
-<span class="w">      </span><span class="nx">channel_ws</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;ws://127.0.0.1:4001&#39;</span><span class="p">,</span>
-<span class="w">      </span><span class="nx">storage_server</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;http://127.0.0.1:4000&#39;</span>
-<span class="w">    </span><span class="p">})</span>
-</pre></div>
-</div>
+<p>Snackabra</p>
 <section id="table-of-contents">
 <h2>Table of contents<a class="headerlink" href="#table-of-contents" title="Permalink to this heading">#</a></h2>
 <section id="constructors">
@@ -239,10 +222,16 @@ without a parameter in which case SB will ping known servers.</p>
 <li><p><a class="reference internal" href="#constructor"><span class="std std-ref">constructor</span></a></p></li>
 </ul>
 </section>
+<section id="properties">
+<h3>Properties<a class="headerlink" href="#properties" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p><a class="reference internal" href="#channelserver"><span class="std std-ref">channelServer</span></a></p></li>
+<li><p><a class="reference internal" href="#storageserver"><span class="std std-ref">storageServer</span></a></p></li>
+</ul>
+</section>
 <section id="accessors">
 <h3>Accessors<a class="headerlink" href="#accessors" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
-<li><p><a class="reference internal" href="#channel"><span class="std std-ref">channel</span></a></p></li>
 <li><p><a class="reference internal" href="#crypto"><span class="std std-ref">crypto</span></a></p></li>
 <li><p><a class="reference internal" href="#storage"><span class="std std-ref">storage</span></a></p></li>
 <li><p><a class="reference internal" href="#version"><span class="std std-ref">version</span></a></p></li>
@@ -251,6 +240,7 @@ without a parameter in which case SB will ping known servers.</p>
 <section id="methods">
 <h3>Methods<a class="headerlink" href="#methods" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
+<li><p><a class="reference internal" href="#attach"><span class="std std-ref">attach</span></a></p></li>
 <li><p><a class="reference internal" href="#connect"><span class="std std-ref">connect</span></a></p></li>
 <li><p><a class="reference internal" href="#create"><span class="std std-ref">create</span></a></p></li>
 </ul>
@@ -260,7 +250,13 @@ without a parameter in which case SB will ping known servers.</p>
 <h2>Constructors<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
 <section id="constructor">
 <h3><a id="constructor" name="constructor"></a> constructor<a class="headerlink" href="#constructor" title="Permalink to this heading">#</a></h3>
-<p>• <strong>new Snackabra</strong>(<code class="docutils literal notranslate"><span class="pre">args?</span></code>, <code class="docutils literal notranslate"><span class="pre">DEBUG?</span></code>)</p>
+<p>• <strong>new Snackabra</strong>(<code class="docutils literal notranslate"><span class="pre">sbServerOrChannelServer</span></code>, <code class="docutils literal notranslate"><span class="pre">setDBG?</span></code>, <code class="docutils literal notranslate"><span class="pre">setDBG2?</span></code>): <a class="reference internal" href="#"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">Snackabra</span></code></span></a></p>
+<p>class Snackabra</p>
+<p>Main class. It corresponds to a single channel server. Most apps
+will only be talking to one channel server, but it is possible
+to have multiple instances of Snackabra, each talking to a
+different channel server.</p>
+<p>SB 2.0 prefers a single parameter, the URL to the channel server.</p>
 <section id="parameters">
 <h4>Parameters<a class="headerlink" href="#parameters" title="Permalink to this heading">#</a></h4>
 <div class="table-wrapper colwidths-auto docutils container">
@@ -268,45 +264,67 @@ without a parameter in which case SB will ping known servers.</p>
 <thead>
 <tr class="row-odd"><th class="head text-left"><p>Name</p></th>
 <th class="head text-left"><p>Type</p></th>
-<th class="head text-left"><p>Default value</p></th>
-<th class="head text-left"><p>Description</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">args?</span></code></p></td>
-<td class="text-left"><p><a class="reference internal" href="../interfaces/SBServer.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">SBServer</span></code></span></a></p></td>
-<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">undefined</span></code></p></td>
-<td class="text-left"><p>optional object with the names of the matching servers, for example below shows the miniflare local dev config. Note that ‘new Snackabra()’ is guaranteed synchronous, so can be ‘used’ right away. You can optionally call without a parameter in which case SB will ping known servers.</p></td>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">sbServerOrChannelServer</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">string</span></code> | <a class="reference internal" href="../interfaces/SBServer.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">SBServer</span></code></span></a></p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">DEBUG</span></code></p></td>
+<tr class="row-odd"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">setDBG?</span></code></p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">boolean</span></code></p></td>
-<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
-<td class="text-left"><p>optional boolean to enable debug logging</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">setDBG2?</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">boolean</span></code></p></td>
 </tr>
 </tbody>
 </table>
 </div>
 </section>
+<section id="returns">
+<h4>Returns<a class="headerlink" href="#returns" title="Permalink to this heading">#</a></h4>
+<p><a class="reference internal" href="#"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">Snackabra</span></code></span></a></p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Example</span></code></strong></p>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">sb</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Snackabra</span><span class="p">(</span><span class="s1">&#39;http://localhost:3845&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Websocket server is always the same server (just different protocol),
+storage server is now provided by ‘/api/info’ endpoint, and shard
+servers are orthogonal anyway (any shard server can talk to any
+storage server).</p>
+<p>Note that ‘new Snackabra()’ is guaranteed synchronous.</p>
+<p>SB 1.x interface was to provide a set of servers, eg:</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Example</span></code></strong></p>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">sb</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Snackabra</span><span class="p">({</span>
+<span class="w">      </span><span class="nx">channel_server</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;http://localhost:3845&#39;</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">channel_ws</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;ws://localhost:3845&#39;</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">storage_server</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;http://localhost:3843&#39;</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">shard_server</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;http://localhost:3841&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="p">})</span>
+</pre></div>
+</div>
+</section>
 </section>
 </section>
 <section id="id2">
-<h2>Accessors<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
-<section id="channel">
-<h3><a id="channel" name="channel"></a> channel<a class="headerlink" href="#channel" title="Permalink to this heading">#</a></h3>
-<p>• <code class="docutils literal notranslate"><span class="pre">get</span></code> <strong>channel</strong>(): <a class="reference internal" href="Channel.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">Channel</span></code></span></a></p>
-<p>Connects to a channel.</p>
-<section id="returns">
-<h4>Returns<a class="headerlink" href="#returns" title="Permalink to this heading">#</a></h4>
-<p><a class="reference internal" href="Channel.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">Channel</span></code></span></a></p>
-</section>
+<h2>Properties<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<section id="channelserver">
+<h3><a id="channelserver" name="channelserver"></a> channelServer<a class="headerlink" href="#channelserver" title="Permalink to this heading">#</a></h3>
+<p>• <strong>channelServer</strong>: <code class="docutils literal notranslate"><span class="pre">string</span></code></p>
 </section>
 <hr class="docutils" />
+<section id="storageserver">
+<h3><a id="storageserver" name="storageserver"></a> storageServer<a class="headerlink" href="#storageserver" title="Permalink to this heading">#</a></h3>
+<p>• <strong>storageServer</strong>: <code class="docutils literal notranslate"><span class="pre">string</span></code></p>
+</section>
+</section>
+<section id="id3">
+<h2>Accessors<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
 <section id="crypto">
 <h3><a id="crypto" name="crypto"></a> crypto<a class="headerlink" href="#crypto" title="Permalink to this heading">#</a></h3>
 <p>• <code class="docutils literal notranslate"><span class="pre">get</span></code> <strong>crypto</strong>(): <a class="reference internal" href="SBCrypto.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">SBCrypto</span></code></span></a></p>
 <p>Returns the crypto API.</p>
-<section id="id3">
-<h4>Returns<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h4>
+<section id="id4">
+<h4>Returns<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h4>
 <p><a class="reference internal" href="SBCrypto.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">SBCrypto</span></code></span></a></p>
 </section>
 </section>
@@ -315,8 +333,8 @@ without a parameter in which case SB will ping known servers.</p>
 <h3><a id="storage" name="storage"></a> storage<a class="headerlink" href="#storage" title="Permalink to this heading">#</a></h3>
 <p>• <code class="docutils literal notranslate"><span class="pre">get</span></code> <strong>storage</strong>(): <code class="docutils literal notranslate"><span class="pre">StorageApi</span></code></p>
 <p>Returns the storage API.</p>
-<section id="id4">
-<h4>Returns<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h4>
+<section id="id5">
+<h4>Returns<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h4>
 <p><code class="docutils literal notranslate"><span class="pre">StorageApi</span></code></p>
 </section>
 </section>
@@ -324,17 +342,43 @@ without a parameter in which case SB will ping known servers.</p>
 <section id="version">
 <h3><a id="version" name="version"></a> version<a class="headerlink" href="#version" title="Permalink to this heading">#</a></h3>
 <p>• <code class="docutils literal notranslate"><span class="pre">get</span></code> <strong>version</strong>(): <code class="docutils literal notranslate"><span class="pre">string</span></code></p>
-<section id="id5">
-<h4>Returns<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h4>
+<section id="id6">
+<h4>Returns<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h4>
 <p><code class="docutils literal notranslate"><span class="pre">string</span></code></p>
 </section>
 </section>
 </section>
-<section id="id6">
-<h2>Methods<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h2>
+<section id="id7">
+<h2>Methods<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h2>
+<section id="attach">
+<h3><a id="attach" name="attach"></a> attach<a class="headerlink" href="#attach" title="Permalink to this heading">#</a></h3>
+<p>▸ <strong>attach</strong>(<code class="docutils literal notranslate"><span class="pre">handle</span></code>): <code class="docutils literal notranslate"><span class="pre">Promise</span></code>&lt;<a class="reference internal" href="Channel.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">Channel</span></code></span></a>&gt;</p>
+<section id="id8">
+<h4>Parameters<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h4>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Name</p></th>
+<th class="head text-left"><p>Type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">handle</span></code></p></td>
+<td class="text-left"><p><a class="reference internal" href="../interfaces/SBChannelHandle.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">SBChannelHandle</span></code></span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="id9">
+<h4>Returns<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">Promise</span></code>&lt;<a class="reference internal" href="Channel.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">Channel</span></code></span></a>&gt;</p>
+</section>
+</section>
+<hr class="docutils" />
 <section id="connect">
 <h3><a id="connect" name="connect"></a> connect<a class="headerlink" href="#connect" title="Permalink to this heading">#</a></h3>
-<p>▸ <strong>connect</strong>(<code class="docutils literal notranslate"><span class="pre">onMessage</span></code>, <code class="docutils literal notranslate"><span class="pre">key?</span></code>, <code class="docutils literal notranslate"><span class="pre">channelId?</span></code>): <code class="docutils literal notranslate"><span class="pre">Promise</span></code>&lt;<a class="reference internal" href="ChannelSocket.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">ChannelSocket</span></code></span></a>&gt;</p>
+<p>▸ <strong>connect</strong>(<code class="docutils literal notranslate"><span class="pre">handle</span></code>, <code class="docutils literal notranslate"><span class="pre">onMessage?</span></code>): <a class="reference internal" href="ChannelSocket.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">ChannelSocket</span></code></span></a></p>
 <p>Connects to :term:<code class="docutils literal notranslate"><span class="pre">Channel</span> <span class="pre">Name</span></code> on this SB config.
 Returns a channel socket promise right away, but it
 will not be ready until the <code class="docutils literal notranslate"><span class="pre">ready</span></code> promise is resolved.</p>
@@ -343,50 +387,43 @@ object will be returned right away, but the <code class="docutils literal notran
 will still be pending. If you do not have a preferred server,
 then the <code class="docutils literal notranslate"><span class="pre">ready</span></code> promise will be resolved when at least
 one of the known servers is responding and ready.</p>
-<section id="id7">
-<h4>Parameters<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h4>
+<section id="id10">
+<h4>Parameters<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h4>
 <div class="table-wrapper colwidths-auto docutils container">
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head text-left"><p>Name</p></th>
 <th class="head text-left"><p>Type</p></th>
-<th class="head text-left"><p>Description</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">onMessage</span></code></p></td>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">handle</span></code></p></td>
+<td class="text-left"><p><a class="reference internal" href="../interfaces/SBChannelHandle.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">SBChannelHandle</span></code></span></a></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">onMessage?</span></code></p></td>
 <td class="text-left"><p>(<code class="docutils literal notranslate"><span class="pre">m</span></code>: <a class="reference internal" href="../interfaces/ChannelMessage.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">ChannelMessage</span></code></span></a>) =&gt; <code class="docutils literal notranslate"><span class="pre">void</span></code></p></td>
-<td class="text-left"><p>-</p></td>
-</tr>
-<tr class="row-odd"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">key?</span></code></p></td>
-<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">JsonWebKey</span></code></p></td>
-<td class="text-left"><p>optional key to use for encryption/decryption</p></td>
-</tr>
-<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">channelId?</span></code></p></td>
-<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">string</span></code></p></td>
-<td class="text-left"><p>optional channel id to use for encryption/decryption</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 </section>
-<section id="id8">
-<h4>Returns<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h4>
-<p><code class="docutils literal notranslate"><span class="pre">Promise</span></code>&lt;<a class="reference internal" href="ChannelSocket.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">ChannelSocket</span></code></span></a>&gt;</p>
+<section id="id11">
+<h4>Returns<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h4>
+<p><a class="reference internal" href="ChannelSocket.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">ChannelSocket</span></code></span></a></p>
 <p>a channel object</p>
 </section>
 </section>
 <hr class="docutils" />
 <section id="create">
 <h3><a id="create" name="create"></a> create<a class="headerlink" href="#create" title="Permalink to this heading">#</a></h3>
-<p>▸ <strong>create</strong>(<code class="docutils literal notranslate"><span class="pre">sbServer</span></code>, <code class="docutils literal notranslate"><span class="pre">serverSecret</span></code>, <code class="docutils literal notranslate"><span class="pre">keys?</span></code>): <code class="docutils literal notranslate"><span class="pre">Promise</span></code>&lt;<a class="reference internal" href="../interfaces/SBChannelHandle.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">SBChannelHandle</span></code></span></a>&gt;</p>
-<p>Creates a new channel. Currently uses trivial authentication.
-Returns a promise to a ‘’SBChannelHandle’’ object
-(which includes the :term:<code class="docutils literal notranslate"><span class="pre">Channel</span> <span class="pre">Name</span></code>).
+<p>▸ <strong>create</strong>(<code class="docutils literal notranslate"><span class="pre">ownerKeys</span></code>, <code class="docutils literal notranslate"><span class="pre">budgetChannel</span></code>): <code class="docutils literal notranslate"><span class="pre">Promise</span></code>&lt;<a class="reference internal" href="../interfaces/SBChannelHandle.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">SBChannelHandle</span></code></span></a>&gt;</p>
+<p>Creates a new channel.
+Returns a promise to a ‘’SBChannelHandle’’ object.
 Note that this method does not connect to the channel,
-it just creates (authorizes) it.</p>
-<section id="id9">
-<h4>Parameters<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h4>
+it just creates (authorizes) it and allocates storage budget.</p>
+<p>New (2.0) interface:</p>
+<section id="id12">
+<h4>Parameters<a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h4>
 <div class="table-wrapper colwidths-auto docutils container">
 <table class="docutils align-default">
 <thead>
@@ -396,24 +433,48 @@ it just creates (authorizes) it.</p>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">sbServer</span></code></p></td>
-<td class="text-left"><p><a class="reference internal" href="../interfaces/SBServer.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">SBServer</span></code></span></a></p></td>
-<td class="text-left"><p>the server to use</p></td>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">ownerKeys</span></code></p></td>
+<td class="text-left"><p><a class="reference internal" href="SB384.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">SB384</span></code></span></a></p></td>
+<td class="text-left"><p>-</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">serverSecret</span></code></p></td>
-<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">string</span></code></p></td>
-<td class="text-left"><p>the server secret</p></td>
-</tr>
-<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">keys?</span></code></p></td>
-<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">JsonWebKey</span></code></p></td>
-<td class="text-left"><p>optional keys to use for encryption/decryption</p></td>
+<tr class="row-odd"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">budgetChannel</span></code></p></td>
+<td class="text-left"><p><a class="reference internal" href="Channel.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">Channel</span></code></span></a></p></td>
+<td class="text-left"><p>NECESSARY unless local/dev; provides a channel to pay for storage</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 </section>
-<section id="id10">
-<h4>Returns<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h4>
+<section id="id13">
+<h4>Returns<a class="headerlink" href="#id13" title="Permalink to this heading">#</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">Promise</span></code>&lt;<a class="reference internal" href="../interfaces/SBChannelHandle.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">SBChannelHandle</span></code></span></a>&gt;</p>
+<p>▸ <strong>create</strong>(<code class="docutils literal notranslate"><span class="pre">sbServer</span></code>, <code class="docutils literal notranslate"><span class="pre">serverSecretOrBudgetChannel?</span></code>, <code class="docutils literal notranslate"><span class="pre">keys?</span></code>): <code class="docutils literal notranslate"><span class="pre">Promise</span></code>&lt;<a class="reference internal" href="../interfaces/SBChannelHandle.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">SBChannelHandle</span></code></span></a>&gt;</p>
+</section>
+<section id="id14">
+<h4>Parameters<a class="headerlink" href="#id14" title="Permalink to this heading">#</a></h4>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Name</p></th>
+<th class="head text-left"><p>Type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">sbServer</span></code></p></td>
+<td class="text-left"><p><a class="reference internal" href="../interfaces/SBServer.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">SBServer</span></code></span></a></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">serverSecretOrBudgetChannel?</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">string</span></code> | <a class="reference internal" href="Channel.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">Channel</span></code></span></a></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">keys?</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">JsonWebKey</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="id15">
+<h4>Returns<a class="headerlink" href="#id15" title="Permalink to this heading">#</a></h4>
 <p><code class="docutils literal notranslate"><span class="pre">Promise</span></code>&lt;<a class="reference internal" href="../interfaces/SBChannelHandle.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">SBChannelHandle</span></code></span></a>&gt;</p>
 </section>
 </section>
@@ -460,6 +521,7 @@ it just creates (authorizes) it.</p>
 <li><a class="reference internal" href="#">Class: Snackabra</a><ul>
 <li><a class="reference internal" href="#table-of-contents">Table of contents</a><ul>
 <li><a class="reference internal" href="#constructors">Constructors</a></li>
+<li><a class="reference internal" href="#properties">Properties</a></li>
 <li><a class="reference internal" href="#accessors">Accessors</a></li>
 <li><a class="reference internal" href="#methods">Methods</a></li>
 </ul>
@@ -467,38 +529,47 @@ it just creates (authorizes) it.</p>
 <li><a class="reference internal" href="#id1">Constructors</a><ul>
 <li><a class="reference internal" href="#constructor"><a id="constructor" name="constructor"></a> constructor</a><ul>
 <li><a class="reference internal" href="#parameters">Parameters</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#id2">Accessors</a><ul>
-<li><a class="reference internal" href="#channel"><a id="channel" name="channel"></a> channel</a><ul>
 <li><a class="reference internal" href="#returns">Returns</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#crypto"><a id="crypto" name="crypto"></a> crypto</a><ul>
-<li><a class="reference internal" href="#id3">Returns</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#storage"><a id="storage" name="storage"></a> storage</a><ul>
+<li><a class="reference internal" href="#id2">Properties</a><ul>
+<li><a class="reference internal" href="#channelserver"><a id="channelserver" name="channelserver"></a> channelServer</a></li>
+<li><a class="reference internal" href="#storageserver"><a id="storageserver" name="storageserver"></a> storageServer</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id3">Accessors</a><ul>
+<li><a class="reference internal" href="#crypto"><a id="crypto" name="crypto"></a> crypto</a><ul>
 <li><a class="reference internal" href="#id4">Returns</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#version"><a id="version" name="version"></a> version</a><ul>
+<li><a class="reference internal" href="#storage"><a id="storage" name="storage"></a> storage</a><ul>
 <li><a class="reference internal" href="#id5">Returns</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#version"><a id="version" name="version"></a> version</a><ul>
+<li><a class="reference internal" href="#id6">Returns</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id6">Methods</a><ul>
+</ul>
+</li>
+<li><a class="reference internal" href="#id7">Methods</a><ul>
+<li><a class="reference internal" href="#attach"><a id="attach" name="attach"></a> attach</a><ul>
+<li><a class="reference internal" href="#id8">Parameters</a></li>
+<li><a class="reference internal" href="#id9">Returns</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#connect"><a id="connect" name="connect"></a> connect</a><ul>
-<li><a class="reference internal" href="#id7">Parameters</a></li>
-<li><a class="reference internal" href="#id8">Returns</a></li>
+<li><a class="reference internal" href="#id10">Parameters</a></li>
+<li><a class="reference internal" href="#id11">Returns</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#create"><a id="create" name="create"></a> create</a><ul>
-<li><a class="reference internal" href="#id9">Parameters</a></li>
-<li><a class="reference internal" href="#id10">Returns</a></li>
+<li><a class="reference internal" href="#id12">Parameters</a></li>
+<li><a class="reference internal" href="#id13">Returns</a></li>
+<li><a class="reference internal" href="#id14">Parameters</a></li>
+<li><a class="reference internal" href="#id15">Returns</a></li>
 </ul>
 </li>
 </ul>

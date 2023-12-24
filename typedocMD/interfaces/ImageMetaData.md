@@ -8,6 +8,7 @@
 
 - [imageId](ImageMetaData.md#imageid)
 - [imageKey](ImageMetaData.md#imagekey)
+- [imgObjVersion](ImageMetaData.md#imgobjversion)
 - [previewId](ImageMetaData.md#previewid)
 - [previewKey](ImageMetaData.md#previewkey)
 - [previewNonce](ImageMetaData.md#previewnonce)
@@ -24,6 +25,12 @@ ___
 ### <a id="imagekey" name="imagekey"></a> imageKey
 
 • `Optional` **imageKey**: `string`
+
+___
+
+### <a id="imgobjversion" name="imgobjversion"></a> imgObjVersion
+
+• `Optional` **imgObjVersion**: [`SBObjectHandleVersions`](../modules.md#sbobjecthandleversions)
 
 ___
 
